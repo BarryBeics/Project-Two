@@ -22,6 +22,36 @@ body {
 }
 
 /* ------------- Site wide  ----------- Special paddings/margins/text -----*/
+h1,
+h2,
+h3,
+h5 {
+   margin: 0;
+}
+ 
+h1 {
+   font-size: 24px;
+   padding: 25px 0px 10px 15px;
+   font-weight: 600;
+}
+ 
+h2 {
+   font-size: 21px;
+   font-weight: 500;
+   color: #79b4b7;
+   padding: 10px 0px;
+}
+ 
+h3 {
+   font-size: 17px;
+   padding: 3px;
+   color: #79b4b7;
+}
+ 
+h5 {
+   font-size: 14px;
+   color: #e9cf96;
+}
 
 
 
@@ -152,5 +182,6 @@ footer p {
     padding: 7px 20px;
     width: 80px;
  }
+ 
  
 
