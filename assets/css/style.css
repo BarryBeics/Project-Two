@@ -55,68 +55,82 @@ header {
     background-color: #222222;
 }
 
-.name-inner {
-    text-transform: uppercase;
-    font-size: 24px;
-    padding: 24px 28px 14px 28px;
-    text-align: center;
-    color: #999999;
- }
-  
- .list-inline-item:not(:last-child) {
-    margin: 0;
- }
-  
- .menucontainer {
-    font-size: 0;
- }
-  
- #nav {
-    z-index: 1;
- }
-  
- #nav li {
-    font-size: 14px;
-    padding: 0px;
- }
-  
- .menuitem {
-    height: 80px;
-    padding: 0;
-    text-align: center;
- }
-  
- .menuitem a {
-    width: 100%;
-    text-decoration: none;
-    color: #999999;
-    height: 80px;
- }
-  
- .menuitem a i {
-    padding-top: 18px;
-    display: block;
-    color: #999999;
-    font-size: 22px;
- }
-  
- .menuitem a span {
-    display: block;
-    width: 100%;
-    padding-top: 6px;
-    text-align: center;
-    font-size: 15px;
-    font-weight: 300;
-    letter-spacing: 3px;
- }
-
  /* ------------- Site wide  ----------- Hover.css */
  
 .hvr-underline-from-center:before {
     background-color: #0795d6;
  }
  
+/* ------------- Media Queries  ----------- Everything except Mobile size screen */
 
+@media only screen and (min-width: 576px) {
+
+
+    .name-inner {
+        text-transform: uppercase;
+        font-size: 24px;
+        padding: 24px 28px 14px 28px;
+        text-align: center;
+        color: #999999;
+     }
+      
+     .list-inline-item:not(:last-child) {
+        margin: 0;
+     }
+      
+     .menucontainer {
+        font-size: 0;
+     }
+      
+     #nav {
+        z-index: 1;
+     }
+      
+     #nav li {
+        font-size: 14px;
+        padding: 0px;
+     }
+      
+     .menuitem {
+        height: 80px;
+        padding: 0;
+        text-align: center;
+     }
+      
+     .menuitem a {
+        width: 100%;
+        text-decoration: none;
+        color: #999999;
+        height: 80px;
+     }
+      
+     .menuitem a i {
+        padding-top: 18px;
+        display: block;
+        color: #999999;
+        font-size: 22px;
+     }
+      
+     .menuitem a span {
+        display: block;
+        width: 100%;
+        padding-top: 6px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 300;
+        letter-spacing: 3px;
+     }
+    
+
+}
+
+/* ------------- Media Queries  ----------- Mobile only */
+
+@media only screen and (max-width: 576px) {
+
+    
+
+}
 
 /* ------------- Site wide  ----------- Footer */
 
