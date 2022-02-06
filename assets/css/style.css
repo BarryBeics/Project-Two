@@ -2,16 +2,24 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: #ebebeb;
+    color: #999999;
     background-color: #131313;
 }
 
 /* ------------- Site wide  ----------- Colours */
 
 .site-colour {
-    background-color: #0795d6;
+    background-color: #222222;
 }
 
+.selected:before {
+    color: #3b3b38;
+}
+
+
+.social i:hover {
+    color: #2867b2;
+}
 
 /* ------------- Site wide  ----------- Special paddings/margins/text -----*/
 
@@ -44,7 +52,7 @@ p {
 /* ------------- Site wide  ----------- Header */
  
 header {
-    background-color: #0795d6;
+    background-color: #222222;
 }
 
 .name-inner {
@@ -52,7 +60,7 @@ header {
     font-size: 24px;
     padding: 24px 28px 14px 28px;
     text-align: center;
-    color: #3b3b38;
+    color: #999999;
  }
   
  .list-inline-item:not(:last-child) {
@@ -81,14 +89,14 @@ header {
  .menuitem a {
     width: 100%;
     text-decoration: none;
-    color: #3b3b38;
+    color: #999999;
     height: 80px;
  }
   
  .menuitem a i {
     padding-top: 18px;
     display: block;
-    color: #eeeeea;
+    color: #999999;
     font-size: 22px;
  }
   
@@ -105,7 +113,7 @@ header {
  /* ------------- Site wide  ----------- Hover.css */
  
 .hvr-underline-from-center:before {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #0795d6;
  }
  
 
@@ -113,13 +121,22 @@ header {
 /* ------------- Site wide  ----------- Footer */
 
 footer {
-    background-color: #0795d6;
-    color: #f8f0df;
+    background-color: #222222;
+    color: #999999;
     padding-top: 10px;
 }
 
 footer p {
     font-size: 14px;
-    color: #e9cf96;
+    color: #999999;
 }
+
+.footer-icon i {
+    font-size: 25px;
+    color: #999999;
+    text-align: center;
+    padding: 7px 20px;
+    width: 80px;
+ }
+ 
 
