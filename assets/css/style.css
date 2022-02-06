@@ -41,7 +41,73 @@ p {
     text-align: center;
 }
 
+/* ------------- Site wide  ----------- Header */
+ 
+header {
+    background-color: #0795d6;
+}
 
+.name-inner {
+    text-transform: uppercase;
+    font-size: 24px;
+    padding: 24px 28px 14px 28px;
+    text-align: center;
+    color: #3b3b38;
+ }
+  
+ .list-inline-item:not(:last-child) {
+    margin: 0;
+ }
+  
+ .menucontainer {
+    font-size: 0;
+ }
+  
+ #nav {
+    z-index: 1;
+ }
+  
+ #nav li {
+    font-size: 14px;
+    padding: 0px;
+ }
+  
+ .menuitem {
+    height: 80px;
+    padding: 0;
+    text-align: center;
+ }
+  
+ .menuitem a {
+    width: 100%;
+    text-decoration: none;
+    color: #3b3b38;
+    height: 80px;
+ }
+  
+ .menuitem a i {
+    padding-top: 18px;
+    display: block;
+    color: #eeeeea;
+    font-size: 22px;
+ }
+  
+ .menuitem a span {
+    display: block;
+    width: 100%;
+    padding-top: 6px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 3px;
+ }
+
+ /* ------------- Site wide  ----------- Hover.css */
+ 
+.hvr-underline-from-center:before {
+    background-color: rgba(0, 0, 0, 0.3);
+ }
+ 
 
 
 /* ------------- Site wide  ----------- Footer */
