@@ -79,6 +79,14 @@ p {
     text-align: center;
 }
 
+
+
+.row {
+   margin-right: 0px;
+   margin-left: 0px;
+
+}
+
 /* ------------- Site wide  ----------- Header */
  
 header {
@@ -184,4 +192,11 @@ footer p {
  }
  
  
+ .trading-background {
+   clear: left;
+   background: url("../images/background.png");
+   background-size: cover;
+   background-position: center;
+   height: 900px;
+}
 
