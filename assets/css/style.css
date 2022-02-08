@@ -96,7 +96,7 @@ header {
  /* ------------- Site wide  ----------- Hover.css */
  
 .hvr-underline-from-center:before {
-    background-color: #0795d6;
+    background-color: #79b4b7;
  }
  
 /* ------------- Media Queries  ----------- Everything except Mobile size screen */
@@ -198,5 +198,101 @@ footer p {
    background-size: cover;
    background-position: center;
    height: 900px;
+}
+
+
+/* ------------- contact.html ------------ Contact Form */
+
+.contact-form {
+   margin-top: 35px;
+   color: #fff;
+   background: rgba(66, 64, 64, 0.6);
+   position: absolute;
+   padding: 30px;
+   width: 90%;
+}
+
+
+.contact-form-item {
+   margin-bottom: 10px;
+   display: block;
+   clear: both;
+}
+
+.contact-form-title {
+   margin-bottom: 10px;
+   display: block;
+   clear: both;
+   font-weight: 400;
+}
+
+.contact-form-item .key,
+.contact-form-item .value {
+   padding-right: 8px;
+   display: inline-block;
+}
+
+.contact-form-item .key p,
+.contact-form-item .value p {
+   margin: 0;
+   font-size: 14px;
+}
+
+.contact-form-item .key {
+   width: 20%;
+   margin-right: 19px;
+   margin-top: 2px;
+   vertical-align: top;
+}
+
+.contact-form-item .key p {
+   font-weight: 400;
+}
+
+.contact-form-item .value {
+   position: relative;
+   width: 70%;
+}
+
+.contact-form-item .left-option {
+   width: 48%;
+   margin-right: 19px;
+   margin-top: 2px;
+   vertical-align: top;
+}
+
+.contact-form-item .right-option {
+   position: relative;
+   width: 48%;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+   border-color: rgb(73, 110, 112);
+   background-color: rgb(95, 142, 145);
+}
+
+.custom-control-label::before {
+   border-radius: 30%;
+}
+
+.custom-control-label::before {
+   left: 5px;
+}
+
+.custom-control-label {
+   padding-left: 35px;
+}
+
+.form-control {
+   height: calc(18px + 0.75rem + 2px);
+}
+
+button[type="submit"] {
+   margin-top: 15px;
+   margin-bottom: 20px;
+   color: #f8f0df;
+   font-weight: 500;
+   width: 40%;
+   background-color: rgb(95, 142, 145);
 }
 
