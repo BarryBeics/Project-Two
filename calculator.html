@@ -15,59 +15,55 @@
 <body>
     <header>
         <div class="row no-gutters">
-            <!-- Mobile Header & Navigation bar -->
-            <div class="d-sm-none">
-            <nav class="navbar navbar-dark bg-grey-800">
-                <div class="container-fluid">
-                  <a class="navbar-brand" href="index.html">Calculator</a>
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                      <a class="nav-link" href="index.html">Home</a>
-                      <a class="nav-link active" aria-current="page" href="calculator.html">Calculator</a>
-                      <a class="nav-link" href="results.html">Results</a>
-                      <a class="nav-link" href="contact.html">Contact</a>
-                    </div>
-                  </div>
-                </div>
-              </nav>
-            </div>
-        </div>
-        <div class="row no-gutters">
-            <!-- Main Header & Navigation bar -->
-            <div class="col-md-12 d-none d-sm-block">
             <div class="row">
-            <div class="col-md-4">logo here</div>
-            <!-- Navigation bar -->
-            <div class="col-md-8">
-                <ul id="nav" class="list-inline menucontainer">
-                    <li class="col-6 col-md-3 site-colour list-inline-item menuitem">
-                        <a href="index.html" class="hvr-underline-from-center">
-                            <i class="fas fa-home" aria-hidden="true"></i><span>Home</span>
-                        </a>
+                <!-- Logo -->
+                <div class="col-3">
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Desktop & Tablet -->
+                        <div class="col-md-12 d-none d-sm-block"><img src="/assets/images/Bear-Bull-logo.png" width="160" height="80" alt="logo"></div>
+                        <!-- Mobile -->
+                        <div class="d-sm-none"><img src="/assets/images/Bear-Bull-logo.png"  alt="logo"></div>
+                      </a>
+                </div>
+                <!-- Navigation bar -->
+            <div class="col-9">
+                <!-- Desktop & Tablet -->
+                <div class="d-none d-sm-block">
+                <ul id="nav" class="main-list-inline main-menucontainer">
+                    <li class="col-6 col-md-3 list-inline-item main-menuitem">
+                        <a href="index.html" class="hvr-underline-from-center"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a>
                     </li>
-                    <li class="col-6 col-md-3 site-colour list-inline-item menuitem">
-                        <a href="calculator.html" class="hvr-underline-from-center">
-                            <i class="fas fa-calculator  selected" aria-hidden="true"></i><span>Calculator</span>
-                        </a>
+                    <li class="col-6 col-md-3 list-inline-item main-menuitem">
+                        <a href="calculator.html" class="hvr-underline-from-center"><i class="fas fa-calculator selected" aria-hidden="true"></i><div class="d-none d-sm-block"><span>Calculator</span></div> </a>
                     </li>
-                  
-                    <li class="col-6 col-md-3 site-colour list-inline-item menuitem">
-                        <a href="results.html" class="hvr-underline-from-center">
-                            <i class="fa fa-clipboard-list" aria-hidden="true"></i><span>Results</span>
-                        </a>
+                    <li class="col-6 col-md-3 list-inline-item main-menuitem">
+                        <a href="results.html" class="hvr-underline-from-center"><i class="fa fa-clipboard-list" aria-hidden="true"></i><div class="d-none d-sm-block"><span>Results</span></div> </a>
                     </li>
-                    <li class="col-6 col-md-3 site-colour list-inline-item menuitem">
-                        <a href="contact.html" class="hvr-underline-from-center">
-                            <i class="fas fa-at" aria-hidden="true"></i><span>Contact</span>
-                        </a>
+                    <li class="ccol-6 col-md-3  list-inline-item main-menuitem">
+                        <a href="contact.html" class="hvr-underline-from-center"><i class="fas fa-at" aria-hidden="true"></i><div class="d-none d-sm-block"><span>Contact</span></div></a>
                     </li>
+                    </ul>
+                </div>
+                <!-- Mobile -->
+                <div class="d-sm-none">
+                    <ul id="nav" class="mobile-list-inline mobile-menucontainer"></ul>
+                    <li class="col-3 list-inline-item mobile-menuitem">
+                        <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="col-3 list-inline-item mobile-menuitem">
+                        <a href="calculator.html" ><i class="fas fa-calculator selected" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="col-3 list-inline-item mobile-menuitem">
+                        <a href="results.html" ><i class="fa fa-clipboard-list" aria-hidden="true"></i></a>
+                    </li>
+                    <li class="col-3 list-inline-item mobile-menuitem">
+                        <a href="contact.html" ><i class="fas fa-at" aria-hidden="true"></i></a>
+                    </li>
+                </div>
                 </ul>
             </div>
           </div>
-        </div>
+        
 
         </div>
     </header>
