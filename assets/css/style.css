@@ -25,6 +25,11 @@ header {
    background-color: #222222;
 }
 
+.modal-content {
+   
+   background-color: #222222;
+}
+
 /* ------------- Site wide  ----------- Special paddings/margins/text -----*/
 h1,
 h2,
@@ -54,7 +59,7 @@ h3 {
  
 h5 {
    font-size: 14px;
-   color: #e9cf96;
+   color: #999999;
 }
 
 
@@ -343,11 +348,84 @@ button[type="submit"] {
    color: #2867b2;
 }
 
+/* ------------- Align Icon and text links ------------  */
+
+
+.tech-info {
+   margin: auto;
+   background-color: rgba(51, 47, 47, 0.5);
+   padding: 0px 10px;
+   border-bottom: 1px solid #2c2a2a; 
+ }
+
+ .tech-info a {
+   color: #999999;
+   text-decoration: none;
+   
+}
+
+.tech-info p {
+   padding: 2px;
+   margin-bottom: 0px;
+}
+
+.tech-info a i {
+   font-size: 18px;
+   padding: 10px;
+}
+
+.tech-info span {
+   vertical-align: middle;
+}
+
+.tech-info i:hover {
+   color: #2867b2;
+}
+
 /* ------------- Trade option ------------  */
 
 .options p {
    color: #f8f0df;
 }
+
+
+/* ------------- w3schools ------------  */
+
+
+ 
+ .slider {
+   -webkit-appearance: none;
+   width: 100%;
+   height: 5px;
+   border-radius: 5px;
+   background: #d3d3d3;
+   outline: none;
+   opacity: 0.7;
+   -webkit-transition: .2s;
+   transition: opacity .2s;
+ }
+ 
+ .slider:hover {
+   opacity: 1;
+ }
+ 
+ .slider::-webkit-slider-thumb {
+   -webkit-appearance: none;
+   appearance: none;
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   background: #79b4b7;
+   cursor: pointer;
+ }
+ 
+ .slider::-moz-range-thumb {
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   background: #79b4b7;
+   cursor: pointer;
+ }
 
 
 

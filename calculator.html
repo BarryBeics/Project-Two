@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>Trade Probability Calculator</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Trade Probability Calculator</title>
+</head>
+
 <body>
-    
+
     <header class="container-xl">
         <div class="row">
-            
-                <!-- Logo -->
-                <div class="col-3">
-                    <a class="navbar-brand" href="index.html">
-                        <!-- Desktop & Tablet -->
-                        <div class="col-md-12 d-none d-sm-block"><img src="/assets/images/Bear-Bull-logo.png" width="160" height="80" alt="logo"></div>
-                        <!-- Mobile -->
-                        <div class="d-sm-none"><img src="/assets/images/Bear-Bull-logo.png" width="70" height="35" alt="logo"></div>
-                      </a>
-                </div>
-                <!-- Navigation bar -->
+
+            <!-- Logo -->
+            <div class="col-3">
+                <a class="navbar-brand" href="index.html">
+                    <!-- Desktop & Tablet -->
+                    <div class="col-md-12 d-none d-sm-block"><img src="/assets/images/Bear-Bull-logo.png" width="160"
+                            height="80" alt="logo"></div>
+                    <!-- Mobile -->
+                    <div class="d-sm-none"><img src="/assets/images/Bear-Bull-logo.png" width="70" height="35"
+                            alt="logo"></div>
+                </a>
+            </div>
+            <!-- Navigation bar -->
             <div class="col-9">
                 <!-- Desktop & Tablet -->
                 <div class="d-none d-sm-block">
-                <ul id="nav" class="main-list-inline main-menucontainer">
-                    <li class="col-6 col-md-3 list-inline-item main-menuitem">
-                        <a href="index.html" class="hvr-underline-from-center"><i class="fas fa-home" aria-hidden="true"></i><span>Home</span></a>
-                    </li>
-                    <li class="col-6 col-md-3 list-inline-item main-menuitem">
-                        <a href="calculator.html" class="hvr-underline-from-center"><i class="fas fa-calculator selected" aria-hidden="true"></i><div class="d-none d-sm-block"><span>Calculator</span></div> </a>
-                    </li>
-                    <li class="col-6 col-md-3 list-inline-item main-menuitem">
-                        <a href="results.html" class="hvr-underline-from-center"><i class="fa fa-clipboard-list" aria-hidden="true"></i><div class="d-none d-sm-block"><span>Results</span></div> </a>
-                    </li>
-                    <li class="ccol-6 col-md-3  list-inline-item main-menuitem">
-                        <a href="contact.html" class="hvr-underline-from-center"><i class="fas fa-at" aria-hidden="true"></i><div class="d-none d-sm-block"><span>Contact</span></div></a>
-                    </li>
+                    <ul id="nav" class="main-list-inline main-menucontainer">
+                        <li class="col-6 col-md-3 list-inline-item main-menuitem">
+                            <a href="index.html" class="hvr-underline-from-center"><i class="fas fa-home"
+                                    aria-hidden="true"></i><span>Home</span></a>
+                        </li>
+                        <li class="col-6 col-md-3 list-inline-item main-menuitem">
+                            <a href="calculator.html" class="hvr-underline-from-center"><i
+                                    class="fas fa-calculator selected" aria-hidden="true"></i>
+                                <div class="d-none d-sm-block"><span>Calculator</span></div>
+                            </a>
+                        </li>
+                        <li class="col-6 col-md-3 list-inline-item main-menuitem">
+                            <a href="results.html" class="hvr-underline-from-center"><i class="fa fa-clipboard-list"
+                                    aria-hidden="true"></i>
+                                <div class="d-none d-sm-block"><span>Results</span></div>
+                            </a>
+                        </li>
+                        <li class="ccol-6 col-md-3  list-inline-item main-menuitem">
+                            <a href="contact.html" class="hvr-underline-from-center"><i class="fas fa-at"
+                                    aria-hidden="true"></i>
+                                <div class="d-none d-sm-block"><span>Contact</span></div>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Mobile -->
@@ -52,108 +66,188 @@
                         <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
                     </li>
                     <li class="col-3 list-inline-item mobile-menuitem">
-                        <a href="calculator.html" ><i class="fas fa-calculator  selected" aria-hidden="true"></i></a>
+                        <a href="calculator.html"><i class="fas fa-calculator selected" aria-hidden="true"></i></a>
                     </li>
                     <li class="col-3 list-inline-item mobile-menuitem">
-                        <a href="results.html" ><i class="fa fa-clipboard-list" aria-hidden="true"></i></a>
+                        <a href="results.html"><i class="fa fa-clipboard-list" aria-hidden="true"></i></a>
                     </li>
                     <li class="col-3 list-inline-item mobile-menuitem">
-                        <a href="contact.html" ><i class="fas fa-at" aria-hidden="true"></i></a>
+                        <a href="contact.html"><i class="fas fa-at" aria-hidden="true"></i></a>
                     </li>
                 </div>
                 </ul>
             </div>
-          </div>
-        
+        </div>
 
-        
+
+
     </header>
-    <section class="container-xl trading-background">
+    <section class="container-xl trading-background overflow-hidden">
 
+        <div class="row gx-5">
+            <div class="col">
+                <div class="p-3 ">
 
-    
-   <!-- Options panel -->
-   <div class="col ">
-    OPTIONS
-    <p>Choose the parameters that you would like to test with the options provided below:</p>
-    <!-- Take Profit -->
-    <div class="row border border-dark">
-        <div class="col"> <p>Take Profit</p> </div>
-        <div class="col-2"><a href="#" >
-            <span> Info</span>
-            <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a></div>
-    </div>
-    
-        <div class="col-3">2.9%</div>
-        
-            <label for="customRange3" class="form-label"></label>
-            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
-       
-             
-                
-                
+                    <p>Choose the parameters that you would like to test with the options provided below:</p>
+                    <!-- Take Profit Title & Info Icon-->
+                    <div class="tech-info"> <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            <span> Take Profit</span>
+                            <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
+
+                        <!--Take Profit Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="staticBackdropLabel">TAKE PROFIT</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        For when the market increases at what percentage of the change in the assets
+                                        value would you like to lock in profit? Use the slider provided to see what the
+                                        impact your chosen “Take Profit” would have on your strategy.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Understood</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="range" min="1" max="20" value="5" class="slider" id="take-profit">
+                        <p><span id="tp-amount"></span>%</p>
+
+                    </div>
+                    <!-- Stop Loss Title & Info Icon-->
+                    <div class="tech-info"> <a href="#" data-bs-toggle="modal" data-bs-target="#stoploss">
+                            <span> Stop Loss</span>
+                            <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
+
+                        <!--TStop Loss Modal -->
+                        <div class="modal fade" id="stoploss" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="stoplossLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="stoplossLabel">STOP LOSS</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        For when the market decreases at what percentage of the change in the assets
+                                        value would you like to exit the trade? Use the slider provided to see what the
+                                        impact your chosen “Stop Loss” would have on your strategy.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Understood</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="range" min="1" max="20" value="5" class="slider" id="stop-loss">
+                        <p><span id="sl-amount"></span>%</p>
+
+                    </div>
+                    <script>
+                        
+                        var slidertp = document.getElementById("take-profit");
+                        var outputtp = document.getElementById("tp-amount");
+                        outputtp.innerHTML = slidertp.valuetp;
+
+                        slidertp.oninput = function () {
+                            outputtp.innerHTML = this.valuetp;
+                        }
+
+                        var slider = document.getElementById("stop-loss");
+                        var output = document.getElementById("sl-amount");
+                        output.innerHTML = slider.value;
+
+                        slider.oninput = function () {
+                            output.innerHTML = this.value;
+                        }
+                    </script>
                 </div>
-                  </div>
+            </div>
+            <div class="col d-none d-sm-block">
+                <div class="p-3 border bg-light">Custom column padding</div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+    </section>
+    <footer class="container-xl">
+        <div class="row">
+            <div class="col-sm-6 ">
+                <div class="row more-info"> <a href="more-info.html">
+                        <span> For a detailed explanation</span>
+                        <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
                 </div>
-              </div>
+            </div>
+            <!-- Social icons section of the footer-->
+            <div class="col-sm-6">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="https://www.linkedin.com/in/barry-marples-developer/" target="_blank"
+                            class="footer-icon social hvr-pop">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/barry.marples" target="_blank"
+                            class="footer-icon social hvr-pop">
+                            <i class="fab fa-facebook-square" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/BarryMarples" target="_blank" class="footer-icon social hvr-pop">
+                            <i class="fab fa-twitter-square" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://github.com/BarryBeics" target="_blank" class="footer-icon social hvr-pop">
+                            <i class="fab fa-github-square" aria-hidden="true"></i>
+                            <span class="sr-only">Github</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-            
-                </section>
-
-
-
-
-</section>
-<footer class="container-xl">
-    <div class="row">
-        <div class="col-sm-6 ">
-             <div class="row more-info"> <a href="more-info.html" >
-                <span> For a detailed explanation</span>
-                <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
-             </div> 
         </div>
-        <!-- Social icons section of the footer-->
-        <div class="col-sm-6">
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    <a href="https://www.linkedin.com/in/barry-marples-developer/" target="_blank"
-                        class="footer-icon social hvr-pop">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        <span class="sr-only">LinkedIn</span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://www.facebook.com/barry.marples" target="_blank"
-                        class="footer-icon social hvr-pop">
-                        <i class="fab fa-facebook-square" aria-hidden="true"></i>
-                        <span class="sr-only">Facebook</span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://twitter.com/BarryMarples" target="_blank" class="footer-icon social hvr-pop">
-                        <i class="fab fa-twitter-square" aria-hidden="true"></i>
-                        <span class="sr-only">Twitter</span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://github.com/BarryBeics" target="_blank" class="footer-icon social hvr-pop">
-                        <i class="fab fa-github-square" aria-hidden="true"></i>
-                        <span class="sr-only">Github</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-    </div>
-</footer>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
 </body>
+
 </html>
