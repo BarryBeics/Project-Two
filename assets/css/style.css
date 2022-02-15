@@ -21,6 +21,10 @@ body {
     color: #2867b2;
 }
 
+header {
+   background-color: #222222;
+}
+
 /* ------------- Site wide  ----------- Special paddings/margins/text -----*/
 h1,
 h2,
@@ -60,10 +64,7 @@ p {
     font-weight: 200;
 }
 
-.col {
-    padding-right: 15px;
-    padding-left: 15px;
-}
+
 
 .uppercase {
     text-transform: uppercase;
@@ -79,20 +80,12 @@ p {
     text-align: center;
 }
 
-
-
-.row {
-   margin-right: 0px;
-   margin-left: 0px;
-   width: 100%;
+.trading-background {
+   clear: left;
+   background: url("../images/background.jpg");
+   background-size: cover;
+   background-position: center;
 }
-
-/* ------------- Site wide  ----------- Header */
- 
-header {
-    background-color: #222222;
-}
-
 
  /* ------------- Site wide  ----------- Hover.css */
  
@@ -111,7 +104,8 @@ header {
 
 @media only screen and (min-width: 576px) {
 
-      
+
+
      #main-nav {
         z-index: 1;
      }
@@ -158,7 +152,10 @@ header {
 
 @media only screen and (max-width: 576px) {
     
-   img {
+
+
+
+   #logo img {
       padding-top: 0px;
       width: 70px;
       height: 35px;
@@ -221,13 +218,7 @@ footer p {
  }
  
  
- .trading-background {
-   clear: left;
-   background: url("../images/background.jpg");
-   background-size: cover;
-   background-position: center;
-   height: 900px;
-}
+
 
 
 /* ------------- contact.html ------------ Contact Form */
@@ -324,4 +315,40 @@ button[type="submit"] {
    width: 40%;
    background-color: rgb(95, 142, 145);
 }
+
+/* ------------- Align Icon and text links ------------  */
+
+
+ .more-info {
+   padding: 10px;
+   margin: auto;
+ }
+
+ .more-info a {
+   color: #999999;
+   text-decoration: none;
+   margin: auto;
+}
+ 
+.more-info a i {
+   font-size: 22px;
+   padding: 10px;
+}
+
+.more-info span {
+   vertical-align: middle;
+}
+
+.more-info i:hover {
+   color: #2867b2;
+}
+
+/* ------------- Trade option ------------  */
+
+.options p {
+   color: #f8f0df;
+}
+
+
+
 

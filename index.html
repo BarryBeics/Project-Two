@@ -13,16 +13,17 @@
         <title>Trade Probability Calculator</title>
     </head>
 <body>
-    <header>
-        <div class="row no-gutters">
-            <div class="row">
+    
+    <header class="container-xl">
+        <div class="row">
+            
                 <!-- Logo -->
                 <div class="col-3">
                     <a class="navbar-brand" href="index.html">
                         <!-- Desktop & Tablet -->
                         <div class="col-md-12 d-none d-sm-block"><img src="/assets/images/Bear-Bull-logo.png" width="160" height="80" alt="logo"></div>
                         <!-- Mobile -->
-                        <div class="d-sm-none"><img src="/assets/images/Bear-Bull-logo.png"  alt="logo"></div>
+                        <div class="d-sm-none"><img src="/assets/images/Bear-Bull-logo.png" width="70" height="35" alt="logo"></div>
                       </a>
                 </div>
                 <!-- Navigation bar -->
@@ -48,7 +49,7 @@
                 <div class="d-sm-none">
                     <ul id="nav" class="mobile-list-inline mobile-menucontainer"></ul>
                     <li class="col-3 list-inline-item mobile-menuitem">
-                        <a href="index.html"><i class="fas fa-home selected" aria-hidden="true"></i></a>
+                        <a href="index.html"><i class="fas fa-home  selected" aria-hidden="true"></i></a>
                     </li>
                     <li class="col-3 list-inline-item mobile-menuitem">
                         <a href="calculator.html" ><i class="fas fa-calculator" aria-hidden="true"></i></a>
@@ -65,19 +66,21 @@
           </div>
         
 
-        </div>
+        
     </header>
-    <section class="trading-background">
-        <!--Grid row-->
-        <div class="row d-flex justify-content-center">
-            <!--Grid column-->
-            <div class="col-md-6">
-            <!-- Page title displayed in this first row -->
-            <div class="row uppercase">
-            <h1>Home</h1>
-            </div>
-            <div class="row">
-                <div class="col main-menuitem"><!-- Text Area -->
+    <section class="container-xl trading-background">
+
+
+    
+
+
+            <div class="container px-4">
+                <div class="row gx-5">
+                  <div class="col">
+                   <div class="p-3">
+                       
+                    
+                    <!-- Text Area -->
                     <h2>Trade Probability Calculator</h2>
                     <p>
                     This application allows the users to experiment with a number of trading parameters to gain a better understanding of how their strategy would perform in the markets.
@@ -88,32 +91,45 @@
              <div class="d-sm-none center"><img src="/assets/images/Trader.png"  width="200" height="170" alt="logo"></div>
 
              <p>
-                This aplication simulates the market buy changing the assets price over a given period. For a detailed explanation click the info icon <a href="more-info.html" ><i class="fas fa-info-circle" aria-hidden="true"></i></a>
+                This aplication simulates the market buy changing the assets price over a given period. For a detailed explanation click the info icon 
+                <div class="row more-info"> <a href="more-info.html" >
+                    <span> For a detailed explanation</span>
+                    <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
+                 </div> 
+                
             </p>
-            <a href="calculator.html"><i class="fas fa-calculator" aria-hidden="true"></i><div class="d-none d-sm-block"></div> </a>
+           
 
-
-
+            <div class="row more-info"> <a href="calculator.html" >
+                <span> For a detailed explanation</span>
+                <span><i class="fas fa-calculator" aria-hidden="true"></i></span> </a>
+             </div> 
+       
+             
+                
+                
                 </div>
+                  </div>
+                </div>
+              </div>
 
-        </div>
+            
+                </section>
 
-            </div>
-            <!--Grid column-->
-          </div>
-          <!--Grid row-->
-        
-            </section>
-<footer>
+
+
+
+</section>
+<footer class="container-xl">
     <div class="row">
-        <div class="col-6 main-menuitem">
-            <p>
-                For a detailed explanation <a href="more-info.html" ><i class="fas fa-info-circle" aria-hidden="true"></i></a>
-            </p>
+        <div class="col-sm-6 ">
+             <div class="row more-info"> <a href="more-info.html" >
+                <span> For a detailed explanation</span>
+                <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
+             </div> 
         </div>
         <!-- Social icons section of the footer-->
-        <div class="col-6">
-            <h5 class="uppercase general-sub">social links</h5>
+        <div class="col-sm-6">
             <ul class="list-inline">
                 <li class="list-inline-item">
                     <a href="https://www.linkedin.com/in/barry-marples-developer/" target="_blank"

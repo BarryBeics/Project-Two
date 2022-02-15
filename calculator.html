@@ -13,16 +13,17 @@
         <title>Trade Probability Calculator</title>
     </head>
 <body>
-    <header>
-        <div class="row no-gutters">
-            <div class="row">
+    
+    <header class="container-xl">
+        <div class="row">
+            
                 <!-- Logo -->
                 <div class="col-3">
                     <a class="navbar-brand" href="index.html">
                         <!-- Desktop & Tablet -->
                         <div class="col-md-12 d-none d-sm-block"><img src="/assets/images/Bear-Bull-logo.png" width="160" height="80" alt="logo"></div>
                         <!-- Mobile -->
-                        <div class="d-sm-none"><img src="/assets/images/Bear-Bull-logo.png"  alt="logo"></div>
+                        <div class="d-sm-none"><img src="/assets/images/Bear-Bull-logo.png" width="70" height="35" alt="logo"></div>
                       </a>
                 </div>
                 <!-- Navigation bar -->
@@ -51,7 +52,7 @@
                         <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
                     </li>
                     <li class="col-3 list-inline-item mobile-menuitem">
-                        <a href="calculator.html" ><i class="fas fa-calculator selected" aria-hidden="true"></i></a>
+                        <a href="calculator.html" ><i class="fas fa-calculator  selected" aria-hidden="true"></i></a>
                     </li>
                     <li class="col-3 list-inline-item mobile-menuitem">
                         <a href="results.html" ><i class="fa fa-clipboard-list" aria-hidden="true"></i></a>
@@ -65,24 +66,54 @@
           </div>
         
 
-        </div>
+        
     </header>
-    <section class="trading-background">
-    <div class="row">
-    <div class="col-md-6 col-lg-4">Calculator Options
-        <div class="row">Section Title</div>
-        <div class="row">Section Text</div>
-        <div class="row">Options</div>
+    <section class="container-xl trading-background">
+
+
+    
+   <!-- Options panel -->
+   <div class="col ">
+    OPTIONS
+    <p>Choose the parameters that you would like to test with the options provided below:</p>
+    <!-- Take Profit -->
+    <div class="row border border-dark">
+        <div class="col"> <p>Take Profit</p> </div>
+        <div class="col-2"><a href="#" >
+            <span> Info</span>
+            <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a></div>
     </div>
-    <div class="col-md-6 col-lg-4">Results</div>
-    <div class="col-md-6 col-lg-4 d-none d-sm-block">Table Of past results</div>
-    </div>
+    
+        <div class="col-3">2.9%</div>
+        
+            <label for="customRange3" class="form-label"></label>
+            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+       
+             
+                
+                
+                </div>
+                  </div>
+                </div>
+              </div>
+
+            
+                </section>
+
+
+
+
 </section>
-<footer>
+<footer class="container-xl">
     <div class="row">
+        <div class="col-sm-6 ">
+             <div class="row more-info"> <a href="more-info.html" >
+                <span> For a detailed explanation</span>
+                <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
+             </div> 
+        </div>
         <!-- Social icons section of the footer-->
-        <div class="col-md-12 center">
-            <h5 class="uppercase general-sub">social links</h5>
+        <div class="col-sm-6">
             <ul class="list-inline">
                 <li class="list-inline-item">
                     <a href="https://www.linkedin.com/in/barry-marples-developer/" target="_blank"
