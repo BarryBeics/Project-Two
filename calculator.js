@@ -5,7 +5,11 @@ let tradeOpen = true;
 
 
 
-
+  // generate random market fluxtuations 
+  
+  function genRand(min, max, decimalPlaces) {
+    return (Math.random() * (max - min) + min).toFixed(decimalPlaces) * 1;
+  } 
   
   
 /****************************************
@@ -28,7 +32,7 @@ for (let eachDay = 0; eachDay < inputDays; eachDay++) {
  ****************************************/
         for (let eachSecond = 0; eachSecond < tradeDuration; eachSecond++)
         {
-          console.log('seconds past', eachSecond + 1, ' --- Open to trade?', tradeOpen, 'move' );
+          console.log('seconds past', eachSecond + 1, ' --- Open to trade?', tradeOpen, 'move' , genRand(-5, 5, 1) );
           
 
 
