@@ -32,7 +32,7 @@
             </div>
             <!-- Navigation bar -->
             <div class="col-9">
-                <!-- Desktop & Tablet -->
+                <!-- Desktop & Tablet Navigation Buttons -->
                 <div class="d-none d-sm-block">
                     <ul id="nav" class="main-list-inline main-menucontainer">
                         <li class="col-6 col-md-3 list-inline-item main-menuitem">
@@ -59,7 +59,7 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Mobile -->
+                <!-- Mobile Navigation Buttons -->
                 <div class="d-sm-none">
                     <ul id="nav" class="mobile-list-inline mobile-menucontainer"></ul>
                     <li class="col-3 list-inline-item mobile-menuitem">
@@ -92,84 +92,89 @@
                     <h2>OPTIONS</h2>
                     <p>Choose the parameters that you would like to test with the options below.</p>
 
+                    <!-- Top Panel Left -->
+                    <div class="options-form-item-half">
+                        <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                                title="Investment Amount" data-bs-content="Some Take Profit content "> info </button>
+                        </div>
+                        <div class="title"> <label for="name"> Amount </label> </div>
+                        <div class="input"> <input id="invesmentAmount" type="number">300</div>
+                    </div>
+                    <!-- Top Panel Left -->
+                    <div class="options-form-item-half">
+                        <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                                title="Trade Fees" data-bs-content="Some Take Profit content "> info </button></div>
+                        <div class="title"> <label for="name"> Fees </label> </div>
+                        <div class="input"> <label for="cars"></label>
+                            <select id="cars" name="cars" class="form-control">
+                                <option value="volvo">0.1%</option>
+                                <option value="volvo">0.1%</option>
+                                <option value="volvo">0.1%</option>
+                                <option value="volvo">0.1%</option>
+                            </select></div>
+                    </div>
+                    <!-- First Wide Panel -->
+                    <div class="options-form-item-full">
+                        <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                                title="Take Profit" data-bs-content="Some Take Profit content "> info </button></div>
+                        <div class="title"> <label for="name"> Take Profit </label> </div>
+                        <div class="value"> <span id="targetTakeProfit"></span> 4</div>
+                        <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider"
+                                    id="take-profit"></span></div>
 
+                        <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                                title="Stop Loss" data-bs-content="Some Stop Loss content r"> info </button></div>
+                        <div class="title"> <label for="name"> Stop Loss </label> </div>
+                        <div class="value"> <span id="setStopLoss"></span> 2</div>
+                        <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider"
+                                    id="take-profit"></span></div>
+                    </div>
+                    <!-- Second Wide Panel -->
+                    <div class="options-form-item-full">
+                        <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                                title="ATR" data-bs-content="Some ATR content"> info</button></div>
+                        <div class="title"> <label for="name"> Average True Range </label> </div>
+                        <div class="value"> <span id="setATR"></span> 3</div>
+                        <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider"
+                                    id="take-profit"></span></div>
+                        <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                                title="Market Mommentum" data-bs-content="Some ATR content"> info</button></div>
+                        <div class="title"> <label for="name"> Market Mommentum </label> </div>
+                        <div class="value"> <span id="setMarketMommentum"></span> 2</div>
+                        <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider"
+                                    id="take-profit"></span></div>
+                    </div>
+                    <!-- Third Wide Panel -->
+                    <div class="options-form-item-full">
+                        <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                                title="Trade Duration" data-bs-content="Some ATR content"> info</button></div>
+                        <div class="title"> <label for="name"> Trade Duration (mins) </label> </div>
+                        <div class="time-group">
+                            <button>5</button>
+                            <button>15</button>
+                            <button>30</button>
+                            <button>60</button>
+                            <button>120</button>
 
-                    <!-- Options Form -->
-                    <form class="options-form" method="post" action="#">
-                        <!-- Top Panel Left -->
-                        <div class="options-form-item-half">
-                            <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="Investment Amount" data-bs-content="Some Take Profit content "> info </button></div>
-                            <div class="title"> <label for="name"> Amount </label> </div>
-                            <div class="input"> <input type="text" class="form-control" id="name"
-                                    placeholder="Your name here ..." required></div>
                         </div>
-                        <!-- Top Panel Left -->
-                        <div class="options-form-item-half">
-                            <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="Trade Fees" data-bs-content="Some Take Profit content "> info </button></div>
-                            <div class="title"> <label for="name"> Fees </label> </div>
-                            <div class="input"> <label for="cars"></label>
-                                <select id="cars" name="cars" class="form-control">
-                                    <option value="volvo">0.1%</option>
-                                    <option value="volvo">0.1%</option>
-                                    <option value="volvo">0.1%</option>
-                                    <option value="volvo">0.1%</option>
-                                </select></div>
+                        <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                                title="# of Days" data-bs-content="Some # of Days content"> info</button></div>
+                        <div class="title"> <label for="name"> # of Days </label> </div>
+                        <div class="time-group">
+                            <button>1</button>
+                            <button>7</button>
+                            <button>30</button>
+                            <button>90</button>
                         </div>
-                        <!-- First Wide Panel -->
-                        <div class="options-form-item-full">
-                            <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="Take Profit" data-bs-content="Some Take Profit content "> info </button></div>
-                            <div class="title"> <label for="name"> Take Profit </label> </div>
-                            <div class="value"> 3.5%</div>
-                            <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider"
-                                        id="take-profit"></span></div>
-                            
-                            <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="Stop Loss" data-bs-content="Some Stop Loss content r"> info </button></div>
-                            <div class="title"> <label for="name"> Stop Loss </label> </div>
-                            <div class="value"> 3.5%</div>
-                            <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider"
-                                        id="take-profit"></span></div>
-                        </div>
-                        <!-- Second Wide Panel -->
-                        <div class="options-form-item-full">
-                            <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="ATR" data-bs-content="Some ATR content">  info</button></div>
-                            <div class="title"> <label for="name"> Average True Range </label> </div>
-                            <div class="value"> 3.5%</div>
-                            <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider" id="take-profit"></span></div>
-                            <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="Market Mommentum" data-bs-content="Some ATR content">  info</button></div>
-                            <div class="title"> <label for="name"> Market Mommentum </label> </div>
-                            <div class="value"> 3.5%</div>
-                            <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider"
-                                        id="take-profit"></span></div>
-                        </div>
-                        <!-- Third Wide Panel -->
-                        <div class="options-form-item-full">
-                            <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="Trade Duration" data-bs-content="Some ATR content">  info</button></div>
-                            <div class="title"> <label for="name"> Trade Duration (mins) </label> </div>
-                            <div class="time-group">
-                                <button>5</button>
-                                <button>15</button>
-                                <button>30</button>
-                                <button>60</button>
-                                <button>120</button>
+                    </div>
+                    <!-- Submit Button -->
 
-                            </div>
-                            <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="# of Days" data-bs-content="Some # of Days content">  info</button></div>
-                            <div class="title"> <label for="name"> # of Days </label> </div>
-                            <div class="time-group">
-                                <button>1</button>
-                                <button>7</button>
-                                <button>30</button>
-                                <button>90</button>
-                            </div>
+                    <div class="form-row text-center">
+                        <div class="col"><button class="btn form-control"> Calculate</button>
+
                         </div>
-                        <!-- Submit Button -->
-                        
-                            <div class="form-row text-center">
-                                <div class="col"><button type="submit" class="btn form-control"> Calculate</button>
-                                
-                            </div>
-                        </div>
-                    </form>
+                    </div>
+
 
                 </div>
             </div>
@@ -181,75 +186,84 @@
                     <p>This is how your chosen strategy would have performed.</p>
 
 
-
-                    <!-- Options Form -->
-                    <form class="options-form" method="post" action="#">
-                        <!-- First Wide Panel -->
-                        <div class="options-form-item-full">
-                            <div class="title"> <label for="name"> New Balance</label> </div>
-                            <div class="value"> £ 103.5</div>
-
-                        </div>
-                        <!-- Top Panel Left -->
-                        <div class="options-form-item-half">
-                            <div class="title"> <label for="name"> Cash Profit </label> </div>
-                            <div class="value"> £ 1203.5</div>
-                            <div class="input"> </div>
-                        </div>
-                        <!-- Top Panel Left -->
-                        <div class="options-form-item-half">
-                            <div class="title"> <label for="name"> Percentage Profit </label> </div>
-                            <div class="value"> 21.4%</div>
-                            <div class="input"> </div>
-                        </div>
-                        <div class="info">Here is the cost and effectiveness of the strategy.<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="advice" data-bs-content="Some # of Days content">  info</button></div>
-                                                <!-- Top Panel Left -->
-                                                <div class="options-form-item-half">
-                                                    <div class="title"> <label for="name"> Total Fees </label> </div>
-                                                    <div class="value"> £ 103.5</div>
-                                                    <div class="input"> </div>
-                                                </div>
-                                                <!-- Top Panel Left -->
-                                                <div class="options-form-item-half">
-                                                    <div class="title"> <label for="name"> Success Rate</label> </div>
-                                                    <div class="value"> 4.7%</div>
-                                                    <div class="input"> </div>
-                                                </div>
-                                                <div class="info">These figures can be used to help guide any changes to new strategies.<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="stuff" data-bs-content="Some # of Days content">  info</button></div>
-                        <!-- Second Wide Panel -->
-                        <div class="options-form-item-third">
-                            <div class="title"> <label for="name"> Successes </label> </div>
-                            <div class="value"> 21</div>
-                            <div class="input"> </div>
-                        </div>
-                        <div class="options-form-item-third">
-                            <div class="title"> <label for="name"> Timed out Trades </label> </div>
-                            <div class="value"> 15</div>
-                            <div class="input"> </div>
-                        </div>
-                        <div class="options-form-item-third">
-                            <div class="title"> <label for="name"> Losses </label> </div>
-                            <div class="value"> 34</div>
-                            <div class="input"> </div>
-                        </div>
-                        <!-- Third Wide Panel -->
-                        <div class="options-form-item-full">
-                            
-                            <div class="title"> <label for="name"> Total # of Trades </label> </div>
-                            <div class="value"> 251</div>
-                        </div>
-                        </div>
-                        <!-- Submit Button -->
-                        
-                            <div class="form-row text-center">
-                                <div class="col"><button type="submit" class="btn form-control"> Save</button>
-                                
-                            </div>
-                        </div>
-                    </form>
+                    <!-- First Wide Panel -->
+                    <div class="options-form-item-full">
+                        <div class="title"> <label for="name"> New Balance</label> </div>
+                        <div class="value"> £<span id="newBalance"></span> 0</div>
+                    </div>
 
                 </div>
+                <!-- Top Panel Left -->
+                <div class="options-form-item-half">
+                    <div class="title"> <label for="name"> Cash Profit </label> </div>
+                    <div class="value"> £ <span id="cashProfit"></span> 0</div>
+                </div>
+                <div class="input"> </div>
             </div>
+            <!-- Top Panel Left -->
+            <div class="options-form-item-half">
+                <div class="title"> <label for="name"> Percentage Profit </label> </div>
+                <div class="value"> <span id="percentageProfit"></span> 0</div>%
+            </div>
+            <div class="input"> </div>
+        </div>
+        <div class="info">Here is the cost and effectiveness of the strategy.<button type="button"
+                class="btn btn-dark btn-sm" data-bs-toggle="popover" title="advice"
+                data-bs-content="Some # of Days content"> info</button></div>
+        <!-- Top Panel Left -->
+        <div class="options-form-item-half">
+            <div class="title"> <label for="name"> Total Fees </label> </div>
+            <div class="value"> £ <span id="totalFees"></span> 0</div>
+        </div>
+        <div class="input"> </div>
+        </div>
+        <!-- Top Panel Left -->
+        <div class="options-form-item-half">
+            <div class="title"> <label for="name"> Success Rate</label> </div>
+            <div class="value"> <span id="successRate"></span> 0</div>%
+        </div>
+        <div class="input"> </div>
+        </div>
+        <div class="info">These figures can be used to help guide any changes to new strategies.<button type="button"
+                class="btn btn-dark btn-sm" data-bs-toggle="popover" title="stuff"
+                data-bs-content="Some # of Days content"> info</button></div>
+        <!-- Second Wide Panel -->
+        <div class="options-form-item-third">
+            <div class="title"> <label for="name"> Successes </label> </div>
+            <div class="value"> <span id="SuccessCount"></span> 0</div>
+        </div>
+        <div class="input"> </div>
+        </div>
+        <div class="options-form-item-third">
+            <div class="title"> <label for="name"> Timed out Trades </label> </div>
+            <div class="value"> <span id="timedOutCount"></span> 0</div>
+        </div>
+        <div class="input"> </div>
+        </div>
+        <div class="options-form-item-third">
+            <div class="title"> <label for="name"> Losses </label> </div>
+            <div class="value"> <span id="lossesCount"></span> 0</div>
+        </div>
+        <div class="input"> </div>
+        </div>
+        <!-- Third Wide Panel -->
+        <div class="options-form-item-full">
+
+            <div class="title"> <label for="name"> Total # of Trades </label> </div>
+            <div class="value"> 251</div>
+        </div>
+        </div>
+        <!-- Submit Button -->
+
+        <div class="form-row text-center">
+            <div class="col"><button type="submit" class="btn form-control"> Save</button>
+
+            </div>
+        </div>
+
+
+        </div>
+        </div>
 
     </section>
 
@@ -308,9 +322,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
-    
 
-<script src="assets/js/script.js"></script>
+
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
