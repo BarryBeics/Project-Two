@@ -106,12 +106,14 @@
                                 title="Trade Fees" data-bs-content="Some Take Profit content "> info </button></div>
                         <div class="title"> <label for="name"> Fees </label> </div>
                         <div class="input"> <label for="cars"></label>
-                            <select id="cars" name="cars" class="form-control">
-                                <option value="volvo">0.1%</option>
-                                <option value="volvo">0.1%</option>
-                                <option value="volvo">0.1%</option>
-                                <option value="volvo">0.1%</option>
-                            </select></div>
+                            <div class="tradeFees">
+                                <button data-type="fee075"> 0.75% Binance</button>
+                                <button data-type="fee085"> 0.75% Kraken</button>
+                                <button data-type="fee095"> 0.75% Coinbase</button>
+                                <button data-type="fee0105"> 0.75% Kucoin</button>
+    
+                            </div>
+                            
                     </div>
                     <!-- First Wide Panel -->
                     <div class="options-form-item-full">
@@ -150,27 +152,28 @@
                                 title="Trade Duration" data-bs-content="Some ATR content"> info</button></div>
                         <div class="title"> <label for="name"> Trade Duration (mins) </label> </div>
                         <div class="time-group">
-                            <button>5</button>
-                            <button>15</button>
-                            <button>30</button>
-                            <button>60</button>
-                            <button>120</button>
+                            <button data-type="duration15"> 15</button>
+                            <button data-type="duration7"> 30</button>
+                            <button data-type="duration30"> 60</button>
+                            <button data-type="duration90"> 120</button>
 
                         </div>
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                 title="# of Days" data-bs-content="Some # of Days content"> info</button></div>
                         <div class="title"> <label for="name"> # of Days </label> </div>
                         <div class="time-group">
-                            <button>1</button>
-                            <button>7</button>
-                            <button>30</button>
-                            <button>90</button>
+                            <button data-type="days1"> 1</button>
+                            <button data-type="days7"> 7</button>
+                            <button data-type="days30"> 30</button>
+                            <button data-type="days90"> 90</button>
                         </div>
                     </div>
-                    <!-- Submit Button -->
+                    <!-- Calculate Button -->
 
                     <div class="form-row text-center">
-                        <div class="col"><button class="btn form-control"> Calculate</button>
+                        
+                        <div class="col">
+                            <button data-type="calculate" class="btn form-control"> Calculate</button>
 
                         </div>
                     </div>
@@ -253,11 +256,11 @@
             <div class="value"> 251</div>
         </div>
         </div>
-        <!-- Submit Button -->
+        <!-- Save Button -->
 
         <div class="form-row text-center">
-            <div class="col"><button type="submit" class="btn form-control"> Save</button>
-
+            <div class="col">
+                <button data-type="save" class="btn form-control"> Save</button>
             </div>
         </div>
 
