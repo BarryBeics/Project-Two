@@ -44,11 +44,19 @@ function stopLoss(){
 function timedOutMarketOrder() {
 
 }
-
-function generateRandonMove() {
-
+/**
+ * 
+ * @param {*} min 
+ * @param {*} max 
+ * @param {*} decimalPlaces 
+ * @returns 
+ */
+// generate random market fluxtuations
+function generateRandonMove(min, max, decimalPlaces) {
+  return (Math.random() * (max - min) + min).toFixed(decimalPlaces) * 1;
 }
 
+generateRandonMove()
 function timeIntoTrade() {
 
 }
