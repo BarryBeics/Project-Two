@@ -103,13 +103,8 @@
                                     oninput="document.getElementById('takeProfit').innerHTML = this.value" />
                                 <label id="takeProfit">0</label>
                             </p>
- 
-                
-                            </div>
 
-                            
-
-                            
+                        </div>
                             <span>Fees</span>
                             
                             <p id="tradingFee">0</p>
@@ -118,6 +113,20 @@
                               <option value="2">Kucoin 2%</option>
                               <option value="3">Kraken 3%</option>
                             </select>
+
+                            <div class="title"> <label for="name"> # of Days </label> </div>
+                            <p id="days">0</p>
+                            <div class="radio-toolbar">
+                                <input type="radio" id="radioApple" name="radioFruit" value="5" checked oninput="document.getElementById('days').innerHTML = this.value">
+                                <label for="radioApple">5</label>
+                            
+                                <input type="radio" id="radioBanana" name="radioFruit" value="10" oninput="document.getElementById('days').innerHTML = this.value">
+                                <label for="radioBanana">10</label>
+                            
+                                <input type="radio" id="radioOrange" name="radioFruit" value="15" oninput="document.getElementById('days').innerHTML = this.value">
+                                <label for="radioOrange">15</label> 
+                            </div>
+                           
                             
                             
                             <p>Validate input boxes</p>

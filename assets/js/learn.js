@@ -61,15 +61,9 @@ function calculateCorrectAnswer() {
     let stake = parseInt(document.getElementById('stake').value);
     let takeProfit = parseInt(document.getElementById('takeProfit').innerText);
     let tradingFee = parseInt(document.getElementById('tradingFee').innerText);
-    let operator = "+";
-
-    if (operator === "+") {
-        return [stake + takeProfit + tradingFee, "addition"];
-    } else {
-        alert(`aey!`);
-        
-    }
-
+    let days = parseInt(document.getElementById('days').innerText);
+    return [stake + takeProfit + tradingFee + days ];
+   
 }
 
 
