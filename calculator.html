@@ -83,12 +83,12 @@
 
     </header>
     <section class="container-xl trading-background overflow-hidden">
-
         <div class="row g-2">
+            <!-- OPTIONS AREA -->
             <div class="col">
                 <div class="p-3">
 
-                    <!-- Text Area -->
+
                     <h2>OPTIONS</h2>
                     <p>Choose the parameters that you would like to test with the options below.</p>
 
@@ -111,9 +111,8 @@
                                 <button data-type="fee085"> 0.75% Kraken</button>
                                 <button data-type="fee095"> 0.75% Coinbase</button>
                                 <button data-type="fee0105"> 0.75% Kucoin</button>
-    
                             </div>
-                            
+                        </div>
                     </div>
                     <!-- First Wide Panel -->
                     <div class="options-form-item-full">
@@ -152,35 +151,31 @@
                                 title="Trade Duration" data-bs-content="Some ATR content"> info</button></div>
                         <div class="title"> <label for="name"> Trade Duration (mins) </label> </div>
                         <div class="time-group">
-                            <button data-type="duration15"> 15</button>
-                            <button data-type="duration7"> 30</button>
-                            <button data-type="duration30"> 60</button>
-                            <button data-type="duration90"> 120</button>
+                            <button class="option" data-type="duration15"> 15</button>
+                            <button class="option" data-type="duration7"> 30</button>
+                            <button class="option" data-type="duration30"> 60</button>
+                            <button class="option" data-type="duration90"> 120</button>
 
                         </div>
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                 title="# of Days" data-bs-content="Some # of Days content"> info</button></div>
                         <div class="title"> <label for="name"> # of Days </label> </div>
                         <div class="time-group">
-                            <button data-type="days1"> 1</button>
-                            <button data-type="days7"> 7</button>
-                            <button data-type="days30"> 30</button>
-                            <button data-type="days90"> 90</button>
+                            <button class="option" data-type="days1"> 1</button>
+                            <button class="option" data-type="days7"> 7</button>
+                            <button class="option" data-type="days30"> 30</button>
+                            <button class="option" data-type="days90"> 90</button>
                         </div>
                     </div>
                     <!-- Calculate Button -->
-
                     <div class="form-row text-center">
-                        
                         <div class="col">
                             <button data-type="calculate" class="btn form-control"> Calculate</button>
-
                         </div>
                     </div>
-
-
                 </div>
             </div>
+            <!-- RESULTS AREA -->
             <div class="col d-none d-sm-block">
                 <div class="p-3">
 
@@ -195,84 +190,71 @@
                         <div class="value"> £<span id="newBalance"></span> 0</div>
                     </div>
 
+                    <!-- Top Panel Left -->
+                    <div class="options-form-item-half">
+                        <div class="title"> <label for="name"> Cash Profit </label> </div>
+                        <div class="value"> £ <span id="cashProfit"></span> 0</div>
+                    </div>
+                    
+
+                    <!-- Top Panel Left -->
+                    <div class="options-form-item-half">
+                        <div class="title"> <label for="name"> Percentage Profit </label> </div>
+                        <div class="value"> <span id="percentageProfit"></span> 0</div>%
+                    </div>
+                    
+                    <div class="info">Here is the cost and effectiveness of the strategy.<button type="button"
+                            class="btn btn-dark btn-sm" data-bs-toggle="popover" title="advice"
+                            data-bs-content="Some # of Days content"> info</button></div>
+                    <!-- Top Panel Left -->
+                    <div class="options-form-item-half">
+                        <div class="title"> <label for="name"> Total Fees </label> </div>
+                        <div class="value"> £ <span id="totalFees"></span> 0</div>
+                    </div>
+                    
+                    <!-- Top Panel Left -->
+                    <div class="options-form-item-half">
+                        <div class="title"> <label for="name"> Success Rate</label> </div>
+                        <div class="value"> <span id="successRate"></span> 0</div>%
+                    </div>
+                    
+
+                    <div class="info">These figures can be used to help guide any changes to new strategies.<button
+                            type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="stuff"
+                            data-bs-content="Some # of Days content"> info</button>
+                    </div>
+                    <!-- Second Wide Panel -->
+                    <div class="options-form-item-third">
+                        <div class="title"> <label for="name"> Successes </label> </div>
+                        <div class="value"> <span id="SuccessCount"></span> 0</div>
+                    </div>
+                    
+                    <div class="options-form-item-third">
+                        <div class="title"> <label for="name"> Timed out Trades </label> </div>
+                        <div class="value"> <span id="timedOutCount"></span> 0</div>
+                    </div>
+                    
+                    <div class="options-form-item-third">
+                        <div class="title"> <label for="name"> Losses </label> </div>
+                        <div class="value"> <span id="lossesCount"></span> 0</div>
+                    </div>
+                    
+                    <!-- Third Wide Panel -->
+                    <div class="options-form-item-full">
+                        <div class="title"> <label for="name"> Total # of Trades </label> </div>
+                        <div class="value"> 251</div>
+                    </div>
+                    <!-- Save Button -->
+                    <div class="form-row text-center">
+                        <div class="col">
+                            <button data-type="save" class="btn form-control"> Save</button>
+                        </div>
+                    </div>
+
+
                 </div>
-                <!-- Top Panel Left -->
-                <div class="options-form-item-half">
-                    <div class="title"> <label for="name"> Cash Profit </label> </div>
-                    <div class="value"> £ <span id="cashProfit"></span> 0</div>
-                </div>
-                <div class="input"> </div>
-            </div>
-            <!-- Top Panel Left -->
-            <div class="options-form-item-half">
-                <div class="title"> <label for="name"> Percentage Profit </label> </div>
-                <div class="value"> <span id="percentageProfit"></span> 0</div>%
-            </div>
-            <div class="input"> </div>
-        </div>
-        <div class="info">Here is the cost and effectiveness of the strategy.<button type="button"
-                class="btn btn-dark btn-sm" data-bs-toggle="popover" title="advice"
-                data-bs-content="Some # of Days content"> info</button></div>
-        <!-- Top Panel Left -->
-        <div class="options-form-item-half">
-            <div class="title"> <label for="name"> Total Fees </label> </div>
-            <div class="value"> £ <span id="totalFees"></span> 0</div>
-        </div>
-        <div class="input"> </div>
-        </div>
-        <!-- Top Panel Left -->
-        <div class="options-form-item-half">
-            <div class="title"> <label for="name"> Success Rate</label> </div>
-            <div class="value"> <span id="successRate"></span> 0</div>%
-        </div>
-        <div class="input"> </div>
-        </div>
-        <div class="info">These figures can be used to help guide any changes to new strategies.<button type="button"
-                class="btn btn-dark btn-sm" data-bs-toggle="popover" title="stuff"
-                data-bs-content="Some # of Days content"> info</button></div>
-        <!-- Second Wide Panel -->
-        <div class="options-form-item-third">
-            <div class="title"> <label for="name"> Successes </label> </div>
-            <div class="value"> <span id="SuccessCount"></span> 0</div>
-        </div>
-        <div class="input"> </div>
-        </div>
-        <div class="options-form-item-third">
-            <div class="title"> <label for="name"> Timed out Trades </label> </div>
-            <div class="value"> <span id="timedOutCount"></span> 0</div>
-        </div>
-        <div class="input"> </div>
-        </div>
-        <div class="options-form-item-third">
-            <div class="title"> <label for="name"> Losses </label> </div>
-            <div class="value"> <span id="lossesCount"></span> 0</div>
-        </div>
-        <div class="input"> </div>
-        </div>
-        <!-- Third Wide Panel -->
-        <div class="options-form-item-full">
-
-            <div class="title"> <label for="name"> Total # of Trades </label> </div>
-            <div class="value"> 251</div>
-        </div>
-        </div>
-        <!-- Save Button -->
-
-        <div class="form-row text-center">
-            <div class="col">
-                <button data-type="save" class="btn form-control"> Save</button>
             </div>
         </div>
-
-
-        </div>
-        </div>
-
-    </section>
-
-
-
-
     </section>
     <footer class="container-xl">
         <div class="row">

@@ -88,101 +88,50 @@
         <div class="row g-2">
             <div class="col">
                 <div class="p-3">
+                    <div class="game-area">
 
-                    <!-- Text Area -->
-                    <h2>Do you nd?</h2>
-                    <p>Why ts.</p>
-
-                    
-
-                    <!-- Options Form -->
-                    <form class="options-form" method="post" action="#">
-                        <!-- Top Panel Left -->
-                        <div class="options-form-item-narrow">
-                            <div class="title"> <label for="name"> Amount </label> </div>
-                            <div class="info"><i class="fas fa-info-circle" aria-hidden="true"></i></div>
-                            <div class="input"> <input type="text" class="form-control" id="name"
-                                placeholder="Your name here ..." required></div>
-                        </div>
-                        <!-- Top Panel Left -->
-                        <div class="options-form-item-narrow">
-                            <div class="title"> <label for="name"> Fees </label> </div>
-                            <div class="info"><i class="fas fa-info-circle" aria-hidden="true"></i></div>
-                            <div class="input">  <label for="cars"></label>
-                                <select id="cars" name="cars" class="form-control">
-                                  <option value="volvo">0.1%</option>
-                                  <option value="volvo">0.1%</option>
-                                  <option value="volvo">0.1%</option>
-                                  <option value="volvo">0.1%</option>
-                                </select></div>
-                        </div>
-                        <!-- First Wide Panel -->
-                        <div class="options-form-item-wide">
-                            <div class="title"> <label for="name"> Take Profit </label> </div>
-                            <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="Take Profit" data-bs-content="Some Take Profit content ">
-                                info
-                            </button></div>
-                            <div class="value"> 3.5%</div>
-                            <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider" id="take-profit"></span></div>
-                            <div class="title"> <label for="name"> Stop Loss </label> </div>
-                            <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="Stop Loss" data-bs-content="Some Stop Loss content r">
-                                info
-                            </button></div>
-                            <div class="value"> 3.5%</div>
-                            <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider" id="take-profit"></span></div>
-                        </div>
-                        <!-- Second Wide Panel -->
-                        <div class="options-form-item-wide">
-                            <div class="title"> <label for="name"> Average True Range </label> </div>
-                            <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="ATR" data-bs-content="Some ATR content">
-                                info
-                            </button></div>
-                            <div class="value"> 3.5%</div>
-                            <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider" id="take-profit"></span></div>
-                            <div class="title"> <label for="name"> Market Mommentum </label> </div>
-                            <div class="info"><i class="fas fa-info-circle" aria-hidden="true"></i></div>
-                            <div class="value"> 3.5%</div>
-                            <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider" id="take-profit"></span></div>
-                        </div>
-                        <!-- Third Wide Panel -->
-                        <div class="options-form-item-wide">
-                            <div class="title"> <label for="name"> Trade Duration (mins) </label> </div>
-                            <div class="info"><i class="fas fa-info-circle" aria-hidden="true"></i></div>
-                            <div class="time-group">
-                                <button>5</button>
-                                <button>15</button>
-                                <button>30</button>
-                                <button>60</button>
-                                <button>120</button>
-                                
-                              </div>
-                            <div class="title"> <label for="name"> # of Days </label> </div>
-                            <div class="info"><i class="fas fa-info-circle" aria-hidden="true"></i></div>
-                            <div class="time-group">
-                                <button>1</button>
-                                <button>7</button>
-                                <button>30</button>
-                                <button>90</button>
-                              </div>
-                        </div>
-                        <!-- Submit Button -->
-                        <div class="options-form-item-wide">
-                            <div class="form-row text-center">
-                                <div class="col"><button type="submit" class="btn form-control"> Calculate</button>
-                                </div>
+                        <div class="question-area">
+                            
+                            <span>Investment Amount</span>
+                            <input id="stake" type="number">
+                            
+                            
+                            
+                            <p>
+                                <label>Take Profit %:</label>
+                                <input type="range" id="ope" value="5" min="0" max="10" 
+                                    oninput="document.getElementById('takeProfit').innerHTML = this.value" />
+                                <label id="takeProfit">0</label>
+                            </p>
+ 
+                
                             </div>
+
+                            
+
+                            
+                            <span>Fees</span>
+                            
+                            <p id="tradingFee">0</p>
+                            <select class="select">
+                              <option value="1">Binance 1%</option>
+                              <option value="2">Kucoin 2%</option>
+                              <option value="3">Kraken 3%</option>
+                            </select>
+                            
+                            
+                            <p>Validate input boxes</p>
+                            <input id="answer-box" type="number">
                         </div>
-                    </form>
+                        <button data-type="submit" class="btn form-control">Calculate</button>
+                    </div>
+                
 
                 </div>
             </div>
             <div class="col d-none d-sm-block">
                 <div class="p-3">
-                    Custom column padding
-                    Custom column padding
-                    Custom column padding
-                    Custom column padding
-                    Custom column padding
+              
                 </div>
         </div>
 
@@ -243,12 +192,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 
-<script>
-    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-      return new bootstrap.Popover(popoverTriggerEl)
-    })
-    </script>
+<script src="assets/js/learn.js"></script>
 </body>
 
 </html>

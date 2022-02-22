@@ -5,17 +5,20 @@ document.addEventListener("DOMContentLoaded", function() {
   let buttons = document.getElementsByTagName("button");
 
   for (let button of buttons) {
+    console.log(button);
       button.addEventListener("click", function() {
-          if (this.getAttribute("data-type") === "calculate") {
-              alert("You clicked calculate!");
+          if (this.getAttribute("data-type") === "submit") {
+              alert("You clicked days");
+              let days = this.getAttribute("data-type");
           } else {
-              let timeOption = this.getAttribute("data-type");
-              alert(`You clicked ${timeOption}`);
+              alert(`You clicked option not reckonised`);
           }
       });
   }
 });
  
+
+
  
  // info popover functionality
 
@@ -71,4 +74,8 @@ function winLossAnalysis() {
 
 function strategyReport() {
 
+}
+
+function getDetails() {
+  let 
 }
