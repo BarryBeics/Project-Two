@@ -98,82 +98,99 @@
                                 title="Investment Amount" data-bs-content="Some Take Profit content "> info </button>
                         </div>
                         <div class="title"> <label for="name"> Amount </label> </div>
-                        <div class="input"> <input id="invesmentAmount" type="number">300</div>
+                        <div class="input"> <input id="stake" type="number" placeholder="300"></div>
                     </div>
                     <!-- Top Panel Left -->
                     <div class="options-form-item-half">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                 title="Trade Fees" data-bs-content="Some Take Profit content "> info </button></div>
                         <div class="title"> <label for="name"> Fees </label> </div>
-                        <div class="input"> <label for="cars"></label>
-                            <div class="tradeFees">
-                                <button data-type="fee075"> 0.75% Binance</button>
-                                <button data-type="fee085"> 0.75% Kraken</button>
-                                <button data-type="fee095"> 0.75% Coinbase</button>
-                                <button data-type="fee0105"> 0.75% Kucoin</button>
-                            </div>
-                        </div>
+                        <p id="tradingFee">0</p>
+                        <select class="select">
+                          <option value="1">Binance 1%</option>
+                          <option value="2">Kucoin 2%</option>
+                          <option value="3">Kraken 3%</option>
+                        </select>
                     </div>
                     <!-- First Wide Panel -->
                     <div class="options-form-item-full">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                 title="Take Profit" data-bs-content="Some Take Profit content "> info </button></div>
                         <div class="title"> <label for="name"> Take Profit </label> </div>
-                        <div class="value"> <span id="targetTakeProfit"></span> 4</div>
-                        <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider"
-                                    id="take-profit"></span></div>
+                        <div class="value"> <label id="takeProfit">0</label></div>
+                            <input type="range" id="tp" value="5" min="0" max="10" class="slider"
+                                oninput="document.getElementById('takeProfit').innerHTML = this.value" />
+                            
 
-                        <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="Stop Loss" data-bs-content="Some Stop Loss content r"> info </button></div>
-                        <div class="title"> <label for="name"> Stop Loss </label> </div>
-                        <div class="value"> <span id="setStopLoss"></span> 2</div>
-                        <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider"
-                                    id="take-profit"></span></div>
+                                <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                                    title="Stop Loss" data-bs-content="Some Take Profit content "> info </button></div>
+                            <div class="title"> <label for="name"> Stop Loss </label> </div>
+                            <div class="value"> <label id="stopLoss">0</label></div>
+                                <input type="range" id="sl" value="5" min="0" max="10" class="slider"
+                                    oninput="document.getElementById('stopLoss').innerHTML = this.value" />
                     </div>
                     <!-- Second Wide Panel -->
                     <div class="options-form-item-full">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                 title="ATR" data-bs-content="Some ATR content"> info</button></div>
                         <div class="title"> <label for="name"> Average True Range </label> </div>
-                        <div class="value"> <span id="setATR"></span> 3</div>
-                        <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider"
-                                    id="take-profit"></span></div>
+                        <div class="value"> <label id="avgTrueRange">0</label></div>
+                            <input type="range" id="atr" value="5" min="0" max="10" class="slider"
+                                oninput="document.getElementById('avgTrueRange').innerHTML = this.value" />
+
+
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                 title="Market Mommentum" data-bs-content="Some ATR content"> info</button></div>
                         <div class="title"> <label for="name"> Market Mommentum </label> </div>
-                        <div class="value"> <span id="setMarketMommentum"></span> 2</div>
-                        <div class="range-slide"><span><input type="range" min="1" max="20" value="5" class="slider"
-                                    id="take-profit"></span></div>
+                        <div class="value"> <label id="marketMommentum">0</label></div>
+                            <input type="range" id="mm" value="5" min="0" max="10" class="slider"
+                                oninput="document.getElementById('marketMommentum').innerHTML = this.value" />
                     </div>
                     <!-- Third Wide Panel -->
                     <div class="options-form-item-full">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                 title="Trade Duration" data-bs-content="Some ATR content"> info</button></div>
-                        <div class="title"> <label for="name"> Trade Duration (mins) </label> </div>
-                        <div class="time-group">
-                            <button class="option" data-type="duration15"> 15</button>
-                            <button class="option" data-type="duration7"> 30</button>
-                            <button class="option" data-type="duration30"> 60</button>
-                            <button class="option" data-type="duration90"> 120</button>
-
+                        <div class="title"> <label for="name1"> Trade Duration (mins) </label> </div>
+                       
+                        <p id="duration">0</p>
+                        <div class="radio-toolbar">
+                            <input type="radio" id="duration5" name="durationOption" value="5" checked oninput="document.getElementById('duration').innerHTML = this.value">
+                            <label for="duration5">5</label>
+                        
+                            <input type="radio" id="duration10" name="durationOption" value="10" oninput="document.getElementById('duration').innerHTML = this.value">
+                            <label for="duration10">10</label>
+                        
+                            <input type="radio" id="duration15" name="durationOption" value="15" oninput="document.getElementById('duration').innerHTML = this.value">
+                            <label for="duration15">15</label> 
                         </div>
+
+
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                 title="# of Days" data-bs-content="Some # of Days content"> info</button></div>
                         <div class="title"> <label for="name"> # of Days </label> </div>
-                        <div class="time-group">
-                            <button class="option" data-type="days1"> 1</button>
-                            <button class="option" data-type="days7"> 7</button>
-                            <button class="option" data-type="days30"> 30</button>
-                            <button class="option" data-type="days90"> 90</button>
+                        
+                        <p id="days">0</p>
+                        <div class="radio-toolbar">
+                            <input type="radio" id="days5" name="daysOption" value="6" checked oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days5">6</label>
+                        
+                            <input type="radio" id="days10" name="daysOption" value="12" oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days10">12</label>
+                        
+                            <input type="radio" id="days15" name="daysOption" value="18" oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days15">18</label> 
                         </div>
                     </div>
                     <!-- Calculate Button -->
                     <div class="form-row text-center">
                         <div class="col">
-                            <button data-type="calculate" class="btn form-control"> Calculate</button>
+                            <p>Validate input boxes</p>
+                        <input id="answer-box" type="number">
+                            <button data-type="submit" class="btn form-control"> Calculate</button>
                         </div>
                     </div>
-                </div>
+                </div>                    
+                
             </div>
             <!-- RESULTS AREA -->
             <div class="col d-none d-sm-block">
