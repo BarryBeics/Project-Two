@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
           } else if (this.getAttribute("data-type") === "trade") {
             // block of code to be executed if the condition1 is false and condition2 is true
             trading();
+            console.log(generateRandomDaily());
           } else if (this.getAttribute("data-type") === "save") {
             // block of code to be executed if the condition1 is false and condition2 is true
             console.log(" Save results! ");
@@ -53,21 +54,45 @@ function validateInputs() {
   let isCorrect = userAnswer === calculatedAnswer[0];
 
   if (isCorrect) {
-      console.log(" Hey! You got it right! ");
+      console.log("Selection Confirmed! ");
   } else {
-    console.log('Something doesnt add up here!');
+    console.log('You have not entered any details!');
   }
 
 }
 
-let numberOfTradesCount = 4;
-let tradeDurationCount = 10;
+
+
+
+
+
+// Define the variables as zero, then the users input can update these variables values
+let tradesPerDay = 4;
+
+
 let tradeOpen = true;
-let days3 = 3;
+let stake = 0;
+let takeProfit = 0;
+let stopLoss = 0;
+let avgTrueRange = 0;
+let marketMommentum = 0;
+let tradingFee = 0;
+let tradeDuration = 10;
+let days = 0;
+
+/**
+* tradesPerDay trades would be trade 24 hours / trade duration the would be a random amount from that range
+* take 24hour / 1 day in minutes 1440 and divede by selected trade duration to produce the range
+* from this generate a random number to similate a realife probability of trade oppotunities in any 1 given day
+*/
+function generateRandomDaily() {
+  let chances = 1440 / tradeDuration; 
+  return Math.floor(Math.random() * chances);
+
+ }
 
 
-
-
+ 
 
 /**
 * Gets the values from the various input types and checks they add up
@@ -75,16 +100,16 @@ let days3 = 3;
 */
 function calculateCorrectAnswer() {
 
-  let stake = parseInt(document.getElementById('stake').value);
-  let takeProfit = parseInt(document.getElementById('takeProfit').innerText);
-  let stopLoss = parseInt(document.getElementById('stopLoss').innerText);
-  let avgTrueRange = parseInt(document.getElementById('avgTrueRange').innerText);
-  let marketMommentum = parseInt(document.getElementById('marketMommentum').innerText);
-  let tradingFee = parseInt(document.getElementById('tradingFee').innerText);
-  let duration = parseInt(document.getElementById('duration').innerText);
-  let days = parseInt(document.getElementById('days').innerText);
+  stake = parseInt(document.getElementById('stake').value);
+  takeProfit = parseInt(document.getElementById('takeProfit').innerText);
+  stopLoss = parseInt(document.getElementById('stopLoss').innerText);
+  avgTrueRange = parseInt(document.getElementById('avgTrueRange').innerText);
+  marketMommentum = parseInt(document.getElementById('marketMommentum').innerText);
+  tradingFee = parseInt(document.getElementById('tradingFee').innerText);
+  tradeDuration = parseInt(document.getElementById('tradeDuration').innerText);
+  days = parseInt(document.getElementById('days').innerText);
   
-  return [stake + takeProfit + stopLoss + avgTrueRange + marketMommentum + tradingFee + duration + days ];
+  return [stake + takeProfit + stopLoss + avgTrueRange + marketMommentum + tradingFee + tradeDuration + days ];
  
 }
 
@@ -168,14 +193,14 @@ function trading(){
 /****************************************
  *      NUMBER OF DAYS - - - - - - - - - - FOR LOOP
  ****************************************/
- for (let eachDay = 0; eachDay < days3; eachDay++) {
+ for (let eachDay = 0; eachDay < days; eachDay++) {
   console.log('Begining of trading day', eachDay + 1);
 }
 
  /****************************************
  *     NUMBER OF TRADES - - - - - - - - - - FOR LOOP
  ****************************************/
-  for (let frequency = 0; frequency < numberOfTradesCount; frequency++)
+  for (let frequency = 0; frequency < tradesPerDay; frequency++)
   // PRINT STATEMENT USED FOR DEBUGGING
   {
     console.log('*********************** THIS IS AN INSTANCES OF TRADING.  *************** TOTAL OF', frequency + 1, 'TRADING INSTANCE *********');
@@ -184,7 +209,7 @@ function trading(){
  /****************************************
         ##     TRADE DURATION - - - - - - - - - - FOR LOOP
  ****************************************/
-        for (let eachSecond = 0; eachSecond < tradeDurationCount; eachSecond++)
+        for (let eachSecond = 0; eachSecond < tradeDuration; eachSecond++)
         {
           console.log('seconds past', eachSecond + 1, ' --- Open to trade?', tradeOpen, 'move' , generateRandonMove(-5, 5, 1) );
         }
