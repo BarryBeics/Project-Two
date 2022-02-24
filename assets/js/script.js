@@ -1,3 +1,5 @@
+function init(){
+
 // Set up a single handler at a common ancestor of all the select elements
 document.body.addEventListener("change", function(event){
   // event.target references the element that actually triggered the event
@@ -21,9 +23,17 @@ document.addEventListener("DOMContentLoaded", function() {
           console.log(button);
            if (this.getAttribute("data-type") === "submit") {
               validateInputs();
-          } else {
               
-              alert(`nope`);
+          } else if (this.getAttribute("data-type") === "trade") {
+            // block of code to be executed if the condition1 is false and condition2 is true
+            trading();
+          } else if (this.getAttribute("data-type") === "save") {
+            // block of code to be executed if the condition1 is false and condition2 is true
+            console.log(" Save results! ");
+          }
+          else {
+            console.log(" Info Popup! ");
+              
           }
       });
   }
@@ -43,21 +53,28 @@ function validateInputs() {
   let isCorrect = userAnswer === calculatedAnswer[0];
 
   if (isCorrect) {
-      alert(" Hey! You got it right! ");
+      console.log(" Hey! You got it right! ");
   } else {
-      alert('Something doesnt add up here!');
+    console.log('Something doesnt add up here!');
   }
-
- 
 
 }
 
+let numberOfTradesCount = 4;
+let tradeDurationCount = 10;
+let tradeOpen = true;
+let days3 = 3;
+
+
+
+
+
 /**
 * Gets the values from the various input types and checks they add up
-* Adding up the sum of each allows us to besure all awil be sent to the script 
+* Adding up the sum of each allows us to besure all are working as expected
 */
 function calculateCorrectAnswer() {
-  
+
   let stake = parseInt(document.getElementById('stake').value);
   let takeProfit = parseInt(document.getElementById('takeProfit').innerText);
   let stopLoss = parseInt(document.getElementById('stopLoss').innerText);
@@ -66,14 +83,14 @@ function calculateCorrectAnswer() {
   let tradingFee = parseInt(document.getElementById('tradingFee').innerText);
   let duration = parseInt(document.getElementById('duration').innerText);
   let days = parseInt(document.getElementById('days').innerText);
+  
   return [stake + takeProfit + stopLoss + avgTrueRange + marketMommentum + tradingFee + duration + days ];
  
 }
 
- 
 
 
- 
+
  // info popover functionality
 
 var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
@@ -90,11 +107,11 @@ function exchangeRate(){
 
 }
 
-function takeProfit(){
+function takeProfit4(){
 
 }
 
-function stopLoss(){
+function stopLoss4(){
 
 }
 
@@ -112,6 +129,7 @@ function timedOutMarketOrder() {
 function generateRandonMove(min, max, decimalPlaces) {
   return (Math.random() * (max - min) + min).toFixed(decimalPlaces) * 1;
 }
+
 
 generateRandonMove()
 function timeIntoTrade() {
@@ -133,3 +151,62 @@ function strategyReport() {
 function getDetails() {
   let 
 }
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+function trading(){
+/****************************************
+ *      NUMBER OF DAYS - - - - - - - - - - FOR LOOP
+ ****************************************/
+ for (let eachDay = 0; eachDay < days3; eachDay++) {
+  console.log('Begining of trading day', eachDay + 1);
+}
+
+ /****************************************
+ *     NUMBER OF TRADES - - - - - - - - - - FOR LOOP
+ ****************************************/
+  for (let frequency = 0; frequency < numberOfTradesCount; frequency++)
+  // PRINT STATEMENT USED FOR DEBUGGING
+  {
+    console.log('*********************** THIS IS AN INSTANCES OF TRADING.  *************** TOTAL OF', frequency + 1, 'TRADING INSTANCE *********');
+}
+
+ /****************************************
+        ##     TRADE DURATION - - - - - - - - - - FOR LOOP
+ ****************************************/
+        for (let eachSecond = 0; eachSecond < tradeDurationCount; eachSecond++)
+        {
+          console.log('seconds past', eachSecond + 1, ' --- Open to trade?', tradeOpen, 'move' , generateRandonMove(-5, 5, 1) );
+        }
+}
+
+
+
+
+  
+};
+
+init();
+
+
+
+
+
+ 
+
+
+/****************************************
+  if (each_day == 7) {
+    break;
+  }
+ ****************************************/
