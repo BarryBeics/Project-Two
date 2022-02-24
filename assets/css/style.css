@@ -222,7 +222,13 @@ footer p {
     width: 80px;
  }
  
- 
+ .fees p {
+    margin-bottom: 0px;
+ }
+
+ .fees .title {
+   margin-bottom: 0px;
+}
 
 
 
@@ -310,7 +316,7 @@ footer p {
 
 .form-control {
    height: calc(18px + 0.75rem + 2px);
-   background-color: #1f2833;
+   background-color: #79b4b7;
 }
 
 button[type="submit"] {
@@ -320,6 +326,10 @@ button[type="submit"] {
    font-weight: 500;
    width: 40%;
    background-color: rgb(95, 142, 145);
+}
+
+.input {
+   width: 50%;
 }
 
 /* ------------- Align Icon and text links ------------  */
@@ -489,7 +499,7 @@ button[type="submit"] {
  
  .slider {
    -webkit-appearance: none;
-   width: 83%;
+   width: 90%;
    height: 1px;
    border-radius: 5px;
    background: #d3d3d3;
@@ -534,11 +544,10 @@ button[type="submit"] {
  
  .radio-toolbar label {
      display: inline-block;
-     background-color: #ddd;
-     padding: 10px 20px;
-     font-family: sans-serif, Arial;
+     background-color: #444;
+     padding: 7px 18px;
      font-size: 16px;
-     border: 2px solid #444;
+     border: 2px solid #ddd;
      border-radius: 4px;
  }
  
@@ -551,6 +560,6 @@ button[type="submit"] {
  }
  
  .radio-toolbar input[type="radio"]:checked + label {
-     background-color: #bfb;
-     border-color: #4c4;
+     background-color: #79b4b7;
+     border-color: #2b7578
  }
