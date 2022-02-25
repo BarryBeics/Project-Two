@@ -98,7 +98,7 @@
                                 title="Investment Amount" data-bs-content="Some Take Profit content "> info </button>
                         </div>
                         <label class="title" for="name"> Amount </label>
-                        <input id="stake" class="input" type="number" placeholder="300">
+                        <input id="stake" class="form-control" type="number" placeholder="300">
                     </div>
                     <!-- Top Panel Left -->
                     <div class="options-form-item-half">
@@ -106,10 +106,11 @@
                                 title="Trade Fees" data-bs-content="Some Take Profit content "> info </button></div>
                          <label class="title" for="name"> Fees </label> 
                         <p id="tradingFee">0</p>
-                        <select class="select">
-                          <option value="1">Binance 1%</option>
-                          <option value="2">Kucoin 2%</option>
-                          <option value="3">Kraken 3%</option>
+                        <select class="select form-control">
+                          <option value="0.75">Binance 0.75%</option>
+                          <option value="0.7">Kucoin 0.7%</option>
+                          <option value="0.12">Kraken 0.12%</option>
+                          <option value="0.5">Coinbase 0.5%</option>
                         </select>
                     </div>
                     <!-- First Wide Panel -->
@@ -118,17 +119,17 @@
                                 title="Take Profit" data-bs-content="Some Take Profit content "> info </button></div>
                         <label class="title" for="name"> Take Profit </label>
                         
-                            <input type="range" id="tp" value="5" min="0" max="10" class="slider"
+                            <input type="range" id="tp" value="4" min="0" max="8" class="slider"
                                 oninput="document.getElementById('takeProfit').innerHTML = this.value" />
-                                <div class="value"> <label id="takeProfit">0</label></div>
+                                <div class="value"> <label id="takeProfit">0</label>%</div>
                             
 
                                 <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                     title="Stop Loss" data-bs-content="Some Take Profit content "> info </button></div>
                             <label class="title" for="name"> Stop Loss </label>
-                            <input type="range" id="sl" value="5" min="0" max="10" class="slider"
+                            <input type="range" id="sl" value="4" min="0" max="8" class="slider"
                                     oninput="document.getElementById('stopLoss').innerHTML = this.value" />
-                            <div class="value"> <label id="stopLoss">0</label></div>
+                            <div class="value"> <label id="stopLoss">0</label>%</div>
                                 
                     </div>
                     <!-- Second Wide Panel -->
@@ -136,9 +137,9 @@
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                 title="ATR" data-bs-content="Some ATR content"> info</button></div>
                         <label class="title" for="name"> Average True Range </label>
-                        <input type="range" id="atr" value="5" min="0" max="10" class="slider"
+                        <input type="range" id="atr" value="4" min="0" max="8" class="slider"
                                 oninput="document.getElementById('avgTrueRange').innerHTML = this.value" />
-                        <div class="value"> <label id="avgTrueRange">0</label></div>
+                        <div class="value"> <label id="avgTrueRange">0</label>%</div>
                             
 
 
@@ -146,9 +147,9 @@
                                 title="Market Mommentum" data-bs-content="Some ATR content"> info</button></div>
                         <label class="title" for="name"> Market Mommentum </label>
                         
-                            <input type="range" id="mm" value="5" min="0" max="10" class="slider"
+                            <input type="range" id="mm" value="4" min="0" max="8" class="slider"
                                 oninput="document.getElementById('marketMommentum').innerHTML = this.value" />
-                                <div class="value"> <label id="marketMommentum">0</label></div>
+                                <div class="value"> <label id="marketMommentum">0</label>%</div>
                     </div>
                     <!-- Third Wide Panel -->
                     <div class="options-form-item-full">
@@ -158,7 +159,7 @@
                        
                         <p id="tradeDuration">0</p>
                         <div class="radio-toolbar">
-                            <input type="radio" id="duration5" name="durationOption" value="5" checked oninput="document.getElementById('tradeDuration').innerHTML = this.value">
+                            <input type="radio" id="duration5" name="durationOption" value="5" oninput="document.getElementById('tradeDuration').innerHTML = this.value">
                             <label for="duration5">5</label>
                         
                             <input type="radio" id="duration10" name="durationOption" value="10" oninput="document.getElementById('tradeDuration').innerHTML = this.value">
@@ -166,6 +167,15 @@
                         
                             <input type="radio" id="duration15" name="durationOption" value="15" oninput="document.getElementById('tradeDuration').innerHTML = this.value">
                             <label for="duration15">15</label> 
+
+                            <input type="radio" id="duration30" name="durationOption" value="30" oninput="document.getElementById('tradeDuration').innerHTML = this.value">
+                            <label for="duration30">30</label>
+                        
+                            <input type="radio" id="duration60" name="durationOption" value="60" oninput="document.getElementById('tradeDuration').innerHTML = this.value">
+                            <label for="duration60">60</label>
+                        
+                            <input type="radio" id="duration120" name="durationOption" value="120" oninput="document.getElementById('tradeDuration').innerHTML = this.value">
+                            <label for="duration120">120</label> 
                         </div>
 
 
@@ -175,14 +185,23 @@
                         
                         <p id="days">0</p>
                         <div class="radio-toolbar">
-                            <input type="radio" id="days5" name="daysOption" value="6" checked oninput="document.getElementById('days').innerHTML = this.value">
-                            <label for="days5">6</label>
+                            <input type="radio" id="days1" name="daysOption" value="1" oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days1">1</label>
                         
-                            <input type="radio" id="days10" name="daysOption" value="12" oninput="document.getElementById('days').innerHTML = this.value">
-                            <label for="days10">12</label>
+                            <input type="radio" id="days3" name="daysOption" value="3" oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days3">3</label>
                         
-                            <input type="radio" id="days15" name="daysOption" value="18" oninput="document.getElementById('days').innerHTML = this.value">
-                            <label for="days15">18</label> 
+                            <input type="radio" id="days7" name="daysOption" value="7" oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days7">7</label> 
+
+                            <input type="radio" id="days14" name="daysOption" value="14" oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days14">14</label>
+                        
+                            <input type="radio" id="days21" name="daysOption" value="21" oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days21">21</label>
+                        
+                            <input type="radio" id="days30" name="daysOption" value="30" oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days30">30</label> 
                         </div>
                     </div>
                     <!-- Calculate Button -->
@@ -190,8 +209,8 @@
                         <div class="col">
                             <p>Validate input boxes</p>
                         <input id="answer-box" type="number">
-                            <button data-type="submit" class="btn form-control"> Confirm Selection</button>
-                            <button data-type="trade" class="btn form-control"> Calculate Trade</button>
+                            <button data-type="submit" class="btn button"> Confirm Selection</button>
+                            <button data-type="trade" class="btn button"> Calculate Trade</button>
                         </div>
                     </div>
                 </div>                    
@@ -199,7 +218,7 @@
             </div>
             <!-- RESULTS AREA -->
             <div class="col d-none d-sm-block">
-                <div class="p-3">
+                <div class="p-3 ">
 
                     <!-- Text Area -->
                     <h2>RESULTS</h2>
@@ -207,69 +226,69 @@
 
 
                     <!-- First Wide Panel -->
-                    <div class="options-form-item-full">
-                        <label class="title" for="name"> New Balance</label>
-                        <div class="value"> £<span id="newBalance"></span> 0</div>
+                    <div class="options-form-item-full center">
+                        <label class="title" for="name"> New Balance £</label>
+                        <div class="results"> <span id="newBalance"></span> 0</div>
                     </div>
 
                     <!-- Top Panel Left -->
-                    <div class="options-form-item-half">
-                        <label class="title" for="name"> Cash Profit </label>
-                        <div class="value"> £ <span id="cashProfit"></span> 0</div>
+                    <div class="options-form-item-half center">
+                        <label class="title" for="name"> Cash Profit £</label>
+                        <div class="results"> <span id="cashProfit"></span> 0</div>
                     </div>
                     
 
                     <!-- Top Panel Left -->
-                    <div class="options-form-item-half">
-                        <label class="title" for="name"> Percentage Profit </label>
-                        <div class="value"> <span id="percentageProfit"></span> 0</div>%
+                    <div class="options-form-item-half center">
+                        <label class="title" for="name"> Percentage Profit %</label>
+                        <div class="results"> <span id="percentageProfit"></span> 0</div>
                     </div>
                     
-                    <div class="info">Here is the cost and effectiveness of the strategy.<button type="button"
-                            class="btn btn-dark btn-sm" data-bs-toggle="popover" title="advice"
-                            data-bs-content="Some # of Days content"> info</button></div>
+                    <div class="info"> <button type="button"
+                        class="btn btn-dark btn-sm" data-bs-toggle="popover" title="advice"
+                        data-bs-content="Some # of Days content"> info</button> Here is the cost and effectiveness of the strategy.</div>
                     <!-- Top Panel Left -->
-                    <div class="options-form-item-half">
-                        <label class="title" for="name"> Total Fees </label>
-                        <div class="value"> £ <span id="totalFees"></span> 0</div>
+                    <div class="options-form-item-half center">
+                        <label class="title" for="name"> Total Fees £</label>
+                        <div class="results"> <span id="totalFees"></span> 0</div>
                     </div>
                     
                     <!-- Top Panel Left -->
-                    <div class="options-form-item-half">
-                        <label class="title" for="name"> Success Rate</label>
-                        <div class="value"> <span id="successRate"></span> 0</div>%
+                    <div class="options-form-item-half center">
+                        <label class="title" for="name"> Success Rate %</label>
+                        <div class="results"> <span id="successRate"></span> 0</div>
                     </div>
                     
 
-                    <div class="info">These figures can be used to help guide any changes to new strategies.<button
-                            type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="stuff"
-                            data-bs-content="Some # of Days content"> info</button>
+                    <div class="info"> <button
+                        type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="stuff"
+                        data-bs-content="Some # of Days content"> info</button> These figures can be used to help guide any changes to new strategies.
                     </div>
                     <!-- Second Wide Panel -->
-                    <div class="options-form-item-third">
+                    <div class="options-form-item-third center">
                         <label class="title" for="name"> Successes </label>
-                        <div class="value"> <span id="SuccessCount"></span> 0</div>
+                        <div class="results"> <span id="SuccessCount"></span> 0</div>
                     </div>
                     
-                    <div class="options-form-item-third">
+                    <div class="options-form-item-third center">
                         <label class="title" for="name"> Timed out Trades </label>
-                        <div class="value"> <span id="timedOutCount"></span> 0</div>
+                        <div class="results"> <span id="timedOutCount"></span> 0</div>
                     </div>
                     
-                    <div class="options-form-item-third">
+                    <div class="options-form-item-third center">
                         <label class="title" for="name"> Losses </label>
-                        <div class="value"> <span id="lossesCount"></span> 0</div>
+                        <div class="results"> <span id="lossesCount"></span> 0</div>
                     </div>
                     
                     <!-- Third Wide Panel -->
-                    <div class="options-form-item-full">
+                    <div class="options-form-item-full center">
                         <label class="title" for="name"> Total # of Trades </label> 
-                        <div class="value"> 251</div>
+                        <div class="results"> 251</div>
                     </div>
                     <!-- Save Button -->
                     <div class="form-row text-center">
                         <div class="col">
-                            <button data-type="save" class="btn form-control"> Save</button>
+                            <button data-type="save" class="btn button"> Save</button>
                         </div>
                     </div>
 

@@ -1,5 +1,45 @@
+// The application has been enclosed within the init function so as to avoid any variable being classed as global
 function init(){
 
+
+// Wait for the DOM to finish loading before taking values from the inputs
+// Get the button elements and add event listeners to them
+document.addEventListener("DOMContentLoaded", function() {
+  let buttons = document.getElementsByTagName("button");
+
+  for (let button of buttons) {
+      button.addEventListener("click", function() {
+          console.log(button);
+           if (this.getAttribute("data-type") === "submit") {
+              validateInputs();
+              
+          } else if (this.getAttribute("data-type") === "trade") {
+            // On click runs trading function
+            trading();
+            
+          } else if (this.getAttribute("data-type") === "save") {
+            // On click runs save function
+            console.log(" Save results! ");
+          }
+          else {
+            console.log(" Info Popup! ");
+              
+          }
+      });
+  }
+
+});
+
+
+ // info popover functionality 
+ var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+ var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+   return new bootstrap.Popover(popoverTriggerEl)
+ })
+
+
+// This block handles the functionality of the drop down menu used to select the fees value
+// RETURN TO THIS TO SEE IF THERES A BETTER WAY
 // Set up a single handler at a common ancestor of all the select elements
 document.body.addEventListener("change", function(event){
   // event.target references the element that actually triggered the event
@@ -12,40 +52,9 @@ document.body.addEventListener("change", function(event){
 });
 
 
-// Wait for the DOM to finish loading before taking values from the inputs
-// Get the button elements and add event listeners to them
-
-document.addEventListener("DOMContentLoaded", function() {
-  let buttons = document.getElementsByTagName("button");
-
-  for (let button of buttons) {
-      button.addEventListener("click", function() {
-          console.log(button);
-           if (this.getAttribute("data-type") === "submit") {
-              validateInputs();
-              
-          } else if (this.getAttribute("data-type") === "trade") {
-            // block of code to be executed if the condition1 is false and condition2 is true
-            trading();
-            console.log(generateRandomDaily());
-          } else if (this.getAttribute("data-type") === "save") {
-            // block of code to be executed if the condition1 is false and condition2 is true
-            console.log(" Save results! ");
-          }
-          else {
-            console.log(" Info Popup! ");
-              
-          }
-      });
-  }
-
-  
-
-});
-
-
 /**
-* Checks the sum value of all the inputs and displays an alert to help with debuging
+* WILL BE ROMVED
+* Checks the sum value of all the inputs and uses consol.log to help with debuging
 */
 function validateInputs() {
   
@@ -61,38 +70,6 @@ function validateInputs() {
 
 }
 
-
-
-
-
-
-// Define the variables as zero, then the users input can update these variables values
-let tradesPerDay = 4;
-
-
-let tradeOpen = true;
-let stake = 0;
-let takeProfit = 0;
-let stopLoss = 0;
-let avgTrueRange = 0;
-let marketMommentum = 0;
-let tradingFee = 0;
-let tradeDuration = 10;
-let days = 0;
-
-/**
-* tradesPerDay trades would be trade 24 hours / trade duration the would be a random amount from that range
-* take 24hour / 1 day in minutes 1440 and divede by selected trade duration to produce the range
-* from this generate a random number to similate a realife probability of trade oppotunities in any 1 given day
-*/
-function generateRandomDaily() {
-  let chances = 1440 / tradeDuration; 
-  return Math.floor(Math.random() * chances);
-
- }
-
-
- 
 
 /**
 * Gets the values from the various input types and checks they add up
@@ -110,18 +87,34 @@ function calculateCorrectAnswer() {
   days = parseInt(document.getElementById('days').innerText);
   
   return [stake + takeProfit + stopLoss + avgTrueRange + marketMommentum + tradingFee + tradeDuration + days ];
- 
+}
+
+// Define the variables as zero, then the users input can update these variables values
+// THIS MAY NOT BE THE BEST WAY, REVIEW THIS ONCE APPLICTION IS FUNCTIONAL
+let tradeOpen = true;
+let stake = 0;
+let takeProfit = 0;
+let stopLoss = 0;
+let avgTrueRange = 0;
+let marketMommentum = 0;
+let tradingFee = 0;
+let tradeDuration = 10;
+let days = 0;
+
+
+/**
+* tradesPerDay trades would be trade 24 hours / trade duration the would be a random amount from that range
+* take 24hour / 1 day in minutes 1440 and divede by selected trade duration to produce the range
+* from this generate a random number to similate a realife probability of trade oppotunities in any 1 given day
+*/
+ function generateRandomDaily(minTrades, maxTrades) {
+  minTrades = 0;
+  maxTrades = 1440 / tradeDuration; 
+  return Math.floor(Math.random() * (maxTrades - minTrades) + minTrades); 
 }
 
 
 
-
- // info popover functionality
-
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
 
 
 function chooseVolatility() {
@@ -143,20 +136,16 @@ function stopLoss4(){
 function timedOutMarketOrder() {
 
 }
+
 /**
- * 
- * @param {*} min 
- * @param {*} max 
- * @param {*} decimalPlaces 
- * @returns 
- */
-// generate random market fluxtuations
+* Moment by moment the assets price can increase or decrease 
+* this function replicates this by generating random moves
+*/
 function generateRandonMove(min, max, decimalPlaces) {
   return (Math.random() * (max - min) + min).toFixed(decimalPlaces) * 1;
 }
 
 
-generateRandonMove()
 function timeIntoTrade() {
 
 }
@@ -182,29 +171,25 @@ function getDetails() {
   
 
 
-
-
-
-
-
-
-
+/**
+* This function contains the logic of the application
+*/
 function trading(){
 /****************************************
  *      NUMBER OF DAYS - - - - - - - - - - FOR LOOP
  ****************************************/
  for (let eachDay = 0; eachDay < days; eachDay++) {
-  console.log('Begining of trading day', eachDay + 1);
-}
+  console.log(' *******  ******* Begining of trading day  *******', eachDay + 1);
+
 
  /****************************************
  *     NUMBER OF TRADES - - - - - - - - - - FOR LOOP
  ****************************************/
-  for (let frequency = 0; frequency < tradesPerDay; frequency++)
+  for (let frequency = 0; frequency < generateRandomDaily(); frequency++)
   // PRINT STATEMENT USED FOR DEBUGGING
   {
-    console.log('*********************** THIS IS AN INSTANCES OF TRADING.  *************** TOTAL OF', frequency + 1, 'TRADING INSTANCE *********');
-}
+    console.log('  ******** TOTAL OF', frequency + 1, 'TRADING INSTANCE *********');
+
 
  /****************************************
         ##     TRADE DURATION - - - - - - - - - - FOR LOOP
@@ -215,8 +200,8 @@ function trading(){
         }
 }
 
-
-
+}
+}
 
   
 };
