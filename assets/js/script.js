@@ -110,7 +110,7 @@ function calculateCorrectAnswer() {
 
 /* For development purpose we use a static amount of 10,000 as this will aid debugging */
 /* There's potential to use an API call to get live prices */
-
+let cryptoPrice = 10000;
 /* Exchange rate */
  function exchangeRate(cryptoPrice) {
  let valueHeld = stake / cryptoPrice;
@@ -169,7 +169,17 @@ function calculateCorrectAnswer() {
 let tradingFeeRate = inputTradingFee / 100;
 let takeProfit = inputTakeProfit / 100;
 let stopLoss = inputStopLoss / 100;
-let MarketMommentum = inputMarketMommentum / 100;
+let marketMommentum = inputMarketMommentum / 100;
+
+let confirmationDuration = 100; // This will be kep at 60 but maybe become an input option for the user
+
+
+function changePerSecond(price) {
+/*  This will be used as the backbone of a strategy simulator ensuring the direction of the momentum can be controled */
+let change = (price * inputMarketMommentum) / confirmationDuration; 
+
+console.log('CHANGE PER SECOND', change.toFixed(2));
+}
 
 // Define the variables as zero, then the users input can update these variables values
 // THIS MAY NOT BE THE BEST WAY, REVIEW THIS ONCE APPLICTION IS FUNCTIONAL
@@ -238,8 +248,8 @@ function getDetails() {
 function trading(){
 
 
-exchangeRate(10000);
-
+exchangeRate(cryptoPrice);
+changePerSecond(cryptoPrice);
 chooseVolatility(avgTrueRange);
 /****************************************
  *      NUMBER OF DAYS - - - - - - - - - - FOR LOOP
