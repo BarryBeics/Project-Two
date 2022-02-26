@@ -121,17 +121,19 @@ function chooseVolatility() {
 
 }
 
-function exchangeRate(){
+  
+ 
 
+/* Exchange rate */
+function exchangeRate(cryptoPrice) {
+
+/* There's potential to use an API call to get live prices */
+let valueHeld = stake / cryptoPrice;
+console.log('Exchange rate:  1 FIAT:', valueHeld.toFixed(2), 'CRYPTO')
 }
 
-function takeProfit4(){
 
-}
 
-function stopLoss4(){
-
-}
 
 function timedOutMarketOrder() {
 
@@ -175,6 +177,9 @@ function getDetails() {
 * This function contains the logic of the application
 */
 function trading(){
+
+  /* For development purpose we use a static amount as this will aid debugging */
+exchangeRate(10000);
 /****************************************
  *      NUMBER OF DAYS - - - - - - - - - - FOR LOOP
  ****************************************/
