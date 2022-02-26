@@ -98,7 +98,7 @@ let stopLoss = 0;
 let avgTrueRange = 0;
 let marketMommentum = 0;
 let tradingFee = 0;
-let tradeDuration = 10;
+let tradeDuration = 3;
 let days = 0;
 
 
@@ -114,20 +114,27 @@ let days = 0;
 }
 
 
-
-
-
-function chooseVolatility() {
-
-}
-
+let volatility = 0;
+/* Also the ATR here will need to be relative to the validation period the market momentum, so this serves a another condtion that needs to be met before we enter a trade.
+#this determines the how far up and down from the average gain price the actual price moves, this script bedefault generates a move of up to 0.9%
+# Therefore if you change this to 1 the move can be upto 1.9% in either direction making a an ATR of 3.8% which im calling upto 4% */
+/* Users can select from a drop down menu of options */
+function chooseVolatility(){
   
- 
+  let volatilityOptions = {
+    2 : 0,
+    4 : 1,
+    6 : 2,
+    8 : 3,
+    10 : 4
+  };
+  volatility = volatilityOptions[avgTrueRange];
+  
+  }
+
 
 /* Exchange rate */
 function exchangeRate(cryptoPrice) {
-
-/* There's potential to use an API call to get live prices */
 let valueHeld = stake / cryptoPrice;
 console.log('Exchange rate:  1 FIAT:', valueHeld.toFixed(2), 'CRYPTO')
 }
@@ -179,7 +186,10 @@ function getDetails() {
 function trading(){
 
   /* For development purpose we use a static amount as this will aid debugging */
+  /* There's potential to use an API call to get live prices */
 exchangeRate(10000);
+
+chooseVolatility(avgTrueRange);
 /****************************************
  *      NUMBER OF DAYS - - - - - - - - - - FOR LOOP
  ****************************************/
@@ -201,7 +211,7 @@ exchangeRate(10000);
  ****************************************/
         for (let eachSecond = 0; eachSecond < tradeDuration; eachSecond++)
         {
-          console.log('seconds past', eachSecond + 1, ' --- Open to trade?', tradeOpen, 'move' , generateRandonMove(-5, 5, 1) );
+          console.log('seconds past', eachSecond + 1, ' --- Open to trade?', tradeOpen, 'move' , generateRandonMove( -volatility, volatility, 1) );
         }
 }
 
