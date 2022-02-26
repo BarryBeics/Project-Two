@@ -95,7 +95,7 @@
                     <!-- Top Panel Left -->
                     <div class="options-form-item-half">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="Investment Amount" data-bs-content="Some Take Profit content "> info </button>
+                                title="Investment Amount" data-bs-content="Here you can enter an amount that you would like to see the results for using your strategy idea."> info </button>
                         </div>
                         <label class="title" for="name"> Amount </label>
                         <input id="stake" class="form-control" type="number" placeholder="300">
@@ -103,7 +103,7 @@
                     <!-- Top Panel Left -->
                     <div class="options-form-item-half">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="Trade Fees" data-bs-content="Some Take Profit content "> info </button></div>
+                                title="Trade Fees" data-bs-content="Each exchange has their of own fee structure, here we have the basic amount for 4 of the most popular Crypto Exchange."> info </button></div>
                          <label class="title" for="name"> Fees </label> 
                         <p id="tradingFee">0</p>
                         <select class="select form-control">
@@ -116,18 +116,18 @@
                     <!-- First Wide Panel -->
                     <div class="options-form-item-full">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="Take Profit" data-bs-content="Some Take Profit content "> info </button></div>
+                                title="Take Profit" data-bs-content="For when the market increases at what percentage of the change in the assets value would you like to lock in profit? Use the slider provided to see what the impact your chosen “Take Profit” would have on your strategy."> info </button></div>
                         <label class="title" for="name"> Take Profit </label>
                         
-                            <input type="range" id="tp" value="4" min="0" max="8" class="slider"
+                            <input type="range" id="tp" value="4" min="1" max="8" step="0.1" class="slider"
                                 oninput="document.getElementById('takeProfit').innerHTML = this.value" />
                                 <div class="value"> <label id="takeProfit">0</label>%</div>
                             
 
                                 <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                    title="Stop Loss" data-bs-content="Some Take Profit content "> info </button></div>
+                                    title="Stop Loss" data-bs-content="For when the market decreases at what percentage of the change in the assets value would you like to exit the trade? Use the slider provided to see what the impact your chosen “Stop Loss” would have on your strategy."> info </button></div>
                             <label class="title" for="name"> Stop Loss </label>
-                            <input type="range" id="sl" value="4" min="0" max="8" class="slider"
+                            <input type="range" id="sl" value="-3" min="-6" max="-1" step="0.1" class="slider"
                                     oninput="document.getElementById('stopLoss').innerHTML = this.value" />
                             <div class="value"> <label id="stopLoss">0</label>%</div>
                                 
@@ -135,7 +135,7 @@
                     <!-- Second Wide Panel -->
                     <div class="options-form-item-full">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="ATR" data-bs-content="Some ATR content"> info</button></div>
+                                title="ATR" data-bs-content="This calculator allows you to test what the impact of market volatility would have on your strategy. Using the slider provided allows you to choose an “Average True Range” in percentage to determine the conditions your strategy would perform best in."> info</button></div>
                         <label class="title" for="name"> Average True Range </label>
                         <input type="range" id="atr" value="2" min="2" max="10" step="2" class="slider"
                                 oninput="document.getElementById('avgTrueRange').innerHTML = this.value" />
@@ -144,17 +144,17 @@
 
 
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="Market Mommentum" data-bs-content="Some ATR content"> info</button></div>
+                                title="Market Mommentum" data-bs-content="This is how much the market has gained over the previous period selected. For Example if the assets has gained 3% in the last 24hrs you would choose 3% Market Momentum along with a trading period of 24hrs.  Use the slider provided to see what the impact your chosen “Market Momentum” would have on your strategy."> info</button></div>
                         <label class="title" for="name"> Market Mommentum </label>
                         
-                            <input type="range" id="mm" value="4" min="0" max="8" class="slider"
+                            <input type="range" id="mm" value="4" min="0.5" max="8" step="0.5" class="slider"
                                 oninput="document.getElementById('marketMommentum').innerHTML = this.value" />
                                 <div class="value"> <label id="marketMommentum">0</label>%</div>
                     </div>
                     <!-- Third Wide Panel -->
                     <div class="options-form-item-full">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="Trade Duration" data-bs-content="Some ATR content"> info</button></div>
+                                title="Trade Duration" data-bs-content="How often would you like to apply this strategy? Select a time period to see what the impact this would have on your strategy."> info</button></div>
                         <label class="title" for="name1"> Trade Duration (mins) </label>
                        
                         <p id="tradeDuration">0</p>
@@ -180,7 +180,7 @@
 
 
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="# of Days" data-bs-content="Some # of Days content"> info</button></div>
+                                title="# of Days" data-bs-content="To see how your strategy would perform over time you can select a period to see how that impacts the profitability of your strategy."> info</button></div>
                         <label class="title" for="name"> # of Days </label>
                         
                         <p id="days">0</p>
