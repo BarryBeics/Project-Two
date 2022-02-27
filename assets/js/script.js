@@ -83,10 +83,10 @@ function calculateCorrectAnswer() {
   avgTrueRange = parseInt(document.getElementById('avgTrueRange').innerText);
   inputMarketMommentum = parseInt(document.getElementById('inputMarketMommentum').innerText);
   inputTradingFee = parseInt(document.getElementById('inputTradingFee').innerText);
-  tradeDuration = parseInt(document.getElementById('tradeDuration').innerText);
+  minutes = parseInt(document.getElementById('minutes').innerText);
   days = parseInt(document.getElementById('days').innerText);
   
-  return [stake + inputTakeProfit + inputStopLoss + avgTrueRange + inputMarketMommentum + inputTradingFee + tradeDuration + days ];
+  return [stake + inputTakeProfit + inputStopLoss + avgTrueRange + inputMarketMommentum + inputTradingFee + minutes + days ];
 }
 
 
@@ -171,7 +171,7 @@ let takeProfit = inputTakeProfit / 100;
 let stopLoss = inputStopLoss / 100;
 let marketMommentum = inputMarketMommentum / 100;
 
-let confirmationDuration = 100; // This will be kep at 60 but maybe become an input option for the user
+let confirmationDuration = 60; // This will be kept at 60 but maybe become an input option for the user
 
 
 function changePerSecond(price) {
@@ -181,13 +181,24 @@ let change = (price * inputMarketMommentum) / confirmationDuration;
 console.log('CHANGE PER SECOND', change.toFixed(2));
 }
 
-// Define the variables as zero, then the users input can update these variables values
-// THIS MAY NOT BE THE BEST WAY, REVIEW THIS ONCE APPLICTION IS FUNCTIONAL
-let tradeOpen = true;
 
+/* ########################################
+##     TRADE INTERVALS & TIME PERIOD
+######################################## */
 
-let tradeDuration = 3; // This will need to be multipled by 60 secound, but not while we are develpoing the application
+/* Here the user can adjust the duration to see if the strategy can return meaningful gains over time.
+/*  In a real world senario the true number of times a trade would take place would depend on the number of times the "enter a trade conditions" are met */
 let days = 0;
+
+
+/*  This vaialble allows you to set the time in the trade before it times out and forces a market order at what ever the position is be it positive or negative.
+# Define in input_minutes how long you will stay in the trade (5, 10, 15, 30, 60 must be in input_minutes) */
+let minutes = 0;
+
+
+/*  This is the window of opportunity you allow for the trade to fulfill 1 of 3 criteria, Take Profit, Stop Loss or Timed Out Market Order 
+let tradeDuration = minutes * 60; */
+let tradeDuration = 3; // This will need to be multipled by 60 secound, but not while we are develpoing the application
 
 
 /**
@@ -197,12 +208,53 @@ let days = 0;
 */
  function generateRandomDaily(minTrades, maxTrades) {
   minTrades = 0;
-  maxTrades = 1440 / tradeDuration; 
+  maxTrades = 1440 / minutes; 
   return Math.floor(Math.random() * (maxTrades - minTrades) + minTrades); 
 }
 
 
 
+/* ########################################
+##     count_each_secondING STUFF
+######################################## */
+
+/* Win count_each_seconds number of successful "take profit" instances, timed out records number of trades that result in a forced market order & losses record each instance of being stopped out of the trade */
+let win = 0;
+let timedOut = 0;
+let losses = 0;
+/* count_each_second is used to report on the duration into a trade an actins takes place  ...... sum moves is ..... min kilines is ...... */
+let countEachSecond = 0;
+let sumMoves = 0;
+let minKlines = [];
+
+/* These allow for a runing total of each to be recorded and updated from trade to trade (what do you mean trade to trade) */
+let totalFees = 0;
+let profit = 0;
+
+/* These 2 arrays are used to track the time the average time into a trade before conditions are to be met */
+let timeInWinTrade = [];
+let timeInLossTrade = [];
+
+/* This array records if the move was up, flat or down so that we can see if there is fair distributions of randomness */
+let checkMoves = [];
+
+/* Function to calculate average */
+function getAve(value) {
+  var total = 0;
+  for (var i = 0; i value < value.length; i++) {
+    total += value[i];
+  }
+  var avg = total / value.length;
+}
+
+
+let carriedBalance = stake;
+
+
+
+// Define the variables as zero, then the users input can update these variables values
+// THIS MAY NOT BE THE BEST WAY, REVIEW THIS ONCE APPLICTION IS FUNCTIONAL
+let tradeOpen = true;
 
 function timedOutMarketOrder() {
 
