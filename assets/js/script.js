@@ -81,12 +81,12 @@ function calculateCorrectAnswer() {
   inputTakeProfit = parseInt(document.getElementById('inputTakeProfit').innerText);
   inputStopLoss = parseInt(document.getElementById('inputStopLoss').innerText);
   avgTrueRange = parseInt(document.getElementById('avgTrueRange').innerText);
-  inputMarketMommentum = parseInt(document.getElementById('inputMarketMommentum').innerText);
+  marketMommentum = parseInt(document.getElementById('marketMommentum').innerText);
   inputTradingFee = parseInt(document.getElementById('inputTradingFee').innerText);
   minutes = parseInt(document.getElementById('minutes').innerText);
   days = parseInt(document.getElementById('days').innerText);
   
-  return [stake + inputTakeProfit + inputStopLoss + avgTrueRange + inputMarketMommentum + inputTradingFee + minutes + days ];
+  return [stake + inputTakeProfit + inputStopLoss + avgTrueRange + marketMommentum + inputTradingFee + minutes + days ];
 }
 
 
@@ -159,7 +159,7 @@ let cryptoPrice = 10000;
      
      }
 
-     let inputMarketMommentum = 0;  // 6th of 8 options the user will set the user on the calculator.html page
+     let marketMommentum = 0;  // 6th of 8 options the user will set the user on the calculator.html page
 
 
  /****************************************
@@ -169,16 +169,19 @@ let cryptoPrice = 10000;
 let tradingFeeRate = inputTradingFee / 100;
 let takeProfit = inputTakeProfit / 100;
 let stopLoss = inputStopLoss / 100;
-let marketMommentum = inputMarketMommentum / 100;
+
+
+
 
 let confirmationDuration = 60; // This will be kept at 60 but maybe become an input option for the user
 
 
 function changePerSecond(price) {
 /*  This will be used as the backbone of a strategy simulator ensuring the direction of the momentum can be controled */
-let change = (price * inputMarketMommentum) / confirmationDuration; 
+let change = (price * marketMommentum) / confirmationDuration; 
 
 console.log('CHANGE PER SECOND', change.toFixed(2));
+
 }
 
 
@@ -194,10 +197,10 @@ let days = 0;
 /*  This vaialble allows you to set the time in the trade before it times out and forces a market order at what ever the position is be it positive or negative.
 # Define in input_minutes how long you will stay in the trade (5, 10, 15, 30, 60 must be in input_minutes) */
 let minutes = 0;
-
+let seconds = 10;
 
 /*  This is the window of opportunity you allow for the trade to fulfill 1 of 3 criteria, Take Profit, Stop Loss or Timed Out Market Order 
-let tradeDuration = minutes * 60; */
+let tradeDuration = minutes * seconds; */
 let tradeDuration = 3; // This will need to be multipled by 60 secound, but not while we are develpoing the application
 
 
@@ -238,10 +241,10 @@ let timeInLossTrade = [];
 /* This array records if the move was up, flat or down so that we can see if there is fair distributions of randomness */
 let checkMoves = [];
 
-/* Function to calculate average */
-function getAve(value) {
+/* Function to calculate avergage */
+function getAvg(value) {
   var total = 0;
-  for (var i = 0; i value < value.length; i++) {
+  for (var i = 0; i < value.length; i++) {
     total += value[i];
   }
   var avg = total / value.length;
@@ -251,10 +254,6 @@ function getAve(value) {
 let carriedBalance = stake;
 
 
-
-// Define the variables as zero, then the users input can update these variables values
-// THIS MAY NOT BE THE BEST WAY, REVIEW THIS ONCE APPLICTION IS FUNCTIONAL
-let tradeOpen = true;
 
 function timedOutMarketOrder() {
 
@@ -290,8 +289,8 @@ function getDetails() {
 }
 
 
-  
-  
+
+
 
 
 /**
@@ -299,10 +298,25 @@ function getDetails() {
 */
 function trading(){
 
-
+/* This is the amount increase the crypto will gain on average during the trade (this ensures market momentum at the set amount but still allows the price to fluxuate randomly) */
 exchangeRate(cryptoPrice);
-changePerSecond(cryptoPrice);
+
 chooseVolatility(avgTrueRange);
+let projectedGain = cryptoPrice * (marketMommentum / 100);
+let incrementMove = projectedGain / (6 * seconds);
+let averageMove = minutes * changePerSecond(cryptoPrice);
+console.log('Opening Steak Value: £', stake);
+console.log('Opening Crypto Value:', cryptoPrice);
+console.log('Crypto gain over validation period ', projectedGain.toFixed(2));
+console.log('average gain per second:', incrementMove.toFixed(2));
+console.log('average gain per trade:', averageMove.toFixed(2));
+
+
+/* This initial sets the */
+let averagePrice = cryptoPrice;
+let assetPrice = cryptoPrice;
+let perTrade = cryptoPrice;
+
 /****************************************
  *      NUMBER OF DAYS - - - - - - - - - - FOR LOOP
  ****************************************/
@@ -317,7 +331,8 @@ chooseVolatility(avgTrueRange);
   // PRINT STATEMENT USED FOR DEBUGGING
   {
     console.log('  ******** TOTAL OF', frequency + 1, 'TRADING INSTANCE *********');
-
+/* trade open is used to validate where we are in a trade or not so that gains and losses are only based on time in trade and not the whole */
+let tradeOpen = true;
 
  /****************************************
         ##     TRADE DURATION - - - - - - - - - - FOR LOOP
