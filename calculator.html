@@ -120,16 +120,16 @@
                         <label class="title" for="name"> Take Profit </label>
                         
                             <input type="range" id="tp" value="4" min="1" max="8" step="0.1" class="slider"
-                                oninput="document.getElementById('inputTakeProfit').innerHTML = this.value" />
-                                <div class="value"> <label id="inputTakeProfit">0</label>%</div>
+                                oninput="document.getElementById('takeProfit').innerHTML = this.value" />
+                                <div class="value"> <label id="takeProfit">0</label>%</div>
                             
 
                                 <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                     title="Stop Loss" data-bs-content="For when the market decreases at what percentage of the change in the assets value would you like to exit the trade? Use the slider provided to see what the impact your chosen “Stop Loss” would have on your strategy."> info </button></div>
                             <label class="title" for="name"> Stop Loss </label>
                             <input type="range" id="sl" value="-3" min="-6" max="-1" step="0.1" class="slider"
-                                    oninput="document.getElementById('inputStopLoss').innerHTML = this.value" />
-                            <div class="value"> <label id="inputStopLoss">0</label>%</div>
+                                    oninput="document.getElementById('stopLoss').innerHTML = this.value" />
+                            <div class="value"> <label id="stopLoss">0</label>%</div>
                                 
                     </div>
                     <!-- Second Wide Panel -->

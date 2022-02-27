@@ -63,9 +63,9 @@ function validateInputs() {
   let isCorrect = userAnswer === calculatedAnswer[0];
 
   if (isCorrect) {
-      console.log("Selection Confirmed! ");
+      console.log("Selection Confirmed!", takeProfit.toFixed(2));
   } else {
-    console.log('You have not entered any details!');
+    console.log('You have not entered any details!', takeProfit.toFixed(2));
   }
 
 }
@@ -78,15 +78,15 @@ function validateInputs() {
 function calculateCorrectAnswer() {
 
   stake = parseInt(document.getElementById('stake').value);
-  inputTakeProfit = parseInt(document.getElementById('inputTakeProfit').innerText);
-  inputStopLoss = parseInt(document.getElementById('inputStopLoss').innerText);
+  takeProfit = parseInt(document.getElementById('takeProfit').innerText);
+  stopLoss = parseInt(document.getElementById('stopLoss').innerText);
   avgTrueRange = parseInt(document.getElementById('avgTrueRange').innerText);
   marketMommentum = parseInt(document.getElementById('marketMommentum').innerText);
   inputTradingFee = parseInt(document.getElementById('inputTradingFee').innerText);
   minutes = parseInt(document.getElementById('minutes').innerText);
   days = parseInt(document.getElementById('days').innerText);
   
-  return [stake + inputTakeProfit + inputStopLoss + avgTrueRange + marketMommentum + inputTradingFee + minutes + days ];
+  return [stake + takeProfit + stopLoss + avgTrueRange + marketMommentum + inputTradingFee + minutes + days ];
 }
 
 
@@ -125,7 +125,7 @@ let cryptoPrice = 10000;
  ****************************************/
 
    let inputTakeProfit = 0; // 3rd of 8 options the user will set the user on the calculator.html page
-   let inputStopLoss = 0; // 4th of 8 options the user will set the user on the calculator.html page
+   let stopLoss = 0; // 4th of 8 options the user will set the user on the calculator.html page
 
 
 
@@ -167,8 +167,8 @@ let cryptoPrice = 10000;
  ****************************************/
 
 let tradingFeeRate = inputTradingFee / 100;
-let takeProfit = inputTakeProfit / 100;
-let stopLoss = inputStopLoss / 100;
+
+
 
 
 
@@ -328,11 +328,17 @@ let perTrade = cryptoPrice;
  *     NUMBER OF TRADES - - - - - - - - - - FOR LOOP
  ****************************************/
   for (let frequency = 0; frequency < generateRandomDaily(); frequency++)
-  // PRINT STATEMENT USED FOR DEBUGGING
+  // CONSOLE LOG USED FOR DEBUGGING
   {
     console.log('  ******** TOTAL OF', frequency + 1, 'TRADING INSTANCE *********');
 /* trade open is used to validate where we are in a trade or not so that gains and losses are only based on time in trade and not the whole */
 let tradeOpen = true;
+
+let takeProfitAmount = assetPrice + (assetPrice * (takeProfit / 100));
+let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
+    console.log('Asset price:', assetPrice.toFixed(2));
+    console.log('Take profit amount:', takeProfitAmount.toFixed(2));
+    console.log('Stop Loss amount:', stopLossAmount.toFixed(2));
 
  /****************************************
         ##     TRADE DURATION - - - - - - - - - - FOR LOOP
@@ -346,20 +352,6 @@ let tradeOpen = true;
 }
 }
 
-  
 };
 
 init();
-
-
-
-
-
- 
-
-
-/****************************************
-  if (each_day == 7) {
-    break;
-  }
- ****************************************/
