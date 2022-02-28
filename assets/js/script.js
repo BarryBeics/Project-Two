@@ -201,7 +201,7 @@ let seconds = 10;
 
 /*  This is the window of opportunity you allow for the trade to fulfill 1 of 3 criteria, Take Profit, Stop Loss or Timed Out Market Order 
 let tradeDuration = minutes * seconds; */
-let tradeDuration = 3; // This will need to be multipled by 60 secound, but not while we are develpoing the application
+let tradeDuration = 10; // This will need to be multipled by 60 secound, but not while we are develpoing the application
 
 
 /**
@@ -360,6 +360,36 @@ let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
       
       console.log('This is the Asset Value is now: ', assetPrice.toFixed(2));
       console.log('The underlying average price is: ', averagePrice.toFixed(2));
+
+      /****************************************
+             ##     TAKE PROFIT - - - - - - - - - IF STATEMENT
+      ****************************************/
+if (averagePrice >= takeProfitAmount && tradeOpen == true){
+console.log('Take Profit');
+
+break
+};
+
+
+      /****************************************
+             ##     STOP LOSS - - - - - - - - - IF STATEMENT
+      ****************************************/
+if (averagePrice <= stopLossAmount && tradeOpen == true){
+console.log('Stop Loss');
+
+break
+};
+
+      /****************************************
+             ##     TIMED OUT MARKET ORDER - - - - - - - - - IF STATEMENT
+      ****************************************/
+if (eachSecond == tradeDuration - 1 && tradeOpen == true){
+console.log('Timed out Market order');
+};
+
+
+
+
         }
 }
 
