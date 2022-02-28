@@ -331,7 +331,7 @@ let perTrade = cryptoPrice;
   for (let frequency = 0; frequency < generateRandomDaily(); frequency++)
   // CONSOLE LOG USED FOR DEBUGGING
   {
-    console.log('  ******** TOTAL OF', frequency + 1, 'TRADING INSTANCE *********');
+    console.log('  *********************************************** TOTAL OF', frequency + 1, 'TRADING INSTANCE *********');
 /* trade open is used to validate where we are in a trade or not so that gains and losses are only based on time in trade and not the whole */
 let tradeOpen = true;
 
@@ -366,12 +366,13 @@ let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
              ##     TAKE PROFIT - - - - - - - - - IF STATEMENT
       ****************************************/
 if (averagePrice >= takeProfitAmount && tradeOpen == true){
-console.log('Take Profit conditions have been met');
+console.log('************************************** Take Profit conditions have been met');
 console.log('Carried balance is: £', carriedBalance.toFixed(2));
 let gain = carriedBalance * (takeProfit / 100);
-carriedBalance = carriedBalance + gain;
+carriedBalance = carriedBalance += gain;
 
 console.log('From this trade we gained: £', gain.toFixed(2));
+console.log('New balance is now: £', carriedBalance.toFixed(2));
 break
 };
 
@@ -380,8 +381,13 @@ break
              ##     STOP LOSS - - - - - - - - - IF STATEMENT
       ****************************************/
 if (averagePrice <= stopLossAmount && tradeOpen == true){
-console.log('Stop Loss');
+console.log('************************************** Stop Loss conditions have been met');
+console.log('Carried balance is: £', carriedBalance.toFixed(2));
+let loss = carriedBalance * (stopLoss / 100);
+carriedBalance = carriedBalance += loss;
 
+console.log('From this trade we lossed: £', loss.toFixed(2));
+console.log('New balance is now: £', carriedBalance.toFixed(2));
 break
 };
 
