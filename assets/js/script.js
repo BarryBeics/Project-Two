@@ -395,7 +395,16 @@ break
              ##     TIMED OUT MARKET ORDER - - - - - - - - - IF STATEMENT
       ****************************************/
 if (eachSecond == tradeDuration - 1 && tradeOpen == true){
-console.log('Timed out Market order');
+console.log('************************************** Timed out Market order');
+console.log('Carried balance is: £', carriedBalance.toFixed(2));
+changePercentage = (assetPrice - averagePrice) / averagePrice;
+console.log(changePercentage.toFixed(2));
+change = carriedBalance * changePercentage;
+console.log('The change was: £',change.toFixed(2));
+carriedBalance = carriedBalance += change;
+
+
+console.log('New balance is now: £', carriedBalance.toFixed(2));
 };
 
 
