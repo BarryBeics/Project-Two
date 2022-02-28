@@ -345,7 +345,21 @@ let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
  ****************************************/
         for (let eachSecond = 0; eachSecond < tradeDuration; eachSecond++)
         {
-          console.log('seconds past', eachSecond + 1, ' --- Open to trade?', tradeOpen, 'move' , generateRandonMove( -volatility, volatility, 1) );
+          console.log('seconds past', eachSecond + 1, ' --- Open to trade?', tradeOpen,);
+          let move = generateRandonMove( -volatility, volatility, 1);
+          
+          let moveAmount = assetPrice * (move / 100);
+
+          let movePerSecound = moveAmount + incrementMove;
+          console.log('MOVE:', move, '% - ', moveAmount.toFixed(2), 'plus the average move of ', incrementMove.toFixed(2), 'equals =', movePerSecound.toFixed(2));
+
+          assetPrice = assetPrice + movePerSecound;
+          
+
+      averagePrice = averagePrice + incrementMove; 
+      
+      console.log('This is the Asset Value is now: ', assetPrice.toFixed(2));
+      console.log('The underlying average price is: ', averagePrice.toFixed(2));
         }
 }
 
