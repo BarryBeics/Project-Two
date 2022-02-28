@@ -251,7 +251,7 @@ function getAvg(value) {
 }
 
 
-let carriedBalance = stake;
+
 
 
 
@@ -298,6 +298,7 @@ function getDetails() {
 */
 function trading(){
 
+  let carriedBalance = stake;  
 /* This is the amount increase the crypto will gain on average during the trade (this ensures market momentum at the set amount but still allows the price to fluxuate randomly) */
 exchangeRate(cryptoPrice);
 
@@ -365,8 +366,12 @@ let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
              ##     TAKE PROFIT - - - - - - - - - IF STATEMENT
       ****************************************/
 if (averagePrice >= takeProfitAmount && tradeOpen == true){
-console.log('Take Profit');
+console.log('Take Profit conditions have been met');
+console.log('Carried balance is: £', carriedBalance.toFixed(2));
+let gain = carriedBalance * (takeProfit / 100);
+carriedBalance = carriedBalance + gain;
 
+console.log('From this trade we gained: £', gain.toFixed(2));
 break
 };
 
