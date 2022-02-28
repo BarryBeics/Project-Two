@@ -373,6 +373,9 @@ carriedBalance = carriedBalance += gain;
 
 console.log('From this trade we gained: £', gain.toFixed(2));
 console.log('New balance is now: £', carriedBalance.toFixed(2));
+win += 1;
+
+
 break
 };
 
@@ -388,6 +391,9 @@ carriedBalance = carriedBalance += loss;
 
 console.log('From this trade we lossed: £', loss.toFixed(2));
 console.log('New balance is now: £', carriedBalance.toFixed(2));
+losses += 1;
+
+
 break
 };
 
@@ -398,13 +404,14 @@ if (eachSecond == tradeDuration - 1 && tradeOpen == true){
 console.log('************************************** Timed out Market order');
 console.log('Carried balance is: £', carriedBalance.toFixed(2));
 changePercentage = (assetPrice - averagePrice) / averagePrice;
-console.log(changePercentage.toFixed(2));
+
 change = carriedBalance * changePercentage;
 console.log('The change was: £',change.toFixed(2));
 carriedBalance = carriedBalance += change;
 
 
 console.log('New balance is now: £', carriedBalance.toFixed(2));
+timedOut += 1;
 };
 
 
@@ -414,6 +421,13 @@ console.log('New balance is now: £', carriedBalance.toFixed(2));
 }
 
 }
+console.log('From a possible number of trades there have been', win, 'successes', timedOut, 'timed out trades', losses, 'losses');
+win = document.getElementById("win").innerHTML = win;
+timedOut = document.getElementById("timedOut").innerHTML = timedOut;
+losses = document.getElementById("losses").innerHTML = losses;
+
+
+
 }
 
 };
