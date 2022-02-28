@@ -24,7 +24,7 @@ header {
    background-color: #1f2833;
 }
 
-#inputTradingFee, #minutes, #days { display: none;}
+#tradingFee, #minutes, #days { display: none;}
 
 /* ------------- Site wide  ----------- Special paddings/margins/text -----*/
 h1,

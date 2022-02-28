@@ -65,7 +65,7 @@ function validateInputs() {
   if (isCorrect) {
       console.log("Selection Confirmed!", takeProfit.toFixed(2));
   } else {
-    console.log('You have not entered any details!', takeProfit.toFixed(2));
+    console.log('You have not entered any details!', takeProfit.toFixed(1));
   }
 
 }
@@ -78,15 +78,15 @@ function validateInputs() {
 function calculateCorrectAnswer() {
 
   stake = parseInt(document.getElementById('stake').value);
-  takeProfit = parseInt(document.getElementById('takeProfit').innerText);
-  stopLoss = parseInt(document.getElementById('stopLoss').innerText);
-  avgTrueRange = parseInt(document.getElementById('avgTrueRange').innerText);
-  marketMommentum = parseInt(document.getElementById('marketMommentum').innerText);
-  inputTradingFee = parseInt(document.getElementById('inputTradingFee').innerText);
+  takeProfit = parseFloat(document.getElementById('takeProfit').innerText);
+  stopLoss = parseFloat(document.getElementById('stopLoss').innerText);
+  avgTrueRange = parseFloat(document.getElementById('avgTrueRange').innerText);
+  marketMommentum = parseFloat(document.getElementById('marketMommentum').innerText);
+  tradingFee = parseFloat(document.getElementById('tradingFee').innerText);
   minutes = parseInt(document.getElementById('minutes').innerText);
   days = parseInt(document.getElementById('days').innerText);
   
-  return [stake + takeProfit + stopLoss + avgTrueRange + marketMommentum + inputTradingFee + minutes + days ];
+  return [stake + takeProfit + stopLoss + avgTrueRange + marketMommentum + tradingFee + minutes + days ];
 }
 
 
@@ -117,14 +117,14 @@ let cryptoPrice = 10000;
  console.log('Exchange rate:  1 FIAT:', valueHeld.toFixed(2), 'CRYPTO')
  }
  
- let inputTradingFee = 0; // 2nd of 8 options the user will set the user on the calculator.html page
+ let tradingFee = 0; // 2nd of 8 options the user will set the user on the calculator.html page
 
 
   /****************************************
  *      TAKE PROFIT & STOP LOSS OPTIONS
  ****************************************/
 
-   let inputTakeProfit = 0; // 3rd of 8 options the user will set the user on the calculator.html page
+   let takeProfit = 0; // 3rd of 8 options the user will set the user on the calculator.html page
    let stopLoss = 0; // 4th of 8 options the user will set the user on the calculator.html page
 
 
@@ -160,16 +160,6 @@ let cryptoPrice = 10000;
      }
 
      let marketMommentum = 0;  // 6th of 8 options the user will set the user on the calculator.html page
-
-
- /****************************************
- *      PERCENATGES
- ****************************************/
-
-let tradingFeeRate = inputTradingFee / 100;
-
-
-
 
 
 
@@ -225,6 +215,9 @@ let tradeDuration = 10; // This will need to be multipled by 60 secound, but not
 let win = 0;
 let timedOut = 0;
 let losses = 0;
+let totalTrades = 0;
+let newBalance = 0;
+
 /* count_each_second is used to report on the duration into a trade an actins takes place  ...... sum moves is ..... min kilines is ...... */
 let countEachSecond = 0;
 let sumMoves = 0;
@@ -312,6 +305,12 @@ console.log('Crypto gain over validation period ', projectedGain.toFixed(2));
 console.log('average gain per second:', incrementMove.toFixed(2));
 console.log('average gain per trade:', averageMove.toFixed(2));
 
+console.log('takeProfit:', takeProfit.toFixed(2));
+console.log('stopLoss:', stopLoss.toFixed(2));
+console.log('avgTrueRange:', avgTrueRange.toFixed(2));
+console.log('marketMommentum:', marketMommentum.toFixed(2));
+console.log('tradingFee:', tradingFee.toFixed(2));
+
 
 /* This initial sets the */
 let averagePrice = cryptoPrice;
@@ -370,11 +369,13 @@ console.log('************************************** Take Profit conditions have 
 console.log('Carried balance is: £', carriedBalance.toFixed(2));
 let gain = carriedBalance * (takeProfit / 100);
 carriedBalance = carriedBalance += gain;
-
+let fee = gain * (tradingFee / 100);
+carriedBalance -= fee;
 console.log('From this trade we gained: £', gain.toFixed(2));
+console.log('The fee from this trade was: £', fee.toFixed(2));
 console.log('New balance is now: £', carriedBalance.toFixed(2));
 win += 1;
-
+totalFees += fee;
 
 break
 };
@@ -388,11 +389,13 @@ console.log('************************************** Stop Loss conditions have be
 console.log('Carried balance is: £', carriedBalance.toFixed(2));
 let loss = carriedBalance * (stopLoss / 100);
 carriedBalance = carriedBalance += loss;
-
+fee = loss * (tradingFee / 100);
+carriedBalance -= fee;
 console.log('From this trade we lossed: £', loss.toFixed(2));
+console.log('The fee from this trade was: £', fee.toFixed(2));
 console.log('New balance is now: £', carriedBalance.toFixed(2));
 losses += 1;
-
+totalFees += fee;
 
 break
 };
@@ -406,12 +409,15 @@ console.log('Carried balance is: £', carriedBalance.toFixed(2));
 changePercentage = (assetPrice - averagePrice) / averagePrice;
 
 change = carriedBalance * changePercentage;
-console.log('The change was: £',change.toFixed(2));
+fee = change * (tradingFee / 100);
+carriedBalance -= fee;
 carriedBalance = carriedBalance += change;
 
-
+console.log('The change was: £',change.toFixed(2));
+console.log('The fee from this trade was: £', fee.toFixed(2));
 console.log('New balance is now: £', carriedBalance.toFixed(2));
 timedOut += 1;
+totalFees += fee;
 };
 
 
@@ -421,12 +427,20 @@ timedOut += 1;
 }
 
 }
+
+ /****************************************
+             ##     STRATEGY OUTCOME
+ ****************************************/
 console.log('From a possible number of trades there have been', win, 'successes', timedOut, 'timed out trades', losses, 'losses');
+totalTrades = (win + timedOut + losses);
 win = document.getElementById("win").innerHTML = win;
 timedOut = document.getElementById("timedOut").innerHTML = timedOut;
 losses = document.getElementById("losses").innerHTML = losses;
-
-
+totalTrades = document.getElementById("totalTrades").innerHTML = totalTrades;
+newBalance = carriedBalance.toFixed(2);
+newBalance = document.getElementById("newBalance").innerHTML = newBalance;
+totalFees = totalFees.toFixed(2);
+totalFees = document.getElementById("totalFees").innerHTML = totalFees;
 
 }
 
