@@ -369,14 +369,17 @@ console.log('************************************** Take Profit conditions have 
 console.log('Carried balance is: £', carriedBalance.toFixed(2));
 let gain = carriedBalance * (takeProfit / 100);
 carriedBalance = carriedBalance += gain;
+
 let fee = gain * (tradingFee / 100);
 carriedBalance -= fee;
+
 console.log('From this trade we gained: £', gain.toFixed(2));
 console.log('The fee from this trade was: £', fee.toFixed(2));
 console.log('New balance is now: £', carriedBalance.toFixed(2));
 win += 1;
+profit += gain;
 totalFees += fee;
-
+tradeOpen = false;
 break
 };
 
@@ -395,8 +398,9 @@ console.log('From this trade we lossed: £', loss.toFixed(2));
 console.log('The fee from this trade was: £', fee.toFixed(2));
 console.log('New balance is now: £', carriedBalance.toFixed(2));
 losses += 1;
+profit += loss;
 totalFees += fee;
-
+tradeOpen = false;
 break
 };
 
@@ -417,7 +421,9 @@ console.log('The change was: £',change.toFixed(2));
 console.log('The fee from this trade was: £', fee.toFixed(2));
 console.log('New balance is now: £', carriedBalance.toFixed(2));
 timedOut += 1;
+profit += change;
 totalFees += fee;
+tradeOpen = false;
 };
 
 
@@ -441,6 +447,13 @@ newBalance = carriedBalance.toFixed(2);
 newBalance = document.getElementById("newBalance").innerHTML = newBalance;
 totalFees = totalFees.toFixed(2);
 totalFees = document.getElementById("totalFees").innerHTML = totalFees;
+
+
+console.log('GROSS PROFIT: £', profit.toFixed(2));
+let netProfit = (profit - totalFees)
+console.log('NET PROFIT: £', netProfit.toFixed(2));
+let percentage = ((profit / totalFees) / carriedBalance) * 100;
+console.log('PROFIT:', percentage.toFixed(2), '%');
 
 }
 

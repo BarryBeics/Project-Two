@@ -62,16 +62,16 @@
                 <!-- Mobile Navigation Buttons -->
                 <div class="d-sm-none">
                     <ul id="nav" class="mobile-list-inline mobile-menucontainer"></ul>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
                     </li>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="calculator.html"><i class="fas fa-calculator selected" aria-hidden="true"></i></a>
                     </li>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="results.html"><i class="fa fa-clipboard-list" aria-hidden="true"></i></a>
                     </li>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="contact.html"><i class="fas fa-at" aria-hidden="true"></i></a>
                     </li>
                 </div>
@@ -89,7 +89,7 @@
                 <div class="p-3">
 
 
-                    <h2>OPTIONS</h2>
+                    <h1>Options</h1>
                     <p>Choose the parameters that you would like to test with the options below.</p>
 
                     <!-- Top Panel Left -->
@@ -100,8 +100,9 @@
                         <label class="title" for="name"> Amount </label>
                         <input id="stake" class="form-control" type="number" placeholder="300">
                     </div>
+                    
                     <!-- Top Panel Left -->
-                    <div class="options-form-item-half">
+                    <div class="options-form-item-half space">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
                                 title="Trade Fees" data-bs-content="Each exchange has their of own fee structure, here we have the basic amount for 4 of the most popular Crypto Exchange."> info </button></div>
                          <label class="title" for="name"> Fees </label> 
@@ -205,7 +206,7 @@
                         </div>
                     </div>
                     <!-- Calculate Button -->
-                    <div class="form-row text-center">
+                    <div class="form-row">
                         <div class="col">
                             <p>Validate input boxes</p>
                         <input id="answer-box" type="number">
@@ -221,40 +222,40 @@
                 <div class="p-3 ">
 
                     <!-- Text Area -->
-                    <h2>RESULTS</h2>
+                    <h1>Results</h1>
                     <p>This is how your chosen strategy would have performed.</p>
 
 
                     <!-- First Wide Panel -->
-                    <div class="options-form-item-full center">
+                    <div class="results-form-item-full">
                         <label class="title" for="name"> New Balance £</label>
                         <div class="results"> <span id="newBalance">0</span> </div>
                     </div>
 
                     <!-- Top Panel Left -->
-                    <div class="options-form-item-half center">
+                    <div class="results-form-item-half">
                         <label class="title" for="name"> Cash Profit £</label>
                         <div class="results"> <span id="cashProfit"></span> 0</div>
                     </div>
                     
-
+                    
                     <!-- Top Panel Left -->
-                    <div class="options-form-item-half center">
+                    <div class="results-form-item-half space">
                         <label class="title" for="name"> Percentage Profit %</label>
                         <div class="results"> <span id="percentageProfit"></span> 0</div>
                     </div>
                     
                     <div class="info"> <button type="button"
                         class="btn btn-dark btn-sm" data-bs-toggle="popover" title="advice"
-                        data-bs-content="Some # of Days content"> info</button> Here is the cost and effectiveness of the strategy.</div>
+                        data-bs-content="Some # of Days content"> info</button> <p> Here is the cost and effectiveness of the strategy. </p></div>
                     <!-- Top Panel Left -->
-                    <div class="options-form-item-half center">
+                    <div class="results-form-item-half">
                         <label class="title" for="name"> Total Fees £</label>
                         <div class="results"> <span id="totalFees">0</span> </div>
                     </div>
                     
                     <!-- Top Panel Left -->
-                    <div class="options-form-item-half center">
+                    <div class="results-form-item-half space">
                         <label class="title" for="name"> Success Rate %</label>
                         <div class="results"> <span id="successRate"></span> 0</div>
                     </div>
@@ -262,31 +263,31 @@
 
                     <div class="info"> <button
                         type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="stuff"
-                        data-bs-content="Some # of Days content"> info</button> These figures can be used to help guide any changes to new strategies.
+                        data-bs-content="Some # of Days content"> info</button> <p> These figures can be used to help guide any changes to new strategies.</p>
                     </div>
                     <!-- Second Wide Panel -->
-                    <div class="options-form-item-third center">
+                    <div class="results-form-item-third">
                         <label class="title" for="name"> Successes </label>
                         <div class="results"> <span id="win">0</span> </div>
                     </div>
                     
-                    <div class="options-form-item-third center">
+                    <div class="results-form-item-third space">
                         <label class="title" for="name"> Timed Out </label>
                         <div class="results"> <span id="timedOut">0</span> </div>
                     </div>
                     
-                    <div class="options-form-item-third center">
+                    <div class="results-form-item-third space">
                         <label class="title" for="name"> Losses </label>
                         <div class="results"> <span id="losses">0</span> </div>
                     </div>
                     
                     <!-- Third Wide Panel -->
-                    <div class="options-form-item-full center">
+                    <div class="results-form-item-full">
                         <label class="title" for="name"> Total # of Trades </label> 
                         <div class="results"> <span id="totalTrades">0</span> </div>
                     </div>
                     <!-- Save Button -->
-                    <div class="form-row text-center">
+                    <div class="form-row">
                         <div class="col">
                             <button data-type="save" class="btn button"> Save</button>
                         </div>

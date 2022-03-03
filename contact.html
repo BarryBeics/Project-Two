@@ -48,16 +48,16 @@
                 <!-- Mobile -->
                 <div class="d-sm-none">
                     <ul id="nav" class="mobile-list-inline mobile-menucontainer"></ul>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
                     </li>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="calculator.html" ><i class="fas fa-calculator" aria-hidden="true"></i></a>
                     </li>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="results.html" ><i class="fa fa-clipboard-list" aria-hidden="true"></i></a>
                     </li>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="contact.html" ><i class="fas fa-at selected" aria-hidden="true"></i></a>
                     </li>
                 </div>
@@ -77,55 +77,59 @@
             
                 <div class="row gx-5">
                   <div class="col">
-                   <div class="p-3">
-                    <h1>contact</h1>
-                           
-                            
-                    <!-- Text Area -->
-                        <h2>Do you have a comments or improvements in mind?</h2>
+                    <div class="p-3">
+    
+                        <!-- Text Area -->
+                        <h1>Do you have a comments or improvements in mind?</h1>
                         <p>Why not complete this form, to see if they can be considered in future developments.</p>
                     
-                     <!-- Contact Form -->
-                     <form class="contact-form" method="post" action="#">
-                        <!-- Users Details -->
-                        <div class="contact-form-item">
-                            <div class="key"> <label for="name">   Name </label> </div>
-                            <div class="value"> <input type="text" class="form-control" id="name" placeholder="Your name here ..." required></div>
-                        </div>
-                        <div class="contact-form-item">
-                            <div class="key"> <label for="email"> Email </label></div>
-                            <div class="value"> <input type="text" class="form-control" id="email" placeholder="Your Email here ..." required> </div>
-                        </div>
-                        <!-- What there comment relates to -->
-                        <div class="contact-form-title"> In relations to:</div>
-                                                
-                        <div class="contact-form-item">
-                            <div class="left-option"><label class="custom-control-label" for="fees"> Fees </label><input type="checkbox" class="custom-control-input" id="fees"></div>
-                            <div class="right-option"><label class="custom-control-label" for="trade-orders"> Trade Orders </label><input type="checkbox" class="custom-control-input" id="trade-orders"> </div>
-                        </div>
-                        <div class="contact-form-item">
-                            <div class="left-option"><label class="custom-control-label" for="volatility">  Volatility </label><input type="checkbox" class="custom-control-input" id="volatility"></div>
-                            <div class="right-option"><label class="custom-control-label" for="time-frames"> Time Frames </label><input type="checkbox" class="custom-control-input"  id="time-frames"></div>
-                        </div>
-                        <!-- Users Comments -->
-                        <div class="contact-form-title">  Your Comments </div>
-
-                        <div class="contact-form-item">
-                                <div class="form-group"><textarea class="form-control" id="projectoverview" rows="3" 
-                                placeholder="Let me know your thoughts ..." required></textarea></div>
-                        </div>
-                        <div class="contact-form-item">
-                                <div class="form-row text-center">
-                                <div class="col"><button type="submit" class="btn form-control"> Let's Talk</button>
+                            <!-- Top Panel Left -->
+                            <div class="options-form-item-half">
+                                <label class="title" for="name">Name </label>
+                                <input id="stake" class="form-control" type="number" placeholder="Your name here">
+                            </div>
+                            
+                            <!-- Top Panel Left -->
+                            <div class="options-form-item-half space-contact">
+                                <label class="title" for="name">Email </label>
+                                <input id="stake" class="form-control" type="number" placeholder="Your email here">
+                            </div>
+    
+                            <!-- Third Wide Panel -->
+                            <div class="options-form-item-full">
+                         <label class="title" for="name"> My comment relates to: </label>
+                                
+                                <p id="days">0</p>
+                                <div class="radio-toolbar">
+                                    <input type="radio" id="days1" name="daysOption" value="1" oninput="document.getElementById('days').innerHTML = this.value">
+                                    <label for="days1">Fees</label>
+                                
+                                    <input type="radio" id="days3" name="daysOption" value="3" oninput="document.getElementById('days').innerHTML = this.value">
+                                    <label for="days3">Trade Orders</label>
+                                
+                                    <input type="radio" id="days7" name="daysOption" value="7" oninput="document.getElementById('days').innerHTML = this.value">
+                                    <label for="days7">Volatility</label> 
+        
+                                    <input type="radio" id="days14" name="daysOption" value="14" oninput="document.getElementById('days').innerHTML = this.value">
+                                    <label for="days14">Time Frames</label>
+                                
+                                    
                                 </div>
+                            </div>
+    
+                            <!-- Third Wide Panel -->
+                            <div class="options-form-item-full">
+                                <label class="title" for="name"> Your Comments: </label>
+                                <textarea name="message" class="form-control" id="messgae" cols="30" rows="10" placeholder="Let me know your thoughts"></textarea>
                                 </div>
-                        </div>
-                </form>
-       
-                
-                
-                
-                </div>
+                            <!-- Calculate Button -->
+                            <div class="form-row">
+                                <div class="col">
+                               
+                                    <button data-type="trade" class="btn button"> Calculate Trade</button>
+                                </div>
+                            </div>
+                        </div>   
                   </div>
                 </div>
              

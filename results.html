@@ -62,16 +62,16 @@
                 <!-- Mobile -->
                 <div class="d-sm-none">
                     <ul id="nav" class="mobile-list-inline mobile-menucontainer"></ul>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
                     </li>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="calculator.html"><i class="fas fa-calculator" aria-hidden="true"></i></a>
                     </li>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="results.html"><i class="fa fa-clipboard-list selected" aria-hidden="true"></i></a>
                     </li>
-                    <li class="col-3 list-inline-item mobile-menuitem">
+                    <li class="col-3 list-inline-item main-menuitem">
                         <a href="contact.html"><i class="fas fa-at" aria-hidden="true"></i></a>
                     </li>
                 </div>
@@ -87,54 +87,62 @@
 
         <div class="row g-2">
             <div class="col">
-                <div class="p-3">
-                    <div class="game-area">
-
-                        <div class="question-area">
-                            
-                            <span>Investment Amount</span>
-                            <input id="stake" type="number">
-                            
-                            
-                            
-                            <p>
-                                <label>Take Profit %:</label>
-                                <input type="range" id="ope" value="5" min="0" max="10" 
-                                    oninput="document.getElementById('takeProfit').innerHTML = this.value" />
-                                <label id="takeProfit">0</label>
-                            </p>
-
+               
+                <div class="col">
+                    <div class="p-3">
+    
+                    <!-- Text Area -->
+                    <h1>Do you have a comments or improvements in mind?</h1>
+                    <p>Why not complete this form, to see if they can be considered in future developments.</p>
+                
+                        <!-- Top Panel Left -->
+                        <div class="options-form-item-half">
+                            <label class="title" for="name">Name </label>
+                            <input id="stake" class="form-control" type="number" placeholder="Your name here">
                         </div>
-                            <span>Fees</span>
-                            
-                            <p id="tradingFee">0</p>
-                            <select class="select">
-                              <option value="1">Binance 1%</option>
-                              <option value="2">Kucoin 2%</option>
-                              <option value="3">Kraken 3%</option>
-                            </select>
+                        <!-- Top Panel Left -->
+                        <div class="options-form-item-half">
+                            <label class="title" for="name">Email </label>
+                            <input id="stake" class="form-control" type="number" placeholder="Your email here">
+                        </div>
 
-                            <div class="title"> <label for="name"> # of Days </label> </div>
+                        <!-- Third Wide Panel -->
+                        <div class="options-form-item-full">
+                     <label class="title" for="name"> My comment relates to: </label>
+                            
                             <p id="days">0</p>
                             <div class="radio-toolbar">
-                                <input type="radio" id="radioApple" name="radioFruit" value="5" checked oninput="document.getElementById('days').innerHTML = this.value">
-                                <label for="radioApple">5</label>
+                                <input type="radio" id="days1" name="daysOption" value="1" oninput="document.getElementById('days').innerHTML = this.value">
+                                <label for="days1">Fees</label>
                             
-                                <input type="radio" id="radioBanana" name="radioFruit" value="10" oninput="document.getElementById('days').innerHTML = this.value">
-                                <label for="radioBanana">10</label>
+                                <input type="radio" id="days3" name="daysOption" value="3" oninput="document.getElementById('days').innerHTML = this.value">
+                                <label for="days3">Trade Orders</label>
                             
-                                <input type="radio" id="radioOrange" name="radioFruit" value="15" oninput="document.getElementById('days').innerHTML = this.value">
-                                <label for="radioOrange">15</label> 
+                                <input type="radio" id="days7" name="daysOption" value="7" oninput="document.getElementById('days').innerHTML = this.value">
+                                <label for="days7">Volatility</label> 
+    
+                                <input type="radio" id="days14" name="daysOption" value="14" oninput="document.getElementById('days').innerHTML = this.value">
+                                <label for="days14">Time Frames</label>
+                            
+                                
                             </div>
-                           
-                            
-                            
-                            <p>Validate input boxes</p>
-                            <input id="answer-box" type="number">
                         </div>
-                        <button data-type="submit" class="btn form-control">Calculate</button>
-                    </div>
-                
+
+                        <!-- Third Wide Panel -->
+                        <div class="options-form-item-full">
+                            <label class="title" for="name"> Your Comments: </label>
+                            <textarea name="message" class="form-control" id="messgae" cols="30" rows="10" placeholder="Let me know your thoughts"></textarea>
+                            </div>
+                        <!-- Calculate Button -->
+                        <div class="form-row">
+                            <div class="col">
+                           
+                                <button data-type="trade" class="btn button"> Calculate Trade</button>
+                            </div>
+                        </div>
+                    </div>                    
+                    
+                </div>
 
                 </div>
             </div>
