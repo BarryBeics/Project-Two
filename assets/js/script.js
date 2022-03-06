@@ -2,12 +2,15 @@
 function init(){
 
 
+
 // Wait for the DOM to finish loading before taking values from the inputs
 // Get the button elements and add event listeners to them
 document.addEventListener("DOMContentLoaded", function() {
+  
   let buttons = document.getElementsByTagName("button");
 
   for (let button of buttons) {
+    
       button.addEventListener("click", function() {
           console.log(button);
            if (this.getAttribute("data-type") === "submit") {
@@ -19,7 +22,8 @@ document.addEventListener("DOMContentLoaded", function() {
             
           } else if (this.getAttribute("data-type") === "save") {
             // On click runs save function
-            console.log(" Save results! ");
+            
+            saveResults();
           }
           else {
             console.log(" Info Popup! ");
@@ -226,6 +230,7 @@ let minKlines = [];
 /* These allow for a runing total of each to be recorded and updated from trade to trade (what do you mean trade to trade) */
 let totalFees = 0;
 let profit = 0;
+let netProfit = 0;
 
 /* These 2 arrays are used to track the time the average time into a trade before conditions are to be met */
 let timeInWinTrade = [];
@@ -255,31 +260,44 @@ function timedOutMarketOrder() {
 /**
 * Moment by moment the assets price can increase or decrease 
 * this function replicates this by generating random moves
+
+
 */
 function generateRandonMove(min, max, decimalPlaces) {
   return (Math.random() * (max - min) + min).toFixed(decimalPlaces) * 1;
 }
 
 
-function timeIntoTrade() {
+function saveResults() {
+
+  console.log(" Save results! ");
+ 
+
+                let results = [];
+               
+                let result = {
+                  "win" : win,
+              "timedOut" : timedOut,
+              "losses" : losses, 
+              "totalTrades" : totalTrades, 
+              "newBalance" : newBalance, 
+              "totalFees" : totalFees, 
+              "netProfit" : netProfit, 
+              "percentageProfit": 5,
+              "successRate": 4 
+            }
+                    results.push(result);
+                    
+        
+                  
+                    //saving to localStorage
+                    localStorage.setItem('ResultsList', JSON.stringify(results) );
+
+                console.log(result);
 
 }
 
-function checkVolatility() {
 
-}
-
-function winLossAnalysis() {
-
-}
-
-function strategyReport() {
-
-}
-
-function getDetails() {
-  let 
-}
 
 
 
@@ -438,22 +456,38 @@ tradeOpen = false;
              ##     STRATEGY OUTCOME
  ****************************************/
 console.log('From a possible number of trades there have been', win, 'successes', timedOut, 'timed out trades', losses, 'losses');
-totalTrades = (win + timedOut + losses);
+
 win = document.getElementById("win").innerHTML = win;
 timedOut = document.getElementById("timedOut").innerHTML = timedOut;
 losses = document.getElementById("losses").innerHTML = losses;
+
+totalTrades = (win + timedOut + losses);
 totalTrades = document.getElementById("totalTrades").innerHTML = totalTrades;
+
 newBalance = carriedBalance.toFixed(2);
 newBalance = document.getElementById("newBalance").innerHTML = newBalance;
+
 totalFees = totalFees.toFixed(2);
 totalFees = document.getElementById("totalFees").innerHTML = totalFees;
 
+netProfit = (profit - totalFees);
+netProfit = netProfit.toFixed(2);
+netProfit = document.getElementById("netProfit").innerHTML = netProfit;
+
+let percentageProfit = ((profit / totalFees) / carriedBalance) * 100;
+percentageProfit = percentageProfit.toFixed(1);
+percentageProfit = document.getElementById("percentageProfit").innerHTML = percentageProfit;
+
+let successRate = (win + losses) / 100 * win;
+successRate = successRate.toFixed(1);
+successRate = document.getElementById("successRate").innerHTML = successRate;
 
 console.log('GROSS PROFIT: £', profit.toFixed(2));
-let netProfit = (profit - totalFees)
-console.log('NET PROFIT: £', netProfit.toFixed(2));
-let percentage = ((profit / totalFees) / carriedBalance) * 100;
-console.log('PROFIT:', percentage.toFixed(2), '%');
+console.log('NET PROFIT: £', netProfit);
+console.log('PROFIT:', percentageProfit, '%');
+console.log('SUCCESS:', successRate, '%');
+
+
 
 }
 
