@@ -26,7 +26,7 @@ body {
 
 .popover-header {
    background-color: #00aaaa;
-
+   font-family: 'Teko', sans-serif;
 }
 .social i:hover, h1, h2, .title {
    color: #197b7b;
@@ -35,6 +35,7 @@ body {
 
 h3 {
    color: #444;
+   
 }
 .button {
    background-color: #197b7b;
@@ -82,7 +83,7 @@ h1 {
    text-transform: uppercase;
 }
  
-h2 {
+h2, h3 {
    font-size: 1.8em;
    font-weight: 500;
    padding: 10px 0px;
@@ -399,3 +400,31 @@ footer p {
  }
  
 
+ /* ------------- Results Page Table ------------  */
+
+ #results-table {
+   width: 100%;
+   display: table;
+   }
+
+#results-table-caption{
+   display: table-caption;
+   text-align: center;
+   font-size: 30px;
+   font-weight: bold;
+   }
+
+
+#results-table-header{
+   display: table-header-group;
+   background-color: gray;
+   font-weight: bold;
+   font-size: 25px;
+   }
+ 
+   .table-header-cell{
+      display: table-cell;
+      padding: 10px;
+      text-align: justify;
+      border-bottom: 1px solid black;
+      }   
