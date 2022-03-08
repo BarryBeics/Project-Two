@@ -15,14 +15,13 @@ document.addEventListener("DOMContentLoaded", function() {
           console.log(button);
            if (this.getAttribute("data-type") === "submit") {
               validateInputs();
-              
+            
           } else if (this.getAttribute("data-type") === "trade") {
             // On click runs trading function
-            trading();
             
+            validate();
           } else if (this.getAttribute("data-type") === "save") {
             // On click runs save function
-            
             saveResults();
           }
           else {
@@ -59,7 +58,7 @@ document.body.addEventListener("change", function(event){
 /**
 * WILL BE ROMVED
 * Checks the sum value of all the inputs and uses consol.log to help with debuging
-*/
+
 function validateInputs() {
   
   let userAnswer = parseInt(document.getElementById("answer-box").value);
@@ -67,18 +66,68 @@ function validateInputs() {
   let isCorrect = userAnswer === calculatedAnswer[0];
 
   if (isCorrect) {
-      console.log("Selection Confirmed!", takeProfit.toFixed(2));
+    alert("Selection Confirmed!", takeProfit.toFixed(2));
   } else {
-    console.log('You have not entered any details!', takeProfit.toFixed(1));
+    alert('You have not completed all the fields!', takeProfit.toFixed(1));
   }
 
 }
 
 
+*/
+
+
+
+function validate() {
+  stake = parseInt(document.getElementById('stake').value);
+  tradingFee = parseFloat(document.getElementById('tradingFee').innerText);
+  takeProfit = parseFloat(document.getElementById('takeProfit').innerText);
+  stopLoss = parseFloat(document.getElementById('stopLoss').innerText);
+  avgTrueRange = parseFloat(document.getElementById('avgTrueRange').innerText);
+  marketMommentum = parseFloat(document.getElementById('marketMommentum').innerText);
+  minutes = parseInt(document.getElementById('minutes').innerText);
+  days = parseInt(document.getElementById('days').innerText);
+
+
+  
+
+  if (stake === 0) {
+    alert("Please enter a steak amount");
+    return false;
+  } else if (tradingFee === 0) {
+    alert("Select the appropreate trading fee");
+    return false;
+  } else if (takeProfit === 0) {
+    alert("Use the slider to choose the desired take profit amount");
+    return false;
+  } else if (stopLoss === 0) {
+    alert("Use the slider to choose the desired stop loss amount");
+    return false;
+  } else if (avgTrueRange === 0) {
+    alert("Use the slider to choose the desired average true range amount");
+    return false;
+  } else if (marketMommentum === 0) {
+    alert("Use the slider to choose the desired market momentum amount");
+    return false;
+  } else if (minutes === 0) {
+    alert("Select the appropreate duration in minutes");
+    return false;
+  } else if (days === 0) {
+    alert("Select the appropreate number of trading days");
+    return false;
+  } else {
+    trading(); //  block of code to be executed if all feilds have been completed
+  }
+}
+
+
+
+
 /**
 * Gets the values from the various input types and checks they add up
 * Adding up the sum of each allows us to besure all are working as expected
-*/
+
+
 function calculateCorrectAnswer() {
 
   stake = parseInt(document.getElementById('stake').value);
@@ -92,6 +141,9 @@ function calculateCorrectAnswer() {
   
   return [stake + takeProfit + stopLoss + avgTrueRange + marketMommentum + tradingFee + minutes + days ];
 }
+
+
+*/
 
 
 
@@ -247,10 +299,6 @@ function getAvg(value) {
   }
   var avg = total / value.length;
 }
-
-
-
-
 
 
 function timedOutMarketOrder() {

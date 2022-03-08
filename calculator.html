@@ -91,7 +91,7 @@
                                 info </button>
                         </div>
                         <label class="title" for="name"> Amount </label>
-                        <input id="stake" class="form-control" type="number" placeholder="300">
+                        <input id="stake" class="form-control" type="number"  min="0" placeholder="Enter value here .." value="0">
                     </div>
                     <!-- Top Panel Right -->
                     <div class="options-form-item-half space">
@@ -115,7 +115,7 @@
                                 data-bs-content="For when the market increases at what percentage of the change in the assets value would you like to lock in profit? Use the slider provided to see what the impact your chosen “Take Profit” would have on your strategy.">
                                 info </button></div>
                         <label class="title" for="name"> Take Profit </label>
-                        <input type="range" id="tp" value="4" min="1" max="8" step="0.1" class="slider"
+                        <input type="range" id="tp" value="1" min="1" max="8" step="0.1" class="slider"
                             oninput="document.getElementById('takeProfit').innerHTML = this.value" />
                         <div class="value"> <label id="takeProfit">0</label>%</div>
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
@@ -123,7 +123,7 @@
                                 data-bs-content="For when the market decreases at what percentage of the change in the assets value would you like to exit the trade? Use the slider provided to see what the impact your chosen “Stop Loss” would have on your strategy.">
                                 info </button></div>
                         <label class="title" for="name"> Stop Loss </label>
-                        <input type="range" id="sl" value="-3" min="-6" max="-1" step="0.1" class="slider"
+                        <input type="range" id="sl" value="0" min="-6" max="-1" step="0.1" class="slider"
                             oninput="document.getElementById('stopLoss').innerHTML = this.value" />
                         <div class="value"> <label id="stopLoss">0</label>%</div>
                     </div>
@@ -142,7 +142,7 @@
                                 data-bs-content="This is how much the market has gained over the previous period selected. For Example if the assets has gained 3% in the last 24hrs you would choose 3% Market Momentum along with a trading period of 24hrs.  Use the slider provided to see what the impact your chosen “Market Momentum” would have on your strategy.">
                                 info</button></div>
                         <label class="title" for="name"> Market Mommentum </label>
-                        <input type="range" id="mm" value="4" min="0.5" max="8" step="0.5" class="slider"
+                        <input type="range" id="mm" value="0.5" min="0.5" max="8" step="0.5" class="slider"
                             oninput="document.getElementById('marketMommentum').innerHTML = this.value" />
                         <div class="value"> <label id="marketMommentum">0</label>%</div>
                     </div>
@@ -155,7 +155,8 @@
                         <label class="title" for="name1"> Trade Duration (mins) </label>
                         <p id="minutes">0</p>
                         <div class="radio-toolbar">
-                            <input type="radio" id="duration5" name="durationOption" value="5"
+                            <input type="hidden" value="0" name="durationOption">
+                            <input type="radio" id="duration5" name="durationOption" value="5" 
                                 oninput="document.getElementById('minutes').innerHTML = this.value">
                             <label for="duration5">5</label>
 
@@ -188,7 +189,8 @@
 
                         <p id="days">0</p>
                         <div class="radio-toolbar">
-                            <input type="radio" id="days1" name="daysOption" value="1"
+                            <input type="hidden" value="0" name="daysOption">
+                            <input type="radio" id="days1" name="daysOption" value="1" 
                                 oninput="document.getElementById('days').innerHTML = this.value">
                             <label for="days1">1</label>
 
@@ -216,9 +218,9 @@
                     <!-- Calculate Button -->
                     <div class="form-row">
                         <div class="col">
-                            <p>Validate input boxes</p>
+                           <!--  <p>Validate input boxes</p>
                             <input id="answer-box" type="number">
-                            <button data-type="submit" class="btn button"> Confirm Selection</button>
+                            <button data-type="submit" class="btn button"> Confirm Selection</button> -->
                             <button data-type="trade" class="btn button"> Calculate Trade</button>
                         </div>
                     </div>
