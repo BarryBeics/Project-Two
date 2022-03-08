@@ -1,31 +1,21 @@
 
- fetch('./data/records.json')
- .then(function (response) {
-      return response.json();
-  })
-  .then(function (data) {
-      for(var i=0; i<data.length; i++) {
-          document. getElementById("data").innerHTML +=
-          "<tr>" +
-          "<td>" +  "£" + data[i].newBalance + "</td>" +
-          "<td>" +  "£" +  data[i].netProfit + "</td>" + 
-          "<td>" +  data[i].percentageProfit + "%" +  "</td>" +
-          "<td>" +  "£" +  data[i].totalFees + "</td>" +  
-          "<td>" + data[i].successRate + "%"  + "</td>" + 
-          "<td>" + data[i].win  + "</td>" +
-          "<td>" + data[i].timedOut + "</td>" +  
-          "<td>" + data[i].losses + "</td>" + 
-          "<td>" + data[i].totalTrades + "</td>" +
-          "</tr>";
-      }
-  })
-  .catch(function (err) {
-      console.log(err);
-  });
-
-
  
-
-                     
-
-
+ var ResultsList = JSON.parse(localStorage.getItem('ResultsList'));
+ 
+console.log(ResultsList);
+ 
+for(var i=0; i<ResultsList.length; i++) {
+    document. getElementById("ResultsList").innerHTML +=
+    "<tr>" +
+    "<td>" +  "£" + ResultsList[i].newBalance + "</td>" +
+    "<td>" +  "£" +  ResultsList[i].netProfit + "</td>" + 
+    "<td>" +  ResultsList[i].percentageProfit + "%" +  "</td>" +
+    "<td>" +  "£" +  ResultsList[i].totalFees + "</td>" +  
+    "<td>" + ResultsList[i].successRate + "%"  + "</td>" + 
+    "<td>" + ResultsList[i].win  + "</td>" +
+    "<td>" + ResultsList[i].timedOut + "</td>" +  
+    "<td>" + ResultsList[i].losses + "</td>" + 
+    "<td>" + ResultsList[i].totalTrades + "</td>" +
+    "</tr>";
+}
+ 

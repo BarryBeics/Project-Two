@@ -110,7 +110,7 @@ function calculateCorrectAnswer() {
   /****************************************
  *      INVESTMENT AMOUNT  & FEES
  ****************************************/
-   let stake = 0; // 1st of 8 options the user will set the user on the calculator.html page
+let stake = 0; // 1st of 8 options the user will set the user on the calculator.html page
 
 /* For development purpose we use a static amount of 10,000 as this will aid debugging */
 /* There's potential to use an API call to get live prices */
@@ -149,8 +149,8 @@ let cryptoPrice = 10000;
    # Therefore if you change this to 1 the move can be upto 1.9% in either direction making a an ATR of 3.8% which im calling upto 4% */
 
    
-   /* THIS COULD BE SOMPLIFIED AS JUST HALFING THE VOLATILITY INPUT */
-   function chooseVolatility(){
+/* THIS COULD BE SIMPLIFIED AS JUST HALFING THE VOLATILITY INPUT */
+function chooseVolatility(){
      
      let volatilityOptions = {
        2 : 1,
@@ -163,7 +163,7 @@ let cryptoPrice = 10000;
      
      }
 
-     let marketMommentum = 0;  // 6th of 8 options the user will set the user on the calculator.html page
+let marketMommentum = 0;  // 6th of 8 options the user will set the user on the calculator.html page
 
 
 
@@ -269,38 +269,27 @@ function generateRandonMove(min, max, decimalPlaces) {
 
 
 function saveResults() {
+console.log(" Save results! ");
+let results = [];
+let result = {
+"win" : win,
+"timedOut" : timedOut,
+"losses" : losses, 
+"totalTrades" : totalTrades, 
+"newBalance" : newBalance, 
+"totalFees" : totalFees, 
+"netProfit" : netProfit, 
+"percentageProfit": 5,
+"successRate": 4 
+ }
 
-  console.log(" Save results! ");
- 
+ results.push(result);
+ //saving to localStorage - COULD THIS BE SAVED TO A SESSION?
+localStorage.setItem('ResultsList', JSON.stringify(results) );
 
-                let results = [];
-               
-                let result = {
-                  "win" : win,
-              "timedOut" : timedOut,
-              "losses" : losses, 
-              "totalTrades" : totalTrades, 
-              "newBalance" : newBalance, 
-              "totalFees" : totalFees, 
-              "netProfit" : netProfit, 
-              "percentageProfit": 5,
-              "successRate": 4 
-            }
-                    results.push(result);
-                    
-        
-                  
-                    //saving to localStorage
-                    localStorage.setItem('ResultsList', JSON.stringify(results) );
-
-                console.log(result);
+console.log(result);
 
 }
-
-
-
-
-
 
 
 
@@ -359,7 +348,7 @@ let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
     console.log('Stop Loss amount:', stopLossAmount.toFixed(2));
 
  /****************************************
-        ##     TRADE DURATION - - - - - - - - - - FOR LOOP
+##     TRADE DURATION - - - - - - - - - - FOR LOOP
  ****************************************/
         for (let eachSecond = 0; eachSecond < tradeDuration; eachSecond++)
         {
@@ -379,9 +368,9 @@ let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
       console.log('This is the Asset Value is now: ', assetPrice.toFixed(2));
       console.log('The underlying average price is: ', averagePrice.toFixed(2));
 
-      /****************************************
-             ##     TAKE PROFIT - - - - - - - - - IF STATEMENT
-      ****************************************/
+/****************************************
+##     TAKE PROFIT - - - - - - - - - IF STATEMENT
+****************************************/
 if (averagePrice >= takeProfitAmount && tradeOpen == true){
 console.log('************************************** Take Profit conditions have been met');
 console.log('Carried balance is: £', carriedBalance.toFixed(2));
@@ -402,9 +391,9 @@ break
 };
 
 
-      /****************************************
-             ##     STOP LOSS - - - - - - - - - IF STATEMENT
-      ****************************************/
+/****************************************
+##     STOP LOSS - - - - - - - - - IF STATEMENT
+****************************************/
 if (averagePrice <= stopLossAmount && tradeOpen == true){
 console.log('************************************** Stop Loss conditions have been met');
 console.log('Carried balance is: £', carriedBalance.toFixed(2));
@@ -422,9 +411,9 @@ tradeOpen = false;
 break
 };
 
-      /****************************************
-             ##     TIMED OUT MARKET ORDER - - - - - - - - - IF STATEMENT
-      ****************************************/
+/****************************************
+##     TIMED OUT MARKET ORDER - - - - - - - - - IF STATEMENT
+****************************************/
 if (eachSecond == tradeDuration - 1 && tradeOpen == true){
 console.log('************************************** Timed out Market order');
 console.log('Carried balance is: £', carriedBalance.toFixed(2));
@@ -444,17 +433,14 @@ totalFees += fee;
 tradeOpen = false;
 };
 
-
-
-
-        }
+  }
 }
 
 }
 
- /****************************************
-             ##     STRATEGY OUTCOME
- ****************************************/
+/****************************************
+##     STRATEGY OUTCOME
+****************************************/
 console.log('From a possible number of trades there have been', win, 'successes', timedOut, 'timed out trades', losses, 'losses');
 
 win = document.getElementById("win").innerHTML = win;
@@ -486,7 +472,6 @@ console.log('GROSS PROFIT: £', profit.toFixed(2));
 console.log('NET PROFIT: £', netProfit);
 console.log('PROFIT:', percentageProfit, '%');
 console.log('SUCCESS:', successRate, '%');
-
 
 
 }

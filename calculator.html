@@ -13,12 +13,9 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Trade Probability Calculator</title>
 </head>
-
 <body>
-
     <header class="container-xl">
         <div class="row">
-
             <!-- Logo -->
             <div class="col-3">
                 <a class="navbar-brand" href="index.html">
@@ -78,144 +75,155 @@
                 </ul>
             </div>
         </div>
-
-
-
     </header>
     <section class="container-xl trading-background overflow-hidden">
         <div class="row g-2">
             <!-- OPTIONS AREA -->
             <div class="col">
                 <div class="p-3">
-
-
                     <h1>Options</h1>
                     <p>Choose the parameters that you would like to test with the options below.</p>
-
                     <!-- Top Panel Left -->
                     <div class="options-form-item-half">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="Investment Amount" data-bs-content="Here you can enter an amount that you would like to see the results for using your strategy idea."> info </button>
+                                title="Investment Amount"
+                                data-bs-content="Here you can enter an amount that you would like to see the results for using your strategy idea.">
+                                info </button>
                         </div>
                         <label class="title" for="name"> Amount </label>
                         <input id="stake" class="form-control" type="number" placeholder="300">
                     </div>
-                    
-                    <!-- Top Panel Left -->
+                    <!-- Top Panel Right -->
                     <div class="options-form-item-half space">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="Trade Fees" data-bs-content="Each exchange has their of own fee structure, here we have the basic amount for 4 of the most popular Crypto Exchange."> info </button></div>
-                         <label class="title" for="name"> Fees </label> 
+                                title="Trade Fees"
+                                data-bs-content="Each exchange has their of own fee structure, here we have the basic amount for 4 of the most popular Crypto Exchange.">
+                                info </button></div>
+                        <label class="title" for="name"> Fees </label>
                         <p id="tradingFee">0</p>
                         <select class="select form-control">
-                          <option value="0.75">Binance 0.75%</option>
-                          <option value="0.7">Kucoin 0.7%</option>
-                          <option value="0.12">Kraken 0.12%</option>
-                          <option value="0.5">Coinbase 0.5%</option>
+                            <option value="0.75">Binance 0.75%</option>
+                            <option value="0.7">Kucoin 0.7%</option>
+                            <option value="0.12">Kraken 0.12%</option>
+                            <option value="0.5">Coinbase 0.5%</option>
                         </select>
                     </div>
                     <!-- First Wide Panel -->
                     <div class="options-form-item-full">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="Take Profit" data-bs-content="For when the market increases at what percentage of the change in the assets value would you like to lock in profit? Use the slider provided to see what the impact your chosen “Take Profit” would have on your strategy."> info </button></div>
+                                title="Take Profit"
+                                data-bs-content="For when the market increases at what percentage of the change in the assets value would you like to lock in profit? Use the slider provided to see what the impact your chosen “Take Profit” would have on your strategy.">
+                                info </button></div>
                         <label class="title" for="name"> Take Profit </label>
-                        
-                            <input type="range" id="tp" value="4" min="1" max="8" step="0.1" class="slider"
-                                oninput="document.getElementById('takeProfit').innerHTML = this.value" />
-                                <div class="value"> <label id="takeProfit">0</label>%</div>
-                            
-
-                                <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                    title="Stop Loss" data-bs-content="For when the market decreases at what percentage of the change in the assets value would you like to exit the trade? Use the slider provided to see what the impact your chosen “Stop Loss” would have on your strategy."> info </button></div>
-                            <label class="title" for="name"> Stop Loss </label>
-                            <input type="range" id="sl" value="-3" min="-6" max="-1" step="0.1" class="slider"
-                                    oninput="document.getElementById('stopLoss').innerHTML = this.value" />
-                            <div class="value"> <label id="stopLoss">0</label>%</div>
-                                
+                        <input type="range" id="tp" value="4" min="1" max="8" step="0.1" class="slider"
+                            oninput="document.getElementById('takeProfit').innerHTML = this.value" />
+                        <div class="value"> <label id="takeProfit">0</label>%</div>
+                        <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                                title="Stop Loss"
+                                data-bs-content="For when the market decreases at what percentage of the change in the assets value would you like to exit the trade? Use the slider provided to see what the impact your chosen “Stop Loss” would have on your strategy.">
+                                info </button></div>
+                        <label class="title" for="name"> Stop Loss </label>
+                        <input type="range" id="sl" value="-3" min="-6" max="-1" step="0.1" class="slider"
+                            oninput="document.getElementById('stopLoss').innerHTML = this.value" />
+                        <div class="value"> <label id="stopLoss">0</label>%</div>
                     </div>
                     <!-- Second Wide Panel -->
                     <div class="options-form-item-full">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="ATR" data-bs-content="This calculator allows you to test what the impact of market volatility would have on your strategy. Using the slider provided allows you to choose an “Average True Range” in percentage to determine the conditions your strategy would perform best in."> info</button></div>
+                                title="ATR"
+                                data-bs-content="This calculator allows you to test what the impact of market volatility would have on your strategy. Using the slider provided allows you to choose an “Average True Range” in percentage to determine the conditions your strategy would perform best in.">
+                                info</button></div>
                         <label class="title" for="name"> Average True Range </label>
                         <input type="range" id="atr" value="2" min="2" max="10" step="2" class="slider"
-                                oninput="document.getElementById('avgTrueRange').innerHTML = this.value" />
+                            oninput="document.getElementById('avgTrueRange').innerHTML = this.value" />
                         <div class="value">upto <label id="avgTrueRange">0</label>%</div>
-                            
-
-
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="Market Mommentum" data-bs-content="This is how much the market has gained over the previous period selected. For Example if the assets has gained 3% in the last 24hrs you would choose 3% Market Momentum along with a trading period of 24hrs.  Use the slider provided to see what the impact your chosen “Market Momentum” would have on your strategy."> info</button></div>
+                                title="Market Mommentum"
+                                data-bs-content="This is how much the market has gained over the previous period selected. For Example if the assets has gained 3% in the last 24hrs you would choose 3% Market Momentum along with a trading period of 24hrs.  Use the slider provided to see what the impact your chosen “Market Momentum” would have on your strategy.">
+                                info</button></div>
                         <label class="title" for="name"> Market Mommentum </label>
-                        
-                            <input type="range" id="mm" value="4" min="0.5" max="8" step="0.5" class="slider"
-                                oninput="document.getElementById('marketMommentum').innerHTML = this.value" />
-                                <div class="value"> <label id="marketMommentum">0</label>%</div>
+                        <input type="range" id="mm" value="4" min="0.5" max="8" step="0.5" class="slider"
+                            oninput="document.getElementById('marketMommentum').innerHTML = this.value" />
+                        <div class="value"> <label id="marketMommentum">0</label>%</div>
                     </div>
                     <!-- Third Wide Panel -->
                     <div class="options-form-item-full">
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="Trade Duration" data-bs-content="How often would you like to apply this strategy? Select a time period to see what the impact this would have on your strategy."> info</button></div>
+                                title="Trade Duration"
+                                data-bs-content="How often would you like to apply this strategy? Select a time period to see what the impact this would have on your strategy.">
+                                info</button></div>
                         <label class="title" for="name1"> Trade Duration (mins) </label>
-                       
                         <p id="minutes">0</p>
                         <div class="radio-toolbar">
-                            <input type="radio" id="duration5" name="durationOption" value="5" oninput="document.getElementById('minutes').innerHTML = this.value">
+                            <input type="radio" id="duration5" name="durationOption" value="5"
+                                oninput="document.getElementById('minutes').innerHTML = this.value">
                             <label for="duration5">5</label>
-                        
-                            <input type="radio" id="duration10" name="durationOption" value="10" oninput="document.getElementById('minutes').innerHTML = this.value">
-                            <label for="duration10">10</label>
-                        
-                            <input type="radio" id="duration15" name="durationOption" value="15" oninput="document.getElementById('minutes').innerHTML = this.value">
-                            <label for="duration15">15</label> 
 
-                            <input type="radio" id="duration30" name="durationOption" value="30" oninput="document.getElementById('minutes').innerHTML = this.value">
+                            <input type="radio" id="duration10" name="durationOption" value="10"
+                                oninput="document.getElementById('minutes').innerHTML = this.value">
+                            <label for="duration10">10</label>
+
+                            <input type="radio" id="duration15" name="durationOption" value="15"
+                                oninput="document.getElementById('minutes').innerHTML = this.value">
+                            <label for="duration15">15</label>
+
+                            <input type="radio" id="duration30" name="durationOption" value="30"
+                                oninput="document.getElementById('minutes').innerHTML = this.value">
                             <label for="duration30">30</label>
-                        
-                            <input type="radio" id="duration60" name="durationOption" value="60" oninput="document.getElementById('minutes').innerHTML = this.value">
+
+                            <input type="radio" id="duration60" name="durationOption" value="60"
+                                oninput="document.getElementById('minutes').innerHTML = this.value">
                             <label for="duration60">60</label>
-                        
-                            <input type="radio" id="duration120" name="durationOption" value="120" oninput="document.getElementById('minutes').innerHTML = this.value">
-                            <label for="duration120">120</label> 
+
+                            <input type="radio" id="duration120" name="durationOption" value="120"
+                                oninput="document.getElementById('minutes').innerHTML = this.value">
+                            <label for="duration120">120</label>
                         </div>
 
-
                         <div class="info"><button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
-                                title="# of Days" data-bs-content="To see how your strategy would perform over time you can select a period to see how that impacts the profitability of your strategy."> info</button></div>
+                                title="# of Days"
+                                data-bs-content="To see how your strategy would perform over time you can select a period to see how that impacts the profitability of your strategy.">
+                                info</button></div>
                         <label class="title" for="name"> # of Days </label>
-                        
+
                         <p id="days">0</p>
                         <div class="radio-toolbar">
-                            <input type="radio" id="days1" name="daysOption" value="1" oninput="document.getElementById('days').innerHTML = this.value">
+                            <input type="radio" id="days1" name="daysOption" value="1"
+                                oninput="document.getElementById('days').innerHTML = this.value">
                             <label for="days1">1</label>
-                        
-                            <input type="radio" id="days3" name="daysOption" value="3" oninput="document.getElementById('days').innerHTML = this.value">
-                            <label for="days3">3</label>
-                        
-                            <input type="radio" id="days7" name="daysOption" value="7" oninput="document.getElementById('days').innerHTML = this.value">
-                            <label for="days7">7</label> 
 
-                            <input type="radio" id="days14" name="daysOption" value="14" oninput="document.getElementById('days').innerHTML = this.value">
+                            <input type="radio" id="days3" name="daysOption" value="3"
+                                oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days3">3</label>
+
+                            <input type="radio" id="days7" name="daysOption" value="7"
+                                oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days7">7</label>
+
+                            <input type="radio" id="days14" name="daysOption" value="14"
+                                oninput="document.getElementById('days').innerHTML = this.value">
                             <label for="days14">14</label>
-                        
-                            <input type="radio" id="days21" name="daysOption" value="21" oninput="document.getElementById('days').innerHTML = this.value">
+
+                            <input type="radio" id="days21" name="daysOption" value="21"
+                                oninput="document.getElementById('days').innerHTML = this.value">
                             <label for="days21">21</label>
-                        
-                            <input type="radio" id="days30" name="daysOption" value="30" oninput="document.getElementById('days').innerHTML = this.value">
-                            <label for="days30">30</label> 
+
+                            <input type="radio" id="days30" name="daysOption" value="30"
+                                oninput="document.getElementById('days').innerHTML = this.value">
+                            <label for="days30">30</label>
                         </div>
                     </div>
                     <!-- Calculate Button -->
                     <div class="form-row">
                         <div class="col">
                             <p>Validate input boxes</p>
-                        <input id="answer-box" type="number">
+                            <input id="answer-box" type="number">
                             <button data-type="submit" class="btn button"> Confirm Selection</button>
                             <button data-type="trade" class="btn button"> Calculate Trade</button>
                         </div>
                     </div>
-                </div>                    
-                
+                </div>
+
             </div>
             <!-- RESULTS AREA -->
             <div class="col d-none d-sm-block">
@@ -224,7 +232,6 @@
                     <!-- Text Area -->
                     <h1>Results</h1>
                     <p>This is how your chosen strategy would have performed.</p>
-
 
                     <!-- First Wide Panel -->
                     <div class="results-form-item-full">
@@ -237,53 +244,53 @@
                         <label class="title" for="name"> Net Profit £</label>
                         <div class="results"> <span id="netProfit">0</span> </div>
                     </div>
-                    
-                    
-                    <!-- Top Panel Left -->
+
+
+                    <!-- Top Panel Right -->
                     <div class="results-form-item-half space">
                         <label class="title" for="name"> Percentage Profit %</label>
                         <div class="results"> <span id="percentageProfit">0</span> </div>
                     </div>
-                    
-                    <div class="info"> <button type="button"
-                        class="btn btn-dark btn-sm" data-bs-toggle="popover" title="advice"
-                        data-bs-content="Some # of Days content"> info</button> <p> Here is the cost and effectiveness of the strategy. </p></div>
-                    <!-- Top Panel Left -->
+
+                    <div class="info"> <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                            title="advice" data-bs-content="Some # of Days content"> info</button>
+                        <p> Here is the cost and effectiveness of the strategy. </p>
+                    </div>
+                    <!-- Middle Panel Left -->
                     <div class="results-form-item-half">
                         <label class="title" for="name"> Total Fees £</label>
                         <div class="results"> <span id="totalFees">0</span> </div>
                     </div>
-                    
-                    <!-- Top Panel Left -->
+
+                    <!-- Middle Panel Right -->
                     <div class="results-form-item-half space">
                         <label class="title" for="name"> Success Rate %</label>
                         <div class="results"> <span id="successRate">0</span> </div>
                     </div>
-                    
 
-                    <div class="info"> <button
-                        type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" title="stuff"
-                        data-bs-content="Some # of Days content"> info</button> <p> These figures can be used to help guide any changes to new strategies.</p>
+                    <div class="info"> <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="popover"
+                            title="stuff" data-bs-content="Some # of Days content"> info</button>
+                        <p> These figures can be used to help guide any changes to new strategies.</p>
                     </div>
-                    <!-- Second Wide Panel -->
+                    <!-- Block of 3 Panels -->
                     <div class="results-form-item-third">
                         <label class="title" for="name"> Successes </label>
                         <div class="results"> <span id="win">0</span> </div>
                     </div>
-                    
+
                     <div class="results-form-item-third space">
                         <label class="title" for="name"> Timed Out </label>
                         <div class="results"> <span id="timedOut">0</span> </div>
                     </div>
-                    
+
                     <div class="results-form-item-third space">
                         <label class="title" for="name"> Losses </label>
                         <div class="results"> <span id="losses">0</span> </div>
                     </div>
-                    
-                    <!-- Third Wide Panel -->
+
+                    <!-- Final Wide Panel -->
                     <div class="results-form-item-full">
-                        <label class="title" for="name"> Total # of Trades </label> 
+                        <label class="title" for="name"> Total # of Trades </label>
                         <div class="results"> <span id="totalTrades">0</span> </div>
                     </div>
                     <!-- Save Button -->
@@ -352,8 +359,8 @@
 
 
     <script src="assets/js/script.js"></script>
-    
-    
+
+
 </body>
 
 </html>

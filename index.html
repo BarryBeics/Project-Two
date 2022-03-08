@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>Trade Probability Calculator</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Trade Probability Calculator</title>
+</head>
 <body>
-    
     <header class="container-xl">
         <div class="row">
-            
-                <!-- Logo -->
+            <!-- Logo -->
             <div class="col-3">
                 <a class="navbar-brand" href="index.html">
                     <!-- Desktop & Tablet -->
@@ -28,23 +27,33 @@
                             alt="logo"></div>
                 </a>
             </div>
-                <!-- Navigation bar -->
+            <!-- Navigation bar -->
             <div class="col-9">
                 <!-- Desktop & Tablet -->
                 <div class="d-none d-sm-block">
-                <ul id="nav" class="main-list-inline main-menucontainer">
-                    <li class="col-6 col-md-3 list-inline-item main-menuitem">
-                        <a href="index.html" class="hvr-underline-from-center"><i class="fas fa-home selected" aria-hidden="true"></i><span>Home</span></a>
-                    </li>
-                    <li class="col-6 col-md-3 list-inline-item main-menuitem">
-                        <a href="calculator.html" class="hvr-underline-from-center"><i class="fas fa-calculator" aria-hidden="true"></i><div class="d-none d-sm-block"><span>Calculator</span></div> </a>
-                    </li>
-                    <li class="col-6 col-md-3 list-inline-item main-menuitem">
-                        <a href="results.html" class="hvr-underline-from-center"><i class="fa fa-clipboard-list" aria-hidden="true"></i><div class="d-none d-sm-block"><span>Results</span></div> </a>
-                    </li>
-                    <li class="ccol-6 col-md-3  list-inline-item main-menuitem">
-                        <a href="contact.html" class="hvr-underline-from-center"><i class="fas fa-at" aria-hidden="true"></i><div class="d-none d-sm-block"><span>Contact</span></div></a>
-                    </li>
+                    <ul id="nav" class="main-list-inline main-menucontainer">
+                        <li class="col-6 col-md-3 list-inline-item main-menuitem">
+                            <a href="index.html" class="hvr-underline-from-center"><i class="fas fa-home selected"
+                                    aria-hidden="true"></i><span>Home</span></a>
+                        </li>
+                        <li class="col-6 col-md-3 list-inline-item main-menuitem">
+                            <a href="calculator.html" class="hvr-underline-from-center"><i class="fas fa-calculator"
+                                    aria-hidden="true"></i>
+                                <div class="d-none d-sm-block"><span>Calculator</span></div>
+                            </a>
+                        </li>
+                        <li class="col-6 col-md-3 list-inline-item main-menuitem">
+                            <a href="results.html" class="hvr-underline-from-center"><i class="fa fa-clipboard-list"
+                                    aria-hidden="true"></i>
+                                <div class="d-none d-sm-block"><span>Results</span></div>
+                            </a>
+                        </li>
+                        <li class="ccol-6 col-md-3  list-inline-item main-menuitem">
+                            <a href="contact.html" class="hvr-underline-from-center"><i class="fas fa-at"
+                                    aria-hidden="true"></i>
+                                <div class="d-none d-sm-block"><span>Contact</span></div>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- Mobile -->
@@ -54,109 +63,94 @@
                         <a href="index.html"><i class="fas fa-home  selected" aria-hidden="true"></i></a>
                     </li>
                     <li class="col-3 list-inline-item main-menuitem">
-                        <a href="calculator.html" ><i class="fas fa-calculator" aria-hidden="true"></i></a>
+                        <a href="calculator.html"><i class="fas fa-calculator" aria-hidden="true"></i></a>
                     </li>
                     <li class="col-3 list-inline-item main-menuitem">
-                        <a href="results.html" ><i class="fa fa-clipboard-list" aria-hidden="true"></i></a>
+                        <a href="results.html"><i class="fa fa-clipboard-list" aria-hidden="true"></i></a>
                     </li>
                     <li class="col-3 list-inline-item main-menuitem">
-                        <a href="contact.html" ><i class="fas fa-at" aria-hidden="true"></i></a>
+                        <a href="contact.html"><i class="fas fa-at" aria-hidden="true"></i></a>
                     </li>
                 </div>
                 </ul>
             </div>
-          </div>
-        
-
-        
+        </div>
     </header>
     <section class="container-xl trading-background overflow-hidden">
-
-
-                <div class="row gx-5">
-                  <div class="col">
-                   <div class="p-3">
-                       
-                    
+        <div class="row gx-5">
+            <div class="col">
+                <div class="p-3">
                     <!-- Text Area -->
                     <h1>Trade Probability Calculator</h1>
                     <p>
-                    This application allows the users to experiment with a number of trading parameters to gain a better understanding of how their strategy would perform in the markets.
-                </p>
-
-                <div class="container mt-3">
-      
-            <!-- Desktop & Tablet -->
-            <div class="d-none d-sm-block center"><img src="/assets/images/Trader.png" width="500" height="425" alt="logo"></div>
-            <!-- Mobile -->
-             <div class="d-sm-none center"><img src="/assets/images/Trader.png"  width="200" height="170" alt="logo"></div>
-
-             <p>
-                This aplication simulates the market buy changing the assets price over a given period. For a detailed explanation click the info icon 
-                <div class="row more-info"> <a href="more-info.html" >
-                    <span> For a detailed explanation</span>
-                    <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
-                 </div> 
-                
-            </p>
-
+                        This application allows the users to experiment with a number of trading parameters to gain a
+                        better understanding of how their strategy would perform in the markets.
+                    </p>
+                    <div class="container mt-3">
+                        <!-- Desktop & Tablet -->
+                        <div class="d-none d-sm-block center"><img src="/assets/images/Trader.png" width="500"
+                                height="425" alt="logo"></div>
+                        <!-- Mobile -->
+                        <div class="d-sm-none center"><img src="/assets/images/Trader.png" width="200" height="170"
+                                alt="logo"></div>
+                        <p>
+                            This aplication simulates the market buy changing the assets price over a given period. For
+                            a detailed explanation click the info icon
+                            <div class="row more-info"> <a href="more-info.html">
+                                    <span> For a detailed explanation</span>
+                                    <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
+                            </div>
+                        </p>
+                    </div>
                 </div>
-                  </div>
+            </div>
+    </section>
+    <footer class="container-xl">
+        <div class="row">
+            <div class="col-sm-6 ">
+                <div class="row more-info"> <a href="more-info.html">
+                        <span> For a detailed explanation</span>
+                        <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
                 </div>
+            </div>
+            <!-- Social icons section of the footer-->
+            <div class="col-sm-6">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="https://www.linkedin.com/in/barry-marples-developer/" target="_blank"
+                            class="footer-icon social hvr-pop">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/barry.marples" target="_blank"
+                            class="footer-icon social hvr-pop">
+                            <i class="fab fa-facebook-square" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/BarryMarples" target="_blank" class="footer-icon social hvr-pop">
+                            <i class="fab fa-twitter-square" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://github.com/BarryBeics" target="_blank" class="footer-icon social hvr-pop">
+                            <i class="fab fa-github-square" aria-hidden="true"></i>
+                            <span class="sr-only">Github</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-            
-                </section>
-
-
-
-
-</section>
-<footer class="container-xl">
-    <div class="row">
-        <div class="col-sm-6 ">
-             <div class="row more-info"> <a href="more-info.html" >
-                <span> For a detailed explanation</span>
-                <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
-             </div> 
         </div>
-        <!-- Social icons section of the footer-->
-        <div class="col-sm-6">
-            <ul class="list-inline">
-                <li class="list-inline-item">
-                    <a href="https://www.linkedin.com/in/barry-marples-developer/" target="_blank"
-                        class="footer-icon social hvr-pop">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        <span class="sr-only">LinkedIn</span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://www.facebook.com/barry.marples" target="_blank"
-                        class="footer-icon social hvr-pop">
-                        <i class="fab fa-facebook-square" aria-hidden="true"></i>
-                        <span class="sr-only">Facebook</span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://twitter.com/BarryMarples" target="_blank" class="footer-icon social hvr-pop">
-                        <i class="fab fa-twitter-square" aria-hidden="true"></i>
-                        <span class="sr-only">Twitter</span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a href="https://github.com/BarryBeics" target="_blank" class="footer-icon social hvr-pop">
-                        <i class="fab fa-github-square" aria-hidden="true"></i>
-                        <span class="sr-only">Github</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-    </div>
-</footer>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </script>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" >
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
@@ -164,8 +158,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    
-
-
 </body>
 </html>
