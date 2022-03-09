@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<h1>Learning</h1>
+
+    <script>
+let info = {"win" : 7};
+
+
+
+function SaveDataToLocalStorage(data)
+{
+    var a = [];
+    // Parse the serialized data back into an aray of objects
+    a = JSON.parse(localStorage.getItem('newsession')) || [];
+    // Push the new data (whether it be an object or anything else) onto the array
+    a.push(data);
+    // Alert the array value
+    alert(a);  // Should be something like [Object array]
+    // Re-serialize the array back into a string and store it in localStorage
+    localStorage.setItem('newsession', JSON.stringify(a));
+
+    console.log(a)
+}
+SaveDataToLocalStorage(info);
+    </script>
+</body>
+</html>

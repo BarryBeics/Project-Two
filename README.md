@@ -37,21 +37,11 @@ Users are also be able to contact the developer using the contact form to make s
  
 ### 1.3. Design ###
  
-- **Colour Scheme**: The colours have been selected to compliment the original graphic which features on every page of the site.
- 
-<h2 align="center"><img src="./assets/images/header-graphic.png"><img src="./readme-docs/palette.png"></h2>
- 
-- Kingfisher Turquoise #79b4b7 - This forms the colour of the navigation section, sitewide background, h2 & h3 tags
-- Home Plate #f8f0df - This is used as the background of the section area, nav & socials icons
-- Black Olive #3b3b38 - This used for the footer, text and the selected nav icons
-- Golden West #e9cf96 - This is used in the footer text
-- Litewood #e5decf - This is used for a contrast panels
+- **Colour Scheme**: The colours have been selected to 
  
 - **Typography**: The site uses 2 fonts, Firstly for the body text and buttons Montserrat font was the choice, Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate. Secondly for the headings, navigation text and to display the results Teko is the choice, this is a slim font allowing for more content to be displayed in a small area. Both fonts have Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly.
  
-- **Imagery**: This simple clean site design only contains one graphic of a character of Barry busy working at his desk. This graphic is overlaid with 2 animated gifs.
-of a fresh steaming cup of coffee 
-The talking mouth and blinking eyes of the character.
+- **Imagery**: T
  
 ### 1.4. Wireframes ###
  
@@ -69,48 +59,47 @@ Wireframe - [View](WIREFRAMES.md)
  
 **The Header** includes:
  
-- **Developers name**: allows users to know where they are every moment.
 - **Navigation Bar**: allows users to navigate the site in an easy and intuitive way.
  
 **The Footer** includes:
  
-- **Social**: allows users to know more about the developer. These are all links to real accounts as I intend to publish the site for my own personal use.
-- **PDF Download**: allows users to download a copy of the developer CV as a pdf file.
+- **Social**: allows users to know more about the developer. These are all links to real accounts as I intend develop this project futher over time.
  
 Both the Header and the Footer are consistent throughout the website.
  
 **Home Page** includes:
  
-- **Who What Why**: three sentences that allow users to quickly get an overview of the developer.
-Animated graphic showing the developer hard at work, this will disappear on smaller screens.
+- **overview**: A couple of sentances to give a brief explanation of the the site does.
+Graphic showing a person work hard to understand trading strategy, this displays a smaller image on mobile screens.
  
  
-**Resume Page** includes:
+**Calculator Page** includes:
  
-- **Tools I Use**: a description of the developers perpetual development
-- **Skills logos**: a simple illustration so users can see which skills held by the developer (this is for illustration purposes only as many of the skills are not held)
-- **Work History**: a timeline of the positions held so the users can quickly understand the developer's past career.
+- **Options Panel**: Allows for input of various parameters but the user.
+- **Results Panel**: Show the results of the current trading strategy.
+
  
-**Portfolio Page** includes:
+**Results Page** includes:
  
 - **Description of each project**: allows the users to quickly understand the scope of the project.
-- **Example layouts Graphic**: illustrates simply how the site has been built to work for all devices.
-- **Live Project Link**: users can explore the project further in a separate browser window.
-- **How it was made**: details of technologies used for each project.
+
  
 **Contact Page** includes:
  
 - **Personal info**: allows users to post documents, phone and email files to the developer if necessary.
 - **Contact form**: allows users to make initial contact in a structured format so that the developer can respond with an answer and not need to ask for more details.
  
-**Favicon**: allows the user to identify the site by just seeing the icon on the tab.
+
  
 ### 2.2. Features left to implement in the future ###
  
-- The form should submit the details and send a confirmation email.
-- Add a section with testimonials.
-- Add future completed projects to the portfolio page.
-- Add skill logos to the resume page as they are acquired during the course.
+
+- Offer other volatility indicators
+- API to get live currency prices
+- Ability to sort results by success rate, percentage profit
+- Setting page to allow further customization
+
+
  
 <br /><br />
  

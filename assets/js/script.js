@@ -13,10 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
       button.addEventListener("click", function() {
           console.log(button);
-           if (this.getAttribute("data-type") === "submit") {
-              validateInputs();
-            
-          } else if (this.getAttribute("data-type") === "trade") {
+          if (this.getAttribute("data-type") === "trade") {
             // On click runs trading function
             
             validate();
@@ -35,10 +32,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
  // info popover functionality 
- var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
- var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-   return new bootstrap.Popover(popoverTriggerEl)
- })
+/** var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+  trigger: 'focus'
+}) */
 
 
 // This block handles the functionality of the drop down menu used to select the fees value
@@ -89,10 +85,8 @@ function validate() {
   days = parseInt(document.getElementById('days').innerText);
 
 
-  
-
   if (stake === 0) {
-    alert("Please enter a steak amount");
+    alert("Please enter a stake amount");
     return false;
   } else if (tradingFee === 0) {
     alert("Select the appropreate trading fee");
@@ -144,10 +138,6 @@ function calculateCorrectAnswer() {
 
 
 */
-
-
-
-
 
 
 
@@ -274,6 +264,10 @@ let losses = 0;
 let totalTrades = 0;
 let newBalance = 0;
 
+let tradeApplied = false;
+let percentageProfit = 0;
+let successRate = 0;
+
 /* count_each_second is used to report on the duration into a trade an actins takes place  ...... sum moves is ..... min kilines is ...... */
 let countEachSecond = 0;
 let sumMoves = 0;
@@ -308,36 +302,61 @@ function timedOutMarketOrder() {
 /**
 * Moment by moment the assets price can increase or decrease 
 * this function replicates this by generating random moves
-
-
 */
 function generateRandonMove(min, max, decimalPlaces) {
   return (Math.random() * (max - min) + min).toFixed(decimalPlaces) * 1;
 }
 
 
+
+
+
+
+
+
+function SaveDataToLocalStorage(data)
+{
+    var saving = [];
+    
+    saving = JSON.parse(localStorage.getItem('results')) || [];
+
+    saving.push(data);
+    
+    alert("The results have been saved to you local storage and can be viewed on the results page. All feilds will now be cleared ready for you to try different parameters");  // Should be something like [Object array]
+    
+    localStorage.setItem('results', JSON.stringify(saving));
+
+    console.log(saving)
+}
+
+
+
 function saveResults() {
-console.log(" Save results! ");
-let results = [];
-let result = {
-"win" : win,
-"timedOut" : timedOut,
-"losses" : losses, 
-"totalTrades" : totalTrades, 
-"newBalance" : newBalance, 
-"totalFees" : totalFees, 
-"netProfit" : netProfit, 
-"percentageProfit": 5,
-"successRate": 4 
- }
 
- results.push(result);
- //saving to localStorage - COULD THIS BE SAVED TO A SESSION?
-localStorage.setItem('ResultsList', JSON.stringify(results) );
+if (tradeApplied === false) {
+  alert("Nothing to save!");
+  return false;
+} else {
+  const result = {
+    "win" : win,
+    "timedOut" : timedOut,
+    "losses" : losses, 
+    "totalTrades" : totalTrades, 
+    "newBalance" : newBalance, 
+    "totalFees" : totalFees, 
+    "netProfit" : netProfit, 
+    "percentageProfit": percentageProfit,
+    "successRate": successRate 
+     };
 
-console.log(result);
+  SaveDataToLocalStorage(result);
+  location.reload()
+}
+
 
 }
+
+
 
 
 
@@ -345,6 +364,8 @@ console.log(result);
 * This function contains the logic of the application
 */
 function trading(){
+
+  tradeApplied = true;
 
   let carriedBalance = stake;  
 /* This is the amount increase the crypto will gain on average during the trade (this ensures market momentum at the set amount but still allows the price to fluxuate randomly) */
@@ -508,11 +529,11 @@ netProfit = (profit - totalFees);
 netProfit = netProfit.toFixed(2);
 netProfit = document.getElementById("netProfit").innerHTML = netProfit;
 
-let percentageProfit = ((profit / totalFees) / carriedBalance) * 100;
+percentageProfit = ((profit / totalFees) / carriedBalance) * 100;
 percentageProfit = percentageProfit.toFixed(1);
 percentageProfit = document.getElementById("percentageProfit").innerHTML = percentageProfit;
 
-let successRate = (win + losses) / 100 * win;
+successRate = (win + losses) / 100 * win;
 successRate = successRate.toFixed(1);
 successRate = document.getElementById("successRate").innerHTML = successRate;
 

@@ -277,7 +277,7 @@ footer p {
    margin: 0px;
 }
 .info, .value, .range-slider, .options-form-item-half {
-   padding: 5px 10px;
+   padding: 0px 9px 0px 15px;
    display: inline-block;
 }
 
@@ -349,7 +349,7 @@ footer p {
  
 .slider {
    -webkit-appearance: none;
-   width: 75%;
+   width: 82%;
    height: 1px;
    border-radius: 5px;
    background: #d3d3d3;
