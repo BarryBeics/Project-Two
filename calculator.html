@@ -20,10 +20,10 @@
             <div class="col-3">
                 <a class="navbar-brand" href="index.html">
                     <!-- Desktop & Tablet -->
-                    <div class="col-md-12 d-none d-sm-block"><img src="/assets/images/Bear-Bull-logo.png" width="160"
+                    <div class="col-md-12 d-none d-sm-block"><img src="/Project-Two/assets/images/Bear-Bull-logo.png" width="160"
                             height="80" alt="logo"></div>
                     <!-- Mobile -->
-                    <div class="d-sm-none"><img src="/assets/images/Bear-Bull-logo.png" width="70" height="35"
+                    <div class="d-sm-none"><img src="/Project-Two/assets/images/Bear-Bull-logo.png" width="70" height="35"
                             alt="logo"></div>
                 </a>
             </div>
@@ -79,7 +79,7 @@
     <section class="container-xl trading-background overflow-hidden">
         <div class="row g-2">
             <!-- OPTIONS AREA -->
-            <div class="col">
+            <div class="col-sm-12 col-md-6">
                 <div class="p-3">
                     <h1>Options</h1>
                     <p>Choose the parameters that you would like to test with the options below.</p>
@@ -119,7 +119,7 @@
                         <input type="range" id="tp" value="1" min="1" max="8" step="0.1" class="slider"
                             oninput="document.getElementById('takeProfit').innerHTML = this.value" />
                         <div class="value"> <label id="takeProfit">0</label>%</div>
-                        <div class="info"><a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
+                        <div class="info info-space"><a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
                             title="Stop Loss"
                             data-bs-content="For when the market decreases at what percentage of the change in the assets value would you like to exit the trade? Use the slider provided to see what the impact your chosen “Stop Loss” would have on your strategy.">
                             info </a></div>
@@ -218,10 +218,8 @@
                     </div>
                     <!-- Calculate Button -->
                     <div class="form-row">
-                        <div class="col">
-                           <!--  <p>Validate input boxes</p>
-                            <input id="answer-box" type="number">
-                            <button data-type="submit" class="btn button"> Confirm Selection</button> -->
+                        <div class="col text-center">
+                           
                             <button data-type="trade" class="btn button"> Calculate Trade</button>
                         </div>
                     </div>
@@ -229,7 +227,7 @@
 
             </div>
             <!-- RESULTS AREA -->
-            <div class="col d-none d-sm-block">
+            <div class="col-sm-12  col-md-6">
                 <div class="p-3 ">
 
                     <!-- Text Area -->
@@ -255,7 +253,7 @@
                         <div class="results"> <span id="percentageProfit">0</span> </div>
                     </div>
 
-                    <div class="info"> <a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
+                    <div class="results-info"> <a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
                         title="advice" data-bs-content="Some # of Days content"> info</a>
                         <p> Here is the cost and effectiveness of the strategy. </p>
                     </div>
@@ -271,7 +269,7 @@
                         <div class="results"> <span id="successRate">0</span> </div>
                     </div>
 
-                    <div class="info"> <a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
+                    <div class="results-info"> <a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
                         title="advice" data-bs-content="Some # of Days content"> info</a>
                         <p> These figures can be used to help guide any changes to new strategies.</p>
                     </div>
@@ -298,7 +296,7 @@
                     </div>
                     <!-- Save Button -->
                     <div class="form-row">
-                        <div class="col">
+                        <div class="col text-center">
                             <button id="btn" data-type="save" class="btn button"> Save & Clear</button>
                         </div>
                     </div>

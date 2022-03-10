@@ -20,10 +20,10 @@
             <div class="col-3">
                 <a class="navbar-brand" href="index.html">
                     <!-- Desktop & Tablet -->
-                    <div class="col-md-12 d-none d-sm-block"><img src="/assets/images/Bear-Bull-logo.png" width="160"
+                    <div class="col-md-12 d-none d-sm-block"><img src="/Project-Two/assets/images/Bear-Bull-logo.png" width="160"
                             height="80" alt="logo"></div>
                     <!-- Mobile -->
-                    <div class="d-sm-none"><img src="/assets/images/Bear-Bull-logo.png" width="70" height="35"
+                    <div class="d-sm-none"><img src="/Project-Two/assets/images/Bear-Bull-logo.png" width="70" height="35"
                             alt="logo"></div>
                 </a>
             </div>
@@ -91,7 +91,7 @@
                     </div>
 
                     <!-- Top Panel right -->
-                    <div class="options-form-item-half space-contact">
+                    <div class="options-form-item-half space">
                         <label class="title" for="name">Email </label>
                         <input id="stake" class="form-control" type="number" placeholder="Your email here">
                     </div>
@@ -128,7 +128,7 @@
                     </div>
                     <!-- Submit Button -->
                     <div class="form-row">
-                        <div class="col">
+                        <div class="col text-center">
                             <button data-type="trade" class="btn button"> Let's Talk</button>
                         </div>
                     </div>
@@ -186,7 +186,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <script src="https://smtpjs.com/v3/smtp.js">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+    emailjs.init("Q-_8US3JroQzc3S8M");
+    })();
     </script>
 </body>
 </html>
