@@ -8,6 +8,11 @@ header, footer {
  }  
  
 body {
+   clear: left;
+   background: url("../images/background.jpg");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
    background-color: #1b1b1b;
 }
 
@@ -19,7 +24,6 @@ body {
    color: #00aaaa;
 }
 
-
 .hvr-underline-from-center:before, .radio-toolbar label:hover {
    background-color: #00aaaa;
 }
@@ -28,7 +32,7 @@ body {
    background-color: #00aaaa;
    font-family: 'Teko', sans-serif;
 }
-.social i:hover, h1, h2, .title {
+.social i:hover, h1, h2, .title, .data span {
    color: #197b7b;
    font-family: 'Teko', sans-serif;
 }
@@ -41,10 +45,6 @@ h3 {
    background-color: #197b7b;
 }
 
-.main-menuitem span, .title, .value, .results {
-   font-family: 'Teko', sans-serif;
-}
-
 
 .options-form-item-half, .options-form-item-full, .options-form-item-third,
 .results-form-item-half, .results-form-item-full, .results-form-item-third {
@@ -52,44 +52,60 @@ h3 {
    background: rgba(66, 64, 64, 0.3); 
 }
 
-.results-form-item-half, .results-form-item-full, .results-form-item-third {
-   text-align: center;
+.result-item-light {
+   background: rgba(179, 170, 170, 0.3); 
 }
 
+.result-item-dark {
+   background: rgba(66, 64, 64, 0.3); 
+}
 
 .radio-toolbar label:hover {
    background-color: #79b4b7;
  }
- 
  
  .radio-toolbar input[type="radio"]:checked + label {
      background-color: #79b4b7;
      color: #1b1b1b;
  }
 
-
- .center {
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
-   width: 100%;
-  height: auto;
- }
-
-.graphic img {
-   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+ .more-info i:hover {
+   color: #2867b2;
 }
 
+#results-table-header{
+   background-color: gray;
+   }
 
+   .slider {
+      background: #d3d3d3;
+    }
+    
+    .slider::-webkit-slider-thumb {
+      background: #00aaaa;
+    }
+    
+    .slider::-moz-range-thumb {
+      background: #00aaaa;
+    }
+    .radio-toolbar label {
+      background-color: #444;
+    }
 
+    .table-header-cell{
+      border-bottom: 1px solid black;
+      }
+
+      .form-control {
+         background-color: transparent !important;
+          color: #495057;
+          border: 1px solid #ced4da;
+      }
 
 /* ------------- Site wide  ----------- Special paddings/margins/text -----*/
 
 h1,
-h2,
+h2
 {
    margin: 0;
 }
@@ -107,7 +123,6 @@ h2, h3 {
    padding: 10px 0px;
 }
  
-
 p {
     font-size: 1em;
     font-weight: 200;
@@ -123,6 +138,12 @@ p {
       font-size: 6em;
 }
 
+.main-menuitem a i {
+   display: block;
+   font-size: 22px;
+}
+
+/* ------------- not sure -----*/
 #main-nav {
    z-index: 1;
 }
@@ -133,20 +154,37 @@ p {
    text-transform: uppercase;
 }
 
-.main-menuitem a i {
-   display: block;
-   font-size: 22px;
+.main-menuitem span, .title, .value, .results {
+   font-family: 'Teko', sans-serif;
 }
 
-.trading-background {
-   clear: left;
-   background: url("../images/background.jpg");
-   background-size: cover;
-   background-position: center;
+.results-form-item-half, .results-form-item-full, .results-form-item-third {
+   text-align: center;
 }
+
+/* ------------- not sure -----*/
+.center {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 100%;
+  height: auto;
+ }
+
+.graphic img {
+   display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 /* ------------- Media Queries  ----------- Everything except Mobile size screen */
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 1201px) {
+
+   .slider {
+      width: 83%;
+    }
 
    .graphic img {
       width: 80%;
@@ -163,11 +201,9 @@ p {
      .main-menuitem a {
         width: 100%;
         text-decoration: none;
-        color: #c5c6c7;
         height: 80px;
-        
      }
-      
+
      .main-menuitem a i {
         padding-top: 18px;
      }
@@ -179,7 +215,6 @@ p {
         text-align: center;
         font-size: 1.5em;
         letter-spacing: 3px;
-        
      }
 
      .space {
@@ -195,8 +230,25 @@ p {
 
 /* ------------- Media Queries  ----------- Mobile only */
 
+@media only screen and (max-width: 1200px) {
+   .space {
+      margin: 0px 0px 0px 5px;
+   }
+
+   .slider {
+      width: 75%;
+    }
+}
+
+/* ------------- Media Queries  ----------- Mobile only */
+
 @media only screen and (max-width: 576px) {
     
+
+   .slider {
+      width: 72%;
+    }
+
    .graphic img {
      width: 100%;
    } 
@@ -211,7 +263,6 @@ p {
       max-width: 21%;
    }
     
-
    #main-nav li {
       font-size: 14px;
       padding: 0px;
@@ -271,6 +322,8 @@ footer p {
 }
 
 
+
+
 /* ------------- calculator.html ------------  */
 
 #tradingFee, #minutes, #days { display: none;}
@@ -294,14 +347,13 @@ footer p {
 }
 
 .options-form-item-half, .results-form-item-half {
-   width: 49%;
+   width: 48.5%;
    display: inline-block;
 }
 
 .options-form-item-full, .results-form-item-full {
    width: 100%;
    padding: 6px;
-   
 }
 
 .options-form-item-third, .results-form-item-third {
@@ -329,8 +381,26 @@ footer p {
    display: inline-block;
 }
 
+/* ------------- Results mobile ------------  */
 
 
+
+.data {
+   display: inline-flex;
+   
+}
+
+.data p, .data span {
+   padding: 2px;
+    margin: 4px;
+}
+
+
+
+
+
+
+/* ------------- Form elements ------------  */
 
 
 .form-control {
@@ -342,13 +412,12 @@ footer p {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
-    background-color: transparent !important;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
+
+
 
 .button {
    margin-top: 15px;
@@ -371,42 +440,12 @@ footer p {
    padding: 5px;
 }
 
-.more-info {
-   padding: 10px;
-   margin: auto;
- }
-
- .more-info a {
-   color: #999999;
-   text-decoration: none;
-   margin: auto;
-}
- 
-.more-info a i {
-   font-size: 22px;
-   padding: 10px;
-}
-
-.more-info span {
-   vertical-align: middle;
-}
-
-.more-info i:hover {
-   color: #2867b2;
-}
-
-
-
 /* ------------- w3schools ------------  */
 
-
- 
 .slider {
    -webkit-appearance: none;
-   width: 72%;
    height: 1px;
    border-radius: 5px;
-   background: #d3d3d3;
    outline: none;
    opacity: 0.7;
    -webkit-transition: .2s;
@@ -423,7 +462,6 @@ footer p {
    width: 15px;
    height: 15px;
    border-radius: 50%;
-   background: #00aaaa;
    cursor: pointer;
  }
  
@@ -431,9 +469,9 @@ footer p {
    width: 15px;
    height: 15px;
    border-radius: 50%;
-   background: #00aaaa;
    cursor: pointer;
  }
+
 
 /* ------------- w3schools --------- https://markheath.net/post/customize-radio-button-css ---  */
 .radio-toolbar {
@@ -447,10 +485,9 @@ footer p {
  }
  
  .radio-toolbar label {
-     display: inline-block;
-     background-color: #444;
-     padding: 7px 12px;
-     border-radius: 4px;
+   display: inline-block;
+   padding: 7px 12px;
+   border-radius: 4px;
  }
  
 
@@ -468,17 +505,16 @@ footer p {
    font-weight: bold;
    }
 
-
 #results-table-header{
    display: table-header-group;
-   background-color: gray;
    font-weight: bold;
    font-size: 25px;
    }
  
-   .table-header-cell{
-      display: table-cell;
-      padding: 10px;
-      text-align: justify;
-      border-bottom: 1px solid black;
-      }   
+.table-header-cell{
+   display: table-cell;
+   padding: 10px;
+   text-align: justify;
+   }   
+
+   

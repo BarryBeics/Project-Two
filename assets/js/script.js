@@ -51,26 +51,6 @@ document.body.addEventListener("change", function(event){
 });
 
 
-/**
-* WILL BE ROMVED
-* Checks the sum value of all the inputs and uses consol.log to help with debuging
-
-function validateInputs() {
-  
-  let userAnswer = parseInt(document.getElementById("answer-box").value);
-  let calculatedAnswer = calculateCorrectAnswer();
-  let isCorrect = userAnswer === calculatedAnswer[0];
-
-  if (isCorrect) {
-    alert("Selection Confirmed!", takeProfit.toFixed(2));
-  } else {
-    alert('You have not completed all the fields!', takeProfit.toFixed(1));
-  }
-
-}
-
-
-*/
 
 
 
@@ -114,30 +94,6 @@ function validate() {
   }
 }
 
-
-
-
-/**
-* Gets the values from the various input types and checks they add up
-* Adding up the sum of each allows us to besure all are working as expected
-
-
-function calculateCorrectAnswer() {
-
-  stake = parseInt(document.getElementById('stake').value);
-  takeProfit = parseFloat(document.getElementById('takeProfit').innerText);
-  stopLoss = parseFloat(document.getElementById('stopLoss').innerText);
-  avgTrueRange = parseFloat(document.getElementById('avgTrueRange').innerText);
-  marketMommentum = parseFloat(document.getElementById('marketMommentum').innerText);
-  tradingFee = parseFloat(document.getElementById('tradingFee').innerText);
-  minutes = parseInt(document.getElementById('minutes').innerText);
-  days = parseInt(document.getElementById('days').innerText);
-  
-  return [stake + takeProfit + stopLoss + avgTrueRange + marketMommentum + tradingFee + minutes + days ];
-}
-
-
-*/
 
 
 
@@ -317,15 +273,10 @@ function generateRandonMove(min, max, decimalPlaces) {
 function SaveDataToLocalStorage(data)
 {
     var saving = [];
-    
     saving = JSON.parse(localStorage.getItem('results')) || [];
-
     saving.push(data);
-    
     alert("The results have been saved to you local storage and can be viewed on the results page. All feilds will now be cleared ready for you to try different parameters");  // Should be something like [Object array]
-    
     localStorage.setItem('results', JSON.stringify(saving));
-
     console.log(saving)
 }
 
@@ -338,6 +289,14 @@ if (tradeApplied === false) {
   return false;
 } else {
   const result = {
+"stake" : stake,
+"Trading Fee" : tradingFee, 
+  "takeProfit" : takeProfit, 
+  "stopLoss" : stopLoss, 
+  "avgTrueRange" : avgTrueRange, 
+  "marketMommentum" : marketMommentum, 
+  "minutes" : minutes, 
+  "days" : days, 
     "win" : win,
     "timedOut" : timedOut,
     "losses" : losses, 
