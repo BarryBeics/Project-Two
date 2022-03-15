@@ -220,9 +220,24 @@ p {
      .space {
       margin: 0px 0px 0px 5px;
    }
+   .space-contact {
+      margin: 0px 0px 0px 5px;
+   }
+   .spacer-third {
+      margin: 0px 0px 0px 2px;
+   }
 
    .info-space {
       margin: 0px 0px 0px 5px;
+   }
+
+   .options-form-item-third, .results-form-item-third {
+      width: 31.5%;
+      display: inline-block;
+   }
+   .options-form-item-half, .results-form-item-half {
+      width: 48.5%;
+      display: inline-block;
    }
     
 
@@ -235,11 +250,91 @@ p {
       margin: 0px 0px 0px 5px;
    }
 
+   .space-contact {
+      margin: 0px 0px 0px 15px;
+   }
+
+   .spacer-third {
+      margin: 0px 0px 0px 5px;
+   }
+
+   .slider {
+      width: 80%;
+    }
+
+    .col-md-3 {
+      max-width: 21%;
+   }
+
+   .options-form-item-third, .results-form-item-third {
+      width: 32%;
+      display: inline-block;
+   }
+   
+   .options-form-item-half, .results-form-item-half {
+      width: 49%;
+      display: inline-block;
+   }
+}
+/* ------------- Media Queries  ----------- Tablet potrait*/
+@media only screen and (max-width: 825px) {
+   .space {
+      margin: 0px 0px 0px 7px;
+   }
+   .space-contact {
+      margin: 0px 0px 0px 24px;
+   }
+   .spacer-third {
+      margin: 0px 0px 0px 3px;
+   }
+
    .slider {
       width: 75%;
     }
+
+.options-form-item-third, .results-form-item-third {
+   width: 31.5%;
+   display: inline-block;
 }
 
+.options-form-item-half, .results-form-item-half {
+   width: 48%;
+   display: inline-block;
+}
+
+}
+
+/* ------------- Media Queries  ----------- Mobile Landscape*/
+@media only screen and (max-width: 680px) {
+   .space {
+      margin: 0px 0px 0px 7px;
+   }
+   .space-contact {
+      margin: 0px 0px 0px 7px;
+   }
+   .spacer-third {
+      margin: 0px 0px 0px 3px;
+   }
+
+   .slider {
+      width: 84%;
+    }
+
+.options-form-item-third, .results-form-item-third {
+   width: 32.5%;
+   display: inline-block;
+}
+
+.options-form-item-half, .results-form-item-half {
+   width: 49%;
+   display: inline-block;
+}
+
+.footer-icon i {
+   width: 66px;
+}
+
+}
 /* ------------- Media Queries  ----------- Mobile only */
 
 @media only screen and (max-width: 576px) {
@@ -279,9 +374,28 @@ p {
    }
 
    .space {
-      margin: 0px 0px 0px 2px;
+      margin: 0px 0px 0px 4px;
+   }
+   .space-contact {
+      margin: 0px 0px 0px 5px;
+   }
+   .spacer-third {
+      margin: 0px 0px 0px 4px;
    }
     
+   .options-form-item-third, .results-form-item-third {
+      width: 31.5%;
+      display: inline-block;
+   }
+
+   .options-form-item-half, .results-form-item-half {
+      width: 48.5%;
+      display: inline-block;
+   }
+
+   .footer-icon i {
+      width: 77px;
+   }
 
 }
 
@@ -299,7 +413,6 @@ footer p {
    font-size: 25px;
    text-align: center;
    padding: 7px 20px;
-   width: 77px;
 }
 
 .more-info {
@@ -320,9 +433,6 @@ footer p {
 .more-info span {
    vertical-align: middle;
 }
-
-
-
 
 /* ------------- calculator.html ------------  */
 
@@ -346,20 +456,13 @@ footer p {
    margin-bottom: 10px;
 }
 
-.options-form-item-half, .results-form-item-half {
-   width: 48.5%;
-   display: inline-block;
-}
+
 
 .options-form-item-full, .results-form-item-full {
    width: 100%;
    padding: 6px;
 }
 
-.options-form-item-third, .results-form-item-third {
-   width: 32%;
-   display: inline-block;
-}
 
 .title{
    padding: 0px;
@@ -395,10 +498,16 @@ footer p {
     margin: 4px;
 }
 
+/* ------------- info Modals ------------  */
 
+.modal-content {
+   background-color: #444;
+}
 
-
-
+.btn-secondary {
+   background-color: #197b7b;
+   color: #c7c5c6;
+}
 
 /* ------------- Form elements ------------  */
 
@@ -416,8 +525,6 @@ footer p {
     border-radius: 0.25rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
-
-
 
 .button {
    margin-top: 15px;
@@ -475,7 +582,7 @@ footer p {
 
 /* ------------- w3schools --------- https://markheath.net/post/customize-radio-button-css ---  */
 .radio-toolbar {
-   margin: 10px;
+   margin: 8px;
  }
  
  .radio-toolbar input[type="radio"] {
@@ -511,10 +618,8 @@ footer p {
    font-size: 25px;
    }
  
-.table-header-cell{
+.table-header-cell {
    display: table-cell;
    padding: 10px;
    text-align: justify;
-   }   
-
-   
+}

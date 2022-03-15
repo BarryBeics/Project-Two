@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Trade Probability Calculator</title>
@@ -82,24 +80,55 @@
             <div class="col-sm-12 col-md-6">
                 <div class="p-3">
                     <h1>Options</h1>
-                    <p>Choose the parameters that you would like to test with the options below.</p>
+                    <p>Choose the parameters that you would like to test.</p>
+                    
                     <!-- Top Panel Left -->
                     <div class="options-form-item-half">
-                        <div class="info"><a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
-                            title="Investment Amount"
-                                data-bs-content="Here you can enter an amount that you would like to see the results for using your strategy idea.">
-                                info</a>
-                        </div>
-                        <label class="title" for="name"> Amount </label>
                         
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#amountModal"> info </button>
+  <!-- Modal -->
+  <div class="modal fade" id="amountModal" tabindex="-1" aria-labelledby="amountModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title" id="amountModalLabel">Investment Amount</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Here you can enter an amount that you would like to see the results for using your strategy idea. 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+                        <label class="title" for="name"> Amount </label>
                         <input id="stake" class="form-control" type="number"  min="0" value="0" name="stake">
                     </div>
+                   
                     <!-- Top Panel Right -->
                     <div class="options-form-item-half space">
-                        <div class="info"><a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
-                            title="Trade Fees"
-                                data-bs-content="Each exchange has their of own fee structure, here we have the basic amount for 4 of the most popular Crypto Exchange.">
-                                info </a></div>
+                        <!-- Button trigger modal -->
+<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#feeModal"> info </button>
+<!-- Modal -->
+<div class="modal fade" id="feeModal" tabindex="-1" aria-labelledby="feeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="feeModalLabel">Trading Fee</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Each exchange has their of own fee structure, here we have the basic amount for 4 of the most popular Crypto Exchange. 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
                         <label class="title" for="name"> Fees </label>
                         <p id="tradingFee">0</p>
                         <select class="select form-control">
@@ -112,18 +141,49 @@
                     </div>
                     <!-- First Wide Panel -->
                     <div class="options-form-item-full">
-                        <div class="info"><a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
-                            title="Take Profit"
-                                data-bs-content="For when the market increases at what percentage of the change in the assets value would you like to lock in profit? Use the slider provided to see what the impact your chosen “Take Profit” would have on your strategy.">
-                                info </a></div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#takeProfitModal"> info </button>
+<!-- Modal -->
+<div class="modal fade" id="takeProfitModal" tabindex="-1" aria-labelledby="takeProfitModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="takeProfitModalLabel">Take Profit</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        For when the market increases at what percentage of the change in the assets value would you like to lock in profit? Use the slider provided to see what the impact your chosen “Take Profit” would have on your strategy. 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
                         <label class="title" for="name"> Take Profit </label>
                         <input type="range" id="tp" value="1" min="1" max="8" step="0.1" class="slider"
                             oninput="document.getElementById('takeProfit').innerHTML = this.value" />
                         <div class="value"> <label id="takeProfit">0</label>%</div>
-                        <div class="info info-space"><a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
-                            title="Stop Loss"
-                            data-bs-content="For when the market decreases at what percentage of the change in the assets value would you like to exit the trade? Use the slider provided to see what the impact your chosen “Stop Loss” would have on your strategy.">
-                            info </a></div>
+                        
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#stopLossModal"> info </button>
+<!-- Modal -->
+<div class="modal fade" id="stopLossModal" tabindex="-1" aria-labelledby="stopLossModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="stopLossModalLabel">Stop Loss</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        For when the market decreases at what percentage of the change in the assets value would you like to exit the trade? Use the slider provided to see what the impact your chosen “Stop Loss” would have on your strategy.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
                         <label class="title" for="name"> Stop Loss </label>
                         <input type="range" id="sl" value="0" min="-6" max="-1" step="0.1" class="slider"
                             oninput="document.getElementById('stopLoss').innerHTML = this.value" />
@@ -131,18 +191,48 @@
                     </div>
                     <!-- Second Wide Panel -->
                     <div class="options-form-item-full">
-                        <div class="info"><a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
-                            title="ATR"
-                                data-bs-content="This calculator allows you to test what the impact of market volatility would have on your strategy. Using the slider provided allows you to choose an “Average True Range” in percentage to determine the conditions your strategy would perform best in.">
-                                info</a></div>
+                                <!-- Button trigger modal -->
+<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#ATRModal"> info </button>
+<!-- Modal -->
+<div class="modal fade" id="ATRModal" tabindex="-1" aria-labelledby="ATRModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="ATRLabel">Average True Range</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        This calculator allows you to test what the impact of market volatility would have on your strategy. Using the slider provided allows you to choose an “Average True Range” in percentage to determine the conditions your strategy would perform best in.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
                         <label class="title" for="name"> Average True Range </label>
                         <input type="range" id="atr" value="2" min="2" max="10" step="2" class="slider"
                             oninput="document.getElementById('avgTrueRange').innerHTML = this.value" />
                         <div class="value">upto <label id="avgTrueRange">0</label>%</div>
-                        <div class="info"><a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
-                            title="Market Mommentum"
-                                data-bs-content="This is how much the market has gained over the previous period selected. For Example if the assets has gained 3% in the last 24hrs you would choose 3% Market Momentum along with a trading period of 24hrs.  Use the slider provided to see what the impact your chosen “Market Momentum” would have on your strategy.">
-                                info</a></div>
+                                                                <!-- Button trigger modal -->
+<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#mommentumModal"> info </button>
+<!-- Modal -->
+<div class="modal fade" id="mommentumModal" tabindex="-1" aria-labelledby="mommentumModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="mommentumLabel">Market Mommentum</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        This is how much the market has gained over the previous period selected. For Example if the assets has gained 3% in the last 24hrs you would choose 3% Market Momentum along with a trading period of 24hrs.  Use the slider provided to see what the impact your chosen “Market Momentum” would have on your strategy.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
                         <label class="title" for="name"> Market Mommentum </label>
                         <input type="range" id="mm" value="0.5" min="0.5" max="8" step="0.5" class="slider"
                             oninput="document.getElementById('marketMommentum').innerHTML = this.value" />
@@ -150,10 +240,24 @@
                     </div>
                     <!-- Third Wide Panel -->
                     <div class="options-form-item-full">
-                        <div class="info"><a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
-                                title="Trade Duration"
-                                data-bs-content="How often would you like to apply this strategy? Select a time period to see what the impact this would have on your strategy.">
-                                info</a></div>
+<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#durationModal"> info </button>
+<!-- Modal -->
+<div class="modal fade" id="durationModal" tabindex="-1" aria-labelledby="durationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="durationLabel">Trade Duration</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        How often would you like to apply this strategy? Select a time period to see what the impact this would have on your strategy.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
                         <label class="title" for="name1"> Trade Duration (mins) </label>
                         <p id="minutes">0</p>
                         <div class="radio-toolbar">
@@ -183,10 +287,25 @@
                             <label for="duration120">120</label>
                         </div>
 
-                        <div class="info"><a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
-                            title="# of Days"
-                                data-bs-content="To see how your strategy would perform over time you can select a period to see how that impacts the profitability of your strategy.">
-                                info</a></div>
+                        
+<button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#daysModal"> info </button>
+<!-- Modal -->
+<div class="modal fade" id="daysModal" tabindex="-1" aria-labelledby="daysModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="daysLabel"># of Days</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        To see how your strategy would perform over time you can select a period to see how that impacts the profitability of your strategy.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
                         <label class="title" for="name"> # of Days </label>
 
                         <p id="days">0</p>
@@ -247,17 +366,12 @@
                         <div class="results"> <span id="netProfit">0</span> </div>
                     </div>
 
-
                     <!-- Top Panel Right -->
                     <div class="results-form-item-half space">
                         <label class="title" for="name"> Percentage Profit %</label>
                         <div class="results"> <span id="percentageProfit">0</span> </div>
                     </div>
 
-                    <div class="results-info"> <a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
-                        title="advice" data-bs-content="Some # of Days content"> info</a>
-                        <p> Here is the cost and effectiveness of the strategy. </p>
-                    </div>
                     <!-- Middle Panel Left -->
                     <div class="results-form-item-half">
                         <label class="title" for="name"> Total Fees £</label>
@@ -270,22 +384,18 @@
                         <div class="results"> <span id="successRate">0</span> </div>
                     </div>
 
-                    <div class="results-info"> <a tabindex="0" role="button" class="btn btn-dark btn-sm" data-bs-toggle="popover" data-bs-trigger="focus"
-                        title="advice" data-bs-content="Some # of Days content"> info</a>
-                        <p> These figures can be used to help guide any changes to new strategies.</p>
-                    </div>
                     <!-- Block of 3 Panels -->
                     <div class="results-form-item-third">
                         <label class="title" for="name"> Successes </label>
                         <div class="results"> <span id="win">0</span> </div>
                     </div>
 
-                    <div class="results-form-item-third space">
+                    <div class="results-form-item-third spacer-third">
                         <label class="title" for="name"> Timed Out </label>
                         <div class="results"> <span id="timedOut">0</span> </div>
                     </div>
 
-                    <div class="results-form-item-third space">
+                    <div class="results-form-item-third spacer-third">
                         <label class="title" for="name"> Losses </label>
                         <div class="results"> <span id="losses">0</span> </div>
                     </div>
@@ -301,8 +411,6 @@
                             <button id="btn" data-type="save" class="btn button"> Save & Clear</button>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
@@ -346,23 +454,11 @@
                     </li>
                 </ul>
             </div>
-
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
-
-
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
-
-
 </body>
 
 </html>

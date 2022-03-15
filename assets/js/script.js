@@ -31,21 +31,12 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
- // info popover functionality 
-/** var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
-  trigger: 'focus'
-}) */
 
 
 // This block handles the functionality of the drop down menu used to select the fees value
-// RETURN TO THIS TO SEE IF THERES A BETTER WAY
-// Set up a single handler at a common ancestor of all the select elements
+
 document.body.addEventListener("change", function(event){
-  // event.target references the element that actually triggered the event
-  // Check to see if the event was triggered by a DOM element you care to handle
   if(event.target.classList.contains("select")){
-    // Access the <p> element that is the previous sibling to the 
-    // select that triggered the event and update it
     event.target.previousElementSibling.textContent = event.target.value
   }
 });
@@ -53,7 +44,11 @@ document.body.addEventListener("change", function(event){
 
 
 
-
+/**
+* Checks each field to see if the user have entered a number other than zero, if the valuse remains at zero an alert pops up 
+prompting the user to enter and amount.
+The user cannot progress until all fields are complete.
+*/
 function validate() {
   stake = parseInt(document.getElementById('stake').value);
   tradingFee = parseFloat(document.getElementById('tradingFee').innerText);
@@ -90,7 +85,7 @@ function validate() {
     alert("Select the appropreate number of trading days");
     return false;
   } else {
-    trading(); //  block of code to be executed if all feilds have been completed
+    trading(); //  block of code to be executed once all fields have been completed
   }
 }
 
@@ -162,9 +157,6 @@ function chooseVolatility(){
      }
 
 let marketMommentum = 0;  // 6th of 8 options the user will set the user on the calculator.html page
-
-
-
 let confirmationDuration = 60; // This will be kept at 60 but maybe become an input option for the user
 
 
