@@ -16,7 +16,7 @@ body {
    background-color: #1b1b1b;
 }
 
-.main-menuitem a, .main-menuitem a i, h2, body, footer, footer p, .footer-icon i, .button, .more-info a, .btn-dark {
+.main-menuitem a, .main-menuitem a i, h2, body, footer, footer p, .footer-icon i, .button, .more-info a, .btn-dark, .form-control {
    color: #c7c5c6;
 }
  
@@ -38,7 +38,7 @@ body {
 }
 
 h3 {
-   color: #444;
+   color: #444444;
    
 }
 .button {
@@ -61,16 +61,16 @@ h3 {
 }
 
 .radio-toolbar label:hover {
-   background-color: #79b4b7;
+   background-color: #00aaaa;
  }
  
  .radio-toolbar input[type="radio"]:checked + label {
-     background-color: #79b4b7;
+     background-color: #00aaaa;
      color: #1b1b1b;
  }
 
  .more-info i:hover {
-   color: #2867b2;
+   color: #00aaaa;
 }
 
 #results-table-header{
@@ -78,7 +78,7 @@ h3 {
    }
 
    .slider {
-      background: #d3d3d3;
+      background: #c7c5c6;
     }
     
     .slider::-webkit-slider-thumb {
@@ -89,17 +89,16 @@ h3 {
       background: #00aaaa;
     }
     .radio-toolbar label {
-      background-color: #444;
+      background-color: #444444;
     }
 
     .table-header-cell{
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #1b1b1b;
       }
 
       .form-control {
          background-color: transparent !important;
-          color: #495057;
-          border: 1px solid #ced4da;
+          border: 1px solid #c7c5c6;
       }
 
 /* ------------- Site wide  ----------- Special paddings/margins/text -----*/
@@ -149,7 +148,7 @@ p {
 }
 
 .main-menuitem {
-   padding: 0;
+   padding: 10px 0px 0px 0px;
    text-align: center;
    text-transform: uppercase;
 }
@@ -160,6 +159,10 @@ p {
 
 .results-form-item-half, .results-form-item-full, .results-form-item-third {
    text-align: center;
+}
+
+.main-menuitem a {
+   text-decoration: none;
 }
 
 /* ------------- not sure -----*/
@@ -259,7 +262,7 @@ p {
    }
 
    .slider {
-      width: 80%;
+      width: 78%;
     }
 
     .col-md-3 {
@@ -289,7 +292,7 @@ p {
    }
 
    .slider {
-      width: 75%;
+      width: 70%;
     }
 
 .options-form-item-third, .results-form-item-third {
@@ -317,7 +320,7 @@ p {
    }
 
    .slider {
-      width: 84%;
+      width: 82%;
     }
 
 .options-form-item-third, .results-form-item-third {
@@ -341,7 +344,7 @@ p {
     
 
    .slider {
-      width: 72%;
+      width: 66%;
     }
 
    .graphic img {
@@ -474,9 +477,10 @@ footer p {
    display: inline-block;
 }
 
-.info {
-   padding: 0px 5px 0px 5px;
-   display: inline-block;
+
+
+.btn-sm {
+   margin: 0px 10px;
 }
 
 .results-info {
@@ -514,8 +518,8 @@ footer p {
 
 .form-control {
    display: block;
-   margin: 10px 0px;
-    width: 100%;
+   margin: 10px;
+    width: 93%;
     height: calc(1.5em + 0.75rem + 2px);
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
@@ -557,6 +561,7 @@ footer p {
    opacity: 0.7;
    -webkit-transition: .2s;
    transition: opacity .2s;
+   margin: 0px 10px;
  }
  
  .slider:hover {

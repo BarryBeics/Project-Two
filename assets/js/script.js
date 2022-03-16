@@ -42,8 +42,6 @@ document.body.addEventListener("change", function(event){
 });
 
 
-
-
 /**
 * Checks each field to see if the user have entered a number other than zero, if the valuse remains at zero an alert pops up 
 prompting the user to enter and amount.
@@ -88,8 +86,6 @@ function validate() {
     trading(); //  block of code to be executed once all fields have been completed
   }
 }
-
-
 
 
   /************************************************************************************************************************************************************************************************************************************************
@@ -216,22 +212,10 @@ let tradeApplied = false;
 let percentageProfit = 0;
 let successRate = 0;
 
-/* count_each_second is used to report on the duration into a trade an actins takes place  ...... sum moves is ..... min kilines is ...... */
-let countEachSecond = 0;
-let sumMoves = 0;
-let minKlines = [];
-
 /* These allow for a runing total of each to be recorded and updated from trade to trade (what do you mean trade to trade) */
 let totalFees = 0;
 let profit = 0;
 let netProfit = 0;
-
-/* These 2 arrays are used to track the time the average time into a trade before conditions are to be met */
-let timeInWinTrade = [];
-let timeInLossTrade = [];
-
-/* This array records if the move was up, flat or down so that we can see if there is fair distributions of randomness */
-let checkMoves = [];
 
 /* Function to calculate avergage */
 function getAvg(value) {
@@ -242,11 +226,6 @@ function getAvg(value) {
   var avg = total / value.length;
 }
 
-
-function timedOutMarketOrder() {
-
-}
-
 /**
 * Moment by moment the assets price can increase or decrease 
 * this function replicates this by generating random moves
@@ -255,25 +234,24 @@ function generateRandonMove(min, max, decimalPlaces) {
   return (Math.random() * (max - min) + min).toFixed(decimalPlaces) * 1;
 }
 
-
-
-
-
-
-
-
+/**
+* This function saves the results to the users local storage
+*/
 function SaveDataToLocalStorage(data)
 {
     var saving = [];
     saving = JSON.parse(localStorage.getItem('results')) || [];
     saving.push(data);
-    alert("The results have been saved to you local storage and can be viewed on the results page. All feilds will now be cleared ready for you to try different parameters");  // Should be something like [Object array]
+    alert("The results have been saved and can be viewed on the results page. All fields will now be cleared ready for you to try different parameters");  // Should be something like [Object array]
     localStorage.setItem('results', JSON.stringify(saving));
     console.log(saving)
 }
 
 
-
+/**
+* Moment by moment the assets price can increase or decrease 
+* this function replicates this by generating random moves
+*/
 function saveResults() {
 
 if (tradeApplied === false) {
@@ -304,11 +282,7 @@ if (tradeApplied === false) {
   location.reload()
 }
 
-
 }
-
-
-
 
 
 /**
@@ -331,7 +305,6 @@ console.log('Opening Crypto Value:', cryptoPrice);
 console.log('Crypto gain over validation period ', projectedGain.toFixed(2));
 console.log('average gain per second:', incrementMove.toFixed(2));
 console.log('average gain per trade:', averageMove.toFixed(2));
-
 console.log('takeProfit:', takeProfit.toFixed(2));
 console.log('stopLoss:', stopLoss.toFixed(2));
 console.log('avgTrueRange:', avgTrueRange.toFixed(2));
@@ -382,7 +355,6 @@ let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
 
           assetPrice = assetPrice + movePerSecound;
           
-
       averagePrice = averagePrice + incrementMove; 
       
       console.log('This is the Asset Value is now: ', assetPrice.toFixed(2));
@@ -493,9 +465,7 @@ console.log('NET PROFIT: £', netProfit);
 console.log('PROFIT:', percentageProfit, '%');
 console.log('SUCCESS:', successRate, '%');
 
-
 }
-
 };
 
 init();

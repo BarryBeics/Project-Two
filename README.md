@@ -38,7 +38,16 @@ Users are also be able to contact the developer using the contact form to make s
 ### 1.3. Design ###
  
 - **Colour Scheme**: The colours have been selected to 
+
+![Barry Marples](./readme-docs/colours.png)
  
+- Persian Green #00aaaa - Highlighted elements 
+- Elm #197b7b - Heading Text & button background
+- Emperor #504e4f - Box borders
+- Tundora #444444 - Unselected buttons 
+- Pale Slate #c7c5c6 - Text 
+- Cod Grey #1b1b1b - Website background colour 
+
 - **Typography**: The site uses 2 fonts, Firstly for the body text and buttons Montserrat font was the choice, Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate. Secondly for the headings, navigation text and to display the results Teko is the choice, this is a slim font allowing for more content to be displayed in a small area. Both fonts have Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly.
  
 - **Imagery**: T
