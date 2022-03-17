@@ -88,35 +88,35 @@
                     <!-- Top Panel Left -->
                     <div class="options-form-item-half">
                         <label class="title" for="name">Name </label>
-                        <input id="stake" class="form-control" type="number" placeholder="Your name here">
+                        <input id="name" class="form-control" type="text" placeholder="Your name here">
                     </div>
 
                     <!-- Top Panel right -->
                     <div class="options-form-item-half space-contact">
-                        <label class="title" for="name">Email </label>
-                        <input id="stake" class="form-control" type="number" placeholder="Your email here">
+                        <label class="title" for="email">Email </label>
+                        <input id="email" class="form-control" type="email" placeholder="Your email here">
                     </div>
 
                     <!-- First Wide Panel -->
                     <div class="options-form-item-full">
-                        <label class="title" for="name"> My comment relates to: </label>
+                        <label class="title" for="comment"> My comment relates to: </label>
 
                         <p id="days">0</p>
                         <div class="radio-toolbar">
-                            <input type="radio" id="days1" name="daysOption" value="1"
-                                oninput="document.getElementById('days').innerHTML = this.value">
+                            <input type="radio" id="Fees" name="daysOption" value="Fees"
+                                oninput="document.getElementById('inRelationTo').innerHTML = this.value">
                             <label for="days1">Fees</label>
 
-                            <input type="radio" id="days3" name="daysOption" value="3"
-                                oninput="document.getElementById('days').innerHTML = this.value">
+                            <input type="radio" id="tradeOrders" name="daysOption" value="Trade Order"
+                                oninput="document.getElementById('inRelationTo').innerHTML = this.value">
                             <label for="days3">Trade Orders</label>
 
-                            <input type="radio" id="days7" name="daysOption" value="7"
-                                oninput="document.getElementById('days').innerHTML = this.value">
+                            <input type="radio" id="volatility" name="daysOption" value="Volatility"
+                                oninput="document.getElementById('inRelationTo').innerHTML = this.value">
                             <label for="days7">Volatility</label>
 
-                            <input type="radio" id="days14" name="daysOption" value="14"
-                                oninput="document.getElementById('days').innerHTML = this.value">
+                            <input type="radio" id="timeFrames" name="daysOption" value="Time Frames"
+                                oninput="document.getElementById('inRelationTo').innerHTML = this.value">
                             <label for="days14">Time Frames</label>
                         </div>
                     </div>
