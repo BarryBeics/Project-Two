@@ -7,6 +7,8 @@
 The wireframes for this site were produced in Balsamiq (https://balsamiq.com/).
  
 Wire frames were created for Desktop, Tablet & mobile respectively.
+
+The main change from the wireframes to the final site was the layout of the results page from a table of data which didn't work on small devices to cards of data with alternating background colour. 
  
 
 <br /><br />

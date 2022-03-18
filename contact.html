@@ -85,68 +85,33 @@
                     <h1>Do you have a comments or improvements in mind?</h1>
                     <p>Why not complete this form, to see if they can be considered in future developments.</p>
 
-                    <!-- Top Panel Left -->
-                    <div class="options-form-item-half">
-                        <label class="title" for="name">Name </label>
-                        <input id="name" class="form-control" type="text" placeholder="Your name here">
-                    </div>
+<!-- modify this form HTML and place wherever you want your form -->
+<form
+  action="https://formspree.io/f/mnqwzbld"
+  method="POST"
+>
+  <!-- Top Panel Left -->
+  <div class="options-form-item-half">
+    <label class="title" for="name">Name </label>
+    <input id="name" class="form-control" type="text" placeholder="Your name here">
+</div>
 
-                    <!-- Top Panel right -->
-                    <div class="options-form-item-half space-contact">
-                        <label class="title" for="email">Email </label>
-                        <input id="email" class="form-control" type="email" placeholder="Your email here">
-                    </div>
+<!-- Top Panel right -->
+<div class="options-form-item-half space-contact">
+    <label class="title" for="email">Email </label>
+    <input id="email" class="form-control" type="email" placeholder="Your email here">
+</div>
 
-                    <!-- First Wide Panel -->
-                    <div class="options-form-item-full">
-                        <label class="title" for="comment"> My comment relates to: </label>
-
-                        <p id="days">0</p>
-                        <div class="radio-toolbar">
-                            <input type="radio" id="Fees" name="daysOption" value="Fees"
-                                oninput="document.getElementById('inRelationTo').innerHTML = this.value">
-                            <label for="days1">Fees</label>
-
-                            <input type="radio" id="tradeOrders" name="daysOption" value="Trade Order"
-                                oninput="document.getElementById('inRelationTo').innerHTML = this.value">
-                            <label for="days3">Trade Orders</label>
-
-                            <input type="radio" id="volatility" name="daysOption" value="Volatility"
-                                oninput="document.getElementById('inRelationTo').innerHTML = this.value">
-                            <label for="days7">Volatility</label>
-
-                            <input type="radio" id="timeFrames" name="daysOption" value="Time Frames"
-                                oninput="document.getElementById('inRelationTo').innerHTML = this.value">
-                            <label for="days14">Time Frames</label>
-                        </div>
-                    </div>
-
-                    <!-- Second Wide Panel -->
-                    <div class="options-form-item-full">
-                        <label class="title" for="name"> Your Comments: </label>
-                        <textarea name="message" class="form-control" id="messgae" cols="30" rows="10"
-                            placeholder="Let me know your thoughts"></textarea>
-                    </div>
-                    <!-- Submit Button -->
-                    <div class="form-row">
-                        <div class="col text-center">
-                            <button data-type="trade" class="btn button"> Let's Talk</button>
-                        </div>
-                    </div>
-<!-- Submit Button -->
-                    <form method="post" name="contact_form"
-action="contact-form-handler.php">
-    Your Name:
-    <input type="text" name="name">
-
-    Email Address:
-    <input type="text" name="email">
-
-    Message:
-    <textarea name="message"></textarea>
-
-    <input type="submit" value="Submit">
-</form>	
+  <!-- Second Wide Panel -->
+  <div class="options-form-item-full">
+    <label class="title"> Your Comments: </label>
+    <textarea name="message" class="form-control" id="message" cols="30" rows="10"
+        placeholder="Let me know your thoughts"></textarea>
+</div>
+  <!-- your other form fields go here -->
+  <button type="submit" class="btn button"> Let's Talk</button>
+  
+</form>
                 </div>
             </div>
         </div>
@@ -194,12 +159,6 @@ action="contact-form-handler.php">
     </footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"> </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script language="JavaScript">
-        var frmvalidator  = new Validator("contactform");
-        frmvalidator.addValidation("name","req","Please provide your name");
-        frmvalidator.addValidation("email","req","Please provide your email");
-        frmvalidator.addValidation("email","email",
-          "Please enter a valid email address");
-        </script>
+
 </body>
 </html>

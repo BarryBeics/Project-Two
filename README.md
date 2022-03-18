@@ -3,7 +3,7 @@
 ![Barry Marples](./readme-docs/TPC-view.png)
  
  
-This site.
+This site offers the user the chance to explore the impact of there choices on trading ideas they may have given the selected number of options provided.
  
 You can visit the deployed website [here](https://barrybeics.github.io/Project-Two/).
  
@@ -37,7 +37,7 @@ Users are also be able to contact the developer using the contact form to make s
  
 ### 1.3. Design ###
  
-- **Colour Scheme**: The colours have been selected to 
+- **Colour Scheme**: The colours have been selected to produce a simple clean look so that users can focus on the results. 
 
 ![Barry Marples](./readme-docs/colours.png)
  
@@ -50,7 +50,7 @@ Users are also be able to contact the developer using the contact form to make s
 
 - **Typography**: The site uses 2 fonts, Firstly for the body text and buttons Montserrat font was the choice, Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate. Secondly for the headings, navigation text and to display the results Teko is the choice, this is a slim font allowing for more content to be displayed in a small area. Both fonts have Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly.
  
-- **Imagery**: T
+- **Imagery**: The site only has 2 graphics. Firstly the bull & bear logo seen in the top left of every page consistant with branding of sites of this nature. Then we have the second graphic on the home of a typical newbie trader swamped in data trying to make sense of it all.
  
 ### 1.4. Wireframes ###
  
@@ -90,13 +90,12 @@ Graphic showing a person work hard to understand trading strategy, this displays
  
 **Results Page** includes:
  
-- **Description of each project**: allows the users to quickly understand the scope of the project.
+- **Past Results**: Here users will see all results of past trade strategies.
 
  
 **Contact Page** includes:
  
-- **Personal info**: allows users to post documents, phone and email files to the developer if necessary.
-- **Contact form**: allows users to make initial contact in a structured format so that the developer can respond with an answer and not need to ask for more details.
+- **Contact form**: allows users to make initial contact in a structured format so that the developer can respond with an answer.
  
 
  
