@@ -3,10 +3,11 @@
 
 /* ------------- Site wide  ----------- Colours */
 
-header, footer {
+header,
+footer {
    background-color: #181818;
- }  
- 
+}
+
 body {
    clear: left;
    background: url("../images/background.jpg");
@@ -16,15 +17,27 @@ body {
    background-color: #1b1b1b;
 }
 
-.main-menuitem a, .main-menuitem a i, h2, body, footer, footer p, .footer-icon i, .button, .more-info a, .btn-dark, .form-control {
+.main-menuitem a,
+.main-menuitem a i,
+h2,
+body,
+footer,
+footer p,
+.footer-icon i,
+.button,
+.more-info a,
+.btn-dark,
+.form-control {
    color: #c7c5c6;
 }
- 
-.selected:before, .more-info i:hover {
+
+.selected:before,
+.more-info i:hover {
    color: #00aaaa;
 }
 
-.hvr-underline-from-center:before, .radio-toolbar label:hover {
+.hvr-underline-from-center:before,
+.radio-toolbar label:hover {
    background-color: #00aaaa;
 }
 
@@ -32,101 +45,122 @@ body {
    background-color: #00aaaa;
    font-family: 'Teko', sans-serif;
 }
-.social i:hover, h1, h2, .title, .data span {
+
+.social i:hover,
+h1,
+h2,
+.title,
+.data span {
    color: #197b7b;
    font-family: 'Teko', sans-serif;
 }
 
 h3 {
    color: #444444;
-   
+
 }
+
 .button {
    background-color: #197b7b;
 }
 
-
-.options-form-item-half, .options-form-item-full, .options-form-item-third,
-.results-form-item-half, .results-form-item-full, .results-form-item-third {
+.options-form-item-half,
+.options-form-item-full,
+.options-form-item-third,
+.results-form-item-half,
+.results-form-item-full,
+.results-form-item-third {
    border: 1px solid #504e4f;
-   background: rgba(66, 64, 64, 0.3); 
+   background: rgba(66, 64, 64, 0.3);
 }
 
 .result-item-light {
-   background: rgba(179, 170, 170, 0.3); 
+   background: rgba(179, 170, 170, 0.3);
 }
 
 .result-item-dark {
-   background: rgba(66, 64, 64, 0.3); 
+   background: rgba(66, 64, 64, 0.3);
 }
 
 .radio-toolbar label:hover {
    background-color: #00aaaa;
- }
- 
- .radio-toolbar input[type="radio"]:checked + label {
-     background-color: #00aaaa;
-     color: #1b1b1b;
- }
+}
 
- .more-info i:hover {
+.radio-toolbar input[type="radio"]:checked+label {
+   background-color: #00aaaa;
+   color: #1b1b1b;
+}
+
+.more-info i:hover {
    color: #00aaaa;
 }
 
-#results-table-header{
+#results-table-header {
    background-color: gray;
-   }
+}
 
-   .slider {
-      background: #c7c5c6;
-    }
-    
-    .slider::-webkit-slider-thumb {
-      background: #00aaaa;
-    }
-    
-    .slider::-moz-range-thumb {
-      background: #00aaaa;
-    }
-    .radio-toolbar label {
-      background-color: #444444;
-    }
+.slider {
+   background: #c7c5c6;
+}
 
-    .table-header-cell{
-      border-bottom: 1px solid #1b1b1b;
-      }
+.slider::-webkit-slider-thumb {
+   background: #00aaaa;
+}
 
-      .form-control {
-         background-color: transparent !important;
-          border: 1px solid #c7c5c6;
-      }
+.slider::-moz-range-thumb {
+   background: #00aaaa;
+}
+
+.radio-toolbar label {
+   background-color: #444444;
+}
+
+.table-header-cell {
+   border-bottom: 1px solid #1b1b1b;
+}
+
+.form-control {
+   background-color: transparent !important;
+   border: 1px solid #c7c5c6;
+}
+
+/* ------------- info Modals ------------  */
+
+.modal-content {
+   background-color: #444444;
+}
+
+.btn-secondary {
+   background-color: #197b7b;
+   color: #c7c5c6;
+}
 
 /* ------------- Site wide  ----------- Special paddings/margins/text -----*/
 
 h1,
-h2
-{
+h2 {
    margin: 0;
 }
- 
+
 h1 {
    font-size: 2em;
    padding: 8px 0px 0px 5px;
    font-weight: 600;
    text-transform: uppercase;
 }
- 
-h2, h3 {
+
+h2,
+h3 {
    font-size: 1.8em;
    font-weight: 500;
    padding: 10px 0px;
 }
- 
+
 p {
-    font-size: 1em;
-    font-weight: 200;
-    font-family: 'Montserrat', sans-serif;
-    padding: 0px 5px;
+   font-size: 1em;
+   font-weight: 200;
+   font-family: 'Montserrat', sans-serif;
+   padding: 0px 5px;
 }
 
 .title, .value {
@@ -134,7 +168,7 @@ p {
 }
 
 .results {
-      font-size: 6em;
+   font-size: 6em;
 }
 
 .main-menuitem a i {
@@ -143,8 +177,9 @@ p {
 }
 
 /* ------------- not sure -----*/
+
 ul {
-   margin-top: 12px;
+   margin: 10px 28px;
 }
 
 .list-inline-item:not(:last-child) {
@@ -155,7 +190,8 @@ ul {
    font-size: 0;
 }
 
-#mob-nav, #nav {
+#mob-nav,
+#nav {
    z-index: 1;
 }
 
@@ -165,11 +201,16 @@ ul {
    text-transform: uppercase;
 }
 
-.main-menuitem span, .title, .value, .results {
+.main-menuitem span,
+.title,
+.value,
+.results {
    font-family: 'Teko', sans-serif;
 }
 
-.results-form-item-half, .results-form-item-full, .results-form-item-third {
+.results-form-item-half,
+.results-form-item-full,
+.results-form-item-third {
    text-align: center;
 }
 
@@ -178,210 +219,273 @@ ul {
 }
 
 /* ------------- not sure -----*/
+
 .center {
    display: block;
    margin-left: auto;
    margin-right: auto;
    width: 100%;
-  height: auto;
- }
+   height: auto;
+}
 
 .graphic img {
    display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+   margin-left: auto;
+   margin-right: auto;
 }
 
-/* ------------- Media Queries  ----------- Everything except Mobile size screen */
+img {
+   margin: 10px 0px;
+}
 
-@media only screen and (min-width: 1201px) {
+/* ------------- Media Queries  ----------- Desktop Screens */
+
+@media only screen and (min-width: 1281px) {
+
+
+   header {
+      height: 100px;
+   }
+
+   .main-menuitem {
+      height: 80px;
+   }
+
+   .main-menuitem a {
+      width: 100%;
+      text-decoration: none;
+      height: 65px;
+   }
+
+   .main-menuitem a span {
+      display: block;
+      width: 100%;
+      padding-top: 6px;
+      text-align: center;
+      font-size: 1.5em;
+      letter-spacing: 3px;
+   }
+
+
+
+   .graphic img {
+      width: 57%;
+   }
+
+   .title,
+   .value {
+      font-size: 1.6em;
+   }
 
    .slider {
       width: 83%;
-    }
-
-   .graphic img {
-      width: 80%;
-    } 
-
+   }
+ 
    .col-md-3 {
       max-width: 23%;
    }
-      
-     .main-menuitem {
-        height: 80px;
-     }
-      
-     .main-menuitem a {
-        width: 100%;
-        text-decoration: none;
-        height: 80px;
-     }
 
-     .main-menuitem a i {
-        padding-top: 18px;
-     }
-      
-     .main-menuitem a span {
-        display: block;
-        width: 100%;
-        padding-top: 6px;
-        text-align: center;
-        font-size: 1.5em;
-        letter-spacing: 3px;
-     }
+   .space {
+      margin-left: 8px;
+   }
 
-     .space {
-      margin: 0px 0px 0px 5px;
-   }
-   .space-contact {
-      margin: 0px 0px 0px 5px;
-   }
    .spacer-third {
-      margin: 0px 0px 0px 2px;
+      margin-left: 6px;
    }
 
    .info-space {
-      margin: 0px 0px 0px 5px;
+      margin-left: 5px;
    }
 
-   .options-form-item-third, .results-form-item-third {
-      width: 31.5%;
+   .options-form-item-third,
+   .results-form-item-third {
+      width: 32.2%;
       display: inline-block;
    }
-   .options-form-item-half, .results-form-item-half {
-      width: 48.5%;
+
+   .options-form-item-half,
+   .results-form-item-half {
+      width: 49%;
       display: inline-block;
-   }
-    
-
-}
-
-/* ------------- Media Queries  ----------- Mobile only */
-
-@media only screen and (max-width: 1200px) {
-   .space {
-      margin: 0px 0px 0px 5px;
    }
 
    .space-contact {
-      margin: 0px 0px 0px 15px;
+      margin-left: 16px;
+   }
+}
+
+/* ------------- Media Queries  ----------- Tablets in Landscape and desktops up to 1200px */
+
+@media only screen and (max-width: 1281px) {
+
+   header {
+      height: 100px;
+   }
+
+   .space {
+      margin-left: 5px;
+   }
+
+   .space-contact {
+      margin-left: 15px;
    }
 
    .spacer-third {
-      margin: 0px 0px 0px 5px;
+      margin-left: 5px;
    }
 
    .slider {
       width: 78%;
-    }
+   }
 
-    .col-md-3 {
+
+
+   .graphic img {
+      width: 58%;
+   }
+
+   .main-menuitem a {
+      width: 100%;
+      text-decoration: none;
+      height: 65px;
+   }
+
+   .main-menuitem a span {
+      display: block;
+      width: 100%;
+      padding-top: 6px;
+      text-align: center;
+      font-size: 1.5em;
+      letter-spacing: 3px;
+   }
+
+   .col-md-3 {
       max-width: 21%;
    }
 
-   .options-form-item-third, .results-form-item-third {
+   .options-form-item-third,
+   .results-form-item-third {
       width: 32%;
       display: inline-block;
    }
-   
-   .options-form-item-half, .results-form-item-half {
+
+   .options-form-item-half,
+   .results-form-item-half {
       width: 49%;
       display: inline-block;
    }
 }
-/* ------------- Media Queries  ----------- Tablet potrait*/
+
+/* ------------- Media Queries  ----------- Tablets in potrait*/
+
 @media only screen and (max-width: 825px) {
    .space {
-      margin: 0px 0px 0px 7px;
+      margin-left: 7px;
    }
+
    .space-contact {
-      margin: 0px 0px 0px 24px;
+      margin-left: 24px;
    }
+
    .spacer-third {
-      margin: 0px 0px 0px 3px;
+      margin-left: 3px;
    }
 
    .slider {
       width: 70%;
-    }
+   }
 
-.options-form-item-third, .results-form-item-third {
-   width: 31.5%;
-   display: inline-block;
+   .options-form-item-third,
+   .results-form-item-third {
+      width: 31.5%;
+      display: inline-block;
+   }
+
+   .options-form-item-half,
+   .results-form-item-half {
+      width: 48%;
+      display: inline-block;
+   }
 }
 
-.options-form-item-half, .results-form-item-half {
-   width: 48%;
-   display: inline-block;
-}
+/* ------------- Media Queries  ----------- Mobiles in Landscape*/
+@media only screen and (max-width: 768px) {
 
-}
-
-/* ------------- Media Queries  ----------- Mobile Landscape*/
-@media only screen and (max-width: 680px) {
+   header {
+      height: 57px;
+   }
+   
    .space {
-      margin: 0px 0px 0px 7px;
+      margin-left: 7px;
    }
+
    .space-contact {
-      margin: 0px 0px 0px 7px;
+      margin-left: 7px;
    }
+
    .spacer-third {
-      margin: 0px 0px 0px 3px;
+      margin-left: 3px;
    }
 
    .slider {
       width: 82%;
-    }
+   }
 
-.options-form-item-third, .results-form-item-third {
-   width: 32.5%;
-   display: inline-block;
+
+
+   .graphic img {
+      width: 80%;
+   }
+
+   .options-form-item-third,
+   .results-form-item-third {
+      width: 32.5%;
+      display: inline-block;
+   }
+
+   .options-form-item-half,
+   .results-form-item-half {
+      width: 49%;
+      display: inline-block;
+   }
+
+   .footer-icon i {
+      width: 66px;
+   }
 }
 
-.options-form-item-half, .results-form-item-half {
-   width: 49%;
-   display: inline-block;
-}
-
-.footer-icon i {
-   width: 66px;
-}
-
-}
-/* ------------- Media Queries  ----------- Mobile only */
+/* ------------- Media Queries  ----------- All Mobile & Nexus 7 Tablet */
 
 @media only screen and (max-width: 576px) {
-    
+
+
+
+   .title,
+   .value {
+      font-size: 1.17em;
+   }
 
    .slider {
       width: 66%;
-    }
+   }
 
    .graphic img {
-     width: 100%;
-   } 
-
-   #logo img {
-      padding-top: 0px;
-      width: 70px;
-      height: 35px;
+      width: 100%;
    }
 
    .col-3 {
       max-width: 23%;
    }
-    
+
    #main-nav li {
       font-size: 14px;
       padding: 0px;
    }
-    
+
    .main-menuitem {
       height: 40px;
    }
-    
+
    .main-menuitem a {
       width: 100%;
       text-decoration: none;
@@ -389,27 +493,67 @@ ul {
    }
 
    .space {
-      margin: 0px 0px 0px 4px;
+      margin-left: 3px;
    }
+
    .space-contact {
-      margin: 0px 0px 0px 5px;
+      margin-left: 6px;
    }
+
    .spacer-third {
-      margin: 0px 0px 0px 4px;
+      margin-left: 3px;
    }
-    
-   .options-form-item-third, .results-form-item-third {
-      width: 31.5%;
+
+   .options-form-item-third,
+   .results-form-item-third {
+      width: 32%;
       display: inline-block;
    }
 
-   .options-form-item-half, .results-form-item-half {
+   .options-form-item-half,
+   .results-form-item-half {
       width: 48.5%;
       display: inline-block;
    }
 
    .footer-icon i {
-      width: 77px;
+      width: 50px;
+   }
+}
+
+/* ------------- Media Queries  ----------- All Mobile & Nexus 7 Tablet */
+
+@media only screen and (max-width: 420px) {
+
+ 
+
+   .slider {
+      width: 66%;
+   }
+
+
+
+   .space {
+      margin-left: 2px;
+   }
+
+   .space-contact {
+      margin-left: 6px;
+   }
+
+   .spacer-third {
+      margin-left: 6px;
+   }
+
+   .options-form-item-third,
+   .results-form-item-third {
+      width: 1%;
+      display: inline-block;
+   }
+   .options-form-item-half,
+   .results-form-item-half {
+      width: 48%;
+      display: inline-block;
    }
 
 }
@@ -418,6 +562,7 @@ ul {
 
 footer {
    padding-top: 10px;
+   height: 75px;
 }
 
 footer p {
@@ -433,13 +578,13 @@ footer p {
 .more-info {
    padding: 10px;
    margin: auto;
- }
-
- .more-info a {
-   text-decoration: none;
-   margin: auto;
 }
- 
+
+.more-info a {
+   text-decoration: none;
+   margin: 0px 20px;
+}
+
 .more-info a i {
    font-size: 22px;
    padding: 10px;
@@ -449,16 +594,21 @@ footer p {
    vertical-align: middle;
 }
 
-/* ------------- calculator.html ------------  */
-
-#tradingFee, #minutes, #days { display: none;}
-
-.fees p {
-   margin-bottom: 0px;
+.col-sm-6 {
+   text-align: center;
 }
 
-.fees .title {
-  margin-bottom: 0px;
+/* ------------- calculator.html ------------  */
+
+/* For the dropdown menu and custom radio buttons we need to hide the default value with display none */
+#tradingFee,
+#minutes,
+#days {
+   display: none;
+}
+
+.fees .title, .fees p  {
+   margin-bottom: 0px;
 }
 
 .options-form {
@@ -466,30 +616,33 @@ footer p {
    width: 100%;
 }
 
-.options-form-item-half, .options-form-item-full, .options-form-item-third,
-.results-form-item-half, .results-form-item-full, .results-form-item-third {
+.options-form-item-half,
+.options-form-item-full,
+.options-form-item-third,
+.results-form-item-half,
+.results-form-item-full,
+.results-form-item-third {
    margin-bottom: 10px;
 }
 
-
-
-.options-form-item-full, .results-form-item-full {
+.options-form-item-full,
+.results-form-item-full {
    width: 100%;
    padding: 6px;
 }
 
-
-.title{
+.title {
    padding: 0px;
    display: inline-block;
    margin: 0px;
 }
-.value, .range-slider, .options-form-item-half {
+
+.value,
+.range-slider,
+.options-form-item-half {
    padding: 0px 10px;
    display: inline-block;
 }
-
-
 
 .btn-sm {
    margin: 0px 10px;
@@ -502,44 +655,30 @@ footer p {
 
 /* ------------- Results mobile ------------  */
 
-
-
 .data {
    display: inline-flex;
-   
 }
 
-.data p, .data span {
+.data p,
+.data span {
    padding: 2px;
-    margin: 4px;
-}
-
-/* ------------- info Modals ------------  */
-
-.modal-content {
-   background-color: #444;
-}
-
-.btn-secondary {
-   background-color: #197b7b;
-   color: #c7c5c6;
+   margin: 4px;
 }
 
 /* ------------- Form elements ------------  */
 
-
 .form-control {
    display: block;
    margin: 10px;
-    width: 93%;
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    background-clip: padding-box;
-    border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+   width: 93%;
+   height: calc(1.5em + 0.75rem + 2px);
+   padding: 0.375rem 0.75rem;
+   font-size: 1rem;
+   font-weight: 400;
+   line-height: 1.5;
+   background-clip: padding-box;
+   border-radius: 0.25rem;
+   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 .button {
@@ -574,69 +713,43 @@ footer p {
    -webkit-transition: .2s;
    transition: opacity .2s;
    margin: 0px 10px;
- }
- 
- .slider:hover {
+}
+
+.slider:hover {
    opacity: 1;
- }
- 
- .slider::-webkit-slider-thumb {
+}
+
+.slider::-webkit-slider-thumb {
    -webkit-appearance: none;
    appearance: none;
    width: 15px;
    height: 15px;
    border-radius: 50%;
    cursor: pointer;
- }
- 
- .slider::-moz-range-thumb {
+}
+
+.slider::-moz-range-thumb {
    width: 15px;
    height: 15px;
    border-radius: 50%;
    cursor: pointer;
- }
-
+}
 
 /* ------------- w3schools --------- https://markheath.net/post/customize-radio-button-css ---  */
+
 .radio-toolbar {
    margin: 8px;
- }
- 
- .radio-toolbar input[type="radio"] {
+}
+
+.radio-toolbar input[type="radio"] {
    opacity: 0;
    position: fixed;
    width: 0;
- }
- 
- .radio-toolbar label {
+}
+
+.radio-toolbar label {
    display: inline-block;
    padding: 7px 12px;
    border-radius: 4px;
- }
- 
-
- /* ------------- Results Page Table ------------  */
-
- #results-table {
-   width: 100%;
-   display: table;
-   }
-
-#results-table-caption{
-   display: table-caption;
-   text-align: center;
-   font-size: 30px;
-   font-weight: bold;
-   }
-
-#results-table-header{
-   display: table-header-group;
-   font-weight: bold;
-   font-size: 25px;
-   }
- 
-.table-header-cell {
-   display: table-cell;
-   padding: 10px;
-   text-align: justify;
 }
+
