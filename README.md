@@ -3,7 +3,7 @@
 ![Barry Marples](./readme-docs/TPC-view.png)
  
  
-This site offers the user the chance to explore the impact of there choices on trading ideas they may have given the selected number of options provided.
+This site offers the user the chance to explore the impact of their choices on trading ideas they may have given the selected number of options provided.
  
 You can visit the deployed website [here](https://barrybeics.github.io/Project-Two/).
  
@@ -15,7 +15,7 @@ You can visit the deployed website [here](https://barrybeics.github.io/Project-T
 ### 1.1. Project Goals ###
  
 Picking a trading strategy can be complex. This site will help users gain a better understanding of what impact changing parameters can have on the effectiveness of a given trading strategy.
-Users are also be able to contact the developer using the contact form to make suggestions for improvments to the site.
+Users are also able to contact the developer using the contact form to make suggestions for improvements to the site.
  
 ### 1.2. User Stories ###
  
@@ -29,7 +29,7 @@ Users are also be able to contact the developer using the contact form to make s
 - As a USER I want to be able to change the duration the simulation will run for so that I can see the effect this would have on the overall strategy 
 - As a USER I want simple explanations of any complex terminology so that I can understand what it is I’m making changes to
 - As a USER I want a simple interface so that I can cycle between strategies quickly and easily
-- As a USER I want a simple summary of the results so that I can quickly understand if change I have made have improved my strategy or not
+- As a USER I want a simple summary of the results so that I can quickly understand if change I have made has improved my strategy or not
 - As a USER I want a to be able to save results for later comparison
 - As a USER I want to be able to contact the developer to suggest future developments to the site
 
@@ -50,7 +50,7 @@ Users are also be able to contact the developer using the contact form to make s
 
 - **Typography**: The site uses 2 fonts, Firstly for the body text and buttons Montserrat font was the choice, Montserrat is a clean font used frequently in programming, so it is both attractive and appropriate. Secondly for the headings, navigation text and to display the results Teko is the choice, this is a slim font allowing for more content to be displayed in a small area. Both fonts have Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly.
  
-- **Imagery**: The site only has 2 graphics. Firstly the bull & bear logo seen in the top left of every page consistant with branding of sites of this nature. Then we have the second graphic on the home of a typical newbie trader swamped in data trying to make sense of it all.
+- **Imagery**: The site only has 2 graphics. Firstly the bull & bear logo seen in the top left of every page consistent with branding of sites of this nature. Then we have the second graphic on the home of a typical newbie trader swamped in data trying to make sense of it all.
  
 ### 1.4. Wireframes ###
  
@@ -72,19 +72,19 @@ Wireframe - [View](WIREFRAMES.md)
  
 **The Footer** includes:
  
-- **Social**: allows users to know more about the developer. These are all links to real accounts as I intend develop this project futher over time.
+- **Social**: allows users to know more about the developer. These are all links to real accounts as I intend to develop this project further over time.
  
 Both the Header and the Footer are consistent throughout the website.
  
 **Home Page** includes:
  
-- **overview**: A couple of sentances to give a brief explanation of the the site does.
-Graphic showing a person work hard to understand trading strategy, this displays a smaller image on mobile screens.
+- **overview**: A couple of sentences to give a brief explanation of the the site does.
+Graphic showing a person working hard to understand trading strategy
  
  
 **Calculator Page** includes:
  
-- **Options Panel**: Allows for input of various parameters but the user.
+- **Options Panel**: Allows for input of various parameters by the user.
 - **Results Panel**: Show the results of the current trading strategy.
 
  
@@ -123,7 +123,7 @@ Graphic showing a person work hard to understand trading strategy, this displays
 
 ### 3.2. Frameworks, Libraries & Programs Used ###
  
-- [Bootstrap 4.4.1:](https://getbootstrap.com/docs/4.4/getting-started/introduction/) - Bootstrap was used to handle the responsive layout of the website.
+- [Bootstrap 5.0.2:](https://getbootstrap.com/docs/5.0/getting-started/introduction/) - Bootstrap was used to handle the responsive layout of the website.
 - [Hover.css:](https://ianlunn.github.io/Hover/) - Hover.css was used on the navigation buttons with the underline-from-center effect and the Social Media icons in the footer pop was used for a response while being hovered over.
 - [Google Fonts:](https://fonts.google.com/) - Google fonts were used to import the 'Montserrat' & 'Teko' fonts into the style.css file which is used on all pages throughout the project.
 - [Font Awesome:](https://fontawesome.com/) - Font Awesome was used on the navigation buttons and in the footer which are present on all pages throughout the website to add icons for aesthetic and UX purposes.
@@ -135,14 +135,22 @@ Graphic showing a person work hard to understand trading strategy, this displays
  
 <br /><br />
  
-## 4. Testing
+## 4. Logic
 ---
+
+Here is a flow diagram to illustrate the logic required to control this aplication based on the users choices
+
+![Logic](./readme-docs/logic.png)
+
+<br /><br />
  
+## 5. Testing
+---
 The testing process can be seen [here](TESTING.md).
  
 <br /><br />
  
-## 5. Deployment
+## 6. Deployment
 ---
  
 **To deploy the project**
@@ -189,22 +197,20 @@ To clone this project from GitHub:
  
 <br /><br />
  
-## 6. Credits
+## 7. Credits
 ---
  
-### 6.1. Content
+### 7.1. Content
 All the text on the website has been written by Barry Marples
  
-[Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make the site responsive using the Bootstrap Grid System.
+[Bootstrap5](https://getbootstrap.com/docs/5.0/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make the site responsive using the Bootstrap Grid System.
  
-[MDN Web Docs](https://developer.mozilla.org/) : For Pattern Validation code. Code was modified to better fit my needs and to match an Irish phone number layout to ensure correct validation. Tutorial Found [Here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/tel#Pattern_validation)
- 
-### 6.2. Media
+### 7.2. Media
  
 The graphic on the home page, the logo & the background image are a free downloads from [Vecteezy](https://www.vecteezy.com/vector-art/2214399-stock-trader-exchange):
 
  
-### 6.3. Acknowledgments
+### 7.3. Acknowledgments
  
 [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/?originalSubdomain=ng) for the mentor guidance and support.
  

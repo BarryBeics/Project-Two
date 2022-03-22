@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Trade Probability Calculator</title>
+   
 </head>
 
 <body> 
@@ -56,7 +57,7 @@
                     </ul>
                 </div>
                 <!-- Mobile -->
-                <div class="d-sm-none">
+                <div class="d-md-none">
                     <ul id="nav-mob" class="list-inline menucontainer">
                         <li class="col-3 list-inline-item main-menuitem">
                             <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
@@ -82,29 +83,28 @@
                     <!-- Text Area -->
                     <h1>Do you have a comments or improvements in mind?</h1>
                     <p>Why not complete this form, to see if they can be considered in future developments.</p>
-                    <!-- Contact form -->
-                    <form action="https://formspree.io/f/mnqwzbld" method="POST">
+                    
                         <!-- Top Panel Left -->
                         <div class="options-form-item-half">
                             <label class="title" for="name">Name </label>
-                            <input id="name" class="form-control" type="text" placeholder="Your name here">
+                            <input id="name" class="form-input" type="text" placeholder="Your name here">
                         </div>
                         <!-- Top Panel right -->
                         <div class="options-form-item-half space-contact">
                             <label class="title" for="email">Email </label>
-                            <input id="email" class="form-control" type="email" placeholder="Your email here">
+                            <input id="email" class="form-input" type="email" placeholder="Your email here">
                         </div>
                         <!-- Second Wide Panel -->
                         <div class="options-form-item-full">
                             <label class="title"> Your Comments: </label>
-                            <textarea name="message" class="form-control" id="message" cols="30" rows="10"
+                            <textarea class="form-comment" id="message" cols="30" rows="10"
                                 placeholder="Let me know your thoughts"></textarea>
                         </div>
-                        <!-- your other form fields go here -->
+                        <!-- Button -->
                         <div class="col text-center">
-                            <button type="submit" class="btn button"> Let's Talk</button>
+                            <button onclick="sendMail()" class="btn button"> Let's Talk</button>
                         </div>
-                    </form>
+                    
                 </div>
             </div>
         </div>
@@ -156,7 +156,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+     <script type="text/javascript">
+     (function() {
+     emailjs.init("Q-_8US3JroQzc3S8M");
+     })();
+     </script>
+<script src="assets/js/contact.js"></script>
 </body>
 
 </html>

@@ -49,7 +49,7 @@ function init() {
     minutes = parseInt(document.getElementById('minutes').innerText);
     days = parseInt(document.getElementById('days').innerText);
 
-    if (stake === 0) {
+    if (stake <= 0) {
       alert("Please enter a stake amount");
       return false;
     } else if (tradingFee === 0) {
@@ -74,22 +74,12 @@ function init() {
       alert("Select the appropreate number of trading days");
       return false;
     } else {
-      trading(); //  block of code to be executed once all fields have been completed
+      trading(); 
     }
   }
 
-  /************************************************************************************************************************************************************************************************************************************************
-   *      TPC TRADE PROBABILTY CACULATOR
-   * 
-   * This application allows the user to experiment with the parameters to gain a better understadning of how their strategy would preform.
-   * This application then simulates the market buy changing the assets price over a given period. Then off the incremental price the
-   * application produces randomly generated moves Up and Down in order to create a realistic simulation of the market.
-   ************************************************************************************************************************************************************************************************************************************************/
 
-  /****************************************
-   *      INVESTMENT AMOUNT  & FEES
-   ****************************************/
-  let stake = 0; // 1st of 8 options the user will set the user on the calculator.html page
+  let stake = 0; 
 
   /* For development purpose we use a static amount of 10,000 as this will aid debugging */
   /* There's potential to use an API call to get live prices */
@@ -100,30 +90,12 @@ function init() {
     console.log('Exchange rate:  1 FIAT:', valueHeld.toFixed(2), 'CRYPTO')
   }
 
-  let tradingFee = 0; // 2nd of 8 options the user will set the user on the calculator.html page
-
-
-  /****************************************
-   *      TAKE PROFIT & STOP LOSS OPTIONS
-   ****************************************/
-  let takeProfit = 0; // 3rd of 8 options the user will set the user on the calculator.html page
-  let stopLoss = 0; // 4th of 8 options the user will set the user on the calculator.html page
-
-
-  /****************************************
-   *      ATR (Average True Range) & MARKET MOMENTUM -- TRADE ENTRY CONDITIONS
-   ****************************************/
-  /* The condtions to enter a trade are that a coin has been trending and the uptrend gain for the period of time here confimation_duration
-   * This allows the user to test the condtions of when a bot would enter a trade, for example if the assets in question had gained 4% over 60 minutes
-   * then we would replicate this momentum with the following settings, if you looking of a 3 hour period just increase the input_confimation_duration = 180 */
-
-  let avgTrueRange = 0; // 5th of 8 options the user will set the user on the calculator.html page
-
+  let tradingFee = 0; 
+  let takeProfit = 0; 
+  let stopLoss = 0; 
+  let avgTrueRange = 0; 
   let volatility = 0;
-  /* Also the ATR here will need to be relative to the validation period the market momentum, so this serves a another condtion that needs to be met before we enter a trade.
 
-  #this determines the how far up and down from the average gain price the actual price moves, this script by default generates a move of up to 0.9%
-  # Therefore if you change this to 1 the move can be upto 1.9% in either direction making a an ATR of 3.8% which im calling upto 4% */
 
 
   /* THIS COULD BE SIMPLIFIED AS JUST HALFING THE VOLATILITY INPUT */
@@ -140,28 +112,9 @@ function init() {
 
   }
 
-  let marketMommentum = 0; // 6th of 8 options the user will set the user on the calculator.html page
-  let confirmationDuration = 60; // This will be kept at 60 but maybe become an input option for the user
+  let marketMommentum = 0; 
 
-  function changePerSecond(price) {
-    /*  This will be used as the backbone of a strategy simulator ensuring the direction of the momentum can be controled */
-    let change = (price * marketMommentum) / confirmationDuration;
-
-    console.log('CHANGE PER SECOND', change.toFixed(2));
-
-  }
-
-  /* ########################################
-  ##     TRADE INTERVALS & TIME PERIOD
-  ######################################## */
-
-  /* Here the user can adjust the duration to see if the strategy can return meaningful gains over time.
-  /*  In a real world senario the true number of times a trade would take place would depend on the number of times the "enter a trade conditions" are met */
   let days = 0;
-
-
-  /*  This vaialble allows you to set the time in the trade before it times out and forces a market order at what ever the position is be it positive or negative.
-  # Define in input_minutes how long you will stay in the trade (5, 10, 15, 30, 60 must be in input_minutes) */
   let minutes = 0;
   let seconds = 10;
 
@@ -180,9 +133,7 @@ function init() {
     return Math.floor(Math.random() * (maxTrades - minTrades) + minTrades);
   }
 
-  /* ########################################
-  ##     count_each_secondING STUFF
-  ######################################## */
+
 
   /* Win count_each_seconds number of successful "take profit" instances, timed out records number of trades that result in a forced market order & losses record each instance of being stopped out of the trade */
   let win = 0;
@@ -281,12 +232,12 @@ function init() {
     chooseVolatility(avgTrueRange);
     let projectedGain = cryptoPrice * (marketMommentum / 100);
     let incrementMove = projectedGain / (6 * seconds);
-    let averageMove = minutes * changePerSecond(cryptoPrice);
+    
     console.log('Opening Steak Value: £', stake);
     console.log('Opening Crypto Value:', cryptoPrice);
     console.log('Crypto gain over validation period ', projectedGain.toFixed(2));
     console.log('average gain per second:', incrementMove.toFixed(2));
-    console.log('average gain per trade:', averageMove.toFixed(2));
+  
     console.log('takeProfit:', takeProfit.toFixed(2));
     console.log('stopLoss:', stopLoss.toFixed(2));
     console.log('avgTrueRange:', avgTrueRange.toFixed(2));

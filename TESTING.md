@@ -90,9 +90,58 @@ This site was tested on the following browsers with no visible issues for the us
  
 ## Testing User stories
 
- 
+- As a USER I want to be able to add the amount I would steak in a trading strategy.
 
- 
+    - The USER can enter any amount they want into the number input field.
+
+- As a USER I want to be able to factor in by broker fees so that I see the cost of a trading strategy.
+
+    - The USER can select from the dropdown menu of the four most popular crypto exchanges fees.
+
+- As a USER I want to be able to vary the point I would take profit from a trade so that I can see the effect this would have on the overall strategy .
+
+    - The USER can use the slider to adjust the % at which the take profit is executed.
+
+- As a USER I want to be able to vary the point I would exit from a trade so that I can see the effect this would have on the overall strategy.
+
+    - The USER cau use the slider to adjust the % at which the stop loss is executed.
+
+- As a USER I want to be able to vary the volatility in the simulation so that I can see the effect this would have on the overall strategy.
+
+    - The USER can adjust the the volatility range in increments of 2% all the way up to 10%, this allows the simulation to whip upto 10% positive and down as far as 10% negative randomly inorder to simulate market volatility.
+
+- As a USER I want to be able to vary the percentage of gain the simulation is working on so that I can see the effect this would have on the overall strategy. 
+
+    - The USER can use the slider to choose the market conditions they would set to enter a trade.
+
+- As a USER I want to be able to change the time spent in a trade so that I can see the effect this would have on the overall strategy. 
+
+    - The USER can choose from 5, 10, 15, 30 or 60 minutes time frame to stay in any given trade. The shorter the time the more frequently they stategy could trade and the longer the time frame the longer the trade will run until the price either moves up to the set take profit or moves down to the set stop loss figure.
+
+- As a USER I want to be able to change the duration the simulation will run for so that I can see the effect this would have on the overall strategy. 
+
+    - The USER can choose from 1, 3, 7, 14 or 21 days. The longer the time period the more realistic the results are likely to be.
+
+- As a USER I want simple explanations of any complex terminology so that I can understand what it is I’m making changes to.
+
+    - The USER is provided with a info button next to each title of a each option and when clicked is provided with a description of said option.
+
+- As a USER I want a simple interface so that I can cycle between strategies quickly and easily.
+
+    - The USER is provided with an intuative selection of sliders, number input, dropdown menu & buttons to make choosing options simple and quick to apply.
+
+- As a USER I want a simple summary of the results so that I can quickly understand if change I have made has improved my strategy or not.
+
+    - The USER is provided with a grid of data in a uniform layout with titles and large number displays for ease of comprehension.   
+
+- As a USER I want a to be able to save results for later comparison.
+
+    - The USER is provided a save button at the foot of the results so as to be able to easily save the results for later viewing.
+
+- As a USER I want to be able to contact the developer to suggest future developments to the site.
+
+    - The USER can contact the developer using the form provided on the contact page.
+
  
 Back to README - [Back](README.md)
  
@@ -104,8 +153,19 @@ Back to README - [Back](README.md)
 ## 4. Bugs
 ---
  
--   To be added
+- Detailed below are errors found and actions taken to resolve them.
 
+- Fixed: by naming them nav and nav-mob respectivley.
+ 
+![index error](./readme-docs/html-testing-index-error.png)
+ 
+- Fixed: Correctly enclosed a tag and remove stray div tag.
+ 
+![calculator error](./readme-docs/html-testing-calculator-error.png)
+
+- Fixed: Removed stray ul tag.
+ 
+![calculator error](./readme-docs/html-testing-mobile-nav-error.png)
 
 [Go back to README.md file](README.md).
  

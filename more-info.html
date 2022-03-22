@@ -2,11 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Trade Probability Calculator</title>
@@ -19,11 +21,11 @@
             <div class="col-3">
                 <a class="navbar-brand" href="index.html">
                     <!-- Desktop & Tablet -->
-                    <div class="col-lg-12 d-none d-md-block"><img src="/Project-Two/assets/images/Bear-Bull-logo.png" width="160"
-                            height="80" alt="logo"></div>
+                    <div class="col-lg-12 d-none d-md-block"><img src="/Project-Two/assets/images/Bear-Bull-logo.png"
+                            width="160" height="80" alt="logo"></div>
                     <!-- Mobile -->
-                    <div class="d-md-none"><img src="/Project-Two/assets/images/Bear-Bull-logo.png" width="70" height="35"
-                            alt="logo"></div>
+                    <div class="d-md-none"><img src="/Project-Two/assets/images/Bear-Bull-logo.png" width="70"
+                            height="35" alt="logo"></div>
                 </a>
             </div>
             <!-- Navigation bar -->
@@ -56,23 +58,23 @@
                     </ul>
                 </div>
                 <!-- Mobile -->
-                <div class="d-sm-none">
+                <div class="d-md-none">
                     <ul id="nav-mob" class="list-inline menucontainer">
-                    <li class="col-3 list-inline-item main-menuitem">
-                        <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="col-3 list-inline-item main-menuitem">
-                        <a href="calculator.html"><i class="fas fa-calculator" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="col-3 list-inline-item main-menuitem">
-                        <a href="results.html"><i class="fa fa-clipboard-list" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="col-3 list-inline-item main-menuitem">
-                        <a href="contact.html"><i class="fas fa-at" aria-hidden="true"></i></a>
-                    </li>
-                </ul>
+                        <li class="col-3 list-inline-item main-menuitem">
+                            <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="col-3 list-inline-item main-menuitem">
+                            <a href="calculator.html"><i class="fas fa-calculator" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="col-3 list-inline-item main-menuitem">
+                            <a href="results.html"><i class="fa fa-clipboard-list" aria-hidden="true"></i></a>
+                        </li>
+                        <li class="col-3 list-inline-item main-menuitem">
+                            <a href="contact.html"><i class="fas fa-at" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
                 </div>
-                
+
             </div>
         </div>
     </header>
@@ -87,101 +89,106 @@
                         going well we believe they will keep getting better and when things are bad we feel they are
                         just going to keep gettting worse.
                     </p>
-<p>
+                    <p>
                         This can be observed in financial markets as described here:
                         <a href="https://en.wikipedia.org/wiki/Momentum_(finance)#:~:text=Students%20of%20financial%20economics%20have,news%20in%20their%20transaction%20prices."
                             target="blank">Referenced from wikipedia</a>
                         "In finance, momentum is the empirically observed tendency for rising asset prices to rise
                         further, and falling prices to keep falling"
-                </p> 
-                <p>
+                    </p>
+                    <p>
                         Therefore the tool allows the user to explore the relationship between the phenomenon and
                         adjusting certain trading parameter to seek out opoptunties for profits in trading.
-                    </p> 
+                    </p>
                     <p>
                         This is acheved with the following steps.
-                    </p> 
-                    
-                        <h2>1, Market simulation --</h2>
-                        <p>
-                            The code running this tool uses a number of for-loops to move a price from any starting
-                            value to a end value which is set by choosing a "time period" and a "percentage" of change.
-                            e.g. if a currency had a start value of 1000 and a move to the up of 6% over a 1 hour period
-                            this would give us a end price of 1060
-                            Therefore we could say the average move per minute is 1
-                            The script then increments the price by 1 each minute to give us an average moving price.
-                            In order to provide a more realistic simulation of how prices can fluxuate the script has
-                            the ability to increase of decrease the price randomly off this average move price.</p>
-                       
-                        <p>
-                        
-                            To maintain control of the market momentum for the purpose of this tool but still offer a
-                            realistic market conditions we then combine this average move with the randon fluxuations,
-                            this ensure we reach the end value as desired but still provide market volatility.
-                        </p> 
-                        
-                        <h2>2, Volatility --</h2>
-                        <p>
-                            The user is offered the option to select the desired percentage of volatility so that
-                            a) They can define the conditions they would enter a trade
-                            b) They can see how this chosen volatility would work in relations to the chosen Stop Loss &
-                            Take Profit amounts.
-                        </p>
-                        
-                        <h5>3, --</h5>
-                    
+                    </p>
+
+                    <h2>1, Market simulation --</h2>
+                    <p>
+                        The code running this tool uses a number of for-loops to move a price from any starting
+                        value to a end value which is set by choosing a "time period" and a "percentage" of change.
+                        e.g. if a currency had a start value of 1000 and a move to the up of 6% over a 1 hour period
+                        this would give us a end price of 1060
+                        Therefore we could say the average move per minute is 1
+                        The script then increments the price by 1 each minute to give us an average moving price.
+                        In order to provide a more realistic simulation of how prices can fluxuate the script has
+                        the ability to increase of decrease the price randomly off this average move price.</p>
+
+                    <p>
+
+                        To maintain control of the market momentum for the purpose of this tool but still offer a
+                        realistic market conditions we then combine this average move with the randon fluxuations,
+                        this ensure we reach the end value as desired but still provide market volatility.
+                    </p>
+
+                    <h2>2, Volatility --</h2>
+                    <p>
+                        The user is offered the option to select the desired percentage of volatility so that
+                        a) They can define the conditions they would enter a trade
+                        b) They can see how this chosen volatility would work in relations to the chosen Stop Loss &
+                        Take Profit amounts.
+                    </p>
+
+                    <h5>3, --</h5>
+
                     <p>
                         This aplication simulates the market buy changing the assets price over a given period. For a
                         detailed explanation <a href="more-info.html"></a>
                     </p>
                     <a href="calculator.html"><i class="fas fa-calculator" aria-hidden="true"></i></a>
-                </div> 
+                </div>
             </div>
         </div>
-        
+
     </section>
     <footer class="container-xl">
         <div class="row">
-          <div class="col-5">
-            <div class="row more-info"> <a href="more-info.html">
-                <span> Detailed explanation</span>
-                <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
+            <div class="col-5">
+                <div class="row more-info"> <a href="more-info.html">
+                        <span> Detailed explanation</span>
+                        <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
+                </div>
             </div>
-          </div>
-          <!-- Social icons section of the footer-->
-          <div class="col-7">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/barry-marples-developer/" target="_blank"
-                  class="footer-icon social hvr-pop">
-                  <i class="fab fa-linkedin" aria-hidden="true"></i>
-                  <span class="sr-only">LinkedIn</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.facebook.com/barry.marples" target="_blank" class="footer-icon social hvr-pop">
-                  <i class="fab fa-facebook-square" aria-hidden="true"></i>
-                  <span class="sr-only">Facebook</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://twitter.com/BarryMarples" target="_blank" class="footer-icon social hvr-pop">
-                  <i class="fab fa-twitter-square" aria-hidden="true"></i>
-                  <span class="sr-only">Twitter</span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://github.com/BarryBeics" target="_blank" class="footer-icon social hvr-pop">
-                  <i class="fab fa-github-square" aria-hidden="true"></i>
-                  <span class="sr-only">Github</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+            <!-- Social icons section of the footer-->
+            <div class="col-7">
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="https://www.linkedin.com/in/barry-marples-developer/" target="_blank"
+                            class="footer-icon social hvr-pop">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://www.facebook.com/barry.marples" target="_blank"
+                            class="footer-icon social hvr-pop">
+                            <i class="fab fa-facebook-square" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://twitter.com/BarryMarples" target="_blank" class="footer-icon social hvr-pop">
+                            <i class="fab fa-twitter-square" aria-hidden="true"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="https://github.com/BarryBeics" target="_blank" class="footer-icon social hvr-pop">
+                            <i class="fab fa-github-square" aria-hidden="true"></i>
+                            <span class="sr-only">Github</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </footer>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"> </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

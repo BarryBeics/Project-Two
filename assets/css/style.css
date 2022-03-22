@@ -26,8 +26,7 @@ footer p,
 .footer-icon i,
 .button,
 .more-info a,
-.btn-dark,
-.form-control {
+.btn-dark {
    color: #c7c5c6;
 }
 
@@ -120,14 +119,14 @@ h3 {
 }
 
 .form-control {
-   background-color: transparent !important;
+   background-color: #197b7b !important;
    border: 1px solid #c7c5c6;
 }
 
 /* ------------- info Modals ------------  */
 
 .modal-content {
-   background-color: #444444;
+   background-color: #181818;
 }
 
 .btn-secondary {
@@ -365,13 +364,13 @@ img {
 
    .options-form-item-third,
    .results-form-item-third {
-      width: 32%;
+      width: 31.6%;
       display: inline-block;
    }
 
    .options-form-item-half,
    .results-form-item-half {
-      width: 49%;
+      width: 48.3%;
       display: inline-block;
    }
 }
@@ -445,7 +444,7 @@ img {
 
    .options-form-item-half,
    .results-form-item-half {
-      width: 49%;
+      width: 48.7%;
       display: inline-block;
    }
 
@@ -531,8 +530,6 @@ img {
       width: 66%;
    }
 
-
-
    .space {
       margin-left: 2px;
    }
@@ -547,7 +544,7 @@ img {
 
    .options-form-item-third,
    .results-form-item-third {
-      width: 1%;
+      width: 31%;
       display: inline-block;
    }
    .options-form-item-half,
@@ -667,11 +664,10 @@ footer p {
 
 /* ------------- Form elements ------------  */
 
-.form-control {
+.form-input, .form-comment {
    display: block;
-   margin: 10px;
+   margin: 4px;
    width: 93%;
-   height: calc(1.5em + 0.75rem + 2px);
    padding: 0.375rem 0.75rem;
    font-size: 1rem;
    font-weight: 400;
@@ -679,6 +675,10 @@ footer p {
    background-clip: padding-box;
    border-radius: 0.25rem;
    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-input {
+   height: calc(1.5em + 0.75rem + 2px);
 }
 
 .button {

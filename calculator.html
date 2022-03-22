@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
   <head>
     <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
       <div class="col-3">
         <a class="navbar-brand" href="index.html">
           <!-- Desktop & Tablet -->
-          <div class="col-md-12 d-none d-md-block"><img src="/Project-Two/assets/images/Bear-Bull-logo.png" width="160"
+          <div class="col-lg-12 d-none d-md-block"><img src="/Project-Two/assets/images/Bear-Bull-logo.png" width="160"
               height="80" alt="logo"></div>
           <!-- Mobile -->
           <div class="d-md-none"><img src="/Project-Two/assets/images/Bear-Bull-logo.png" width="70" height="35"
@@ -55,7 +55,7 @@
           </ul>
         </div>
         <!-- Mobile Navigation Buttons -->
-        <div class="d-sm-none">
+        <div class="d-md-none">
           <ul id="nav-mob" class="list-inline menucontainer">
             <li class="col-3 list-inline-item main-menuitem">
               <a href="index.html"><i class="fas fa-home" aria-hidden="true"></i></a>
@@ -86,10 +86,10 @@
           <!-- Top Panel Left -->
           <div class="options-form-item-half">
 
-            <!-- Button trigger modal -->
+            <!--Investment Amount Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#amountModal"> info
             </button>
-            <!-- Modal -->
+            <!-- Investment Amount Modal -->
             <div class="modal fade" id="amountModal" tabindex="-1" aria-labelledby="amountModalLabel"
               aria-hidden="true">
               <div class="modal-dialog">
@@ -108,15 +108,15 @@
               </div>
             </div>
             <label class="title"> Amount </label>
-            <input id="stake" class="form-control" type="number" min="0" value="0" name="stake">
+            <input id="stake" class="form-input" type="number" min="0" value="0" name="stake">
           </div>
 
           <!-- Top Panel Right -->
           <div class="options-form-item-half space">
-            <!-- Button trigger modal -->
+            <!-- Trading Fee Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#feeModal"> info
             </button>
-            <!-- Modal -->
+            <!-- Trading Fee Modal -->
             <div class="modal fade" id="feeModal" tabindex="-1" aria-labelledby="feeModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -136,7 +136,7 @@
             </div>
             <label class="title"> Fees </label>
             <p id="tradingFee">0</p>
-            <select class="select form-control">
+            <select class="select form-input">
               <option value="0">Select</option>
               <option value="0.75">Binance 0.75%</option>
               <option value="0.7">Kucoin 0.7%</option>
@@ -146,10 +146,10 @@
           </div>
           <!-- First Wide Panel -->
           <div class="options-form-item-full">
-            <!-- Button trigger modal -->
+            <!-- Take Profit Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#takeProfitModal">
               info </button>
-            <!-- Modal -->
+            <!-- Take Profit Modal -->
             <div class="modal fade" id="takeProfitModal" tabindex="-1" aria-labelledby="takeProfitModalLabel"
               aria-hidden="true">
               <div class="modal-dialog">
@@ -174,10 +174,10 @@
               oninput="document.getElementById('takeProfit').innerHTML = this.value" />
             <div class="value"> <label id="takeProfit">0</label>%</div>
 
-            <!-- Button trigger modal -->
+            <!-- Stop Loss Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#stopLossModal">
               info </button>
-            <!-- Modal -->
+            <!-- Stop Loss Modal -->
             <div class="modal fade" id="stopLossModal" tabindex="-1" aria-labelledby="stopLossModalLabel"
               aria-hidden="true">
               <div class="modal-dialog">
@@ -204,10 +204,10 @@
           </div>
           <!-- Second Wide Panel -->
           <div class="options-form-item-full">
-            <!-- Button trigger modal -->
+            <!-- Average True Range Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#ATRModal"> info
             </button>
-            <!-- Modal -->
+            <!-- Average True Range Modal -->
             <div class="modal fade" id="ATRModal" tabindex="-1" aria-labelledby="ATRModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -230,10 +230,10 @@
             <input type="range" id="atr" value="2" min="2" max="10" step="2" class="slider"
               oninput="document.getElementById('avgTrueRange').innerHTML = this.value" />
             <div class="value">upto <label id="avgTrueRange">0</label>%</div>
-            <!-- Button trigger modal -->
+            <!-- Market Mommentum Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#mommentumModal">
               info </button>
-            <!-- Modal -->
+            <!-- Market Mommentum Modal -->
             <div class="modal fade" id="mommentumModal" tabindex="-1" aria-labelledby="mommentumModalLabel"
               aria-hidden="true">
               <div class="modal-dialog">
@@ -243,10 +243,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    This is how much the market has gained over the previous period selected. For Example if the assets
-                    has gained 3% in the last 24hrs you would choose 3% Market Momentum along with a trading period of
-                    24hrs. Use the slider provided to see what the impact your chosen “Market Momentum” would have on
-                    your strategy.
+                    This is how much of an upward trend there would need to be before you enter a trade with this strategy.
+
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -261,9 +259,10 @@
           </div>
           <!-- Third Wide Panel -->
           <div class="options-form-item-full">
+            <!-- Trade Duration Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#durationModal">
               info </button>
-            <!-- Modal -->
+            <!-- Trade Duration Modal -->
             <div class="modal fade" id="durationModal" tabindex="-1" aria-labelledby="durationModalLabel"
               aria-hidden="true">
               <div class="modal-dialog">
@@ -273,7 +272,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    How often would you like to apply this strategy? Select a time period to see what the impact this
+                    How much time would you allow for the market condtions to be met before timing out the trade? Select a time period to see what the impact this
                     would have on your strategy.
                   </div>
                   <div class="modal-footer">
@@ -307,10 +306,10 @@
               <label for="duration60">60</label>
             </div>
 
-
+            <!-- # of Days Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#daysModal"> info
             </button>
-            <!-- Modal -->
+            <!-- # of Days Modal -->
             <div class="modal fade" id="daysModal" tabindex="-1" aria-labelledby="daysModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
