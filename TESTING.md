@@ -10,27 +10,27 @@ The site has been thoroughly tested. All the code has been run through the [W3C 
  
 ### - Home page
  
-![W3C html Validator test result](./readme-docs/html-testing-success.png)
+![W3C html Validator test result](./readme-docs/testing-html-success.png)
 
 ### - Calculator page
  
-![W3C html Validator test result](./readme-docs/html-testing-success.png)
+![W3C html Validator test result](./readme-docs/testing-html-success.png)
  
 ### - Results page
  
-![W3C html Validator test result](./readme-docs/html-testing-success.png)
+![W3C html Validator test result](./readme-docs/testing-html-success.png)
  
 ### - Contact page
  
-![W3C html Validator test result](./readme-docs/html-testing-success.png)
+![W3C html Validator test result](./readme-docs/testing-html-success.png)
 
 ### - More Info page
  
-![W3C html Validator test result](./readme-docs/html-testing-success.png)
+![W3C html Validator test result](./readme-docs/testing-html-success.png)
  
 ### 1.2. CSS validation ###
  
-![W3C html Validator test result](./readme-docs/CSS-testing-success.png)
+![W3C html Validator test result](./readme-docs/testing-CSS-success.png)
  
 <br /><br />
  
@@ -157,15 +157,26 @@ Back to README - [Back](README.md)
 
 - Fixed: by naming them nav and nav-mob respectivley.
  
-![index error](./readme-docs/html-testing-index-error.png)
+![index error](./readme-docs/testing-html-index-error.png)
  
 - Fixed: Correctly enclosed a tag and remove stray div tag.
  
-![calculator error](./readme-docs/html-testing-calculator-error.png)
+![calculator error](./readme-docs/testing-html-calculator-error.png)
 
 - Fixed: Removed stray ul tag.
  
-![calculator error](./readme-docs/html-testing-mobile-nav-error.png)
+![calculator error](./readme-docs/testing-html-mobile-nav-error.png)
+
+- Fixed: Added full file path for images so they display when site deployed.
+ 
+![calculator error](./readme-docs/testing-error-file-path.png)
+
+- Fixed: Found and replaced misspelt elemnt id.
+ 
+![calculator error](./readme-docs/testing-error-results.png)
+
+- Fixed: Added function to stop users being able to click 'Calculate Trade' untill all fields have been enter.
+- Fixed: Early on sideways scroll issue
 
 [Go back to README.md file](README.md).
  

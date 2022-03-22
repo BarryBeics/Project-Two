@@ -49,8 +49,8 @@ function init() {
     minutes = parseInt(document.getElementById('minutes').innerText);
     days = parseInt(document.getElementById('days').innerText);
 
-    if (stake <= 0) {
-      alert("Please enter a stake amount");
+    if (stake <= 0 || stake > 10000) {
+      alert("Please enter a stake amount up to 10,000");
       return false;
     } else if (tradingFee === 0) {
       alert("Select the appropreate trading fee");
@@ -193,7 +193,7 @@ function init() {
     } else {
       const result = {
         "stake": stake,
-        "Trading Fee": tradingFee,
+        "tradingFee": tradingFee,
         "takeProfit": takeProfit,
         "stopLoss": stopLoss,
         "avgTrueRange": avgTrueRange,
@@ -377,21 +377,15 @@ function init() {
     newBalance = carriedBalance.toFixed(2);
     newBalance = document.getElementById("newBalance").innerHTML = newBalance;
 
-    totalFees = totalFees.toFixed(2);
-    totalFees = document.getElementById("totalFees").innerHTML = totalFees;
-
     netProfit = (profit - totalFees);
     netProfit = netProfit.toFixed(2);
     netProfit = document.getElementById("netProfit").innerHTML = netProfit;
 
-    percentageProfit = ((profit / totalFees) / carriedBalance) * 100;
+    percentageProfit = (netProfit / stake) * 100;
     percentageProfit = percentageProfit.toFixed(1);
     percentageProfit = document.getElementById("percentageProfit").innerHTML = percentageProfit;
 
-    successRate = (win + losses) / 100 * win;
-    successRate = successRate.toFixed(1);
-    successRate = document.getElementById("successRate").innerHTML = successRate;
-
+    
     console.log('GROSS PROFIT: £', profit.toFixed(2));
     console.log('NET PROFIT: £', netProfit);
     console.log('PROFIT:', percentageProfit, '%');

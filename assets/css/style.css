@@ -4,7 +4,9 @@
 /* ------------- Site wide  ----------- Colours */
 
 header,
-footer {
+footer,
+.modal-content,
+.result-item-dark {
    background-color: #181818;
 }
 
@@ -73,14 +75,6 @@ h3 {
    background: rgba(66, 64, 64, 0.3);
 }
 
-.result-item-light {
-   background: rgba(179, 170, 170, 0.3);
-}
-
-.result-item-dark {
-   background: rgba(66, 64, 64, 0.3);
-}
-
 .radio-toolbar label:hover {
    background-color: #00aaaa;
 }
@@ -92,10 +86,6 @@ h3 {
 
 .more-info i:hover {
    color: #00aaaa;
-}
-
-#results-table-header {
-   background-color: gray;
 }
 
 .slider {
@@ -110,24 +100,33 @@ h3 {
    background: #00aaaa;
 }
 
+.result-item-light,
 .radio-toolbar label {
-   background-color: #444444;
+   background-color: #2a2828;
 }
 
-.table-header-cell {
-   border-bottom: 1px solid #1b1b1b;
+.result-item-dark,
+.result-item-light {
+   padding: 20px;
 }
 
-.form-control {
-   background-color: #197b7b !important;
+.data, .data-title, .data-sub-title {
+   border: solid 1px #4c4848;
+}
+
+.data-title, .data-sub-title {
+   background-color: #4a4b4a;
+}
+
+.form-input, .form-comment {
+   background-color: transparent !important;
    border: 1px solid #c7c5c6;
+   color: #c7c5c6;
 }
 
 /* ------------- info Modals ------------  */
 
-.modal-content {
-   background-color: #181818;
-}
+
 
 .btn-secondary {
    background-color: #197b7b;
@@ -162,7 +161,7 @@ p {
    padding: 0px 5px;
 }
 
-.title, .value {
+.title, .value, .data span {
    font-size: 1.6em;
 }
 
@@ -173,6 +172,10 @@ p {
 .main-menuitem a i {
    display: block;
    font-size: 22px;
+}
+
+.data p {
+   font-size: 3em;
 }
 
 /* ------------- not sure -----*/
@@ -285,11 +288,11 @@ img {
    }
 
    .space {
-      margin-left: 8px;
+      margin-left: 2px;
    }
 
    .spacer-third {
-      margin-left: 6px;
+      margin-left: 4px;
    }
 
    .info-space {
@@ -304,12 +307,12 @@ img {
 
    .options-form-item-half,
    .results-form-item-half {
-      width: 49%;
+      width: 49.4%;
       display: inline-block;
    }
 
    .space-contact {
-      margin-left: 16px;
+      margin-left: 7px;
    }
 }
 
@@ -600,7 +603,9 @@ footer p {
 /* For the dropdown menu and custom radio buttons we need to hide the default value with display none */
 #tradingFee,
 #minutes,
-#days {
+#days,
+#totalFees,
+#successRate {
    display: none;
 }
 
@@ -650,16 +655,24 @@ footer p {
    display: inline-block;
 }
 
-/* ------------- Results mobile ------------  */
+/* ------------- Results  ------------  */
+
+.data-title, .data-sub-title {
+   display: flex;
+   padding: 5px 15px;
+}
 
 .data {
-   display: inline-flex;
+   display: inline-block;
+   padding: 0px 25px;
 }
 
 .data p,
 .data span {
    padding: 2px;
    margin: 4px;
+   font-family: 'Teko', sans-serif;
+   text-align: center;
 }
 
 /* ------------- Form elements ------------  */

@@ -17,24 +17,26 @@ if (ResultsList !== null) {
         }
         document.getElementById("ResultsList").innerHTML +=
         bgcolor + 
-        '<div class="data"><p>' +  "RESULT" + "</p>" + "<span>" + (i+1) + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Stake" + "</p>" + "<span>" +  "£" + ResultsList[i].stake + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Trading Fee" + "</p>" + "<span>" +  "%" + ResultsList[i].tradingFee + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Take Profit" + "</p>" + "<span>" +  "%" + ResultsList[i].takeProfit + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Stop Loss" + "</p>" + "<span>" +  "%" + ResultsList[i].stopLoss + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "ATR" + "</p>" + "<span>" +  "%" + ResultsList[i].avgTrueRange + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Market Momentum" + "</p>" + "<span>" +  "£" + ResultsList[i].marketMommentum + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Minutes" + "</p>" + "<span>" +  "£" + ResultsList[i].minutes + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Number of days" + "</p>" + "<span>" +  "£" + ResultsList[i].days + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "New Balance £" + "</p>" + "<span>" + ResultsList[i].newBalance + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Net Profit £" + "</p>" + "<span>" +  "£" +  ResultsList[i].netProfit + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Profit %" + "</p>" + "<span>" +  ResultsList[i].percentageProfit + "%" +  "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Total Fees" + "</p>" + "<span>" +  "£" +  ResultsList[i].totalFees + "</span>" +  "</div>" +
-        '<div class="data"><p>' +  "Success Rate" + "</p>" + "<span>" + ResultsList[i].successRate + "%"  + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Wins" + "</p>" +  "<span>" + ResultsList[i].win  + "</span>" + "</div>" + 
-        '<div class="data"><p>' +  "Timed Out" + "</p>" + "<span>" + ResultsList[i].timedOut + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Losses" + "</p>" + "<span>" + ResultsList[i].losses + "</span>" + "</div>" +
-        '<div class="data"><p>' +  "Total Trades" + "</p>" + "<span>" + ResultsList[i].totalTrades + "</span>" + "</div>" +
+        '<div class="data-title"><h1>' +  "RESULT" +  "#" + (i+1) + "</h1>" + "</div>" +
+        '<div class="data-sub-title"><span>' +  "Your chosen parameters" + "</span>" + "</div>" +
+        '<div class="data"><span>' +  "Stake" + "</span>" + "<p>" +  "£" + ResultsList[i].stake + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Trading Fee" + "</span>" + "<p>" + ResultsList[i].tradingFee + "%" + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Take Profit" + "</span>" + "<p>" + ResultsList[i].takeProfit + "%" + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Stop Loss" + "</span>" + "<p>" + ResultsList[i].stopLoss +  "%" + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "ATR" + "</span>" + "<p>" + ResultsList[i].avgTrueRange +  "%" + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Market Momentum" + "</span>" + "<p>" + ResultsList[i].marketMommentum + "%" + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Minutes" + "</span>" + "<p>" + ResultsList[i].minutes + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Number of days" + "</span>" + "<p>" + ResultsList[i].days + "</p>" + "</div>" +
+        '<div class="data-sub-title"><span>' +  "Strategy Results" + "</span>" + "</div>" +
+        '<div class="data"><span>' +  "New Balance £" + "</span>" + "<p>" + "£" + ResultsList[i].newBalance + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Net Profit £" + "</span>" + "<p>" + ResultsList[i].netProfit + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Profit %" + "</span>" + "<p>" +  ResultsList[i].percentageProfit + "%" +  "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Total Fees" + "</span>" + "<p>" +  "£" +  ResultsList[i].totalFees + "</p>" +  "</div>" +
+        '<div class="data"><span>' +  "Success Rate" + "</span>" + "<p>" + ResultsList[i].successRate + "%"  + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Wins" + "</span>" +  "<p>" + ResultsList[i].win  + "</p>" + "</div>" + 
+        '<div class="data"><span>' +  "Timed Out" + "</span>" + "<p>" + ResultsList[i].timedOut + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Losses" + "</span>" + "<p>" + ResultsList[i].losses + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Total Trades" + "</span>" + "<p>" + ResultsList[i].totalTrades + "</p>" + "</div>" +
         "</div>";
     };
 };

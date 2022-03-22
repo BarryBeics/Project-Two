@@ -1,3 +1,6 @@
+/**
+   * Function to send message to email account using emailjs
+   */
 function sendMail(params) {
     var tempParams = { 
         name: document.getElementById("name").value,

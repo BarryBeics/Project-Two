@@ -99,7 +99,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    Here you can enter an amount that you would like to see the results for using your strategy idea.
+                    Here you can enter an amount of up to 10000 for your strategy idea.
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -108,7 +108,7 @@
               </div>
             </div>
             <label class="title"> Amount </label>
-            <input id="stake" class="form-input" type="number" min="0" value="0" name="stake">
+            <input id="stake" class="form-input" type="number" min="0" max="10000" value="0" name="stake">
           </div>
 
           <!-- Top Panel Right -->
@@ -378,28 +378,16 @@
             <div class="results"> <span id="newBalance">0</span> </div>
           </div>
 
-          <!-- Top Panel Left -->
-          <div class="results-form-item-half">
+          <!-- Second Wide Panel -->
+          <div class="results-form-item-full">
             <label class="title"> Net Profit £</label>
             <div class="results"> <span id="netProfit">0</span> </div>
           </div>
 
-          <!-- Top Panel Right -->
-          <div class="results-form-item-half space">
+          <!-- Third Wide Panel -->
+          <div class="results-form-item-full">
             <label class="title"> Profit %</label>
             <div class="results"> <span id="percentageProfit">0</span> </div>
-          </div>
-
-          <!-- Middle Panel Left -->
-          <div class="results-form-item-half">
-            <label class="title"> Total Fees £</label>
-            <div class="results"> <span id="totalFees">0</span> </div>
-          </div>
-
-          <!-- Middle Panel Right -->
-          <div class="results-form-item-half space">
-            <label class="title"> Success Rate %</label>
-            <div class="results"> <span id="successRate">0</span> </div>
           </div>
 
           <!-- Block of 3 Panels -->
