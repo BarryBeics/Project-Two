@@ -26,7 +26,7 @@ function init() {
 
   });
 
-  // This block handles the functionality of the drop down menu used to select the fees value
+  // This block handles the functionality of the drop down menu used to select the Crypto Price
 
   document.body.addEventListener("change", function (event) {
     if (event.target.classList.contains("select")) {
@@ -35,13 +35,13 @@ function init() {
   });
 
   /**
-  * Checks each field to see if the user have entered a number other than zero, if the valuse remains at zero an alert pops up 
+  * Checks each field to see if the user have entered a number other than zero, if a value remains at zero an alert pops up 
   prompting the user to enter and amount.
   The user cannot progress until all fields are complete.
   */
   function validate() {
     stake = parseInt(document.getElementById('stake').value);
-    tradingFee = parseFloat(document.getElementById('tradingFee').innerText);
+    cryptoPrice = parseFloat(document.getElementById('cryptoPrice').innerText);
     takeProfit = parseFloat(document.getElementById('takeProfit').innerText);
     stopLoss = parseFloat(document.getElementById('stopLoss').innerText);
     avgTrueRange = parseFloat(document.getElementById('avgTrueRange').innerText);
@@ -52,7 +52,7 @@ function init() {
     if (stake <= 0 || stake > 10000) {
       alert("Please enter a stake amount up to 10,000");
       return false;
-    } else if (tradingFee === 0) {
+    } else if (cryptoPrice === 0) {
       alert("Select the appropreate trading fee");
       return false;
     } else if (takeProfit === 0) {
@@ -80,23 +80,18 @@ function init() {
 
 
   let stake = 0; 
-
-  /* For development purpose we use a static amount of 10,000 as this will aid debugging */
-  /* There's potential to use an API call to get live prices */
-  let cryptoPrice = 10000;
-  /* Exchange rate */
-  function exchangeRate(cryptoPrice) {
-    let valueHeld = stake / cryptoPrice;
-    console.log('Exchange rate:  1 FIAT:', valueHeld.toFixed(2), 'CRYPTO')
-  }
-
-  let tradingFee = 0; 
   let takeProfit = 0; 
   let stopLoss = 0; 
   let avgTrueRange = 0; 
   let volatility = 0;
 
+ 
+  /* Exchange rate */
+  function exchangeRate(cryptoPrice) {
+    let valueHeld = stake / cryptoPrice;
+  }
 
+ 
 
   /* THIS COULD BE SIMPLIFIED AS JUST HALFING THE VOLATILITY INPUT */
   function chooseVolatility() {
@@ -111,6 +106,8 @@ function init() {
     volatility = volatilityOptions[avgTrueRange];
 
   }
+
+  //volatility = avgTrueRange / 2;
 
   let marketMommentum = 0; 
 
@@ -134,8 +131,6 @@ function init() {
   }
 
 
-
-  /* Win count_each_seconds number of successful "take profit" instances, timed out records number of trades that result in a forced market order & losses record each instance of being stopped out of the trade */
   let win = 0;
   let timedOut = 0;
   let losses = 0;
@@ -147,18 +142,10 @@ function init() {
   let successRate = 0;
 
   /* These allow for a runing total of each to be recorded and updated from trade to trade (what do you mean trade to trade) */
-  let totalFees = 0;
+
   let profit = 0;
   let netProfit = 0;
 
-  /* Function to calculate avergage */
-  function getAvg(value) {
-    var total = 0;
-    for (var i = 0; i < value.length; i++) {
-      total += value[i];
-    }
-    var avg = total / value.length;
-  }
 
   /**
    * Moment by moment the assets price can increase or decrease 
@@ -177,13 +164,13 @@ function init() {
     saving.push(data);
     alert("The results have been saved and can be viewed on the results page. All fields will now be cleared ready for you to try different parameters"); // Should be something like [Object array]
     localStorage.setItem('results', JSON.stringify(saving));
-    console.log(saving)
   }
 
 
   /**
-   * Moment by moment the assets price can increase or decrease 
-   * this function replicates this by generating random moves
+   * Checks to see if there are results to be saved 
+   * Gathers the relavent data then calls the SaveDataToLocalStorage function
+   * then clears the fields ready for a new strategy
    */
   function saveResults() {
 
@@ -193,7 +180,7 @@ function init() {
     } else {
       const result = {
         "stake": stake,
-        "tradingFee": tradingFee,
+        "cryptoPrice": cryptoPrice,
         "takeProfit": takeProfit,
         "stopLoss": stopLoss,
         "avgTrueRange": avgTrueRange,
@@ -205,7 +192,6 @@ function init() {
         "losses": losses,
         "totalTrades": totalTrades,
         "newBalance": newBalance,
-        "totalFees": totalFees,
         "netProfit": netProfit,
         "percentageProfit": percentageProfit,
         "successRate": successRate
@@ -233,127 +219,70 @@ function init() {
     let projectedGain = cryptoPrice * (marketMommentum / 100);
     let incrementMove = projectedGain / (6 * seconds);
     
-    console.log('Opening Steak Value: £', stake);
-    console.log('Opening Crypto Value:', cryptoPrice);
-    console.log('Crypto gain over validation period ', projectedGain.toFixed(2));
-    console.log('average gain per second:', incrementMove.toFixed(2));
-  
-    console.log('takeProfit:', takeProfit.toFixed(2));
-    console.log('stopLoss:', stopLoss.toFixed(2));
-    console.log('avgTrueRange:', avgTrueRange.toFixed(2));
-    console.log('marketMommentum:', marketMommentum.toFixed(2));
-    console.log('tradingFee:', tradingFee.toFixed(2));
-
 
     /* This initial sets the */
     let averagePrice = cryptoPrice;
     let assetPrice = cryptoPrice;
-    let perTrade = cryptoPrice;
+    
 
-    /****************************************
-     *      NUMBER OF DAYS - - - - - - - - - - FOR LOOP
-     ****************************************/
+    /***   NUMBER OF DAYS - - ***/
     for (let eachDay = 0; eachDay < days; eachDay++) {
-      console.log(' *******  ******* Begining of trading day  *******', eachDay + 1);
+  
 
-
-      /****************************************
-       *     NUMBER OF TRADES - - - - - - - - - - FOR LOOP
-       ****************************************/
+      /***  NUMBER OF TRADES - -******/
       for (let frequency = 0; frequency < generateRandomDaily(); frequency++)
-      // CONSOLE LOG USED FOR DEBUGGING
+      
       {
-        console.log('  *********************************************** TOTAL OF', frequency + 1, 'TRADING INSTANCE *********');
-        /* trade open is used to validate where we are in a trade or not so that gains and losses are only based on time in trade and not the whole */
+
         let tradeOpen = true;
 
         let takeProfitAmount = assetPrice + (assetPrice * (takeProfit / 100));
         let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
-        console.log('Asset price:', assetPrice.toFixed(2));
-        console.log('Take profit amount:', takeProfitAmount.toFixed(2));
-        console.log('Stop Loss amount:', stopLossAmount.toFixed(2));
 
-        /****************************************
-        ##     TRADE DURATION - - - - - - - - - - FOR LOOP
-        ****************************************/
+
+        /***  TRADE DURATION - - - -******/
         for (let eachSecond = 0; eachSecond < tradeDuration; eachSecond++) {
-          console.log('seconds past', eachSecond + 1, ' --- Open to trade?', tradeOpen, );
+      
           let move = generateRandonMove(-volatility, volatility, 1);
-
           let moveAmount = assetPrice * (move / 100);
-
           let movePerSecound = moveAmount + incrementMove;
-          console.log('MOVE:', move, '% - ', moveAmount.toFixed(2), 'plus the average move of ', incrementMove.toFixed(2), 'equals =', movePerSecound.toFixed(2));
 
           assetPrice = assetPrice + movePerSecound;
-
           averagePrice = averagePrice + incrementMove;
 
-          console.log('This is the Asset Value is now: ', assetPrice.toFixed(2));
-          console.log('The underlying average price is: ', averagePrice.toFixed(2));
 
-          /****************************************
-          ##     TAKE PROFIT - - - - - - - - - IF STATEMENT
-          ****************************************/
+          /***  TAKE PROFIT - -*****/
           if (averagePrice >= takeProfitAmount && tradeOpen == true) {
-            console.log('************************************** Take Profit conditions have been met');
-            console.log('Carried balance is: £', carriedBalance.toFixed(2));
+   
             let gain = carriedBalance * (takeProfit / 100);
             carriedBalance = carriedBalance += gain;
-
-            let fee = gain * (tradingFee / 100);
-            carriedBalance -= fee;
-
-            console.log('From this trade we gained: £', gain.toFixed(2));
-            console.log('The fee from this trade was: £', fee.toFixed(2));
-            console.log('New balance is now: £', carriedBalance.toFixed(2));
             win += 1;
             profit += gain;
-            totalFees += fee;
             tradeOpen = false;
             break
           };
 
 
-          /****************************************
-          ##     STOP LOSS - - - - - - - - - IF STATEMENT
-          ****************************************/
+          /****  STOP LOSS - - -****/
           if (averagePrice <= stopLossAmount && tradeOpen == true) {
-            console.log('************************************** Stop Loss conditions have been met');
-            console.log('Carried balance is: £', carriedBalance.toFixed(2));
+
             let loss = carriedBalance * (stopLoss / 100);
             carriedBalance = carriedBalance += loss;
-            fee = loss * (tradingFee / 100);
-            carriedBalance -= fee;
-            console.log('From this trade we lossed: £', loss.toFixed(2));
-            console.log('The fee from this trade was: £', fee.toFixed(2));
-            console.log('New balance is now: £', carriedBalance.toFixed(2));
             losses += 1;
             profit += loss;
-            totalFees += fee;
             tradeOpen = false;
             break
           };
 
-          /****************************************
-          ##     TIMED OUT MARKET ORDER - - - - - - - - - IF STATEMENT
-          ****************************************/
+          /***  TIMED OUT MARKET ORDER - *****/
           if (eachSecond == tradeDuration - 1 && tradeOpen == true) {
-            console.log('************************************** Timed out Market order');
-            console.log('Carried balance is: £', carriedBalance.toFixed(2));
+            
             changePercentage = (assetPrice - averagePrice) / averagePrice;
-
             change = carriedBalance * changePercentage;
-            fee = change * (tradingFee / 100);
-            carriedBalance -= fee;
             carriedBalance = carriedBalance += change;
 
-            console.log('The change was: £', change.toFixed(2));
-            console.log('The fee from this trade was: £', fee.toFixed(2));
-            console.log('New balance is now: £', carriedBalance.toFixed(2));
             timedOut += 1;
             profit += change;
-            totalFees += fee;
             tradeOpen = false;
           };
 
@@ -362,9 +291,7 @@ function init() {
 
     }
 
-    /****************************************
-    ##     STRATEGY OUTCOME
-    ****************************************/
+    /***  STRATEGY OUTCOME ****/
     console.log('From a possible number of trades there have been', win, 'successes', timedOut, 'timed out trades', losses, 'losses');
 
     win = document.getElementById("win").innerHTML = win;
@@ -377,19 +304,13 @@ function init() {
     newBalance = carriedBalance.toFixed(2);
     newBalance = document.getElementById("newBalance").innerHTML = newBalance;
 
-    netProfit = (profit - totalFees);
+    netProfit = (profit);
     netProfit = netProfit.toFixed(2);
     netProfit = document.getElementById("netProfit").innerHTML = netProfit;
 
     percentageProfit = (netProfit / stake) * 100;
     percentageProfit = percentageProfit.toFixed(1);
     percentageProfit = document.getElementById("percentageProfit").innerHTML = percentageProfit;
-
-    
-    console.log('GROSS PROFIT: £', profit.toFixed(2));
-    console.log('NET PROFIT: £', netProfit);
-    console.log('PROFIT:', percentageProfit, '%');
-    console.log('SUCCESS:', successRate, '%');
 
   }
 };
