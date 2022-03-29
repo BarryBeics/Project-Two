@@ -28,7 +28,7 @@ if (ResultsList !== null) {
         '<div class="data"><span>' +  "Number of days" + "</span>" + "<p>" + ResultsList[i].days + "</p>" + "</div>" +
         '<div class="data-sub-title"><span>' +  "Strategy Results" + "</span>" + "</div>" +
         '<div class="data"><span>' +  "New Balance £" + "</span>" + "<p>" + "£" + ResultsList[i].newBalance + "</p>" + "</div>" +
-        '<div class="data"><span>' +  "Net Profit £" + "</span>" + "<p>" + ResultsList[i].netProfit + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Net Profit £" + "</span>" + "<p>" + ResultsList[i].profitLoss + "</p>" + "</div>" +
         '<div class="data"><span>' +  "Profit %" + "</span>" + "<p>" +  ResultsList[i].percentageProfit + "%" +  "</p>" + "</div>" +
         '<div class="data"><span>' +  "Wins" + "</span>" +  "<p>" + ResultsList[i].win  + "</p>" + "</div>" + 
         '<div class="data"><span>' +  "Timed Out" + "</span>" + "<p>" + ResultsList[i].timedOut + "</p>" + "</div>" +

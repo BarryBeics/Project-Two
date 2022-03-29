@@ -6,28 +6,21 @@ function init() {
   document.addEventListener("DOMContentLoaded", function () {
 
     let buttons = document.getElementsByTagName("button");
-
     for (let button of buttons) {
-
       button.addEventListener("click", function () {
         console.log(button);
         if (this.getAttribute("data-type") === "trade") {
-          // On click runs trading function
-
           validate();
         } else if (this.getAttribute("data-type") === "save") {
-          // On click runs save function
           saveResults();
         } else {
           console.log(" Info Popup! ");
         }
       });
     }
-
   });
 
   // This block handles the functionality of the drop down menu used to select the Crypto Price
-
   document.body.addEventListener("change", function (event) {
     if (event.target.classList.contains("select")) {
       event.target.previousElementSibling.textContent = event.target.value
@@ -36,8 +29,7 @@ function init() {
 
   /**
   * Checks each field to see if the user have entered a number other than zero, if a value remains at zero an alert pops up 
-  prompting the user to enter and amount.
-  The user cannot progress until all fields are complete.
+  prompting the user to enter and amount. The user cannot progress until all fields are complete.
   */
   function validate() {
     stake = parseInt(document.getElementById('stake').value);
@@ -84,36 +76,15 @@ function init() {
   let stopLoss = 0; 
   let avgTrueRange = 0; 
   let volatility = 0;
-
- 
-  /* Exchange rate */
-  function exchangeRate(cryptoPrice) {
-    let valueHeld = stake / cryptoPrice;
-  }
-
- 
-
-  /* THIS COULD BE SIMPLIFIED AS JUST HALFING THE VOLATILITY INPUT */
-  function chooseVolatility() {
-
-    let volatilityOptions = {
-      2: 1,
-      4: 2,
-      6: 4,
-      8: 4,
-      10: 5
-    };
-    volatility = volatilityOptions[avgTrueRange];
-
-  }
-
-  //volatility = avgTrueRange / 2;
-
   let marketMommentum = 0; 
-
   let days = 0;
   let minutes = 0;
   let seconds = 10;
+
+   /* Exchange rate */
+   function exchangeRate(cryptoPrice) {
+    let valueHeld = stake / cryptoPrice;
+  }
 
   /*  This is the window of opportunity you allow for the trade to fulfill 1 of 3 criteria, Take Profit, Stop Loss or Timed Out Market Order 
   let tradeDuration = minutes * seconds; */
@@ -136,15 +107,14 @@ function init() {
   let losses = 0;
   let totalTrades = 0;
   let newBalance = 0;
-
   let tradeApplied = false;
   let percentageProfit = 0;
-  let successRate = 0;
+  
 
   /* These allow for a runing total of each to be recorded and updated from trade to trade (what do you mean trade to trade) */
 
   let profit = 0;
-  let netProfit = 0;
+  let profitLoss = 0;
 
 
   /**
@@ -192,9 +162,8 @@ function init() {
         "losses": losses,
         "totalTrades": totalTrades,
         "newBalance": newBalance,
-        "netProfit": netProfit,
-        "percentageProfit": percentageProfit,
-        "successRate": successRate
+        "profitLoss": profitLoss,
+        "percentageProfit": percentageProfit
       };
 
       SaveDataToLocalStorage(result);
@@ -215,7 +184,7 @@ function init() {
     /* This is the amount increase the crypto will gain on average during the trade (this ensures market momentum at the set amount but still allows the price to fluxuate randomly) */
     exchangeRate(cryptoPrice);
 
-    chooseVolatility(avgTrueRange);
+    volatility = avgTrueRange / 2;
     let projectedGain = cryptoPrice * (marketMommentum / 100);
     let incrementMove = projectedGain / (6 * seconds);
     
@@ -262,7 +231,6 @@ function init() {
             break
           };
 
-
           /****  STOP LOSS - - -****/
           if (averagePrice <= stopLossAmount && tradeOpen == true) {
 
@@ -304,11 +272,11 @@ function init() {
     newBalance = carriedBalance.toFixed(2);
     newBalance = document.getElementById("newBalance").innerHTML = newBalance;
 
-    netProfit = (profit);
-    netProfit = netProfit.toFixed(2);
-    netProfit = document.getElementById("netProfit").innerHTML = netProfit;
+    profitLoss = (profit);
+    profitLoss = profitLoss.toFixed(2);
+    profitLoss = document.getElementById("profitLoss").innerHTML = profitLoss;
 
-    percentageProfit = (netProfit / stake) * 100;
+    percentageProfit = (profitLoss / stake) * 100;
     percentageProfit = percentageProfit.toFixed(1);
     percentageProfit = document.getElementById("percentageProfit").innerHTML = percentageProfit;
 
