@@ -5,11 +5,11 @@ if (ResultsList !== null) {
     for(var i = 0; i < ResultsList.length; i++) {
         // if the number is even use light background
         if(i % 2 == 0) {
-            bgcolor = '<div class="result-item-light">';
+            bgcolor = '<div class="result-item-dark">';
         }
         // if the number is odd use dark background
         else {
-            bgcolor = '<div class="result-item-dark">';
+            bgcolor = '<div class="result-item-light">';
         }
         document.getElementById("ResultsList").innerHTML +=
         bgcolor + 
