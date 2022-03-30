@@ -1,6 +1,6 @@
 # Trade Probability Calculator Website
  
-![Barry Marples](/Project-Two/readme-docs/TPC-view.png)
+![Barry Marples](./readme-docs/TPC-view.png)
  
  
 This site is a learning tool for those new to the world of crypto trading, it offers the user the chance to explore how changing various trading parameters may impact a given strategies profitability.
@@ -39,7 +39,7 @@ As this is a project I would like to further develop, users are also able to con
  
 - **Colour Scheme**: The colours have been selected to produce a simple clean look so that users can focus on the results. 
 
-![Barry Marples](/Project-Two/readme-docs/colours.png)
+![Barry Marples](./readme-docs/colours.png)
  
 - Persian Green #00aaaa - Highlighted elements 
 - Elm #197b7b - Heading Text & button background
@@ -140,7 +140,7 @@ Graphic showing a person working hard to understand trading strategy
 
 Here is a flow diagram to illustrate the logic required to control this application based on the users choices
 
-![Logic](/Project-Two/readme-docs/logic.png)
+![Logic](./readme-docs/logic.png)
 
 <br /><br />
  
@@ -159,16 +159,16 @@ This project is hosted in GitHub Pages
  
 1. Once your viewing the project’s repository on GitHub select **Settings** from just above the green Gitpod button.
 
-![Deployment Settings](/Project-Two/readme-docs/deployment-share-repository.png)
+![Deployment Settings](./readme-docs/deployment-share-repository.png)
 
 2. From the left hand side navigation go down and click on **Pages** link.
 
-![Deployment Pages](/Project-Two/readme-docs/deployment-share-pages.png)
+![Deployment Pages](./readme-docs/deployment-share-pages.png)
 
 3. Inside that section, click on the drop-down menu under **Source** and select **Branch: Main**.
 4. Click **Save** and the website is now deployed.
 
-![Deployment Save](/Project-Two/readme-docs/deployment-share-save.png)
+![Deployment Save](./readme-docs/deployment-share-save.png)
 
 5. The link to the webpage appears in the green box above where you clicked **Save**.
  
@@ -185,11 +185,11 @@ To clone this project from GitHub:
 1. Once you navigate the main page of project’s repository on GitHub, above the list of files click **Code**
 2. This opens a view showing the url for the project click the copy icon to get the full repository address.
 
-![Clone Copied](/Project-Two/readme-docs/deployment-clone-copied.png)
+![Clone Copied](./readme-docs/deployment-clone-copied.png)
 
 3. Open Terminal and ensure to navigate to the folder where you want to place the cloned project.
 
-![Clone Terminal](/Project-Two/readme-docs/deployment-clone-terminal.png)
+![Clone Terminal](./readme-docs/deployment-clone-terminal.png)
 
 4. Type **git clone** and now paste the url you copied earlier.
 5. Now press **Enter** to create your local clone of this project

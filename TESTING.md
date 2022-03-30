@@ -10,27 +10,27 @@ The site has been thoroughly tested. All the code has been run through the [W3C 
  
 ### - Home page
  
-![W3C html Validator test result](/Project-Two/readme-docs/testing-html-success.png)
+![W3C html Validator test result](./readme-docs/testing-html-success.png)
 
 ### - Calculator page
  
-![W3C html Validator test result](/Project-Two/readme-docs/testing-html-success.png)
+![W3C html Validator test result](./readme-docs/testing-html-success.png)
  
 ### - Results page
  
-![W3C html Validator test result](/Project-Two/readme-docs/testing-html-success.png)
+![W3C html Validator test result](./readme-docs/testing-html-success.png)
  
 ### - Contact page
  
-![W3C html Validator test result](/Project-Two/readme-docs/testing-html-success.png)
+![W3C html Validator test result](./readme-docs/testing-html-success.png)
 
 ### - More Info page
  
-![W3C html Validator test result](/Project-Two/readme-docs/testing-html-success.png)
+![W3C html Validator test result](./readme-docs/testing-html-success.png)
  
 ### 1.2. CSS validation ###
  
-![W3C html Validator test result](/Project-Two/readme-docs/testing-CSS-success.png)
+![W3C html Validator test result](./readme-docs/testing-CSS-success.png)
  
 <br /><br />
  
@@ -157,23 +157,23 @@ Back to README - [Back](README.md)
 
 - Fixed: by naming them nav and nav-mob respectively.
  
-![index error](/Project-Two/readme-docs/testing-html-index-error.png)
+![index error](./readme-docs/testing-html-index-error.png)
  
 - Fixed: Correctly enclosed a tag and remove stray div tag.
  
-![calculator error](/Project-Two/readme-docs/testing-html-calculator-error.png)
+![calculator error](./readme-docs/testing-html-calculator-error.png)
 
 - Fixed: Removed stray ul tag.
  
-![calculator error](/Project-Two/readme-docs/testing-html-mobile-nav-error.png)
+![calculator error](./readme-docs/testing-html-mobile-nav-error.png)
 
 - Fixed: Added full file path for images so they display when site deployed.
  
-![calculator error](/Project-Two/readme-docs/testing-error-file-path.png)
+![calculator error](./readme-docs/testing-error-file-path.png)
 
 - Fixed: Found and replaced misspelt element id.
  
-![calculator error](/Project-Two/readme-docs/testing-error-results.png)
+![calculator error](./readme-docs/testing-error-results.png)
 
 - Fixed: Added function to stop users being able to click 'Calculate Trade' until all fields have been entered.
 - Fixed: Early on sideways scroll issue
