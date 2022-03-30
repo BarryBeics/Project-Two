@@ -45,7 +45,7 @@ function init() {
       alert("Please enter a stake amount up to 10,000");
       return false;
     } else if (cryptoPrice === 0) {
-      alert("Select the appropreate trading fee");
+      alert("Select your preferred crypto currency");
       return false;
     } else if (takeProfit === 0) {
       alert("Use the slider to choose the desired take profit amount");
@@ -68,7 +68,7 @@ function init() {
     } else {
       trading(); 
     }
-  }
+  };
 
 
   let stake = 0; 
@@ -81,39 +81,21 @@ function init() {
   let minutes = 0;
   let seconds = 10;
 
-   /* Exchange rate */
+   /* Exchange rate */ //IT LOOKS LIKE THIS MAY WELL BE REDUNDENT CODE
    function exchangeRate(cryptoPrice) {
     let valueHeld = stake / cryptoPrice;
   }
 
-  /*  This is the window of opportunity you allow for the trade to fulfill 1 of 3 criteria, Take Profit, Stop Loss or Timed Out Market Order 
+  /*  This is the winsdow of opportunity you allow for the trade to fulfill 1 of 3 criteria, Take Profit, Stop Loss or Timed Out Market Order 
   let tradeDuration = minutes * seconds; */
-  let tradeDuration = 10; // This will need to be multipled by 60 secound, but not while we are develpoing the application
-
-  /**
-   * tradesPerDay trades would be trade 24 hours / trade duration the would be a random amount from that range
-   * take 24hour / 1 day in minutes 1440 and divede by selected trade duration to produce the range
-   * from this generate a random number to similate a realife probability of trade oppotunities in any 1 given day
-   */
-  function generateRandomDaily(minTrades, maxTrades) {
-    minTrades = 0;
-    maxTrades = 1440 / minutes;
-    return Math.floor(Math.random() * (maxTrades - minTrades) + minTrades);
-  }
-
-
-  let win = 0;
+  let tradeDuration = 30; // This will need to be multipled by 60 secound, but not while we are develpoing the application
+  let wins = 0;
   let timedOut = 0;
   let losses = 0;
   let totalTrades = 0;
   let newBalance = 0;
   let tradeApplied = false;
   let percentageProfit = 0;
-  
-
-  /* These allow for a runing total of each to be recorded and updated from trade to trade (what do you mean trade to trade) */
-
-  let profit = 0;
   let profitLoss = 0;
 
 
@@ -125,6 +107,38 @@ function init() {
     return (Math.random() * (max - min) + min).toFixed(decimalPlaces) * 1;
   }
 
+   /**
+   * tradesPerDay trades would be trade 24 hours / trade duration the would be a random amount from that range
+   * take 24hour / 1 day in minutes 1440 and divede by selected trade duration to produce the range
+   * from this generate a random number to similate a realife probability of trade oppotunities in any 1 given day
+   */
+    function generateRandomDaily(minTrades, maxTrades) {
+      minTrades = 0;
+      maxTrades = 1440 / minutes;
+      return Math.floor(Math.random() * (maxTrades - minTrades) + minTrades);
+    }
+
+    function avgPriceCorrection(){
+      let workings = 0;
+      let correction = [];
+      let min = 3;
+      let max = 12;
+     
+     for(let i = 0; i < 100; i++) {
+         randomSelect = Math.floor(Math.random() * (max - min + 1)) + min;
+         workings += randomSelect
+         correction.push(workings)
+         if (workings >= tradeDuration) {
+             break
+         }
+      let next = 0;
+      let selector = 0;   
+     }
+      
+     console.log('list', correction);
+  
+  }
+  
   /**
    * This function saves the results to the users local storage
    */
@@ -135,7 +149,6 @@ function init() {
     alert("The results have been saved and can be viewed on the results page. All fields will now be cleared ready for you to try different parameters"); // Should be something like [Object array]
     localStorage.setItem('results', JSON.stringify(saving));
   }
-
 
   /**
    * Checks to see if there are results to be saved 
@@ -157,7 +170,7 @@ function init() {
         "marketMommentum": marketMommentum,
         "minutes": minutes,
         "days": days,
-        "win": win,
+        "wins": wins,
         "timedOut": timedOut,
         "losses": losses,
         "totalTrades": totalTrades,
@@ -169,24 +182,23 @@ function init() {
       SaveDataToLocalStorage(result);
       location.reload()
     }
-
   }
 
-
-  /**
-   * This function contains the logic of the application
-   */
   function trading() {
 
     tradeApplied = true;
-
     let carriedBalance = stake;
+    console.log('carried balance at the start:', carriedBalance);
+    console.log('Opening price for the crypto', cryptoPrice)
     /* This is the amount increase the crypto will gain on average during the trade (this ensures market momentum at the set amount but still allows the price to fluxuate randomly) */
     exchangeRate(cryptoPrice);
 
     volatility = avgTrueRange / 2;
+    console.log('volatility', volatility);
     let projectedGain = cryptoPrice * (marketMommentum / 100);
+    console.log('projectedGain', projectedGain.toFixed(2))
     let incrementMove = projectedGain / (6 * seconds);
+    console.log('incrementMove', incrementMove.toFixed(2))
     
 
     /* This initial sets the */
@@ -196,61 +208,79 @@ function init() {
 
     /***   NUMBER OF DAYS - - ***/
     for (let eachDay = 0; eachDay < days; eachDay++) {
-  
+      console.log('************************* ******************* Trading for day:', eachDay +1);
 
       /***  NUMBER OF TRADES - -******/
-      for (let frequency = 0; frequency < generateRandomDaily(); frequency++)
-      
-      {
+      for (let frequency = 0; frequency < generateRandomDaily(); frequency++) {
 
         let tradeOpen = true;
 
         let takeProfitAmount = assetPrice + (assetPrice * (takeProfit / 100));
         let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
+        console.log('take profit at:', takeProfitAmount.toFixed(2));
+        console.log('Stop loss set at:',stopLossAmount.toFixed(2));
+        
+        tradeDuration = tradeDuration
 
+        avgPriceCorrection();
 
         /***  TRADE DURATION - - - -******/
         for (let eachSecond = 0; eachSecond < tradeDuration; eachSecond++) {
-      
+
+
+          console.log(eachSecond +1, 'seconds');
           let move = generateRandonMove(-volatility, volatility, 1);
+          console.log('move', move.toFixed(2));
           let moveAmount = assetPrice * (move / 100);
+          console.log('move amount', moveAmount.toFixed(2));
           let movePerSecound = moveAmount + incrementMove;
 
           assetPrice = assetPrice + movePerSecound;
+          console.log('assets Price', assetPrice.toFixed(2));
           averagePrice = averagePrice + incrementMove;
+          console.log('underlying average price', averagePrice.toFixed(2));
 
 
           /***  TAKE PROFIT - -*****/
-          if (averagePrice >= takeProfitAmount && tradeOpen == true) {
-   
+          if (assetPrice >= takeProfitAmount && tradeOpen == true) {
+            console.log('********** TAKE PROFIT *****************');
             let gain = carriedBalance * (takeProfit / 100);
+            console.log('gain', gain.toFixed(2));
             carriedBalance = carriedBalance += gain;
-            win += 1;
-            profit += gain;
+            console.log('carried balance', carriedBalance.toFixed(2))
+
+            wins += 1;
+            profitLoss += gain;
             tradeOpen = false;
             break
           };
 
           /****  STOP LOSS - - -****/
-          if (averagePrice <= stopLossAmount && tradeOpen == true) {
-
+          if (assetPrice <= stopLossAmount && tradeOpen == true) {
+            console.log('********** STOP LOSS *****************');
             let loss = carriedBalance * (stopLoss / 100);
+            console.log('loss', loss.toFixed(2));
             carriedBalance = carriedBalance += loss;
+            console.log('carried balance', carriedBalance.toFixed(2))
+
             losses += 1;
-            profit += loss;
+            profitLoss += loss;
             tradeOpen = false;
             break
           };
 
           /***  TIMED OUT MARKET ORDER - *****/
           if (eachSecond == tradeDuration - 1 && tradeOpen == true) {
-            
+            console.log('********** TIMED OUT TRADE *****************');
             changePercentage = (assetPrice - averagePrice) / averagePrice;
+            console.log('changePercentage', changePercentage)
             change = carriedBalance * changePercentage;
+            console.log('change', change.toFixed(2));
             carriedBalance = carriedBalance += change;
+            console.log('carried balance', carriedBalance.toFixed(2))
 
             timedOut += 1;
-            profit += change;
+            profitLoss += change;
             tradeOpen = false;
           };
 
@@ -260,25 +290,24 @@ function init() {
     }
 
     /***  STRATEGY OUTCOME ****/
-    console.log('From a possible number of trades there have been', win, 'successes', timedOut, 'timed out trades', losses, 'losses');
-
-    win = document.getElementById("win").innerHTML = win;
+    wins = document.getElementById("wins").innerHTML = wins;
     timedOut = document.getElementById("timedOut").innerHTML = timedOut;
     losses = document.getElementById("losses").innerHTML = losses;
 
-    totalTrades = (win + timedOut + losses);
+    totalTrades = (wins + timedOut + losses);
     totalTrades = document.getElementById("totalTrades").innerHTML = totalTrades;
 
     newBalance = carriedBalance.toFixed(2);
     newBalance = document.getElementById("newBalance").innerHTML = newBalance;
 
-    profitLoss = (profit);
     profitLoss = profitLoss.toFixed(2);
     profitLoss = document.getElementById("profitLoss").innerHTML = profitLoss;
 
     percentageProfit = (profitLoss / stake) * 100;
     percentageProfit = percentageProfit.toFixed(1);
     percentageProfit = document.getElementById("percentageProfit").innerHTML = percentageProfit;
+
+    console.log('From a possible', totalTrades, 'of trades there have been', wins, 'successes', timedOut, 'timed out trades', losses, 'losses');
 
   }
 };

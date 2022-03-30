@@ -1,9 +1,9 @@
 # Trade Probability Calculator Website
  
-![Barry Marples](./readme-docs/TPC-view.png)
+![Barry Marples](/Project-Two/readme-docs/TPC-view.png)
  
  
-This site offers the user the chance to explore the impact of their choices on trading ideas they may have given the selected number of options provided.
+This site is a learning tool for those new to the world of crypto trading, it offers the user the chance to explore how changing various trading parameters may impact a given strategies profitability.
  
 You can visit the deployed website [here](https://barrybeics.github.io/Project-Two/).
  
@@ -15,23 +15,23 @@ You can visit the deployed website [here](https://barrybeics.github.io/Project-T
 ### 1.1. Project Goals ###
  
 Picking a trading strategy can be complex. This site will help users gain a better understanding of what impact changing parameters can have on the effectiveness of a given trading strategy.
-Users are also able to contact the developer using the contact form to make suggestions for improvements to the site.
+As this is a project I would like to further develop, users are also able to contact the developer using the contact form to make suggestions for improvements to the site.
  
 ### 1.2. User Stories ###
  
-- As a USER I want to be able to add the amount I would steak in a trading strategy
-- As a USER I want to be able to factor in by broker fees so that I see the cost of a trading strategy
-- As a USER I want to be able to vary the point I would take profit from a trade so that I can see the effect this would have on the overall strategy 
-- As a USER I want to be able to vary the point I would exit from a trade so that I can see the effect this would have on the overall strategy 
-- As a USER I want to be able to vary the volatility in the simulation so that I can see the effect this would have on the overall strategy 
-- As a USER I want to be able to vary the percentage of gain the simulation is working on so that I can see the effect this would have on the overall strategy 
-- As a USER I want to be able to change the time spent in a trade so that I can see the effect this would have on the overall strategy 
-- As a USER I want to be able to change the duration the simulation will run for so that I can see the effect this would have on the overall strategy 
-- As a USER I want simple explanations of any complex terminology so that I can understand what it is I’m making changes to
-- As a USER I want a simple interface so that I can cycle between strategies quickly and easily
-- As a USER I want a simple summary of the results so that I can quickly understand if change I have made has improved my strategy or not
-- As a USER I want a to be able to save results for later comparison
-- As a USER I want to be able to contact the developer to suggest future developments to the site
+- As a USER I want to be able to add the amount I would stake in a trading strategy.
+- As a USER I want to be able to choose my prefered crypto currency.
+- As a USER I want to be able to vary the point I would take profit from a trade so that I can see the effect this would have on the overall strategy.
+- As a USER I want to be able to vary the point I would exit from a trade so that I can see the effect this would have on the overall strategy. 
+- As a USER I want to be able to vary the volatility in the simulation so that I can see the effect this would have on the overall strategy. 
+- As a USER I want to be able to vary the percentage of gain the simulation is working on so that I can see the effect this would have on the overall strategy. 
+- As a USER I want to be able to change the time spent in a trade so that I can see the effect this would have on the overall strategy.
+- As a USER I want to be able to change the duration the simulation will run for so that I can see the effect this would have on the overall strategy. 
+- As a USER I want simple explanations of any complex terminology so that I can understand what it is I’m making changes to.
+- As a USER I want a simple interface so that I can cycle between strategies quickly and easily.
+- As a USER I want a simple summary of the results so that I can quickly understand if change I have made has improved my strategy or not.
+- As a USER I want a to be able to save results for later comparison.
+- As a USER I want to be able to contact the developer to suggest future developments to the site.
 
  
  
@@ -39,7 +39,7 @@ Users are also able to contact the developer using the contact form to make sugg
  
 - **Colour Scheme**: The colours have been selected to produce a simple clean look so that users can focus on the results. 
 
-![Barry Marples](./readme-docs/colours.png)
+![Barry Marples](/Project-Two/readme-docs/colours.png)
  
 - Persian Green #00aaaa - Highlighted elements 
 - Elm #197b7b - Heading Text & button background
@@ -78,7 +78,7 @@ Both the Header and the Footer are consistent throughout the website.
  
 **Home Page** includes:
  
-- **overview**: A couple of sentences to give a brief explanation of the the site does.
+- **overview**: A couple of sentences to give a brief explanation of the site does.
 Graphic showing a person working hard to understand trading strategy
  
  
@@ -103,8 +103,8 @@ Graphic showing a person working hard to understand trading strategy
  
 
 - Offer other volatility indicators
-- API to get live currency prices
-- Ability to sort results by success rate, percentage profit
+- Ability to sort results by percentage profit
+- Allow user to add broker fee to be factored into the profitability calculation
 - Setting page to allow further customization
 
 
@@ -138,9 +138,9 @@ Graphic showing a person working hard to understand trading strategy
 ## 4. Logic
 ---
 
-Here is a flow diagram to illustrate the logic required to control this aplication based on the users choices
+Here is a flow diagram to illustrate the logic required to control this application based on the users choices
 
-![Logic](./readme-docs/logic.png)
+![Logic](/Project-Two/readme-docs/logic.png)
 
 <br /><br />
  
@@ -159,16 +159,16 @@ This project is hosted in GitHub Pages
  
 1. Once your viewing the project’s repository on GitHub select **Settings** from just above the green Gitpod button.
 
-![Deployment Settings](./readme-docs/deployment-share-repository.png)
+![Deployment Settings](/Project-Two/readme-docs/deployment-share-repository.png)
 
 2. From the left hand side navigation go down and click on **Pages** link.
 
-![Deployment Pages](./readme-docs/deployment-share-pages.png)
+![Deployment Pages](/Project-Two/readme-docs/deployment-share-pages.png)
 
 3. Inside that section, click on the drop-down menu under **Source** and select **Branch: Main**.
 4. Click **Save** and the website is now deployed.
 
-![Deployment Save](./readme-docs/deployment-share-save.png)
+![Deployment Save](/Project-Two/readme-docs/deployment-share-save.png)
 
 5. The link to the webpage appears in the green box above where you clicked **Save**.
  
@@ -185,11 +185,11 @@ To clone this project from GitHub:
 1. Once you navigate the main page of project’s repository on GitHub, above the list of files click **Code**
 2. This opens a view showing the url for the project click the copy icon to get the full repository address.
 
-![Clone Copied](./readme-docs/deployment-clone-copied.png)
+![Clone Copied](/Project-Two/readme-docs/deployment-clone-copied.png)
 
 3. Open Terminal and ensure to navigate to the folder where you want to place the cloned project.
 
-![Clone Terminal](./readme-docs/deployment-clone-terminal.png)
+![Clone Terminal](/Project-Two/readme-docs/deployment-clone-terminal.png)
 
 4. Type **git clone** and now paste the url you copied earlier.
 5. Now press **Enter** to create your local clone of this project

@@ -21,10 +21,10 @@ The main change from the wireframes to the final site was the layout of the resu
 
 
 <h2 align="center">
-<img src="./readme-docs/wireframe-desktop-options.png" width="470px" height="300px">
-<img src="./readme-docs/wireframe-desktop-how.png" width="470px" height="300px">
-<img src="./readme-docs/wireframe-desktop-past-results.png" width="470px" height="300px">
-<img src="./readme-docs/wireframe-desktop-contact.png" width="470px" height="300px">
+<img src="/Project-Two/readme-docs/wireframe-desktop-options.png" width="470px" height="300px">
+<img src="/Project-Two/readme-docs/wireframe-desktop-how.png" width="470px" height="300px">
+<img src="/Project-Two/readme-docs/wireframe-desktop-past-results.png" width="470px" height="300px">
+<img src="/Project-Two/readme-docs/wireframe-desktop-contact.png" width="470px" height="300px">
 </h2>
 
 <br />
@@ -42,10 +42,10 @@ Back to README - [View](README.md)
 <br />
 
 <h2 align="center">
-<img src="./readme-docs/wireframe-tablet-market-info.png" width="400px" height="283px">
-<img src="./readme-docs/wireframe-tablet-options.png" width="400px" height="283px">
-<img src="./readme-docs/wireframe-tablet-past-results.png" width="400px" height="283px">
-<img src="./readme-docs/wireframe-tablet-contact.png" width="400px" height="283px">
+<img src="/Project-Two/readme-docs/wireframe-tablet-market-info.png" width="400px" height="283px">
+<img src="/Project-Two/readme-docs/wireframe-tablet-options.png" width="400px" height="283px">
+<img src="/Project-Two/readme-docs/wireframe-tablet-past-results.png" width="400px" height="283px">
+<img src="/Project-Two/readme-docs/wireframe-tablet-contact.png" width="400px" height="283px">
 </h2>
 
 <br />
@@ -63,10 +63,10 @@ Back to README - [View](README.md)
 <br />
 
 <h2 align="center">
-<img src="./readme-docs/wireframe-mobile-options.png" width="294px" height="582px">
-<img src="./readme-docs/wireframe-mobile-results.png" width="294px" height="582px">
-<img src="./readme-docs/wireframe-mobile-past-results.png" width="294px" height="582px">
-<img src="./readme-docs/wireframe-mobile-contact.png" width="294px" height="582px">
+<img src="/Project-Two/readme-docs/wireframe-mobile-options.png" width="294px" height="582px">
+<img src="/Project-Two/readme-docs/wireframe-mobile-results.png" width="294px" height="582px">
+<img src="/Project-Two/readme-docs/wireframe-mobile-past-results.png" width="294px" height="582px">
+<img src="/Project-Two/readme-docs/wireframe-mobile-contact.png" width="294px" height="582px">
 </h2>
 
 <br />

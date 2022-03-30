@@ -10,27 +10,27 @@ The site has been thoroughly tested. All the code has been run through the [W3C 
  
 ### - Home page
  
-![W3C html Validator test result](./readme-docs/testing-html-success.png)
+![W3C html Validator test result](/Project-Two/readme-docs/testing-html-success.png)
 
 ### - Calculator page
  
-![W3C html Validator test result](./readme-docs/testing-html-success.png)
+![W3C html Validator test result](/Project-Two/readme-docs/testing-html-success.png)
  
 ### - Results page
  
-![W3C html Validator test result](./readme-docs/testing-html-success.png)
+![W3C html Validator test result](/Project-Two/readme-docs/testing-html-success.png)
  
 ### - Contact page
  
-![W3C html Validator test result](./readme-docs/testing-html-success.png)
+![W3C html Validator test result](/Project-Two/readme-docs/testing-html-success.png)
 
 ### - More Info page
  
-![W3C html Validator test result](./readme-docs/testing-html-success.png)
+![W3C html Validator test result](/Project-Two/readme-docs/testing-html-success.png)
  
 ### 1.2. CSS validation ###
  
-![W3C html Validator test result](./readme-docs/testing-CSS-success.png)
+![W3C html Validator test result](/Project-Two/readme-docs/testing-CSS-success.png)
  
 <br /><br />
  
@@ -41,7 +41,7 @@ The responsive design tests were carried out manually whilst building the site w
  
 ### 2.1. Mobiles ###
 Notes:
-- iPhone5, Galaxy S5/S6/S7 & Xperia Z3/Z3 :   Render fail, box breaks onto next line not as intentded.
+- iPhone5, Galaxy S5/S6/S7 & Xperia Z3/Z3 :   Render fail, box breaks onto next line not as intended.
 
  
 All the errors found have now been fixed as shown below.         
@@ -54,9 +54,9 @@ All the errors found have now been fixed as shown below.
       
 ### 2.2. Tablets ###
 Notes:
-- iPad Pro :   Padding of half & thrid boxes needs increasing to display properly.
+- iPad Pro :   Padding of half & third boxes needs increasing to display properly.
                                    
-- Nexus 7:   Render fail, box breaks onto next line not as intentded.
+- Nexus 7:   Render fail, box breaks onto next line not as intended.
  
 All the errors found have now been fixed as shown below.    
  
@@ -68,7 +68,7 @@ All the errors found have now been fixed as shown below.
  
 ### 2.3. Desktops ###
 Notes:
-- All Sizes Desktop :   Padding of half & thrid boxes needs increasing to display properly.
+- All Sizes Desktop :   Padding of half & third boxes needs increasing to display properly.
  
 All the errors found have now been fixed as shown below.
  
@@ -90,13 +90,13 @@ This site was tested on the following browsers with no visible issues for the us
  
 ## Testing User stories
 
-- As a USER I want to be able to add the amount I would steak in a trading strategy.
+- As a USER I want to be able to add the amount I would stake in a trading strategy.
 
-    - The USER can enter any amount they want into the number input field.
+    - The USER can enter any amount they want upto 10,000 into the number input field.
 
-- As a USER I want to be able to factor in by broker fees so that I see the cost of a trading strategy.
+- As a USER I want to choose my prefered crypto currency
 
-    - The USER can select from the dropdown menu of the four most popular crypto exchanges fees.
+    - The USER can select from the dropdown menu of the four popular crypto currencies.
 
 - As a USER I want to be able to vary the point I would take profit from a trade so that I can see the effect this would have on the overall strategy .
 
@@ -104,11 +104,11 @@ This site was tested on the following browsers with no visible issues for the us
 
 - As a USER I want to be able to vary the point I would exit from a trade so that I can see the effect this would have on the overall strategy.
 
-    - The USER cau use the slider to adjust the % at which the stop loss is executed.
+    - The USER can use the slider to adjust the % at which the stop loss is executed.
 
 - As a USER I want to be able to vary the volatility in the simulation so that I can see the effect this would have on the overall strategy.
 
-    - The USER can adjust the the volatility range in increments of 2% all the way up to 10%, this allows the simulation to whip upto 10% positive and down as far as 10% negative randomly inorder to simulate market volatility.
+    - The USER can adjust the volatility range in increments of 2% all the way up to 10%, this allows the simulation to whip upto 10% positive and down as far as 10% negative randomly in order to simulate market volatility.
 
 - As a USER I want to be able to vary the percentage of gain the simulation is working on so that I can see the effect this would have on the overall strategy. 
 
@@ -124,19 +124,19 @@ This site was tested on the following browsers with no visible issues for the us
 
 - As a USER I want simple explanations of any complex terminology so that I can understand what it is I’m making changes to.
 
-    - The USER is provided with a info button next to each title of a each option and when clicked is provided with a description of said option.
+    - The USER is provided with an info button next to each title of a each option and when clicked is provided with a description of said option.
 
 - As a USER I want a simple interface so that I can cycle between strategies quickly and easily.
 
-    - The USER is provided with an intuative selection of sliders, number input, dropdown menu & buttons to make choosing options simple and quick to apply.
+    - The USER is provided with an intuitive selection of sliders, number input, dropdown menu & buttons to make choosing options simple and quick to apply.
 
-- As a USER I want a simple summary of the results so that I can quickly understand if change I have made has improved my strategy or not.
+- As a USER I want a simple summary of the results so that I can quickly understand if the change I have made has improved my strategy or not.
 
     - The USER is provided with a grid of data in a uniform layout with titles and large number displays for ease of comprehension.   
 
-- As a USER I want a to be able to save results for later comparison.
+- As a USER I want to be able to save results for later comparison.
 
-    - The USER is provided a save button at the foot of the results so as to be able to easily save the results for later viewing.
+    - The USER is provided with a save button at the foot of the results so as to be able to easily save the results for later viewing.
 
 - As a USER I want to be able to contact the developer to suggest future developments to the site.
 
@@ -155,27 +155,27 @@ Back to README - [Back](README.md)
  
 - Detailed below are errors found and actions taken to resolve them.
 
-- Fixed: by naming them nav and nav-mob respectivley.
+- Fixed: by naming them nav and nav-mob respectively.
  
-![index error](./readme-docs/testing-html-index-error.png)
+![index error](/Project-Two/readme-docs/testing-html-index-error.png)
  
 - Fixed: Correctly enclosed a tag and remove stray div tag.
  
-![calculator error](./readme-docs/testing-html-calculator-error.png)
+![calculator error](/Project-Two/readme-docs/testing-html-calculator-error.png)
 
 - Fixed: Removed stray ul tag.
  
-![calculator error](./readme-docs/testing-html-mobile-nav-error.png)
+![calculator error](/Project-Two/readme-docs/testing-html-mobile-nav-error.png)
 
 - Fixed: Added full file path for images so they display when site deployed.
  
-![calculator error](./readme-docs/testing-error-file-path.png)
+![calculator error](/Project-Two/readme-docs/testing-error-file-path.png)
 
-- Fixed: Found and replaced misspelt elemnt id.
+- Fixed: Found and replaced misspelt element id.
  
-![calculator error](./readme-docs/testing-error-results.png)
+![calculator error](/Project-Two/readme-docs/testing-error-results.png)
 
-- Fixed: Added function to stop users being able to click 'Calculate Trade' untill all fields have been enter.
+- Fixed: Added function to stop users being able to click 'Calculate Trade' until all fields have been entered.
 - Fixed: Early on sideways scroll issue
 
 [Go back to README.md file](README.md).
