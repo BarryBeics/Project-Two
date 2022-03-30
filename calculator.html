@@ -224,7 +224,7 @@
             <label class="title"> Average True Range </label>
             <input type="range" id="atr" value="2" min="2" max="10" step="2" class="slider"
               oninput="document.getElementById('avgTrueRange').innerHTML = this.value" />
-            <div class="value">upto <label id="avgTrueRange">0</label>%</div>
+            <div class="value"><label id="avgTrueRange">0</label>%</div>
             <!-- Market Momentum Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#mommentumModal">
               info </button>
@@ -253,7 +253,7 @@
             <div class="value"> <label id="marketMommentum">0</label>%</div>
           </div>
           <!-- Third Wide Panel -->
-          <div class="options-form-item-full">
+          <div class="options-form-item-half">
             <!-- Trade Duration Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#durationModal">
               info </button>
@@ -300,7 +300,8 @@
                 oninput="document.getElementById('minutes').innerHTML = this.value">
               <label for="duration60">60</label>
             </div>
-
+            </div>
+            <div class="options-form-item-half">
             <!-- # of Days Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#daysModal"> info
             </button>
