@@ -25,7 +25,7 @@ if (ResultsList !== null) {
         '<div class="data"><span>' +  "Number of days" + "</span>" + "<p>" + ResultsList[i].days + "</p>" + "</div>" + "</div>" + '<div class="data-block">' +
         '<div class="data-sub-title"><span>' +  "Strategy Results" + "</span>" + "</div>" +
         '<div class="data"><span>' +  "New Balance £" + "</span>" + "<p>" + "£" + ResultsList[i].newBalance + "</p>" + "</div>" +
-        '<div class="data"><span>' +  "Net Profit £" + "</span>" + "<p>" + ResultsList[i].profitLoss + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Profit / Loss £" + "</span>" + "<p>" + ResultsList[i].profitLoss + "</p>" + "</div>" +
         '<div class="data"><span>' +  "Profit %" + "</span>" + "<p>" +  ResultsList[i].percentageProfit + "%" +  "</p>" + "</div>" +
         '<div class="data"><span>' +  "Wins" + "</span>" +  "<p>" + ResultsList[i].wins  + "</p>" + "</div>" + 
         '<div class="data"><span>' +  "Timed Out" + "</span>" + "<p>" + ResultsList[i].timedOut + "</p>" + "</div>" +
@@ -37,7 +37,7 @@ if (ResultsList !== null) {
 
     document.getElementById("ResultsList").innerHTML +=
     bgcolor + 
-    '<div class="data-title"><h1>' +  "Nothing to see here folks" +  "#" + "</h1>" + "</div>" +
+    '<div class="data-title"><h1>' +  "Nothing to see here folks" + "</h1>" + "</div>" +
     '<div class="data-sub-title"><span>' +  "When you save trade calculations the will apear here" + "</span>" + "</div>" +
     "</div>";
     

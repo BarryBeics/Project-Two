@@ -82,7 +82,7 @@
         <div class="p-3">
           <div class="row">
           <h1>Options</h1>
-          <p>Choose the parameters that you would like to test.</p>
+          <p>Choose the conbination of parameters that you would like to test.</p>
 
           <!-- Top Panel Left -->
           <div class="col-6">
@@ -373,7 +373,7 @@
           <div class="form-row">
             <div class="col text-center">
 
-              <button data-type="trade" class="btn button"> Calculate Trade</button>
+              <button data-type="trade" class="btn button"> <a href="#down">Calculate Trade</a></button>
             </div>
           </div>
         </div>
@@ -383,10 +383,11 @@
       <div class="col-sm-12  col-md-6">
         <div class="p-3">
 <div class="row results-center">
+  <div id="down"></div>
           <!-- Text Area -->
           <h1>Results</h1>
           <p>This is how your chosen strategy would have performed.</p>
-
+          
           <!-- First Wide Panel -->
           <div class="col-12">
             <div class="box-style">
@@ -402,10 +403,17 @@
           </div></div>
 
           <!-- Third Wide Panel -->
-          <div class="col-12">
+          <div class="col-5">
             <div class="box-style">
             <label class="title"> Profit %</label>
             <div class="results"> <span id="percentageProfit">0</span> </div>
+          </div></div>
+
+           <!-- Third Wide Panel -->
+           <div class="col-7">
+            <div class="box-style">
+            <label class="title"> Crypto / USD Price</label>
+            <div class="results"> <span id="cryptoSelection">0</span> </div>
           </div></div>
 
           <!-- Block of 3 Panels -->
@@ -434,6 +442,7 @@
             <div class="results"> <span id="totalTrades">0</span> </div>
           </div></div>
         </div>
+        
           <!-- Save Button -->
           <div class="form-row">
             <div class="col text-center">

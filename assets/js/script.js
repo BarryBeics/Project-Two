@@ -97,6 +97,7 @@ function init() {
   let tradeApplied = false;
   let percentageProfit = 0;
   let profitLoss = 0;
+  let cryptoSelection = 0;
 
 
   /**
@@ -184,8 +185,19 @@ function init() {
     }
   }
 
-  function trading() {
+  function clearResult() {
+    wins = 0;
+    timedOut = 0;
+    losses = 0;
+    totalTrades = 0;
+    newBalance = 0;
+    profitLoss = 0;
+    percentageProfit = 0;
+    cryptoSelection = 0;
+  }
 
+  function trading() {
+    clearResult();
     tradeApplied = true;
     let carriedBalance = stake;
     console.log('carried balance at the start:', carriedBalance);
@@ -201,9 +213,7 @@ function init() {
     console.log('incrementMove', incrementMove.toFixed(2))
     
 
-    /* This initial sets the */
-    let averagePrice = cryptoPrice;
-    let assetPrice = cryptoPrice;
+  
     
 
     /***   NUMBER OF DAYS - - ***/
@@ -212,7 +222,9 @@ function init() {
 
       /***  NUMBER OF TRADES - -******/
       for (let frequency = 0; frequency < generateRandomDaily(); frequency++) {
-
+          /* This initial sets the */
+        let averagePrice = cryptoPrice;
+        let assetPrice = cryptoPrice;
         let tradeOpen = true;
         let takeProfitAmount = assetPrice + (assetPrice * (takeProfit / 100));
         let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
@@ -300,6 +312,10 @@ function init() {
     wins = document.getElementById("wins").innerHTML = wins;
     timedOut = document.getElementById("timedOut").innerHTML = timedOut;
     losses = document.getElementById("losses").innerHTML = losses;
+    
+    cryptoSelection = cryptoPrice.toFixed(2);
+    cryptoSelection = document.getElementById("cryptoSelection").innerHTML = cryptoSelection;
+    console.log.apply(cryptoSelection);
 
     totalTrades = (wins + timedOut + losses);
     totalTrades = document.getElementById("totalTrades").innerHTML = totalTrades;

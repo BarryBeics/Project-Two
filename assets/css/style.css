@@ -129,6 +129,23 @@ h3 {
    color: #c7c5c6;
 }
 
+
+
+
+
+
+html {
+   scroll-behavior: smooth;
+  }
+  
+  a, a:hover {
+   text-decoration: none;
+   color: #212529
+  } 
+
+
+  
+
 /* ------------- Site wide  ----------- All Font Sizes -----*/
 
 h1,
@@ -409,7 +426,7 @@ img {
 @media only screen and (max-width: 420px) {
 
    .slider {
-      width: 80%;
+      width: 75%;
    }
    .data {
       width: 100%;
@@ -418,6 +435,10 @@ img {
 }
 
 /* ------------- Site wide  ----------- Footer */
+
+.space {
+   padding: 0px 25px;
+}
 
 footer {
    padding-top: 10px;
