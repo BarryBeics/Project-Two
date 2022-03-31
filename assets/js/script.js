@@ -23,7 +23,7 @@ function init() {
   // This block handles the functionality of the drop down menu used to select the Crypto Price
   document.body.addEventListener("change", function (event) {
     if (event.target.classList.contains("select")) {
-      event.target.previousElementSibling.textContent = event.target.value
+      event.target.previousElementSibling.textContent = event.target.value;
     }
   });
 
@@ -66,9 +66,10 @@ function init() {
       alert("Select the appropreate number of trading days");
       return false;
     } else {
+      tradeDuration = (minutes * 60);
       trading(); 
     }
-  };
+  }
 
 
   let stake = 0; 
@@ -78,8 +79,8 @@ function init() {
   let volatility = 0;
   let marketMommentum = 0; 
   let days = 0;
-  let minutes = 0;
-  let seconds = 10;
+  let minutes =0;
+  let tradeDuration = 0;
 
    /* Exchange rate */ //IT LOOKS LIKE THIS MAY WELL BE REDUNDENT CODE
    function exchangeRate(cryptoPrice) {
@@ -87,8 +88,9 @@ function init() {
   }
 
   /*  This is the winsdow of opportunity you allow for the trade to fulfill 1 of 3 criteria, Take Profit, Stop Loss or Timed Out Market Order 
-  let tradeDuration = minutes * seconds; */
-  let tradeDuration = 30; // This will need to be multipled by 60 secound, but not while we are develpoing the application
+
+  //let tradeDuration = 30; // This will need to be multipled by 60 secound, but not while we are develpoing the application */
+  
   let wins = 0;
   let timedOut = 0;
   let losses = 0;
@@ -98,6 +100,7 @@ function init() {
   let percentageProfit = 0;
   let profitLoss = 0;
   let cryptoSelection = 0;
+  let cryptoPrice = 0;
 
 
   /**
@@ -115,29 +118,28 @@ function init() {
    */
     function generateRandomDaily(minTrades, maxTrades) {
       minTrades = 0;
-      maxTrades = 1440 / minutes;
+      maxTrades = 1440 / minutes ;
       return Math.floor(Math.random() * (maxTrades - minTrades) + minTrades);
     }
 
-    function avgPriceCorrection(){
-      let workings = 0;
-      let correction = [];
-      let min = 3;
-      let max = 12;
+    let next = 0;
+    let selector = 0; 
+    let correction = [];
+
+  function avgPriceCorrection(){
+    let workings = 0;
+    let min = 23;
+    let max = 112;
      
      for(let i = 0; i < 100; i++) {
-         randomSelect = Math.floor(Math.random() * (max - min + 1)) + min;
-         workings += randomSelect
-         correction.push(workings)
+         let randomSelect = Math.floor(Math.random() * (max - min + 1)) + min;
+         workings += randomSelect;
+         correction.push(workings);
          if (workings >= tradeDuration) {
-             break
+             break;
          }
-      let next = 0;
-      let selector = 0;   
      }
-      
-     console.log('list', correction);
-  
+     console.log('thie list', correction);
   }
   
   /**
@@ -181,7 +183,7 @@ function init() {
       };
 
       SaveDataToLocalStorage(result);
-      location.reload()
+      location.reload();
     }
   }
 
@@ -200,20 +202,22 @@ function init() {
     clearResult();
     tradeApplied = true;
     let carriedBalance = stake;
+    
     console.log('carried balance at the start:', carriedBalance);
-    console.log('Opening price for the crypto', cryptoPrice)
+    console.log('Opening price for the crypto', cryptoPrice);
     /* This is the amount increase the crypto will gain on average during the trade (this ensures market momentum at the set amount but still allows the price to fluxuate randomly) */
     exchangeRate(cryptoPrice);
 
     volatility = avgTrueRange / 2;
     console.log('volatility', volatility);
     let projectedGain = cryptoPrice * (marketMommentum / 100);
-    console.log('projectedGain', projectedGain.toFixed(2))
-    let incrementMove = projectedGain / (6 * seconds);
-    console.log('incrementMove', incrementMove.toFixed(2))
+    console.log('projectedGain', projectedGain.toFixed(2));
+    let incrementMove = projectedGain / (60);
+    console.log('incrementMove', incrementMove.toFixed(2));
     
 
-  
+   
+     
     
 
     /***   NUMBER OF DAYS - - ***/
@@ -232,9 +236,9 @@ function init() {
 
         console.log('take profit at:', takeProfitAmount.toFixed(2));
         console.log('Stop loss set at:',stopLossAmount.toFixed(2));
-        
-        tradeDuration = tradeDuration
-
+        next = 0;
+        tradeDuration = tradeDuration;
+        correction = [];
         avgPriceCorrection();
 
         /***  TRADE DURATION - - - -******/
@@ -246,6 +250,15 @@ function init() {
           assetPrice = assetPrice + movePerSecound;
           averagePrice = averagePrice + incrementMove;
 
+          
+          selector = correction[next];
+          if (eachSecond == selector) {
+            console.log('this is where the magichappens', selector)
+            next += 1;
+            console.log('THE NEXT SELCETOR',next)
+            assetPrice = averagePrice;
+          };
+          
 
           console.log(eachSecond +1, 'seconds');
           console.log('move', move.toFixed(2));
@@ -262,13 +275,13 @@ function init() {
 
             console.log('********** TAKE PROFIT *****************');
             console.log('gain', gain.toFixed(2));
-            console.log('carried balance', carriedBalance.toFixed(2))
+            console.log('carried balance', carriedBalance.toFixed(2));
 
             wins += 1;
             profitLoss += gain;
             tradeOpen = false;
-            break
-          };
+            break;
+          }
 
           /****  STOP LOSS - - -****/
           if (assetPrice <= stopLossAmount && tradeOpen == true) {
@@ -278,30 +291,30 @@ function init() {
 
             console.log('********** STOP LOSS *****************');
             console.log('loss', loss.toFixed(2));
-            console.log('carried balance', carriedBalance.toFixed(2))
+            console.log('carried balance', carriedBalance.toFixed(2));
 
             losses += 1;
             profitLoss += loss;
             tradeOpen = false;
-            break
-          };
+            break;
+          }
 
           /***  TIMED OUT MARKET ORDER - *****/
           if (eachSecond == tradeDuration - 1 && tradeOpen == true) {
 
-            changePercentage = (assetPrice - averagePrice) / averagePrice;
-            change = carriedBalance * changePercentage;
+            let changePercentage = (assetPrice - averagePrice) / averagePrice;
+            let change = carriedBalance * changePercentage;
             carriedBalance = carriedBalance += change;
 
             console.log('********** TIMED OUT TRADE *****************');
-            console.log('changePercentage', changePercentage)
+            console.log('changePercentage', changePercentage);
             console.log('change', change.toFixed(2));
-            console.log('carried balance', carriedBalance.toFixed(2))
+            console.log('carried balance', carriedBalance.toFixed(2));
 
             timedOut += 1;
             profitLoss += change;
             tradeOpen = false;
-          };
+          }
 
         }
       }
@@ -333,6 +346,6 @@ function init() {
     console.log('From a possible', totalTrades, 'of trades there have been', wins, 'successes', timedOut, 'timed out trades', losses, 'losses');
 
   }
-};
+}
 
 init();

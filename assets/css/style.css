@@ -539,12 +539,16 @@ footer p {
    text-align: center;
 }
 
+.results-area row>* {
+   padding-right: calc(var(--bs-gutter-x) * .5);
+}
+
 /* ------------- Form elements ------------  */
 
 .form-input, .form-comment {
    display: block;
    margin: 4px;
-   width: 93%;
+   width: 96%;
    padding: 0.375rem 0.75rem;
    font-size: 1rem;
    font-weight: 400;

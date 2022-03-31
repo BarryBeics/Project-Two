@@ -32,7 +32,7 @@ if (ResultsList !== null) {
         '<div class="data"><span>' +  "Losses" + "</span>" + "<p>" + ResultsList[i].losses + "</p>" + "</div>" +
         '<div class="data"><span>' +  "Total Trades" + "</span>" + "<p>" + ResultsList[i].totalTrades + "</p>" + "</div>" + "</div>" +
         "</div>";
-    };
+    }
 }else {
 
     document.getElementById("ResultsList").innerHTML +=
@@ -41,11 +41,9 @@ if (ResultsList !== null) {
     '<div class="data-sub-title"><span>' +  "When you save trade calculations the will apear here" + "</span>" + "</div>" +
     "</div>";
     
-  };
+  }
 
   function deleteItem() {
     localStorage.removeItem('results');
-    location.reload()
+    location.reload();
   }
-
-
