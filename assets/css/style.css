@@ -60,7 +60,7 @@ h3 {
 
 }
 
-.button, .delete-button {
+.button, .delete-button, .contact-button {
    background-color: #197b7b;
 }
 
@@ -155,7 +155,7 @@ h2 {
 
 h1 {
    font-size: 2em;
-   padding: 8px 0px 0px 5px;
+   padding: 8px 0px 0px 0px;
    font-weight: 600;
    text-transform: uppercase;
    text-align: left;
@@ -562,7 +562,7 @@ footer p {
    height: calc(1.5em + 0.75rem + 2px);
 }
 
-.button, .delete-button {
+.button, .delete-button, .contact-button {
    margin-top: 15px;
    margin-bottom: 20px;
    font-weight: 500;
@@ -570,6 +570,10 @@ footer p {
 
 .button {
    width: 60%;
+}
+
+.contact-button {
+   width: 35%;
 }
 
 .delete-button {
@@ -603,7 +607,7 @@ footer p {
    opacity: 0.7;
    -webkit-transition: .2s;
    transition: opacity .2s;
-   margin: 0px 10px;
+   margin: 15px 10px;
 }
 
 .slider:hover {
