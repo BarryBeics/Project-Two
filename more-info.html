@@ -97,7 +97,7 @@
                         further, and falling prices to keep falling"
                     </p>
                     <p>
-                        Therefore the tool allows the user to explore the relationship between the phenomenon and
+                        Therefore this application allows the user to explore the relationship between the phenomenon and
                         adjusting certain trading parameter to seek out opoptunties for profits in trading.
                     </p>
                     <p>
@@ -126,13 +126,23 @@
                     <p>
                         The user is offered the option to select the desired percentage of volatility so that
                         a) They can define the conditions they would enter a trade
-                        b) They can see how this chosen volatility would work in relations to the chosen Stop Loss &
+                        b) They can see how this chosen volatility would work in relations to their chosen Stop Loss &
                         Take Profit amounts.
                     </p>
 
 <p>
     how come the same stragety produces different results?
     number of time per day
+
+    the simulation factors in that from day to day you would have a varing number of opportunities to trade in the real world 
+    so this is replicated by taking 1440 minutes in a day and divding it by the number of minutes you would like to be in a trade.
+    For example if you choose 30 minute then the is a maximum of 48 trade opportuniies on any given day.
+    This simulator the randomly pick between 4 & 48 trade per day.
+
+
+    As the simulator is working on momentum bias the application will random the move the price up and down based on the volatity percentage you selected
+    and will intermittently pull the pice back to the underlying moving average to ensure the simulation has a balance between real world random nature of price 
+    changes second by second and also manges to maintain an upward moment in the price.
 </p>
                     <p>
                         This aplication simulates the market buy changing the assets price over a given period. For a

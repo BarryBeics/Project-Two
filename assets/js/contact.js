@@ -2,7 +2,7 @@
    * Function to send message to email account using emailjs
    */
  function sendMail(params) {
-    var tempParams = { 
+    let tempParams = { 
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
         message: document.getElementById("message").value

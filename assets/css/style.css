@@ -6,7 +6,7 @@
 header,
 footer,
 .modal-content,
-.result-item-dark {
+.result-item-light {
    background-color: #181818;
 }
 
@@ -21,7 +21,6 @@ body {
 
 .main-menuitem a,
 .main-menuitem a i,
-h2,
 body,
 footer,
 footer p,
@@ -54,6 +53,7 @@ h2,
    color: #197b7b;
    font-family: 'Teko', sans-serif;
 }
+
 
 h3 {
    color: #444444;
@@ -96,10 +96,15 @@ h3 {
    background: #00aaaa;
 }
 
-.result-item-light,
+
 .radio-toolbar label {
    background-color: #2a2828;
 }
+
+.result-item-dark {
+   background-color: #0c0b0b;
+}
+
 
 .result-item-dark,
 .result-item-light {
@@ -107,7 +112,7 @@ h3 {
 }
 
 .data, .data-title, .data-sub-title {
-   border: solid 1px #4c4848;
+   border: solid 1px #1b1b1b;
 }
 
 .data-block {
@@ -115,7 +120,7 @@ h3 {
 }
 
 .data-title, .data-sub-title {
-   background-color: #2a2b2a;
+   background-color: #041414;
 }
 
 .form-input, .form-comment {
@@ -142,8 +147,6 @@ html {
    text-decoration: none;
    color: #212529
   } 
-
-
   
 
 /* ------------- Site wide  ----------- All Font Sizes -----*/
@@ -165,7 +168,7 @@ h2,
 h3 {
    font-size: 1.8em;
    font-weight: 500;
-   padding: 10px 0px;
+   padding: 8px 0px;
 }
 
 p {

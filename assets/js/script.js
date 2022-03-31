@@ -81,16 +81,6 @@ function init() {
   let days = 0;
   let minutes =0;
   let tradeDuration = 0;
-
-   /* Exchange rate */ //IT LOOKS LIKE THIS MAY WELL BE REDUNDENT CODE
-   function exchangeRate(cryptoPrice) {
-    let valueHeld = stake / cryptoPrice;
-  }
-
-  /*  This is the winsdow of opportunity you allow for the trade to fulfill 1 of 3 criteria, Take Profit, Stop Loss or Timed Out Market Order 
-
-  //let tradeDuration = 30; // This will need to be multipled by 60 secound, but not while we are develpoing the application */
-  
   let wins = 0;
   let timedOut = 0;
   let losses = 0;
@@ -207,8 +197,7 @@ function init() {
     
     console.log('carried balance at the start:', carriedBalance);
     console.log('Opening price for the crypto', cryptoPrice);
-    /* This is the amount increase the crypto will gain on average during the trade (this ensures market momentum at the set amount but still allows the price to fluxuate randomly) */
-    exchangeRate(cryptoPrice);
+    
 
     volatility = avgTrueRange / 2;
     console.log('volatility', volatility);
@@ -235,7 +224,7 @@ function init() {
         let takeProfitAmount = assetPrice + (assetPrice * (takeProfit / 100));
         let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
 
-        console.log('HOW MANY TODAY THEN??', generateRandomDaily)
+        console.log('HOW MANY TODAY THEN??', generateRandomDaily);
         console.log('take profit at:', takeProfitAmount.toFixed(2));
         console.log('Stop loss set at:',stopLossAmount.toFixed(2));
         next = 0;
@@ -255,11 +244,11 @@ function init() {
           
           selector = correction[next];
           if (eachSecond == selector) {
-            console.log('this is where the magichappens', selector)
+            console.log('this is where the magichappens', selector);
             next += 1;
-            console.log('THE NEXT SELCETOR',next)
+            console.log('THE NEXT SELCETOR',next);
             assetPrice = averagePrice;
-          };
+          }
           
 
           console.log(eachSecond +1, 'seconds');

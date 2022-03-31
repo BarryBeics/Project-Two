@@ -1,6 +1,6 @@
 # Trade Probability Calculator Website
  
-![Barry Marples](./readme-docs/TPC-view.png)
+![Barry Marples](./readme-docs/readme-TPC-view.png)
  
  
 This site is a learning tool for those new to the world of crypto trading, it offers the user the chance to explore how changing various trading parameters may impact a given strategies profitability.
@@ -39,7 +39,7 @@ As this is a project I would like to further develop, users are also able to con
  
 - **Colour Scheme**: The colours have been selected to produce a simple clean look so that users can focus on the results. 
 
-![Barry Marples](./readme-docs/colours.png)
+![Barry Marples](./readme-docs/readme-colours.png)
  
 - Persian Green #00aaaa - Highlighted elements 
 - Elm #197b7b - Heading Text & button background
@@ -140,7 +140,7 @@ Graphic showing a person working hard to understand trading strategy
 
 Here is a flow diagram to illustrate the logic required to control this application based on the users choices
 
-![Logic](./readme-docs/logic.png)
+![Logic](./readme-docs/readme-logic.png)
 
 <br /><br />
  
