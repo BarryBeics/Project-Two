@@ -101,6 +101,7 @@ function init() {
   let profitLoss = 0;
   let cryptoSelection = 0;
   let cryptoPrice = 0;
+  let avgDailyTrades = 0;
 
 
   /**
@@ -117,7 +118,7 @@ function init() {
    * from this generate a random number to similate a realife probability of trade oppotunities in any 1 given day
    */
     function generateRandomDaily(minTrades, maxTrades) {
-      minTrades = 0;
+      minTrades = 3;
       maxTrades = 1440 / minutes ;
       return Math.floor(Math.random() * (maxTrades - minTrades) + minTrades);
     }
@@ -179,7 +180,8 @@ function init() {
         "totalTrades": totalTrades,
         "newBalance": newBalance,
         "profitLoss": profitLoss,
-        "percentageProfit": percentageProfit
+        "percentageProfit": percentageProfit,
+        "avgDailyTrades":  avgDailyTrades
       };
 
       SaveDataToLocalStorage(result);
@@ -233,7 +235,7 @@ function init() {
         let takeProfitAmount = assetPrice + (assetPrice * (takeProfit / 100));
         let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
 
-
+        console.log('HOW MANY TODAY THEN??', generateRandomDaily)
         console.log('take profit at:', takeProfitAmount.toFixed(2));
         console.log('Stop loss set at:',stopLossAmount.toFixed(2));
         next = 0;
@@ -326,12 +328,21 @@ function init() {
     timedOut = document.getElementById("timedOut").innerHTML = timedOut;
     losses = document.getElementById("losses").innerHTML = losses;
     
-    cryptoSelection = cryptoPrice.toFixed(2);
+    cryptoSelection = cryptoPrice;
+    if (cryptoSelection > 100) {
+      cryptoSelection = cryptoSelection.toFixed(0);
+    } else {
+      cryptoSelection = cryptoSelection.toFixed(2);
+    }
     cryptoSelection = document.getElementById("cryptoSelection").innerHTML = cryptoSelection;
-    console.log.apply(cryptoSelection);
+    
 
     totalTrades = (wins + timedOut + losses);
     totalTrades = document.getElementById("totalTrades").innerHTML = totalTrades;
+
+    avgDailyTrades = totalTrades / days;
+    avgDailyTrades = avgDailyTrades.toFixed(1);
+    avgDailyTrades = document.getElementById("avgDailyTrades").innerHTML = avgDailyTrades;
 
     newBalance = carriedBalance.toFixed(2);
     newBalance = document.getElementById("newBalance").innerHTML = newBalance;

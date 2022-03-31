@@ -30,6 +30,7 @@ if (ResultsList !== null) {
         '<div class="data"><span>' +  "Wins" + "</span>" +  "<p>" + ResultsList[i].wins  + "</p>" + "</div>" + 
         '<div class="data"><span>' +  "Timed Out" + "</span>" + "<p>" + ResultsList[i].timedOut + "</p>" + "</div>" +
         '<div class="data"><span>' +  "Losses" + "</span>" + "<p>" + ResultsList[i].losses + "</p>" + "</div>" +
+        '<div class="data"><span>' +  "Avg Daily Trades" + "</span>" + "<p>" + ResultsList[i].avgDailyTrades + "</p>" + "</div>" +
         '<div class="data"><span>' +  "Total Trades" + "</span>" + "<p>" + ResultsList[i].totalTrades + "</p>" + "</div>" + "</div>" +
         "</div>";
     }
