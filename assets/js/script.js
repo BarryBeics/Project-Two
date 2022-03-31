@@ -214,9 +214,10 @@ function init() {
       for (let frequency = 0; frequency < generateRandomDaily(); frequency++) {
 
         let tradeOpen = true;
-
         let takeProfitAmount = assetPrice + (assetPrice * (takeProfit / 100));
         let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
+
+
         console.log('take profit at:', takeProfitAmount.toFixed(2));
         console.log('Stop loss set at:',stopLossAmount.toFixed(2));
         
@@ -227,26 +228,28 @@ function init() {
         /***  TRADE DURATION - - - -******/
         for (let eachSecond = 0; eachSecond < tradeDuration; eachSecond++) {
 
+          let move = generateRandonMove(-volatility, volatility, 1);
+          let moveAmount = assetPrice * (move / 100);
+          let movePerSecound = moveAmount + incrementMove;
+          assetPrice = assetPrice + movePerSecound;
+          averagePrice = averagePrice + incrementMove;
+
 
           console.log(eachSecond +1, 'seconds');
-          let move = generateRandonMove(-volatility, volatility, 1);
           console.log('move', move.toFixed(2));
-          let moveAmount = assetPrice * (move / 100);
           console.log('move amount', moveAmount.toFixed(2));
-          let movePerSecound = moveAmount + incrementMove;
-
-          assetPrice = assetPrice + movePerSecound;
           console.log('assets Price', assetPrice.toFixed(2));
-          averagePrice = averagePrice + incrementMove;
           console.log('underlying average price', averagePrice.toFixed(2));
 
 
           /***  TAKE PROFIT - -*****/
           if (assetPrice >= takeProfitAmount && tradeOpen == true) {
-            console.log('********** TAKE PROFIT *****************');
+
             let gain = carriedBalance * (takeProfit / 100);
-            console.log('gain', gain.toFixed(2));
             carriedBalance = carriedBalance += gain;
+
+            console.log('********** TAKE PROFIT *****************');
+            console.log('gain', gain.toFixed(2));
             console.log('carried balance', carriedBalance.toFixed(2))
 
             wins += 1;
@@ -257,10 +260,12 @@ function init() {
 
           /****  STOP LOSS - - -****/
           if (assetPrice <= stopLossAmount && tradeOpen == true) {
-            console.log('********** STOP LOSS *****************');
+
             let loss = carriedBalance * (stopLoss / 100);
-            console.log('loss', loss.toFixed(2));
             carriedBalance = carriedBalance += loss;
+
+            console.log('********** STOP LOSS *****************');
+            console.log('loss', loss.toFixed(2));
             console.log('carried balance', carriedBalance.toFixed(2))
 
             losses += 1;
@@ -271,12 +276,14 @@ function init() {
 
           /***  TIMED OUT MARKET ORDER - *****/
           if (eachSecond == tradeDuration - 1 && tradeOpen == true) {
-            console.log('********** TIMED OUT TRADE *****************');
+
             changePercentage = (assetPrice - averagePrice) / averagePrice;
-            console.log('changePercentage', changePercentage)
             change = carriedBalance * changePercentage;
-            console.log('change', change.toFixed(2));
             carriedBalance = carriedBalance += change;
+
+            console.log('********** TIMED OUT TRADE *****************');
+            console.log('changePercentage', changePercentage)
+            console.log('change', change.toFixed(2));
             console.log('carried balance', carriedBalance.toFixed(2))
 
             timedOut += 1;

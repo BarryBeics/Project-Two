@@ -178,5 +178,10 @@ Back to README - [Back](README.md)
 - Fixed: Added function to stop users being able to click 'Calculate Trade' until all fields have been entered.
 - Fixed: Early on sideways scroll issue
 
+![calculator error](./readme-docs/testing-error-menu.png)
+
+- Fixed: wrote new script to replace API websocket feed that was causing the menu to be clichy and sometimes not load all 4 options and often difficult to click on as it flickerd when hoverd over.
+
+
 [Go back to README.md file](README.md).
  

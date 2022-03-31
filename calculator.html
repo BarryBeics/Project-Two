@@ -80,12 +80,13 @@
       <!-- OPTIONS AREA -->
       <div class="col-sm-12 col-md-6">
         <div class="p-3">
+          <div class="row">
           <h1>Options</h1>
           <p>Choose the parameters that you would like to test.</p>
 
           <!-- Top Panel Left -->
-          <div class="options-form-item-half">
-
+          <div class="col-6">
+          <div class="box-style">
             <!--Investment Amount Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#amountModal"> info
             </button>
@@ -110,9 +111,10 @@
             <label class="title"> Amount </label>
             <input id="stake" class="form-input" type="number" min="0" max="10000" value="0" name="stake">
           </div>
-
+        </div>
           <!-- Top Panel Right -->
-          <div class="options-form-item-half space">
+          <div class="col-6">
+            <div class="box-style">
             <!-- Trading Fee Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#feeModal"> info
             </button>
@@ -135,12 +137,17 @@
             </div>
             <label class="title"> Crypto </label>
             <p id="cryptoPrice">0</p>
-            <select id="streams" class="select form-input">
+            <select class="select form-input">
               <option value="0"> Select </option>
+              <option id="BTCprice">Bitcoin</option>
+               <option id="ETHprice">Ethereum</option>
+               <option id="ADAprice">Cardano</option>
+               <option id="XRPprice">Ripple</option>
             </select>
-          </div>
+          </div></div>
           <!-- First Wide Panel -->
-          <div class="options-form-item-full">
+          <div class="col-12">
+            <div class="box-style">
             <!-- Take Profit Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#takeProfitModal">
               info </button>
@@ -168,8 +175,9 @@
             <input type="range" id="tp" value="1" min="1" max="8" step="0.1" class="slider"
               oninput="document.getElementById('takeProfit').innerHTML = this.value" />
             <div class="value"> <label id="takeProfit">0</label>%</div>
-            </div>
-            <div class="options-form-item-full">
+            </div></div>
+            <div class="col-12">
+              <div class="box-style">
             <!-- Stop Loss Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#stopLossModal">
               info </button>
@@ -197,9 +205,10 @@
             <input type="range" id="sl" value="0" min="-6" max="-1" step="0.1" class="slider"
               oninput="document.getElementById('stopLoss').innerHTML = this.value" />
             <div class="value"> <label id="stopLoss">0</label>%</div>
-          </div>
+          </div></div>
           <!-- Second Wide Panel -->
-          <div class="options-form-item-full">
+          <div class="col-12">
+            <div class="box-style">
             <!-- Average True Range Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#ATRModal"> info
             </button>
@@ -226,8 +235,10 @@
             <input type="range" id="atr" value="2" min="2" max="10" step="2" class="slider"
               oninput="document.getElementById('avgTrueRange').innerHTML = this.value" />
             <div class="value"><label id="avgTrueRange">0</label>%</div>
-          </div>
-          <div class="options-form-item-full">
+          </div></div>
+          
+          <div class="col-12">
+            <div class="box-style">
             <!-- Market Momentum Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#mommentumModal">
               info </button>
@@ -255,8 +266,11 @@
               oninput="document.getElementById('marketMommentum').innerHTML = this.value" />
             <div class="value"> <label id="marketMommentum">0</label>%</div>
           </div>
+          </div>
           <!-- Third Wide Panel -->
-          <div class="options-form-item-half">
+          <div class="col-sm-12 col-md-6">
+            <div class="box-style">
+          
             <!-- Trade Duration Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#durationModal">
               info </button>
@@ -303,8 +317,9 @@
                 oninput="document.getElementById('minutes').innerHTML = this.value">
               <label for="duration60">60</label>
             </div>
-            </div>
-            <div class="options-form-item-half">
+            </div></div>
+            <div class="col-sm-12 col-md-6">
+              <div class="box-style">
             <!-- # of Days Button trigger modal -->
             <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal" data-bs-target="#daysModal"> info
             </button>
@@ -350,9 +365,10 @@
               <input type="radio" id="days21" name="daysOption" value="21"
                 oninput="document.getElementById('days').innerHTML = this.value">
               <label for="days21">21</label>
-
+</div>
             </div>
           </div>
+        </div>
           <!-- Calculate Button -->
           <div class="form-row">
             <div class="col text-center">
@@ -366,50 +382,58 @@
       <!-- RESULTS AREA -->
       <div class="col-sm-12  col-md-6">
         <div class="p-3">
-
+<div class="row results-center">
           <!-- Text Area -->
           <h1>Results</h1>
           <p>This is how your chosen strategy would have performed.</p>
 
           <!-- First Wide Panel -->
-          <div class="results-form-item-full">
+          <div class="col-12">
+            <div class="box-style">
             <label class="title"> New Balance £</label>
             <div class="results"> <span id="newBalance">0</span> </div>
-          </div>
+          </div></div>
 
           <!-- Second Wide Panel -->
-          <div class="results-form-item-half">
+          <div class="col-12">
+            <div class="box-style">
             <label class="title"> Profit/Loss £</label>
             <div class="results"> <span id="profitLoss">0</span> </div>
-          </div>
+          </div></div>
 
           <!-- Third Wide Panel -->
-          <div class="results-form-item-half">
+          <div class="col-12">
+            <div class="box-style">
             <label class="title"> Profit %</label>
             <div class="results"> <span id="percentageProfit">0</span> </div>
-          </div>
+          </div></div>
 
           <!-- Block of 3 Panels -->
-          <div class="results-form-item-third">
+          <div class="col-4">
+            <div class="box-style">
             <label class="title"> Successes </label>
             <div class="results"> <span id="wins">0</span> </div>
-          </div>
+          </div></div>
 
-          <div class="results-form-item-third spacer-third">
+          <div class="col-4">
+            <div class="box-style">
             <label class="title"> Timed Out </label>
             <div class="results"> <span id="timedOut">0</span> </div>
-          </div>
+          </div></div>
 
-          <div class="results-form-item-third spacer-third">
+          <div class="col-4">
+            <div class="box-style">
             <label class="title"> Losses </label>
             <div class="results"> <span id="losses">0</span> </div>
-          </div>
+          </div></div>
 
           <!-- Final Wide Panel -->
-          <div class="results-form-item-full">
+          <div class="col-12">
+            <div class="box-style">
             <label class="title"> Total # of Trades </label>
             <div class="results"> <span id="totalTrades">0</span> </div>
-          </div>
+          </div></div>
+        </div>
           <!-- Save Button -->
           <div class="form-row">
             <div class="col text-center">
@@ -467,7 +491,7 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
   <script src="assets/js/script.js"></script>
-  <script src="assets/js/live-price.js"></script>
+  <script src="assets/js/api.js"></script>
 </body>
 
 </html>
