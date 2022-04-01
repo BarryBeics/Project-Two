@@ -13,8 +13,8 @@ if (resultsList !== null) {
         }
         document.getElementById("resultsList").innerHTML +=
         bgcolor + '<div class="row">' +
-        '<div class="col-3"><h1>' +  "RESULT" +  "#" + (i+1) + "</h1>" + "</div>" +
-        '<div class="col"><h2>' +  "Your chosen parameters" + "</h2>" + "</div>" + "</div>" + '<div class="data-block">' +
+        '<div class="col-md-3 col-sm-12"><h1>' +  "RESULT" +  "#" + (i+1) + "</h1>" + "</div>" +
+        '<div class="col-md-9 col-sm-12"><h2>' +  "Your chosen parameters" + "</h2>" + "</div>" + "</div>" + '<div class="data-block">' +
         '<div class="data"><span>' +  "Stake" + "</span>" + "<p>" +  "£" + resultsList[i].stake + "</p>" + "</div>" +
         '<div class="data"><span>' +  "Crypto Price" + "</span>" + "<p>" + resultsList[i].cryptoPrice + "</p>" + "</div>" +
         '<div class="data"><span>' +  "Take Profit" + "</span>" + "<p>" + resultsList[i].takeProfit + "%" + "</p>" + "</div>" +

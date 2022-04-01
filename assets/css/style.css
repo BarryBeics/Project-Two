@@ -440,6 +440,10 @@ img {
       font-size: 4em;
       margin: -25px;
   }
+
+  .delete-button {
+   width: 70%;
+}
    
 }
 
@@ -579,7 +583,7 @@ footer p {
 }
 
 .contact-button {
-   width: 35%;
+   width: 38%;
 }
 
 .delete-button {
