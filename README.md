@@ -207,7 +207,7 @@ All the text on the website has been written by Barry Marples
  
 ### 7.2. Media
  
-The graphic on the home page, the logo & the background image are a free downloads from [Vecteezy](https://www.vecteezy.com/vector-art/2214399-stock-trader-exchange):
+The graphic on the home page, the logo & the background image are a free downloads from [Vecteezy](https://www.vecteezy.com/vector-art/2214399-stock-trader-exchange): made by the illustrator Chalermsuk Bootvises.
 
  
 ### 7.3. Acknowledgments

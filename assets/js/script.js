@@ -1,5 +1,4 @@
-// The application has been enclosed within the init function so as to avoid any variable being classed as global
-function init() {
+/*jshint esversion: 6 */
 
   // Wait for the DOM to finish loading before taking values from the inputs
   // Get the button elements and add event listeners to them
@@ -346,6 +345,3 @@ function init() {
     console.log('From a possible', totalTrades, 'of trades there have been', wins, 'successes', timedOut, 'timed out trades', losses, 'losses');
 
   }
-}
-
-init();
