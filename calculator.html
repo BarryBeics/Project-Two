@@ -81,6 +81,7 @@
       <div class="col-sm-12 col-md-6">
         <div class="p-3">
           <div class="row g-2">
+            <div id="up"></div>
           <h1>Options</h1>
           <p>Choose the conbination of parameters that you would like to test.</p>
 
@@ -379,7 +380,7 @@
           <div class="form-row">
             <div class="col text-center">
 
-              <button data-type="trade" class="btn button"> <a href="#down">Calculate Trade</a></button>
+              <button data-type="trade" class="btn button"><a href="#down">Calculate Trade</a></button>
             </div>
           </div>
         </div>
@@ -460,7 +461,14 @@
           <!-- Save Button -->
           <div class="form-row">
             <div class="col text-center">
-              <button id="btn" data-type="save" class="btn button"> Save & Clear</button>
+              <button id="btn" data-type="save" class="btn button">Save & Clear</button>
+              <div class="d-md-none link-text up">
+                <a href="#up">
+                  <span>Return to Top</span>
+                  <span><i class="fas fa-arrow-up" aria-hidden="true"></i></span> </a>
+              </div>
+              
+                
             </div>
           </div>
         </div>
@@ -470,7 +478,7 @@
   <footer class="container-xl">
     <div class="row">
       <div class="col-sm-6 ">
-        <div class="row more-info"> <a href="more-info.html">
+        <div class="row link-text"> <a href="more-info.html">
             <span> Detailed explanation</span>
             <span><i class="fas fa-info-circle" aria-hidden="true"></i></span> </a>
         </div>

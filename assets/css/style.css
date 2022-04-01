@@ -1,14 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,200&family=Teko:wght@300&display=swap');
 
 
+
+
 /* ------------- Site wide  ----------- Colours */
 
-header,
-footer,
+
 .modal-content,
 .result-item-light {
    background-color: #181818;
 }
+
+header,
+footer {
+   background-color: #197b7b;
+}
+
+.up {
+   background-color: #404444;
+}
+
+
+
 
 body {
    clear: left;
@@ -25,13 +38,13 @@ body,
 footer,
 footer p,
 .footer-icon i,
-.more-info a,
+.link-text a,
 .btn-dark {
    color: #c7c5c6;
 }
 
 .selected:before,
-.more-info i:hover {
+.link-text i:hover {
    color: #00aaaa;
 }
 
@@ -45,7 +58,7 @@ footer p,
    font-family: 'Teko', sans-serif;
 }
 
-.social i:hover,
+
 h1,
 h2,
 .title,
@@ -79,7 +92,7 @@ h3 {
    color: #1b1b1b;
 }
 
-.more-info i:hover {
+.link-text i:hover, .social i:hover {
    color: #00aaaa;
 }
 
@@ -142,7 +155,7 @@ html {
    scroll-behavior: smooth;
   }
   
-  a, a:hover {
+ .button a, a:hover {
    text-decoration: none;
    color: #212529
   } 
@@ -430,7 +443,7 @@ img {
 @media only screen and (max-width: 420px) {
 
    .slider {
-      width: 72%;
+      width: 70%;
    }
    .data {
       width: 100%;
@@ -468,22 +481,22 @@ footer p {
    padding: 7px 20px;
 }
 
-.more-info {
+.link-text {
    padding: 10px;
    margin: auto;
 }
 
-.more-info a {
+.link-text a {
    text-decoration: none;
    margin: 0px 20px;
 }
 
-.more-info a i {
+.link-text a i {
    font-size: 22px;
    padding: 10px;
 }
 
-.more-info span {
+.link-text span {
    vertical-align: middle;
 }
 

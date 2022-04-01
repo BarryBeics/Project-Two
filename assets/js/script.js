@@ -7,7 +7,6 @@
     let buttons = document.getElementsByTagName("button");
     for (let button of buttons) {
       button.addEventListener("click", function () {
-        console.log(button);
         if (this.getAttribute("data-type") === "trade") {
           validate();
         } else if (this.getAttribute("data-type") === "save") {
@@ -129,7 +128,6 @@
              break;
          }
      }
-     console.log('thie list', correction);
   }
   
   /**
@@ -193,26 +191,15 @@
     clearResult();
     tradeApplied = true;
     let carriedBalance = stake;
-    
-    console.log('carried balance at the start:', carriedBalance);
-    console.log('Opening price for the crypto', cryptoPrice);
-    
 
     volatility = avgTrueRange / 2;
-    console.log('volatility', volatility);
     let projectedGain = cryptoPrice * (marketMommentum / 100);
-    console.log('projectedGain', projectedGain.toFixed(2));
     let incrementMove = projectedGain / (60);
-    console.log('incrementMove', incrementMove.toFixed(2));
-    
 
-   
-     
-    
 
     /***   NUMBER OF DAYS - - ***/
     for (let eachDay = 0; eachDay < days; eachDay++) {
-      console.log('************************* ******************* Trading for day:', eachDay +1);
+
 
       /***  NUMBER OF TRADES - -******/
       for (let frequency = 0; frequency < generateRandomDaily(); frequency++) {
@@ -223,9 +210,6 @@
         let takeProfitAmount = assetPrice + (assetPrice * (takeProfit / 100));
         let stopLossAmount = assetPrice + (assetPrice * (stopLoss / 100));
 
-        console.log('HOW MANY TODAY THEN??', generateRandomDaily);
-        console.log('take profit at:', takeProfitAmount.toFixed(2));
-        console.log('Stop loss set at:',stopLossAmount.toFixed(2));
         next = 0;
         tradeDuration = tradeDuration;
         correction = [];
@@ -243,29 +227,15 @@
           
           selector = correction[next];
           if (eachSecond == selector) {
-            console.log('this is where the magichappens', selector);
             next += 1;
-            console.log('THE NEXT SELCETOR',next);
             assetPrice = averagePrice;
           }
           
-
-          console.log(eachSecond +1, 'seconds');
-          console.log('move', move.toFixed(2));
-          console.log('move amount', moveAmount.toFixed(2));
-          console.log('assets Price', assetPrice.toFixed(2));
-          console.log('underlying average price', averagePrice.toFixed(2));
-
-
           /***  TAKE PROFIT - -*****/
           if (assetPrice >= takeProfitAmount && tradeOpen == true) {
 
             let gain = carriedBalance * (takeProfit / 100);
             carriedBalance = carriedBalance += gain;
-
-            console.log('********** TAKE PROFIT *****************');
-            console.log('gain', gain.toFixed(2));
-            console.log('carried balance', carriedBalance.toFixed(2));
 
             wins += 1;
             profitLoss += gain;
@@ -279,10 +249,6 @@
             let loss = carriedBalance * (stopLoss / 100);
             carriedBalance = carriedBalance += loss;
 
-            console.log('********** STOP LOSS *****************');
-            console.log('loss', loss.toFixed(2));
-            console.log('carried balance', carriedBalance.toFixed(2));
-
             losses += 1;
             profitLoss += loss;
             tradeOpen = false;
@@ -295,11 +261,6 @@
             let changePercentage = (assetPrice - averagePrice) / averagePrice;
             let change = carriedBalance * changePercentage;
             carriedBalance = carriedBalance += change;
-
-            console.log('********** TIMED OUT TRADE *****************');
-            console.log('changePercentage', changePercentage);
-            console.log('change', change.toFixed(2));
-            console.log('carried balance', carriedBalance.toFixed(2));
 
             timedOut += 1;
             profitLoss += change;
@@ -317,6 +278,7 @@
     losses = document.getElementById("losses").innerHTML = losses;
     
     cryptoSelection = cryptoPrice;
+    // handle larger crypto values by removing decimals points
     if (cryptoSelection > 100) {
       cryptoSelection = cryptoSelection.toFixed(0);
     } else {
@@ -324,7 +286,6 @@
     }
     cryptoSelection = document.getElementById("cryptoSelection").innerHTML = cryptoSelection;
     
-
     totalTrades = (wins + timedOut + losses);
     totalTrades = document.getElementById("totalTrades").innerHTML = totalTrades;
 
@@ -341,7 +302,5 @@
     percentageProfit = (profitLoss / stake) * 100;
     percentageProfit = percentageProfit.toFixed(1);
     percentageProfit = document.getElementById("percentageProfit").innerHTML = percentageProfit;
-
-    console.log('From a possible', totalTrades, 'of trades there have been', wins, 'successes', timedOut, 'timed out trades', losses, 'losses');
 
   }
