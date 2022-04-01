@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // Get JSON data from local storage
 let resultsList = JSON.parse(localStorage.getItem('results'));
 let bgcolor = '<div class="result-item-dark">';
