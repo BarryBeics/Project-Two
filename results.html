@@ -2,18 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Trade Probability Calculator</title>
 </head>
 
 <body>
-    <header class="container-xl"> 
+    <header class="container-xl">
         <div class="row">
             <!-- Logo -->
             <div class="col-3">
@@ -28,7 +30,7 @@
             </div>
             <!-- Navigation bar -->
             <div class="col-9">
-                <!-- Desktop & Tablet -->
+                <!-- Desktop & Tablet Navigation Buttons -->
                 <div class="d-none d-md-block">
                     <ul id="nav" class="main-list-inline main-menucontainer">
                         <li class="col-6 col-md-3 list-inline-item main-menuitem">
@@ -55,7 +57,7 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Mobile -->
+                <!-- Mobile Navigation Buttons -->
                 <div class="d-md-none">
                     <ul id="nav-mob" class="list-inline menucontainer">
                         <li class="col-3 list-inline-item main-menuitem">
@@ -78,33 +80,28 @@
     <section class="container-xl overflow-hidden">
         <div class="row g-2">
             <div class="col">
-                    <div class="p-3">
-                        
-
-<div class="row">
-    <div class="col-md-8 col-sm-12">
-        <h1>HISTORIC RESULTS</h1>
-                        <p>Here you will see the results of the saved strategies you have tried.</p>
-    </div>
-    <div class="col-md-4 col-sm-12">
-        
-                        <button class="btn delete-button" onclick="deleteItem()">Delete Saved Results</button>
-    </div>
-
-</div>
-                        <!-- Text Area -->
-                        
-                        <!-- Display data  -->
-                        <div class="options-form-item-full">
-
-                            <div id="resultsList"></div>
+                <div class="p-3">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12">
+                            <!-- Text Area -->
+                            <h1>HISTORIC RESULTS</h1>
+                            <p>Here you will see the results of the saved strategies you have tried.</p>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <button class="btn delete-button" onclick="deleteItem()">Delete Saved Results</button>
                         </div>
                     </div>
+                    <div class="options-form-item-full">
+                        <!-- Display data  -->
+                        <div id="resultsList"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <footer class="container-xl">
         <div class="row">
+            <!-- Detailed info link  -->
             <div class="col-sm-6 ">
                 <div class="row link-text"> <a href="more-info.html">
                         <span> For a detailed explanation</span>
