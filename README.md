@@ -203,7 +203,13 @@ To clone this project from GitHub:
 ### 7.1. Content
 All the text on the website has been written by Barry Marples
  
-[Bootstrap5](https://getbootstrap.com/docs/5.0/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make the site responsive using the Bootstrap Grid System.
+[Bootstrap5](https://getbootstrap.com/docs/5.0/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make the site responsive using the Bootstrap Grid System. I also utalised some of the boostap styling for the buttons and form inputs.
+
+[Mark Heath Radio Buttons](https://markheath.net/post/customize-radio-button-css ): code for turning radio button options to buttons with styling inkeeping with the site design was based on Mark Heaths code, I utalised the fuctionality of this code but styled them to fit the projects look.
+
+[w3schools range slider](https://www.w3schools.com/howto/howto_js_rangeslider.asp): code for the option range sliders is based on the w3chools lesson and I utalised the fuctionality of this code but styled them to fit the projects look.
+
+
  
 ### 7.2. Media
  

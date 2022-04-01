@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 /**
    * Function to send message to email account using emailjs
    */
@@ -7,7 +8,6 @@
         email: document.getElementById("email").value,
         message: document.getElementById("message").value
     };
-
    emailjs.send('service_qk5l97e', 'template_9bc234k', tempParams)
     .then(function(res){
         console.log("success", res.status);
@@ -19,7 +19,9 @@ const contactName = document.getElementById('name');
 const contactEmail = document.getElementById('email');
 const contactMessage = document.getElementById('message');
 
-
+/**
+   * Validate user input
+   */
 function validateForm() {
   if (contactName.value === "" || contactName.value === null) {
       alert("Please ensure you add your name to the form");

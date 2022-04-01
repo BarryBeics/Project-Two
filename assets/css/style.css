@@ -1,10 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,200&family=Teko:wght@300&display=swap');
 
 
+/* ------------- Site wide  ----------- Font Family */
 
+p {
+   font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+.title,
+.data span,
+.popover-header,
+.main-menuitem span,
+.title,
+.value,
+.results,
+.data p,
+.data span {
+   font-family: 'Teko', sans-serif;
+}
 
 /* ------------- Site wide  ----------- Colours */
-
+body {
+   clear: left;
+   background: url("../images/background.jpg");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-color: #1b1b1b;
+}
 
 .modal-content,
 .result-item-light {
@@ -18,18 +43,6 @@ footer {
 
 .up {
    background-color: #404444;
-}
-
-
-
-
-body {
-   clear: left;
-   background: url("../images/background.jpg");
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-   background-color: #1b1b1b;
 }
 
 .main-menuitem a,
@@ -55,25 +68,22 @@ footer p,
 
 .popover-header {
    background-color: #00aaaa;
-   font-family: 'Teko', sans-serif;
 }
-
 
 h1,
 h2,
 .title,
 .data span {
    color: #197b7b;
-   font-family: 'Teko', sans-serif;
 }
-
 
 h3 {
    color: #444444;
-
 }
 
-.button, .delete-button, .contact-button {
+.button,
+.delete-button,
+.contact-button {
    background-color: #197b7b;
 }
 
@@ -92,7 +102,8 @@ h3 {
    color: #1b1b1b;
 }
 
-.link-text i:hover, .social i:hover {
+.link-text i:hover,
+.social i:hover {
    color: #00aaaa;
 }
 
@@ -108,7 +119,6 @@ h3 {
    background: #00aaaa;
 }
 
-
 .radio-toolbar label {
    background-color: #2a2828;
 }
@@ -117,13 +127,14 @@ h3 {
    background-color: #0c0b0b;
 }
 
-
 .result-item-dark,
 .result-item-light {
    padding: 20px;
 }
 
-.data, .data-title, .data-sub-title {
+.data,
+.data-title,
+.data-sub-title {
    border: solid 1px #1b1b1b;
 }
 
@@ -131,11 +142,13 @@ h3 {
    border: solid 1px #197b7b;
 }
 
-.data-title, .data-sub-title {
+.data-title,
+.data-sub-title {
    background-color: #041414;
 }
 
-.form-input, .form-comment {
+.form-input,
+.form-comment {
    background-color: transparent !important;
    border: 1px solid #c7c5c6;
    color: #c7c5c6;
@@ -146,22 +159,18 @@ h3 {
    color: #c7c5c6;
 }
 
-
-
-
-
-
 html {
    scroll-behavior: smooth;
-  }
-  
- .button a, a:hover {
+}
+
+.button a,
+a:hover {
    text-decoration: none;
    color: #212529
-  } 
-  
+}
 
-/* ------------- Site wide  ----------- All Font Sizes -----*/
+
+/* ------------- Site wide  ----------- All Font Sizes, margins & padding -----*/
 
 h1,
 h2 {
@@ -186,12 +195,13 @@ h3 {
 p {
    font-size: 1em;
    font-weight: 200;
-   font-family: 'Montserrat', sans-serif;
    padding: 0px 5px;
    text-align: left;
 }
 
-.title, .value, .data span {
+.title,
+.value,
+.data span {
    font-size: 1.6em;
 }
 
@@ -199,7 +209,6 @@ p {
    font-size: 5.45em;
    margin: -34px;
 }
-
 
 .main-menuitem a i {
    display: block;
@@ -210,7 +219,7 @@ p {
    font-size: 3em;
 }
 
-/* ------------- not sure -----*/
+/* ------------- Site wide -----*/
 
 ul {
    margin: 10px 10px;
@@ -239,18 +248,9 @@ ul {
    text-transform: uppercase;
 }
 
-.main-menuitem span,
-.title,
-.value,
-.results {
-   font-family: 'Teko', sans-serif;
-}
-
 .main-menuitem a {
    text-decoration: none;
 }
-
-/* ------------- not sure -----*/
 
 .center {
    display: block;
@@ -259,6 +259,8 @@ ul {
    width: 100%;
    height: auto;
 }
+
+/* ------------- images -----*/
 
 .graphic img {
    display: block;
@@ -310,7 +312,7 @@ img {
    .slider {
       width: 83%;
    }
- 
+
    .info-space {
       margin-left: 5px;
    }
@@ -324,8 +326,6 @@ img {
    header {
       height: 100px;
    }
-
-  
 
    .slider {
       width: 78%;
@@ -350,19 +350,15 @@ img {
       letter-spacing: 3px;
    }
 
- 
 }
 
 /* ------------- Media Queries  ----------- Tablets in potrait*/
 
 @media only screen and (max-width: 825px) {
- 
 
    .slider {
       width: 70%;
    }
-
- 
 }
 
 /* ------------- Media Queries  ----------- Mobiles in Landscape*/
@@ -372,10 +368,6 @@ img {
    header {
       height: 57px;
    }
-   
-  
-
- 
 
    .slider {
       width: 82%;
@@ -384,8 +376,6 @@ img {
    .graphic img {
       width: 80%;
    }
-
-  
 
    .footer-icon i {
       width: 66px;
@@ -412,7 +402,6 @@ img {
    .data {
       width: 100%;
    }
-  
 
    #main-nav li {
       font-size: 14px;
@@ -429,10 +418,6 @@ img {
       height: 40px;
    }
 
-  
-
-   
-
    .footer-icon i {
       width: 50px;
    }
@@ -445,6 +430,7 @@ img {
    .slider {
       width: 70%;
    }
+
    .data {
       width: 100%;
    }
@@ -452,12 +438,11 @@ img {
    .results {
       font-size: 4em;
       margin: -25px;
-  }
+   }
 
-  .delete-button {
-   width: 70%;
-}
-   
+   .delete-button {
+      width: 70%;
+   }
 }
 
 /* ------------- Site wide  ----------- Footer */
@@ -513,7 +498,8 @@ footer p {
    display: none;
 }
 
-.fees .title, .fees p  {
+.fees .title,
+.fees p {
    margin-bottom: 0px;
 }
 
@@ -521,8 +507,6 @@ footer p {
    padding: 10px;
    width: 100%;
 }
-
-
 
 .title {
    padding: 0px;
@@ -547,7 +531,8 @@ footer p {
 
 /* ------------- Results  ------------  */
 
-.data-title, .data-sub-title {
+.data-title,
+.data-sub-title {
    display: flex;
    padding: 5px 15px;
 }
@@ -561,14 +546,14 @@ footer p {
 .data span {
    padding: 2px;
    margin: 4px;
-   font-family: 'Teko', sans-serif;
    text-align: center;
 }
 
 
 /* ------------- Form elements ------------  */
 
-.form-input, .form-comment {
+.form-input,
+.form-comment {
    display: block;
    margin: 4px;
    width: 96%;
@@ -585,7 +570,9 @@ footer p {
    height: calc(1.5em + 0.75rem + 2px);
 }
 
-.button, .delete-button, .contact-button {
+.button,
+.delete-button,
+.contact-button {
    margin-top: 15px;
    margin-bottom: 20px;
    font-weight: 500;
@@ -616,7 +603,9 @@ footer p {
    padding: 5px;
 }
 
-/* ------------- w3schools ------------  */
+
+/* credit: code for the option range sliders is based on https://www.w3schools.com/howto/howto_js_rangeslider.asp
+I utalised the fuctionality of this code but styled them to fit the projects look */
 
 .slider {
    -webkit-appearance: none;
@@ -649,7 +638,9 @@ footer p {
    cursor: pointer;
 }
 
-/* ------------- w3schools --------- https://markheath.net/post/customize-radio-button-css ---  */
+/* credit: code for turning radio button options to nice button with styling inkeeping with the site design was based on https://markheath.net/post/customize-radio-button-css 
+I utalised the fuctionality of this code but styled them to fit the projects look */
+
 
 .radio-toolbar {
    margin: 8px;
@@ -666,4 +657,3 @@ footer p {
    padding: 7px 9px;
    border-radius: 4px;
 }
-

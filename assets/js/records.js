@@ -1,13 +1,14 @@
-var resultsList = JSON.parse(localStorage.getItem('results'));
+// Get JSON data from local storage
+let resultsList = JSON.parse(localStorage.getItem('results'));
 let bgcolor = '<div class="result-item-dark">';
 
 if (resultsList !== null) {
     for(var i = 0; i < resultsList.length; i++) {
-        // if the number is even use light background
+        // if the number is even use dark background
         if(i % 2 == 0) {
             bgcolor = '<div class="result-item-dark">';
         }
-        // if the number is odd use dark background
+        // if the number is odd use light background
         else {
             bgcolor = '<div class="result-item-light">';
         }
@@ -35,7 +36,7 @@ if (resultsList !== null) {
         "</div>";
     }
 }else {
-
+    // Displays by default when there are no results to load from local storage
     document.getElementById("resultsList").innerHTML +=
     bgcolor + 
     '<div class="data-title"><h1>' +  "Nothing to see here folks" + "</h1>" + "</div>" +
@@ -43,7 +44,9 @@ if (resultsList !== null) {
     "</div>";
     
   }
-
+/**
+   * Delete any results saved to users local storage
+   */
   function deleteItem() {
     localStorage.removeItem('results');
     location.reload();
